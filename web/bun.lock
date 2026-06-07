@@ -2,7 +2,7 @@
   "lockfileVersion": 1,
   "workspaces": {
     "": {
-      "name": "sokolek",
+      "name": "web",
       "dependencies": {
         "@tailwindcss/vite": "^4.3.0",
         "i18next": "^26.3.0",
