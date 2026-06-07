@@ -1,0 +1,72 @@
+{
+  "nav": {
+    "work": "Work",
+    "philosophy": "Philosophy",
+    "contact": "Contact"
+  },
+  "hero": {
+    "label": "Boutique digital craftsmanship — Warsaw",
+    "heading": "We shape <0>raw code</0> and <1>pure design</1> into lasting digital craft",
+    "description": "A boutique studio engineering high-performance software systems and sculpting visual brand narratives for clients seeking uncompromising excellence.",
+    "cta": "Start a project"
+  },
+  "disciplines": {
+    "label": "Core disciplines",
+    "heading": "Engineering meets <0>visual architecture</0>",
+    "items": {
+      "0": {
+        "title": "Bespoke software engineering",
+        "label": "systems",
+        "desc": "Handcrafted frontend architectures, high-performance web applications, and custom developer tooling — built with absolute technical rigor.",
+        "stack": "React · Vite · Bun · TypeScript · Next.js"
+      },
+      "1": {
+        "title": "Visual identity & branding",
+        "label": "art direction",
+        "desc": "Sculpting unique corporate identities, pristine design systems, typography standards, and brand strategy guidelines.",
+        "stack": "Design Systems · Identity · Figma · Typography"
+      },
+      "2": {
+        "title": "Immersive UX architecture",
+        "label": "interface",
+        "desc": "Interactive, responsive digital layouts where technical logic and visual elegance achieve complete synergy.",
+        "stack": "Micro-interactions · Motion · Responsive Grid"
+      },
+      "3": {
+        "title": "Systems & pragmatic devops",
+        "label": "infrastructure",
+        "desc": "Resilient cloud infrastructure, optimized APIs, automated integration pipelines, and performant database architectures.",
+        "stack": "AWS · Docker · CI/CD · PostgreSQL · Edge"
+      }
+    }
+  },
+  "philosophy": {
+    "label": "Philosophy",
+    "heading": "Our creed",
+    "quote": "We do not build templates. We sculpt <0>custom</0>, highly cohesive architectures that stand the test of time.",
+    "p1": "Sokołek Studio was created from a simple frustration with generic software and design packages. We believe code and visual identity are inseparable — premium systems demand optimal visual frames.",
+    "p2": "Every layout pixel, database query, font weight, and micro-interaction is scrutinized. We partner with visionary founders who respect design and demand impeccable digital engineering.",
+    "caption": "Maks & Klaudia, Co-founders",
+    "alt": "Maks & Klaudia, Co-founders of Sokołek Studio"
+  },
+  "contact": {
+    "label": "Get in touch",
+    "heading": "Let's build something <0>together</0>",
+    "description": "Tell us about your technical requirements or visual aspirations. We review every brief within one business day.",
+    "success": {
+      "label": "Sent",
+      "heading": "Inquiry received",
+      "desc": "We will review your objectives and respond shortly."
+    },
+    "form": {
+      "email_label": "Your email",
+      "email_placeholder": "hello@company.com",
+      "vision_label": "Describe your vision",
+      "vision_placeholder": "Tell us about your project goals...",
+      "submit": "Send inquiry"
+    }
+  },
+  "footer": {
+    "location": "Warsaw · Digital Craft"
+  }
+}
