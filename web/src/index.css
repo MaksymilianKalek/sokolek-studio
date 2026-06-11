@@ -27,6 +27,7 @@
 @theme {
   --font-satoshi: "Satoshi", sans-serif;
   --font-inter: "Inter", sans-serif;
+  --font-serif: "Playfair Display", serif;
 }
 
 html, body {
@@ -34,9 +35,13 @@ html, body {
   padding: 0;
   height: 100%;
   width: 100%;
-  background-color: black;
-  color: white;
+  background-color: #F9F8F4;
+  color: #32302C;
   -webkit-font-smoothing: antialiased;
+  cursor: none;
+}
+* {
+  cursor: none !important;
 }
 
 #root {
