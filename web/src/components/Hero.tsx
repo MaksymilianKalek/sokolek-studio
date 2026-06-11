@@ -1,138 +1,125 @@
-import { useEffect, useRef, useState, useCallback } from 'react';
-import { Trans, useTranslation } from 'react-i18next';
-import { motion, useMotionValue, useSpring, useScroll, useTransform } from 'motion/react';
+import { useRef } from 'react';
+import { useTranslation } from 'react-i18next';
+import { motion, useScroll, useTransform } from 'motion/react';
 import { MagneticElement } from './MagneticElement';
-import { MaskedText } from './MaskedText';
 
-function Crosshair({ className }: { className: string }) {
-  return <span className={`absolute text-[#3E3A35]/15 text-xs font-mono select-none pointer-events-none ${className}`}>+</span>;
+const HEAVY_SPRING = { damping: 20, stiffness: 100 };
+const EASE_OUT_EXPO = [0.16, 1, 0.3, 1] as const;
+
+function RevealLine({ children, delay }: { children: React.ReactNode; delay: number }) {
+  return (
+    <div className="overflow-hidden">
+      <motion.div
+        initial={{ y: '110%', rotateX: -15 }}
+        animate={{ y: '0%', rotateX: 0 }}
+        transition={{ ...HEAVY_SPRING, delay }}
+        style={{ transformOrigin: 'bottom left' }}
+      >
+        {children}
+      </motion.div>
+    </div>
+  );
 }
 
 export function Hero() {
   const { t } = useTranslation();
+  const sectionRef = useRef<HTMLElement>(null);
 
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start start', 'end start'],
+  });
 
-  const springConfig = { damping: 50, stiffness: 30, mass: 5 };
-  const sphereX = useSpring(mouseX, springConfig);
-
-  const { scrollY } = useScroll();
-  const orbParallaxY = useTransform(scrollY, [0, 1000], [0, -200]);
-
-  const headingRef = useRef<HTMLHeadingElement>(null);
-  const [fontWeight, setFontWeight] = useState(700);
-
-  const handleHeadingMouse = useCallback((e: React.MouseEvent) => {
-    if (!headingRef.current) return;
-    const rect = headingRef.current.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-    const dist = Math.sqrt(Math.pow(e.clientX - centerX, 2) + Math.pow(e.clientY - centerY, 2));
-    const maxDist = Math.sqrt(Math.pow(rect.width / 2, 2) + Math.pow(rect.height / 2, 2));
-    const normalized = Math.min(dist / maxDist, 1);
-    const weight = Math.round(800 - normalized * 200);
-    setFontWeight(weight);
-  }, []);
-
-  const handleHeadingLeave = useCallback(() => {
-    setFontWeight(700);
-  }, []);
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      mouseX.set(e.clientX - window.innerWidth / 2);
-      mouseY.set(e.clientY - window.innerHeight / 2);
-    };
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, [mouseX, mouseY]);
-
-  const labelParts = t('hero.label').split('—');
+  const textY = useTransform(scrollYProgress, [0, 1], [0, -120]);
+  const accentY = useTransform(scrollYProgress, [0, 1], [0, -300]);
+  const subtitleY = useTransform(scrollYProgress, [0, 1], [0, -60]);
 
   return (
-    <section className="relative w-full min-h-[90vh] flex items-center px-6 md:px-12 py-32 bg-transparent overflow-hidden">
-
+    <section
+      ref={sectionRef}
+      className="relative w-full min-h-screen flex items-center overflow-hidden"
+      style={{ backgroundColor: 'var(--color-noir-bg)' }}
+    >
+      {/* Decorative vertical brutalist line */}
       <motion.div
-        className="absolute right-[5%] top-[15%] w-[50vw] h-[50vw] rounded-full pointer-events-none z-0 bg-[#FFD000] opacity-[0.12] blur-[120px] md:blur-[180px]"
-        style={{ x: sphereX, y: orbParallaxY }}
-        animate={{
-          scale: [1, 1.05, 0.98, 1],
-          rotate: [0, 90, -90, 0],
+        className="absolute bottom-0 left-[8%] md:left-[5%] w-[1px] h-[40vh] pointer-events-none"
+        style={{
+          y: accentY,
+          background: 'linear-gradient(180deg, transparent, var(--color-noir-border))',
         }}
-        transition={{
-          duration: 25,
-          ease: 'linear',
-          repeat: Infinity,
-        }}
+        aria-hidden="true"
       />
 
-      <div className="w-full max-w-[100rem] mx-auto grid grid-cols-12 gap-6 z-10 relative">
-        {/* Grid Crosshairs */}
-        <Crosshair className="top-0 left-0" />
-        <Crosshair className="top-0 right-0" />
-        <Crosshair className="bottom-0 left-0" />
-        <Crosshair className="bottom-0 right-0" />
-
-        <div className="col-span-12 lg:col-span-10 xl:col-span-9 flex flex-col items-start text-left">
-
-          <MaskedText className="font-inter text-sm tracking-widest uppercase mb-16 text-[#8A867D]" delay={0.2}>
-            {labelParts[0]}
-            <span className="text-[#FFD000]">—</span>
-            {labelParts[1]}
-          </MaskedText>
-
-          <MaskedText
-            as="h1"
-            className="font-satoshi text-[12vw] md:text-[9vw] lg:text-[8vw] tracking-[-0.06em] text-[#3E3A35] mb-12 leading-[0.85] uppercase"
-            delay={0.4}
-          >
-            <span
-              ref={headingRef}
-              onMouseMove={handleHeadingMouse}
-              onMouseLeave={handleHeadingLeave}
-              style={{ fontWeight, transition: 'font-weight 0.3s ease' }}
-            >
-              <Trans
-                i18nKey="hero.heading"
-                components={[
-                  <span
-                    data-cursor-expand
-                    className="font-serif italic text-[1.05em] text-[#69635C] lowercase tracking-normal mx-1 md:mx-3"
-                    key="0"
-                  />,
-                ]}
-              />
-            </span>
-          </MaskedText>
-
-          <MaskedText as="p" className="font-inter text-xl md:text-2xl max-w-2xl text-[#8A867D] mb-16 leading-[1.6]" delay={0.6}>
-            {t('hero.description')}
-          </MaskedText>
-
+      <div className="relative z-10 w-full pl-6 md:pl-12 lg:pl-[15vw] pr-6 md:pr-12">
+        <motion.div
+          className="flex flex-col items-start"
+          style={{ y: textY }}
+        >
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: [0.76, 0, 0.24, 1], delay: 0.8 }}
+            className="font-inter text-xs tracking-[0.3em] uppercase mb-16 opacity-60"
+            style={{ color: 'var(--color-noir-muted)' }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.5, delay: 0.1 }}
           >
-            <MagneticElement>
-              <a
-                href="#contact"
-                className="inline-block font-inter text-[15px] font-medium tracking-wide uppercase bg-[#FFD000] text-[#1A1A1A] px-10 py-5 hover:brightness-110 transition-all duration-700 rounded-full"
-              >
-                {t('hero.cta')}
-              </a>
-            </MagneticElement>
+            Butikowe rzemiosło cyfrowe — Poznań
           </motion.div>
 
-        </div>
+          <h1 className="sr-only">{t('hero.heading')}</h1>
 
-        {/* Live Metadata */}
-        <div className="col-span-12 lg:col-span-2 xl:col-span-3 hidden lg:flex items-end justify-end pb-4">
-          <span className="font-mono text-[9px] uppercase tracking-widest text-[#8A867D]/40">
-            Idx: 01 // Sys_Active
-          </span>
-        </div>
+          <div
+            aria-hidden="true"
+            className="leading-[0.85] md:leading-[0.9]"
+            style={{ fontSize: 'clamp(4rem, 11vw, 12rem)' }}
+          >
+            <RevealLine delay={0.3}>
+              <span className="font-satoshi font-black uppercase tracking-tighter text-[var(--color-noir-text)] whitespace-nowrap">
+                Czysty kod
+              </span>
+            </RevealLine>
+            <RevealLine delay={0.5}>
+              <span className="font-serif italic lowercase text-[#a0a0a0] ml-12 md:ml-[15vw] whitespace-nowrap">
+                świetny design
+              </span>
+            </RevealLine>
+          </div>
+
+          <motion.div
+            style={{ y: subtitleY }}
+            className="mt-16 max-w-xl md:ml-[15vw]"
+          >
+            <motion.p
+              className="font-inter text-xl md:text-2xl leading-[1.8]"
+              style={{ color: 'var(--color-noir-muted)' }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.2, ease: EASE_OUT_EXPO, delay: 0.9 }}
+            >
+              {t('hero.description')}
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: EASE_OUT_EXPO, delay: 1.1 }}
+              className="mt-12"
+            >
+              <MagneticElement>
+                <a
+                  href="#contact"
+                  data-cursor-expand
+                  className="inline-flex items-center justify-center font-inter text-[13px] font-bold tracking-widest uppercase px-12 py-5 rounded-full transition-all duration-500 hover:scale-105"
+                  style={{
+                    backgroundColor: 'var(--color-noir-accent)',
+                    color: 'var(--color-noir-surface)',
+                  }}
+                >
+                  {t('hero.cta')}
+                </a>
+              </MagneticElement>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
