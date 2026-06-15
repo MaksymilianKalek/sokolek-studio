@@ -11,9 +11,9 @@ export function FloatingUnderlineInput({ label, ...props }: InputProps) {
         {...props}
         type={props.type || "text"}
         placeholder=" "
-        className="block py-3 px-0 w-full text-base text-neutral-900 bg-transparent border-0 border-b border-neutral-200 appearance-none focus:outline-none focus:ring-0 focus:border-neutral-900 transition-colors duration-300 peer"
+        className="block py-3 px-0 w-full text-base text-ink bg-transparent border-0 border-b border-ink/20 appearance-none focus:outline-none focus:ring-0 focus:border-ink transition-colors duration-300 peer"
       />
-      <label className="absolute text-sm text-neutral-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:text-neutral-900 font-medium">
+      <label className="absolute text-sm text-ink-faint duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:text-ink font-medium">
         {label}
       </label>
     </div>
@@ -30,9 +30,9 @@ export function FloatingUnderlineTextarea({ label, ...props }: TextareaProps) {
       <textarea
         {...props}
         placeholder=" "
-        className="block py-3 px-0 w-full text-base text-neutral-900 bg-transparent border-0 border-b border-neutral-200 appearance-none focus:outline-none focus:ring-0 focus:border-neutral-900 transition-colors duration-300 peer resize-none"
+        className="block py-3 px-0 w-full text-base text-ink bg-transparent border-0 border-b border-ink/20 appearance-none focus:outline-none focus:ring-0 focus:border-ink transition-colors duration-300 peer resize-none"
       />
-      <label className="absolute text-sm text-neutral-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:text-neutral-900 font-medium">
+      <label className="absolute text-sm text-ink-faint duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:text-ink font-medium">
         {label}
       </label>
     </div>

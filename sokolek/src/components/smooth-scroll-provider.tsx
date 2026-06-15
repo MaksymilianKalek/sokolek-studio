@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
 import type { ReactNode } from 'react'
 import Lenis from 'lenis'
 
@@ -8,9 +8,6 @@ interface SmoothScrollContextType {
 
 const SmoothScrollContext = createContext<SmoothScrollContextType>({ lenis: null })
 
-export function useSmoothScrollContext() {
-  return useContext(SmoothScrollContext)
-}
 
 interface SmoothScrollProviderProps {
   children: ReactNode
@@ -30,7 +27,9 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
       touchMultiplier: 1.5,
     })
 
-    setLenis(lenisInstance)
+    requestAnimationFrame(() => {
+      setLenis(lenisInstance)
+    })
 
     let rafId: number
     function raf(time: number) {
