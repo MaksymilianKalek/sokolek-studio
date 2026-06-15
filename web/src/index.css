@@ -31,6 +31,8 @@
   --font-inter: "Inter", sans-serif;
   --color-obsidian: #111;
   --color-electric: #f9f9f9;
+  --color-amber: #ffb50a;
+  --color-red: #e6000f;
 }
 
 html,
@@ -38,13 +40,11 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  background-color: var(--color-obsidian);
-  color: var(--color-electric);
+  background-color: #ffffff;
+  color: #111111;
   -webkit-font-smoothing: antialiased;
   overscroll-behavior: none;
-  /* Hide scrollbar for IE and Edge */
   -ms-overflow-style: none;
-  /* Hide scrollbar for Firefox */
   scrollbar-width: none;
 }
 
