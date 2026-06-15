@@ -2,7 +2,8 @@
 
 @font-face {
   font-family: "Satoshi";
-  src: url("../fonts/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Variable.woff2") format("woff2");
+  src: url("../fonts/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Variable.woff2")
+    format("woff2");
   font-weight: 300 900;
   font-display: swap;
   font-style: normal;
@@ -10,7 +11,8 @@
 
 @font-face {
   font-family: "Satoshi";
-  src: url("../fonts/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-VariableItalic.woff2") format("woff2");
+  src: url("../fonts/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-VariableItalic.woff2")
+    format("woff2");
   font-weight: 300 900;
   font-display: swap;
   font-style: italic;
@@ -27,19 +29,48 @@
 @theme {
   --font-satoshi: "Satoshi", sans-serif;
   --font-inter: "Inter", sans-serif;
+  --color-obsidian: #111;
+  --color-electric: #f9f9f9;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
-  height: 100%;
   width: 100%;
-  background-color: black;
-  color: white;
+  background-color: var(--color-obsidian);
+  color: var(--color-electric);
   -webkit-font-smoothing: antialiased;
+  overscroll-behavior: none;
+  /* Hide scrollbar for IE and Edge */
+  -ms-overflow-style: none;
+  /* Hide scrollbar for Firefox */
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+  display: none;
 }
 
 #root {
-  height: 100%;
   width: 100%;
+}
+
+::selection {
+  background-color: var(--color-electric);
+  color: var(--color-obsidian);
+}
+
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
