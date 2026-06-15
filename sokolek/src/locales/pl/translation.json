@@ -6,53 +6,52 @@
   },
   "hero": {
     "label": "Butikowe rzemiosło cyfrowe — Poznań",
-    "heading": "Zamieniamy <0>czysty kod</0> i <1>świetny design</1> w produkty z duszą",
-    "description": "Jesteśmy butikowym studiem. Tworzymy wydajne aplikacje i piękne marki dla ludzi, którzy cenią rzemiosło i dbałość o każdy detal.",
-    "cta": "Porozmawiajmy o projekcie"
+    "heading": "Inżynieria spotyka sztukę.",
+    "description": "Jesteśmy butikowym studiem. Łączymy zaawansowaną architekturę oprogramowania z bezkompromisowym designem. Zmieniamy skomplikowane problemy w proste, piękne produkty.",
+    "cta": "ROZPOCZNIJ PROJEKT"
   },
   "disciplines": {
     "label": "W czym pomagamy",
-    "heading": "Technologia spotyka <0>wrażliwość wizualną</0>",
+    "heading": "Technologia spotyka wrażliwość wizualną",
     "items": {
       "0": {
-        "title": "Dedykowane aplikacje",
+        "title": "Architektura & AI",
         "label": "systemy",
-        "desc": "Budujemy szybkie i stabilne aplikacje webowe. Piszemy czysty kod, który rozwiązuje realne problemy biznesowe, zamiast generować nowe.",
-        "stack": "React · TypeScript · Next.js · AI Integrations"
+        "desc": "Projektujemy wydajne, skalowalne platformy webowe i integrujemy systemy sztucznej inteligencji. Autorski, czysty kod bez technologicznego długu.",
+        "stack": "React · Next.js · AI Agents · Node"
       },
       "1": {
-        "title": "Identyfikacja wizualna",
+        "title": "Kierunek Artystyczny",
         "label": "kierunek artystyczny",
-        "desc": "Tworzymy wizerunek marek od podstaw. Od spójnego systemu wizualnego po typografię, która precyzyjnie oddaje Twój charakter.",
-        "stack": "Systemy Designu · Identyfikacja · Figma"
+        "desc": "Tworzymy tożsamość wizualną marek, które zapadają w pamięć. Od rygorystycznych systemów typograficznych po profesjonalną fotografię i color grading.",
+        "stack": "Branding · Typografia · Fotografia"
       },
       "2": {
-        "title": "Projektowanie doświadczeń",
+        "title": "Projektowanie Doświadczeń",
         "label": "interfejsy",
-        "desc": "Projektujemy intuicyjne interfejsy. Łączymy inżynieryjną precyzję z empatią i zrozumieniem potrzeb użytkownika.",
-        "stack": "UX/UI · Mikrointerakcje · Dostępność"
+        "desc": "Tworzymy minimalistyczne i intuicyjne interfejsy. Łączymy analityczną precyzję z obsesyjną dbałością o detale i ludzkie doświadczenie.",
+        "stack": "UI/UX · Mikrointerakcje · Dostępność"
       },
       "3": {
-        "title": "Niezawodna infrastruktura",
-        "label": "backend & devops",
-        "desc": "Dbamy o to, by wszystko działało bezbłędnie pod maską. Od chmury po bazy danych – budujemy fundamenty, na których możesz polegać.",
-        "stack": "AWS · Docker · CI/CD · PostgreSQL"
+        "title": "Niezawodna Infrastruktura",
+        "label": "infrastruktura",
+        "desc": "Budujemy bezpieczne fundamenty chmurowe i automatyzujemy procesy. Środowiska, na których Twój biznes może bez obaw rosnąć.",
+        "stack": "AWS · Docker · CI/CD · Cloud"
       }
     }
   },
   "philosophy": {
     "label": "Nasze podejście",
-    "heading": "Kim jesteśmy",
-    "quote": "Nie wierzymy w masowe szablony. Tworzymy <0>autorskie</0>, przemyślane rozwiązania, które zostają na lata.",
-    "p1": "Sokołek Studio narodziło się z miłości do rzemiosła i zmęczenia bylejakością w świecie IT. Wierzymy, że to, jak aplikacja działa pod maską, jest tak samo ważne, jak to, w jaki sposób z nią obcujemy. Kod i design są dla nas nierozłączne.",
-    "p2": "Jesteśmy zgranym duetem – w życiu i w pracy. Dbamy o każdy piksel, animację i linijkę kodu. Najchętniej współpracujemy z ludźmi, którzy tak jak my cenią rzetelną pracę, szczerość i bezkompromisową jakość.",
-    "caption": "Maks i Klaudia, Założyciele",
+    "heading": "Odrzucamy przeciętność. Wierzymy w cyfrowe rzemiosło.",
+    "p1": "Sokołek Studio to zderzenie dwóch światów: twardej inżynierii i wrażliwości artystycznej. Maksymilian projektuje zaawansowane systemy i wdraża AI. Klaudia odpowiada za identyfikację wizualną i fotografię.",
+    "p2": "Jesteśmy duetem w pracy i w życiu. Nie idziemy na skróty i nie używamy gotowych szablonów. Projektujemy i kodujemy autorskie rozwiązania z najwyższą dbałością o każdą linijkę kodu i każdy piksel.",
+    "caption": "MAKS I KLAUDIA, ZAŁOŻYCIELE",
     "alt": "Maks i Klaudia Sokołek, Założyciele Sokołek Studio"
   },
   "contact": {
     "label": "Poznajmy się",
-    "heading": "Zróbmy coś <0>wspólnie</0>",
-    "description": "Opowiedz nam o swoim pomyśle. Niezależnie od tego, czy potrzebujesz zaawansowanej platformy, czy nowej tożsamości dla swojej marki – po prostu napisz.",
+    "heading": "Zróbmy coś wspólnie",
+    "description": "Opowiedz nam o swoim pomyśle. Niezależnie od tego, czy potrzebujesz platformy napędzanej AI, czy nowej tożsamości dla swojej marki.",
     "success": {
       "label": "Wysłano",
       "heading": "Otrzymaliśmy Twoją wiadomość",
@@ -63,7 +62,7 @@
       "email_placeholder": "czesc@twojafirma.pl",
       "vision_label": "O czym chciałbyś porozmawiać?",
       "vision_placeholder": "Opisz krótko swój cel lub projekt...",
-      "submit": "Wyślij wiadomość"
+      "submit": "WYŚLIJ WIADOMOŚĆ"
     }
   },
   "footer": {

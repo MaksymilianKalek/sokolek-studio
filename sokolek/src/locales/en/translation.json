@@ -1,58 +1,57 @@
 {
   "nav": {
-    "work": "Work",
-    "philosophy": "Philosophy",
+    "work": "Projects",
+    "philosophy": "About us",
     "contact": "Contact"
   },
   "hero": {
-    "label": "Boutique digital craftsmanship — Warsaw",
-    "heading": "We shape <0>raw code</0> and <1>pure design</1> into lasting digital craft",
-    "description": "A boutique studio engineering high-performance software systems and sculpting visual brand narratives for clients seeking uncompromising excellence.",
-    "cta": "Start a project"
+    "label": "Boutique digital craftsmanship — Poznań",
+    "heading": "Engineering meets art.",
+    "description": "We are a boutique studio. We combine advanced software architecture with uncompromising design. We transform complex problems into simple, beautiful products.",
+    "cta": "START PROJECT"
   },
   "disciplines": {
-    "label": "Core disciplines",
-    "heading": "Engineering meets <0>visual architecture</0>",
+    "label": "How we help",
+    "heading": "Technology meets visual sensitivity",
     "items": {
       "0": {
-        "title": "Bespoke software engineering",
+        "title": "Architecture & AI",
         "label": "systems",
-        "desc": "Handcrafted frontend architectures, high-performance web applications, and custom developer tooling — built with absolute technical rigor.",
-        "stack": "React · Vite · Bun · TypeScript · Next.js"
+        "desc": "We design high-performance, scalable web platforms and integrate artificial intelligence systems. Custom, clean code without technical debt.",
+        "stack": "React · Next.js · AI Agents · Node"
       },
       "1": {
-        "title": "Visual identity & branding",
+        "title": "Art Direction",
         "label": "art direction",
-        "desc": "Sculpting unique corporate identities, pristine design systems, typography standards, and brand strategy guidelines.",
-        "stack": "Design Systems · Identity · Figma · Typography"
+        "desc": "We craft visual brand identities that leave a lasting impression. From rigorous typographic systems to professional photography and color grading.",
+        "stack": "Branding · Typography · Photography"
       },
       "2": {
-        "title": "Immersive UX architecture",
-        "label": "interface",
-        "desc": "Interactive, responsive digital layouts where technical logic and visual elegance achieve complete synergy.",
-        "stack": "Micro-interactions · Motion · Responsive Grid"
+        "title": "Experience Design",
+        "label": "interfaces",
+        "desc": "We create minimalist and intuitive interfaces. We combine analytical precision with an obsessive attention to detail and human experience.",
+        "stack": "UI/UX · Micro-interactions · Accessibility"
       },
       "3": {
-        "title": "Systems & pragmatic devops",
+        "title": "Resilient Infrastructure",
         "label": "infrastructure",
-        "desc": "Resilient cloud infrastructure, optimized APIs, automated integration pipelines, and performant database architectures.",
-        "stack": "AWS · Docker · CI/CD · PostgreSQL · Edge"
+        "desc": "We build secure cloud foundations and automate processes. Environments upon which your business can grow without worry.",
+        "stack": "AWS · Docker · CI/CD · Cloud"
       }
     }
   },
   "philosophy": {
-    "label": "Philosophy",
-    "heading": "Our creed",
-    "quote": "We do not build templates. We sculpt <0>custom</0>, highly cohesive architectures that stand the test of time.",
-    "p1": "Sokołek Studio was created from a simple frustration with generic software and design packages. We believe code and visual identity are inseparable — premium systems demand optimal visual frames.",
-    "p2": "Every layout pixel, database query, font weight, and micro-interaction is scrutinized. We partner with visionary founders who respect design and demand impeccable digital engineering.",
-    "caption": "Maks & Klaudia, Co-founders",
-    "alt": "Maks & Klaudia, Co-founders of Sokołek Studio"
+    "label": "Our approach",
+    "heading": "We reject mediocrity. We believe in digital craftsmanship.",
+    "p1": "Sokołek Studio is the collision of two worlds: rigorous engineering and artistic sensitivity. Maksymilian designs advanced systems and deploys AI. Klaudia is responsible for visual identity and photography.",
+    "p2": "We are a partnership in work and life. We do not take shortcuts or use pre-built templates. We design and code bespoke solutions with the highest care for every line of code and every pixel.",
+    "caption": "MAKS & KLAUDIA, FOUNDERS",
+    "alt": "Maks and Klaudia Sokołek, Founders of Sokołek Studio"
   },
   "contact": {
     "label": "Get in touch",
-    "heading": "Let's build something <0>together</0>",
-    "description": "Tell us about your technical requirements or visual aspirations. We review every brief within one business day.",
+    "heading": "Let's build something together",
+    "description": "Tell us about your idea. Whether you need an AI-powered platform or a new identity for your brand.",
     "success": {
       "label": "Sent",
       "heading": "Inquiry received",
@@ -63,10 +62,10 @@
       "email_placeholder": "hello@company.com",
       "vision_label": "Describe your vision",
       "vision_placeholder": "Tell us about your project goals...",
-      "submit": "Send inquiry"
+      "submit": "SEND MESSAGE"
     }
   },
   "footer": {
-    "location": "Warsaw · Digital Craft"
+    "location": "Poznań · Digital Craft"
   }
 }
