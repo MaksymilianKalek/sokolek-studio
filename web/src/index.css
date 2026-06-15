@@ -29,10 +29,9 @@
 @theme {
   --font-satoshi: "Satoshi", sans-serif;
   --font-inter: "Inter", sans-serif;
-  --color-obsidian: #111;
-  --color-electric: #f9f9f9;
+  --color-navy: #180a1f;
   --color-amber: #ffb50a;
-  --color-red: #e6000f;
+  --color-white: #ffffff;
 }
 
 html,
@@ -40,8 +39,8 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  background-color: #ffffff;
-  color: #111111;
+  background-color: #180a1f;
+  color: #ffffff;
   -webkit-font-smoothing: antialiased;
   overscroll-behavior: none;
   -ms-overflow-style: none;
@@ -58,8 +57,8 @@ body {
 }
 
 ::selection {
-  background-color: var(--color-electric);
-  color: var(--color-obsidian);
+  background-color: var(--color-amber);
+  color: var(--color-navy);
 }
 
 html.lenis {
