@@ -10,11 +10,11 @@ import {
 import { useRef } from "react"
 import { SmoothScroll } from "./components/SmoothScroll"
 
-const NAVY = "#180a1f"
-const AMBER = "#ffb50a"
-const WHITE = "#ffffff"
-const NAVY_CARD = "#2a1235"
-const NAVY_LIGHT = "#3f1c52"
+const INK = "#101010"
+const PAPER = "#ffffff"
+const NAVY = INK
+const AMBER = INK
+const WHITE = INK
 
 export default function AppV3() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -102,10 +102,7 @@ export default function AppV3() {
   const s6LineScale = useTransform(smoothProgress, [0.73, 0.81, 1.0], [0, 1, 1])
   const s6Display = useTransform(scrollYProgress, (v) => (v >= 0.71 ? "flex" : "none"))
 
-  // Header adapts: white on navy, navy on amber contact section
-  const headerColor = useTransform(scrollYProgress, (v) => (v >= 0.75 ? NAVY : WHITE))
-  const headerBtnBg = useTransform(scrollYProgress, (v) => (v >= 0.75 ? NAVY : AMBER))
-  const headerBtnColor = useTransform(scrollYProgress, (v) => (v >= 0.75 ? WHITE : NAVY))
+  const headerColor = useTransform(scrollYProgress, () => INK)
 
   const scrollToPercent = (percent: number) => {
     if (containerRef.current) {
@@ -118,37 +115,37 @@ export default function AppV3() {
     <SmoothScroll>
       <main
         ref={containerRef}
-        className="relative h-[900vh] w-full"
-        style={{ backgroundColor: NAVY, color: WHITE }}
+        className="relative h-[900vh] w-full overflow-clip"
+        style={{ color: INK }}
       >
+        <div className="flowing-gradient-bg" />
         <div className="sticky top-0 left-0 flex h-screen w-full items-center justify-center overflow-hidden">
 
           <motion.header
             style={{ color: headerColor }}
-            className="absolute top-0 left-0 w-full p-8 md:p-12 flex justify-between items-center z-50"
+            className="glass-nav absolute left-1/2 top-5 z-50 flex w-[calc(100%-2rem)] max-w-4xl -translate-x-1/2 flex-col items-center justify-between rounded-3xl px-3 py-2 sm:flex-row sm:rounded-full md:top-6 md:px-4"
           >
             <motion.h3
               onClick={() => scrollToPercent(0)}
               style={{ color: headerColor }}
-              className="font-satoshi text-base md:text-lg font-black tracking-tight uppercase cursor-pointer select-none hover:opacity-60 transition-opacity"
+              className="rounded-full px-3 py-1.5 font-satoshi text-xs font-black tracking-tight uppercase cursor-pointer select-none hover:opacity-60 transition-opacity sm:py-2 sm:text-sm md:px-5"
             >
               Sokołek Studio
             </motion.h3>
-            <nav className="flex items-center gap-6 md:gap-8 font-satoshi text-[10px] md:text-xs font-bold tracking-widest uppercase">
+            <nav className="flex flex-wrap items-center justify-center gap-1 font-satoshi text-[8px] font-bold tracking-widest uppercase sm:text-[9px] md:text-xs">
               {["Manifesto", "Design", "IT", "AI"].map((label, i) => (
                 <motion.button
                   key={label}
                   onClick={() => scrollToPercent([0.14, 0.30, 0.47, 0.64][i])}
                   style={{ color: headerColor }}
-                  className="hover:opacity-60 transition-opacity"
+                  className="rounded-full px-2 py-1.5 hover:bg-white/30 hover:opacity-70 transition sm:px-2.5 sm:py-2 md:px-4"
                 >
                   {label}
                 </motion.button>
               ))}
               <motion.button
                 onClick={() => scrollToPercent(0.85)}
-                style={{ backgroundColor: headerBtnBg, color: headerBtnColor }}
-                className="px-5 py-2 rounded-full font-bold text-xs tracking-wider hover:scale-105 hover:brightness-110 transition-transform"
+                className="rounded-full bg-ink px-3 py-1.5 font-bold text-[8px] tracking-wider text-paper hover:scale-105 hover:bg-black transition sm:py-2 sm:text-[9px] md:px-5 md:text-xs"
               >
                 Contact
               </motion.button>
@@ -229,7 +226,7 @@ export default function AppV3() {
               }}
               className="relative w-full max-w-5xl flex flex-col md:flex-row items-stretch gap-8 md:gap-0"
             >
-              <div className="flex-1 rounded-2xl p-10 md:p-14" style={{ backgroundColor: AMBER, color: NAVY }}>
+              <div className="glass-panel glass-panel-strong flex-1 rounded-2xl p-10 md:p-14" style={{ color: NAVY }}>
                 <p className="font-mono text-[10px] tracking-[0.2em] uppercase mb-6" style={{ color: `${NAVY}80` }}>Our Manifesto</p>
                 <h2 className="font-satoshi text-3xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-tight">
                   Systems architecture.<br />Visual precision.
@@ -238,21 +235,19 @@ export default function AppV3() {
               </div>
 
               <motion.div
-                style={{ scaleY: s2LineH }}
+                style={{ scaleY: s2LineH, backgroundColor: NAVY }}
                 className="w-[3px] hidden md:block origin-top rounded-full mx-6"
-                // @ts-expect-error motion style
-                style={{ scaleY: s2LineH, backgroundColor: AMBER }}
               />
 
               <div className="flex-1 flex flex-col gap-6 justify-center">
-                <div className="rounded-2xl p-8" style={{ backgroundColor: `${WHITE}08` }}>
-                  <p className="font-inter text-base md:text-lg leading-relaxed" style={{ color: `${WHITE}90` }}>
+                <div className="glass-panel rounded-2xl p-8">
+                  <p className="font-inter text-base md:text-lg leading-relaxed" style={{ color: `${WHITE}d9` }}>
                     Sokołek Studio operates at the boundary of design purity and hardcore engineering.
                     We construct durable digital systems, graphic frameworks, and advanced neural modules.
                   </p>
                 </div>
-                <div className="rounded-xl p-6" style={{ backgroundColor: `${AMBER}12` }}>
-                  <p className="font-inter text-sm leading-relaxed" style={{ color: `${AMBER}cc` }}>
+                <div className="glass-chip rounded-xl p-6">
+                  <p className="font-inter text-sm leading-relaxed" style={{ color: `${WHITE}cc` }}>
                     We do not build temporal artifacts; we write structural foundations.
                   </p>
                 </div>
@@ -295,7 +290,7 @@ export default function AppV3() {
                   style={{ scale: s3CardScale, rotateX: s3CardRotateX, perspective: "1400px" }}
                   className="md:col-span-8"
                 >
-                  <div className="rounded-2xl p-8 md:p-10" style={{ backgroundColor: NAVY_CARD }}>
+                  <div className="glass-panel rounded-2xl p-8 md:p-10">
                     <p className="font-inter text-base md:text-lg leading-relaxed" style={{ color: `${WHITE}80` }}>
                       We engineer uncompromising visual grids. Specialized in structural typography systems,
                       spatial computing layouts, design asset pipelines, and high-fidelity motion systems.
@@ -310,7 +305,7 @@ export default function AppV3() {
                   {["Brand Architecture", "Spatial UI/UX", "Interactive Motion", "Design Pipelines"].map((tag, i) => (
                     <div
                       key={tag}
-                      className="flex items-center gap-3 rounded-xl px-5 py-3 font-mono text-[10px] md:text-xs tracking-wider uppercase font-bold"
+                      className="glass-chip flex items-center gap-3 rounded-xl px-5 py-3 font-mono text-[10px] md:text-xs tracking-wider uppercase font-bold"
                       style={{
                         backgroundColor: i % 2 === 0 ? `${AMBER}15` : `${WHITE}08`,
                         color: i % 2 === 0 ? AMBER : `${WHITE}70`,
@@ -353,7 +348,7 @@ export default function AppV3() {
 
               <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10">
                 <motion.div style={{ x: s4CardX }} className="md:col-span-8">
-                  <div className="rounded-2xl p-8 md:p-10" style={{ backgroundColor: AMBER, color: NAVY }}>
+                  <div className="glass-panel glass-panel-strong rounded-2xl p-8 md:p-10" style={{ color: NAVY }}>
                     <p className="font-inter text-base md:text-lg leading-relaxed" style={{ color: `${NAVY}cc` }}>
                       We develop performance-critical backends and server structures. Our core competence includes
                       architecting real-time streaming services, configuring secure distributed infrastructures,
@@ -365,7 +360,7 @@ export default function AppV3() {
                   {["Distributed Systems", "Type-Safe Engine", "API Optimization", "Cloud & Security"].map((tag, i) => (
                     <div
                       key={tag}
-                      className="flex items-center gap-3 rounded-xl px-5 py-3 font-mono text-[10px] md:text-xs tracking-wider uppercase font-bold"
+                      className="glass-chip flex items-center gap-3 rounded-xl px-5 py-3 font-mono text-[10px] md:text-xs tracking-wider uppercase font-bold"
                       style={{
                         backgroundColor: i % 2 === 0 ? `${WHITE}08` : `${AMBER}15`,
                         color: i % 2 === 0 ? `${WHITE}70` : AMBER,
@@ -412,7 +407,7 @@ export default function AppV3() {
                   style={{ scaleX: s5CardScaleX, skewX: s5CardSkewX, originX: "left" }}
                   className="md:col-span-8"
                 >
-                  <div className="rounded-2xl p-8 md:p-10" style={{ backgroundColor: NAVY_CARD }}>
+                  <div className="glass-panel rounded-2xl p-8 md:p-10">
                     <p className="font-inter text-base md:text-lg leading-relaxed" style={{ color: `${WHITE}80` }}>
                       We implement enterprise artificial intelligence frameworks. Specialized in deploying
                       and fine-tuning local open-source LLMs, building semantic search and custom vector
@@ -425,7 +420,7 @@ export default function AppV3() {
                   {(["Agent Automation", "RAG Pipelines", "Local Model Tuning", "Cognitive Systems"] as const).map((tag, i) => (
                     <motion.div
                       key={tag}
-                      className="flex items-center gap-3 rounded-xl px-5 py-3 font-mono text-[10px] md:text-xs tracking-wider uppercase font-bold"
+                      className="glass-chip flex items-center gap-3 rounded-xl px-5 py-3 font-mono text-[10px] md:text-xs tracking-wider uppercase font-bold"
                       style={{
                         rotate: useTransform(s5TagsRotate, (v) => v * (1 + i * 0.3)),
                         scale: s5TagsScale,
@@ -451,7 +446,7 @@ export default function AppV3() {
               style={{ scale: s6ScaleIn, rotate: s6BgRotate }}
               className="absolute inset-6 md:inset-12 rounded-3xl z-0 overflow-hidden"
             >
-              <div className="w-full h-full rounded-3xl" style={{ backgroundColor: AMBER }} />
+              <div className="glass-panel glass-panel-strong w-full h-full rounded-3xl" />
               <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full opacity-20" style={{ backgroundColor: WHITE }} />
               <div className="absolute -bottom-12 -left-12 w-36 h-36 rounded-full opacity-10" style={{ backgroundColor: NAVY }} />
             </motion.div>
@@ -483,7 +478,7 @@ export default function AppV3() {
                 <a
                   href="mailto:hello@sokolek.com"
                   className="inline-flex items-center gap-3 px-10 py-5 rounded-full font-satoshi text-xl md:text-3xl font-bold tracking-wider transition-all hover:scale-105 hover:brightness-95"
-                  style={{ backgroundColor: NAVY, color: WHITE }}
+                  style={{ backgroundColor: NAVY, color: PAPER }}
                 >
                   hello@sokolek.com
                   <span className="text-2xl">→</span>
