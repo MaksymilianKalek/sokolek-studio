@@ -1,61 +1,59 @@
-import { Reveal } from '../reveal'
-import { SectionLabel } from './section-label'
+import { DataItem, DataReveal, MaskTextReveal } from './motion-primitives'
 
 const services = [
   {
     index: '01',
     title: 'Brand systems',
-    description:
-      'Naming support, visual direction, typography, identity foundations, and reusable design rules that make a young company feel inevitable.',
+    tags: '[IDENTITY] [TYPOGRAPHY] [ART DIRECTION]',
   },
   {
     index: '02',
-    title: 'AI product interfaces',
-    description:
-      'Human-centered AI workflows, prompt surfaces, automation dashboards, and evaluation-minded UX for teams building with language models.',
+    title: 'AI interfaces',
+    tags: '[LLM UX] [WORKFLOWS] [EVALUATION]',
   },
   {
     index: '03',
-    title: 'Premium web experiences',
-    description:
-      'Fast, responsive React websites and product surfaces with careful motion, accessibility, and performance as part of the design language.',
-  },
-  {
-    index: '04',
-    title: 'Technical direction',
-    description:
-      'Architecture, implementation planning, and focused senior engineering for founders who need clarity before scale turns expensive.',
+    title: 'Web systems',
+    tags: '[REACT] [VITE] [PERFORMANCE]',
   },
 ]
 
 export function Services() {
   return (
-    <section id="services" className="px-5 py-24 sm:px-8 lg:px-10 lg:py-32">
-      <div className="mx-auto grid max-w-[92rem] gap-12 lg:grid-cols-[0.75fr_1.25fr]">
-        <Reveal>
-          <div className="sticky top-10">
-            <SectionLabel>Services</SectionLabel>
-            <h2 className="mt-5 max-w-xl font-satoshi text-5xl font-semibold leading-[0.95] tracking-[-0.055em] sm:text-7xl">
-              Designed to look simple. Built to stay useful.
-            </h2>
-          </div>
-        </Reveal>
+    <section id="services" className="grid bg-paper text-ink md:grid-cols-[30%_70%]">
+      <aside className="px-5 py-10 font-mono text-[10px] uppercase leading-relaxed tracking-widest text-neutral-500 sm:px-8 lg:px-10">
+        <DataReveal className="sticky top-10 grid gap-3">
+          <DataItem>[SECTION: SERVICES]</DataItem>
+          <DataItem>[ROWS: 03]</DataItem>
+        </DataReveal>
+      </aside>
 
-        <div className="border-t border-line">
-          {services.map((service, itemIndex) => (
-            <Reveal key={service.index} delay={itemIndex * 0.08}>
-              <article className="grid gap-5 border-b border-line py-8 sm:grid-cols-[6rem_0.75fr_1fr] sm:py-10">
-                <p className="font-inter text-sm text-ink-muted">{service.index}</p>
-                <h3 className="font-satoshi text-3xl font-medium leading-none tracking-[-0.035em]">
-                  {service.title}
-                </h3>
-                <p className="font-inter text-base leading-7 text-ink-soft">
-                  {service.description}
-                </p>
-              </article>
-            </Reveal>
-          ))}
-        </div>
+      <div>
+        {services.map((service, itemIndex) => (
+          <article
+            key={service.index}
+            className="grid gap-8 border-b border-neutral-200 px-5 py-16 sm:px-8 md:py-10 lg:grid-cols-[1fr_14rem] lg:px-10"
+          >
+            <DataReveal delay={0.22 + itemIndex * 0.08}>
+              <div>
+                <DataItem className="mb-5 font-mono text-[10px] uppercase leading-relaxed tracking-widest text-neutral-500">
+                  [{service.index}]
+                </DataItem>
+                <h2 className="font-satoshi text-6xl font-medium leading-none tracking-tighter text-ink md:text-[7vw]">
+                  <MaskTextReveal delay={itemIndex * 0.08}>{service.title}</MaskTextReveal>
+                </h2>
+              </div>
+            </DataReveal>
+            <DataReveal
+              delay={0.5 + itemIndex * 0.08}
+              className="font-mono text-[10px] uppercase leading-relaxed tracking-widest text-neutral-500 lg:pt-11"
+            >
+              <DataItem>
+                {service.tags}
+              </DataItem>
+            </DataReveal>
+          </article>
+        ))}
       </div>
     </section>
   )

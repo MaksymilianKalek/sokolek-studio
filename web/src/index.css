@@ -16,25 +16,14 @@
   font-style: italic;
 }
 
-@font-face {
-  font-family: "Inter";
-  src: url("../fonts/Inter.woff2") format("woff2");
-  font-weight: 100 900;
-  font-display: swap;
-  font-style: normal;
-}
-
 @theme {
   --font-satoshi: "Satoshi", sans-serif;
-  --font-inter: "Inter", sans-serif;
-  --color-paper: #f7f6f1;
-  --color-ink: #10100f;
-  --color-ink-soft: #4e4b45;
-  --color-ink-muted: #8a867c;
-  --color-line: #dedbd2;
-  --color-sunset-orange: #ff9100;
-  --color-sunset-yellow: #ffbb00;
-  --color-sunset-amber: #ff7a00;
+  --font-mono: "JetBrains Mono", monospace;
+  --color-brand-black: #0a0a0a;
+  --color-brand-white: #ededed;
+  --color-brand-orange: #ff4f00;
+  --color-paper: var(--color-brand-white);
+  --color-ink: var(--color-brand-black);
 }
 
 html {
@@ -67,84 +56,6 @@ body {
 a,
 button {
   border-radius: 0;
-}
-
-.accent-gradient {
-  background-image: linear-gradient(
-    135deg,
-    var(--color-sunset-orange) 0%,
-    var(--color-sunset-yellow) 58%,
-    var(--color-sunset-amber) 100%
-  );
-  background-size: 220% 220%;
-  box-shadow:
-    0 0 20px 2px rgba(255, 145, 0, 0.2),
-    0 0 44px 4px rgba(255, 187, 0, 0.14);
-  filter:
-    saturate(1.08)
-    drop-shadow(0 0 8px rgba(255, 145, 0, 0.32))
-    drop-shadow(0 0 18px rgba(255, 187, 0, 0.2));
-  will-change: background-position, box-shadow, filter, opacity;
-  animation:
-    accent-gradient-drift 12s ease-in-out infinite alternate,
-    accent-glow-wave 7s ease-in-out infinite alternate;
-}
-
-.accent-gradient-text {
-  background-image: linear-gradient(
-    135deg,
-    var(--color-sunset-orange) 0%,
-    var(--color-sunset-yellow) 58%,
-    var(--color-sunset-amber) 100%
-  );
-  background-size: 220% 220%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  will-change: background-position;
-  animation: accent-gradient-drift 12s ease-in-out infinite alternate;
-}
-
-@keyframes accent-gradient-drift {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  100% {
-    background-position: 100% 50%;
-  }
-}
-
-@keyframes accent-glow-wave {
-  0% {
-    box-shadow:
-      0 0 18px 1px rgba(255, 145, 0, 0.16),
-      0 0 34px 3px rgba(255, 187, 0, 0.1);
-    filter:
-      saturate(1.04)
-      drop-shadow(0 0 6px rgba(255, 145, 0, 0.24))
-      drop-shadow(0 0 14px rgba(255, 187, 0, 0.14));
-  }
-
-  48% {
-    box-shadow:
-      0 0 26px 4px rgba(255, 145, 0, 0.28),
-      0 0 54px 7px rgba(255, 187, 0, 0.18);
-    filter:
-      saturate(1.12)
-      drop-shadow(0 0 10px rgba(255, 145, 0, 0.38))
-      drop-shadow(0 0 24px rgba(255, 187, 0, 0.24));
-  }
-
-  100% {
-    box-shadow:
-      0 0 20px 2px rgba(255, 122, 0, 0.2),
-      0 0 42px 5px rgba(255, 145, 0, 0.15);
-    filter:
-      saturate(1.08)
-      drop-shadow(0 0 8px rgba(255, 122, 0, 0.3))
-      drop-shadow(0 0 18px rgba(255, 145, 0, 0.2));
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
