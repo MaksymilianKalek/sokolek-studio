@@ -1,72 +1,93 @@
 {
   "nav": {
-    "work": "Projekty",
-    "philosophy": "O nas",
-    "contact": "Kontakt"
+    "services": "Usługi",
+    "portfolio": "Portfolio",
+    "contact": "Kontakt",
+    "language": "Język"
+  },
+  "common": {
+    "startProject": "Zacznij projekt",
+    "visitLiveSite": "Zobacz stronę",
+    "similarWork": "Zapytaj o podobną realizację",
+    "about": "O nas",
+    "builtIn": "Zbudowane w Polsce"
   },
   "hero": {
-    "label": "Butikowe rzemiosło cyfrowe — Poznań",
-    "heading": "Zamieniamy <0>czysty kod</0> i <1>świetny design</1> w produkty z duszą",
-    "description": "Jesteśmy butikowym studiem. Tworzymy wydajne aplikacje i piękne marki dla ludzi, którzy cenią rzemiosło i dbałość o każdy detal.",
-    "cta": "Porozmawiajmy o projekcie"
+    "title": "Sokołek Studio",
+    "subtitle": "Spokój. Porządek. Rzemiosło.",
+    "description": "Jesteśmy kameralnym studiem z Poznania. Tworzymy mądre strony, automatyzacje AI i wizerunek dla firm, które cenią jakość. Zero korpo-żargonu, zero masowych szablonów. Po prostu technologia, która ułatwia życie."
   },
-  "disciplines": {
-    "label": "W czym pomagamy",
-    "heading": "Technologia spotyka <0>wrażliwość wizualną</0>",
-    "items": {
-      "0": {
-        "title": "Dedykowane aplikacje",
-        "label": "systemy",
-        "desc": "Budujemy szybkie i stabilne aplikacje webowe. Piszemy czysty kod, który rozwiązuje realne problemy biznesowe, zamiast generować nowe.",
-        "stack": "React · TypeScript · Next.js · AI Integrations"
+  "services": {
+    "label": "Usługi",
+    "heading": "Rozwiązujemy konkretne problemy.",
+    "items": [
+      {
+        "index": "01",
+        "title": "Wizerunek Marki",
+        "tags": "[ZROZUMIAŁA TOŻSAMOŚĆ] [CZYSTY DESIGN] [TYPOGRAFIA]"
       },
-      "1": {
-        "title": "Identyfikacja wizualna",
-        "label": "kierunek artystyczny",
-        "desc": "Tworzymy wizerunek marek od podstaw. Od spójnego systemu wizualnego po typografię, która precyzyjnie oddaje Twój charakter.",
-        "stack": "Systemy Designu · Identyfikacja · Figma"
+      {
+        "index": "02",
+        "title": "Inteligentne Automatyzacje",
+        "tags": "[PORZĄDEK W DOKUMENTACH] [OSZCZĘDNOŚĆ CZASU] [LOKALNE DANE]"
       },
-      "2": {
-        "title": "Projektowanie doświadczeń",
-        "label": "interfejsy",
-        "desc": "Projektujemy intuicyjne interfejsy. Łączymy inżynieryjną precyzję z empatią i zrozumieniem potrzeb użytkownika.",
-        "stack": "UX/UI · Mikrointerakcje · Dostępność"
+      {
+        "index": "03",
+        "title": "Strony Internetowe",
+        "tags": "[SZYBKIE DZIAŁANIE] [CZYSTY KOD] [BEZ ZBĘDNYCH WTYCZEK]"
       },
-      "3": {
-        "title": "Niezawodna infrastruktura",
-        "label": "backend & devops",
-        "desc": "Dbamy o to, by wszystko działało bezbłędnie pod maską. Od chmury po bazy danych – budujemy fundamenty, na których możesz polegać.",
-        "stack": "AWS · Docker · CI/CD · PostgreSQL"
+      {
+        "index": "04",
+        "title": "Doradztwo IT",
+        "tags": "[WYBÓR TECHNOLOGII] [BEZPIECZEŃSTWO] [OPTYMALIZACJA PROCESÓW]"
+      }
+    ]
+  },
+  "portfolio": {
+    "label": "Portfolio",
+    "heading": "Cyfrowy dom dla miejsca stworzonego z prawdziwą troską.",
+    "description": "DOG TOK to szkoleniowy raj dla psów i ich przewodników: 3,5 hektara ogrodzonej przestrzeni, warsztaty, obozy, domki, staw i infrastruktura zaprojektowana z myślą o skupieniu.",
+    "dogTok": {
+      "title": "DOG TOK",
+      "subtitle": "DOG TOK Szkoleniowy Raj",
+      "summary": "Minimalna, dwujęzyczna strona dla miejsca w Magicznym Lesie. Gęstą ofertę warsztatów, obozów, noclegów, psich udogodnień i harmonogramu 2026 porządkujemy w czytelną strukturę.",
+      "labels": {
+        "client": "KLIENT",
+        "industry": "BRANŻA",
+        "stack": "TECHNOLOGIA",
+        "year": "ROK"
+      },
+      "data": {
+        "client": "DOG TOK SZKOLENIOWY RAJ",
+        "industry": "EDUKACJA / LOKALNY BIZNES",
+        "stack": "REACT / AUTOMATYZACJA",
+        "year": "2026"
       }
     }
   },
-  "philosophy": {
-    "label": "Nasze podejście",
-    "heading": "Kim jesteśmy",
-    "quote": "Nie wierzymy w masowe szablony. Tworzymy <0>autorskie</0>, przemyślane rozwiązania, które zostają na lata.",
-    "p1": "Sokołek Studio narodziło się z miłości do rzemiosła i zmęczenia bylejakością w świecie IT. Wierzymy, że to, jak aplikacja działa pod maską, jest tak samo ważne, jak to, w jaki sposób z nią obcujemy. Kod i design są dla nas nierozłączne.",
-    "p2": "Jesteśmy zgranym duetem – w życiu i w pracy. Dbamy o każdy piksel, animację i linijkę kodu. Najchętniej współpracujemy z ludźmi, którzy tak jak my cenią rzetelną pracę, szczerość i bezkompromisową jakość.",
-    "caption": "Maks i Klaudia, Założyciele",
-    "alt": "Maks i Klaudia Sokołek, Założyciele Sokołek Studio"
-  },
-  "contact": {
-    "label": "Poznajmy się",
-    "heading": "Zróbmy coś <0>wspólnie</0>",
-    "description": "Opowiedz nam o swoim pomyśle. Niezależnie od tego, czy potrzebujesz zaawansowanej platformy, czy nowej tożsamości dla swojej marki – po prostu napisz.",
-    "success": {
-      "label": "Wysłano",
-      "heading": "Otrzymaliśmy Twoją wiadomość",
-      "desc": "Odezwiemy się do Ciebie najszybciej, jak to możliwe."
+  "manifesto": {
+    "label": "Filozofia",
+    "sectionOne": {
+      "heading": "Dobra praca broni się sama, zanim zdąży krzyczeć.",
+      "description": "Wierzymy w cyfrowe rzemiosło. Tak jak porządne rzeczy tworzy się z naturalnych, wysokich jakościowo materiałów, tak nasze systemy budujemy od zera, z czystego kodu. Każdy przycisk i każda funkcja ma ułatwiać Ci pracę. Jeśli coś nie jest przydatne – po prostu to wyrzucamy."
     },
-    "form": {
-      "email_label": "Twój email",
-      "email_placeholder": "czesc@twojafirma.pl",
-      "vision_label": "O czym chciałbyś porozmawiać?",
-      "vision_placeholder": "Opisz krótko swój cel lub projekt...",
-      "submit": "Wyślij wiadomość"
-    }
+    "sectionTwo": {
+      "heading_part1": "Przynieś nam swój chaos.",
+      "heading_part2": "Zrobimy z nim porządek.",
+      "description": "Opowiedz nam, co budujesz, co musi działać lepiej i gdzie design albo AI mogą zdjąć z Ciebie tarcie. Odpowiemy z konkretnym następnym krokiem."
+    },
+    "principles": [
+      "Zacznij od tego, co musi stać się oczywiste.",
+      "Zaprojektuj najmniejszy system, który uniesie ambicję.",
+      "Usuń wszystko, co nie pomaga użytkownikowi."
+    ]
   },
   "footer": {
-    "location": "Poznań · Cyfrowe Rzemiosło"
+    "heading_main": "Róbmy rzeczy,",
+    "heading_italic": "które mają sens.",
+    "description": "Sokołek Studio to nasz wspólny, poznański projekt. Łączymy lata inżynieryjnego doświadczenia z wyczuciem estetyki, żeby pomagać firmom działać mądrzej i wyglądać lepiej.",
+    "contact": "POGADAJMY O TWOIM BIZNESIE",
+    "meta": "Butikowe studio design / AI",
+    "location": "Poznań / zdalnie"
   }
 }

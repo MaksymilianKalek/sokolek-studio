@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react'
 import { motion, useReducedMotion } from 'motion/react'
 
-const WORDMARK = 'Sokołek Studio'
+type TerminalWordmarkProps = {
+  word: string
+}
 
-export function TerminalWordmark() {
+export function TerminalWordmark({ word }: TerminalWordmarkProps) {
   const prefersReducedMotion = useReducedMotion()
   const [typedText, setTypedText] = useState('')
-  const visibleText = prefersReducedMotion ? WORDMARK : typedText
+  const visibleText = prefersReducedMotion ? word : typedText
 
   useEffect(() => {
     if (prefersReducedMotion) {
@@ -16,15 +18,15 @@ export function TerminalWordmark() {
     let index = 0
     const timer = window.setInterval(() => {
       index += 1
-      setTypedText(WORDMARK.slice(0, index))
+      setTypedText(word.slice(0, index))
 
-      if (index === WORDMARK.length) {
+      if (index === word.length) {
         window.clearInterval(timer)
       }
     }, 92)
 
     return () => window.clearInterval(timer)
-  }, [prefersReducedMotion])
+  }, [prefersReducedMotion, word])
 
   return (
     <span
@@ -38,7 +40,7 @@ export function TerminalWordmark() {
         transition={
           prefersReducedMotion
             ? { duration: 0 }
-            : { duration: 1, repeat: Infinity, ease: 'linear' }
+            : { duration: 1.45, repeat: Infinity, ease: 'easeInOut' }
         }
       />
     </span>
