@@ -10,6 +10,31 @@ type HeroProps = {
   startTyping: boolean
 }
 
+function LanguageSwitch() {
+  const { i18n, t } = useTranslation()
+  const activeLanguage = i18n.language.startsWith('en') ? 'en' : 'pl'
+
+  return (
+    <div
+      aria-label={t('nav.language')}
+      className="nav-text flex items-center gap-2 text-ink-muted"
+    >
+      {(['pl', 'en'] as const).map((language) => (
+        <button
+          key={language}
+          type="button"
+          onClick={() => i18n.changeLanguage(language)}
+          className={`interactive-accent-link focus-ring cursor-pointer ${
+            activeLanguage === language ? 'text-ink' : 'text-ink-muted'
+          }`}
+        >
+          {language}
+        </button>
+      ))}
+    </div>
+  )
+}
+
 function getSecondWordAxisPrefix(value: string) {
   const firstSpaceIndex = value.indexOf(' ')
 
@@ -26,7 +51,7 @@ export function Hero({
   onIntroTypingComplete,
   startTyping,
 }: HeroProps) {
-  const { i18n, t } = useTranslation()
+  const { t } = useTranslation()
   const heroTitle = t('hero.title')
   const studioAxisPrefix = getSecondWordAxisPrefix(heroTitle)
   const studioAxisMeasureRef = useRef<HTMLSpanElement>(null)
@@ -36,7 +61,6 @@ export function Hero({
     { label: t('nav.portfolio'), href: '#portfolio' },
     { label: t('nav.contact'), href: '#contact' },
   ]
-  const activeLanguage = i18n.language.startsWith('en') ? 'en' : 'pl'
   const heroGridStyle = studioAxis
     ? ({ '--studio-axis': `${studioAxis}px` } as CSSProperties)
     : undefined
@@ -89,24 +113,12 @@ export function Hero({
               {item.label}
             </a>
           ))}
-          <div
-            aria-label={t('nav.language')}
-            className="nav-text flex items-center gap-2 text-ink-muted"
-          >
-            {(['pl', 'en'] as const).map((language) => (
-              <button
-                key={language}
-                type="button"
-                onClick={() => i18n.changeLanguage(language)}
-                className={`interactive-accent-link focus-ring cursor-pointer ${
-                  activeLanguage === language ? 'text-ink' : 'text-ink-muted'
-                }`}
-              >
-                {language}
-              </button>
-            ))}
-          </div>
+          <LanguageSwitch />
         </nav>
+
+        <div className="sm:hidden">
+          <LanguageSwitch />
+        </div>
       </header>
 
       <div
