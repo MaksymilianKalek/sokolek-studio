@@ -10,6 +10,31 @@ type HeroProps = {
   startTyping: boolean
 }
 
+function LanguageSwitch() {
+  const { i18n, t } = useTranslation()
+  const activeLanguage = i18n.language.startsWith('en') ? 'en' : 'pl'
+
+  return (
+    <div
+      aria-label={t('nav.language')}
+      className="nav-text flex items-center gap-2 text-ink-muted"
+    >
+      {(['pl', 'en'] as const).map((language) => (
+        <button
+          key={language}
+          type="button"
+          onClick={() => i18n.changeLanguage(language)}
+          className={`interactive-accent-link focus-ring cursor-pointer ${
+            activeLanguage === language ? 'text-ink' : 'text-ink-muted'
+          }`}
+        >
+          {language}
+        </button>
+      ))}
+    </div>
+  )
+}
+
 function getSecondWordAxisPrefix(value: string) {
   const firstSpaceIndex = value.indexOf(' ')
 
@@ -26,7 +51,7 @@ export function Hero({
   onIntroTypingComplete,
   startTyping,
 }: HeroProps) {
-  const { i18n, t } = useTranslation()
+  const { t } = useTranslation()
   const heroTitle = t('hero.title')
   const studioAxisPrefix = getSecondWordAxisPrefix(heroTitle)
   const studioAxisMeasureRef = useRef<HTMLSpanElement>(null)
@@ -36,7 +61,6 @@ export function Hero({
     { label: t('nav.portfolio'), href: '#portfolio' },
     { label: t('nav.contact'), href: '#contact' },
   ]
-  const activeLanguage = i18n.language.startsWith('en') ? 'en' : 'pl'
   const heroGridStyle = studioAxis
     ? ({ '--studio-axis': `${studioAxis}px` } as CSSProperties)
     : undefined
@@ -89,59 +113,53 @@ export function Hero({
               {item.label}
             </a>
           ))}
-          <div
-            aria-label={t('nav.language')}
-            className="nav-text flex items-center gap-2 text-ink-muted"
-          >
-            {(['pl', 'en'] as const).map((language) => (
-              <button
-                key={language}
-                type="button"
-                onClick={() => i18n.changeLanguage(language)}
-                className={`interactive-accent-link focus-ring cursor-pointer ${
-                  activeLanguage === language ? 'text-ink' : 'text-ink-muted'
-                }`}
-              >
-                {language}
-              </button>
-            ))}
-          </div>
+          <LanguageSwitch />
         </nav>
+
+        <div className="sm:hidden">
+          <LanguageSwitch />
+        </div>
       </header>
 
       <div
         id="top"
-        className="flex flex-1 flex-col justify-end gap-10 pb-10 pt-28 sm:pb-14 lg:pb-16"
+        className="flex flex-1 flex-col pb-12 pt-16 sm:justify-end sm:gap-10 sm:pb-14 sm:pt-28 lg:pb-16"
       >
-        <div className="max-w-[94rem]">
-          <h1 aria-label={heroTitle} className="relative font-satoshi">
-            <span
-              ref={studioAxisMeasureRef}
-              aria-hidden="true"
-              className="hero-wordmark pointer-events-none absolute left-0 top-0 -z-10 whitespace-pre opacity-0"
-            >
-              {studioAxisPrefix}
-            </span>
-            <TerminalWordmark
-              key={heroTitle}
-              isActive={startTyping}
-              isIntroActive={isIntroActive}
-              isOnIntroCurtain={isIntroActive && !isIntroDismissing}
-              onTyped={onIntroTypingComplete}
-              word={heroTitle}
-            />
-          </h1>
+        <div className="flex min-h-0 flex-1 flex-col justify-center sm:flex-none sm:justify-start">
+          <div className="max-w-[94rem]">
+            <h1 aria-label={heroTitle} className="relative font-satoshi">
+              <span
+                ref={studioAxisMeasureRef}
+                aria-hidden="true"
+                className="hero-wordmark pointer-events-none absolute left-0 top-0 -z-10 whitespace-pre opacity-0"
+              >
+                {studioAxisPrefix}
+              </span>
+              <TerminalWordmark
+                key={heroTitle}
+                isActive={startTyping}
+                isIntroActive={isIntroActive}
+                isOnIntroCurtain={isIntroActive && !isIntroDismissing}
+                onTyped={onIntroTypingComplete}
+                word={heroTitle}
+              />
+            </h1>
+
+            <p className="heading-sm mt-6 max-w-2xl text-[2.125rem] leading-[1.04] text-ink sm:hidden">
+              {t('hero.subtitle')}
+            </p>
+          </div>
         </div>
 
         <div
-          className="grid gap-y-8 pt-4 md:grid-cols-[minmax(0,var(--studio-axis,1.1fr))_minmax(18rem,1fr)_auto] md:items-start"
+          className="grid gap-y-6 md:grid-cols-[minmax(0,var(--studio-axis,1.1fr))_minmax(18rem,1fr)_auto] md:items-start md:gap-y-8 md:pt-4"
           style={heroGridStyle}
         >
-          <p className="heading-sm max-w-2xl text-ink">
+          <p className="heading-sm hidden max-w-2xl text-[2.125rem] leading-[1.04] text-ink sm:block sm:text-[clamp(1.875rem,4vw,3rem)] sm:leading-[1.1]">
             {t('hero.subtitle')}
           </p>
 
-          <p className="body-copy max-w-md">
+          <p className="body-copy max-w-md text-[1.0625rem] leading-[1.14] sm:text-base sm:leading-[1.1]">
             {t('hero.description')}
           </p>
 

@@ -97,7 +97,7 @@
   "cookieConsent": {
     "label": "Zgoda na cookies",
     "heading": "Czy możemy używać cookies analitycznych?",
-    "description": "Korzystamy z Google Analytics, żeby lepiej rozumieć, jak odwiedzający korzystają z naszej strony. Analitykę uruchomimy dopiero po Twojej zgodzie.",
+    "description": "Korzystamy z Google Analytics, żeby lepiej rozumieć, jak odwiedzający korzystają z naszej strony.",
     "accept": "Akceptuję",
     "reject": "Odrzucam",
     "settings": "Ustawienia cookies"
