@@ -98,7 +98,7 @@
     "label": "Cookie consent",
     "heading": "Can we use analytics cookies?",
     "description": "We use Google Analytics to better understand how visitors use our website. Analytics will only be enabled after you give us your consent.",
-    "accept": "Accept analytics",
+    "accept": "Accept",
     "reject": "Reject",
     "settings": "Cookie settings"
   }
