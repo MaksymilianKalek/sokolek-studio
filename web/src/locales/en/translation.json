@@ -14,7 +14,7 @@
   "hero": {
     "title": "Sokołek Studio",
     "subtitle": "Technology and design, all in one place.",
-    "description": "We are an independent technology studio from Poznań, bringing engineering and creativity together. With us, you can build your brand from the ground up — from visual identity to advanced digital systems. We design with intention. We make artificial intelligence easier to understand, using it responsibly and only where it genuinely makes sense. We believe in technology that matters and makes everyday work easier."
+    "description": "We are an independent technology studio from Poznań, bringing engineering and creativity together. With us, you can build your brand from the ground up - from visual identity to advanced digital systems. We design with intention. We make artificial intelligence easier to understand, using it responsibly and only where it genuinely makes sense. We believe in technology that matters and makes everyday work easier."
   },
   "services": {
     "label": "Services",
@@ -36,13 +36,13 @@
       {
         "index": "03",
         "title": "Branding",
-        "description": "We build brands — from the initial idea and strategy to naming, visual identity and tone of voice.",
+        "description": "We build brands - from the initial idea and strategy to naming, visual identity and tone of voice.",
         "tags": "STRATEGY · VISUAL IDENTITY · PR"
       },
       {
         "index": "04",
         "title": "Content",
-        "description": "We create social media content — photography, video and copywriting — that completes a consistent brand image.",
+        "description": "We create social media content - photography, video and copywriting - that completes a consistent brand image.",
         "tags": "SOCIAL MEDIA · PHOTO & VIDEO · COPYWRITING"
       }
     ]
@@ -52,7 +52,7 @@
     "heading": "A digital space for a place built with passion.",
     "dogTok": {
       "title": "DOG TOK",
-      "subtitle": "DOG TOK — Training Paradise",
+      "subtitle": "DOG TOK - Training Paradise",
       "summary": "We organised DOG TOK's extensive offering into a clear and intuitive structure. We designed a website that captures the atmosphere of the place, makes key information easy to find and guides visitors through workshops, camps, accommodation and the events calendar.",
       "labels": {
         "client": "CLIENT",
@@ -61,7 +61,7 @@
         "year": "YEAR"
       },
       "data": {
-        "client": "DOG TOK — TRAINING PARADISE",
+        "client": "DOG TOK - TRAINING PARADISE",
         "industry": "DOG TRAINING / TOURISM",
         "stack": "DESIGN / WEB / COPYWRITING",
         "year": "2026"
