@@ -7,15 +7,14 @@
   },
   "common": {
     "startProject": "Zacznij projekt",
-    "visitLiveSite": "Zobacz stronę",
-    "similarWork": "Zapytaj o podobną realizację",
+    "visitLiveSite": "Live",
     "about": "O nas",
-    "builtIn": "Zbudowane w Polsce"
+    "builtIn": "Stworzone z troską w Poznaniu"
   },
   "hero": {
     "title": "Sokołek Studio",
-    "subtitle": "Spokój. Porządek. Rzemiosło.",
-    "description": "Jesteśmy kameralnym studiem z Poznania. Tworzymy mądre strony, automatyzacje AI i wizerunek dla firm, które cenią jakość. Zero korpo-żargonu, zero masowych szablonów. Po prostu technologia, która ułatwia życie."
+    "subtitle": "AI i design, które mają sens",
+    "description": "Jesteśmy kameralnym studiem z Poznania. Tworzymy zaawansowane systemy AI, inteligentne strony i wizerunek dla firm, które cenią jakość. Po prostu technologia, która ma znaczenie i ułatwia życie."
   },
   "services": {
     "label": "Usługi",
@@ -24,12 +23,12 @@
       {
         "index": "01",
         "title": "Wizerunek Marki",
-        "tags": "[ZROZUMIAŁA TOŻSAMOŚĆ] [CZYSTY DESIGN] [TYPOGRAFIA]"
+        "tags": "[AUTENTYCZNA TOŻSAMOŚĆ] [CZYSTY DESIGN] [TYPOGRAFIA]"
       },
       {
         "index": "02",
-        "title": "Inteligentne Automatyzacje",
-        "tags": "[PORZĄDEK W DOKUMENTACH] [OSZCZĘDNOŚĆ CZASU] [LOKALNE DANE]"
+        "title": "Systemy AI",
+        "tags": "[PORZĄDEK W DOKUMENTACH] [OSZCZĘDNOŚĆ CZASU] [REALNA WARTOŚĆ]"
       },
       {
         "index": "03",
@@ -38,19 +37,19 @@
       },
       {
         "index": "04",
-        "title": "Doradztwo IT",
+        "title": "Sesje wizerunkowe",
         "tags": "[WYBÓR TECHNOLOGII] [BEZPIECZEŃSTWO] [OPTYMALIZACJA PROCESÓW]"
       }
     ]
   },
   "portfolio": {
     "label": "Portfolio",
-    "heading": "Cyfrowy dom dla miejsca stworzonego z prawdziwą troską.",
+    "heading": "Cyfrowy dom dla miejsca stworzonego z prawdziwą pasją.",
     "description": "DOG TOK to szkoleniowy raj dla psów i ich przewodników: 3,5 hektara ogrodzonej przestrzeni, warsztaty, obozy, domki, staw i infrastruktura zaprojektowana z myślą o skupieniu.",
     "dogTok": {
       "title": "DOG TOK",
       "subtitle": "DOG TOK Szkoleniowy Raj",
-      "summary": "Minimalna, dwujęzyczna strona dla miejsca w Magicznym Lesie. Gęstą ofertę warsztatów, obozów, noclegów, psich udogodnień i harmonogramu 2026 porządkujemy w czytelną strukturę.",
+      "summary": "Minimalna, strona-wizytówka dla miejsca w Magicznym Lesie. Różnorodną ofertę warsztatów, obozów, noclegów, psich udogodnień i harmonogramu 2026 porządkujemy w czytelną strukturę.",
       "labels": {
         "client": "KLIENT",
         "industry": "BRANŻA",
@@ -59,8 +58,8 @@
       },
       "data": {
         "client": "DOG TOK SZKOLENIOWY RAJ",
-        "industry": "EDUKACJA / LOKALNY BIZNES",
-        "stack": "REACT / AUTOMATYZACJA",
+        "industry": "KYNOLOGIA / LOKALNY BIZNES",
+        "stack": "WEB / AUTOMATYZACJA",
         "year": "2026"
       }
     }
@@ -68,7 +67,7 @@
   "manifesto": {
     "label": "Filozofia",
     "sectionOne": {
-      "heading": "Dobra praca broni się sama, zanim zdąży krzyczeć.",
+      "heading": "Dobra praca broni się sama.",
       "description": "Wierzymy w cyfrowe rzemiosło. Tak jak porządne rzeczy tworzy się z naturalnych, wysokich jakościowo materiałów, tak nasze systemy budujemy od zera, z czystego kodu. Każdy przycisk i każda funkcja ma ułatwiać Ci pracę. Jeśli coś nie jest przydatne – po prostu to wyrzucamy."
     },
     "sectionTwo": {
@@ -82,12 +81,12 @@
       "Usuń wszystko, co nie pomaga użytkownikowi."
     ]
   },
+  "contact": {
+    "heading_part1": "Masz coś trudnego?",
+    "heading_part2": "Dobrze.",
+    "description": "Napisz, co chcesz zbudować, uporządkować albo przyspieszyć. Odpowiemy konkretnie: co ma sens, od czego zacząć i jak zrobić to bez zbędnego ciężaru."
+  },
   "footer": {
-    "heading_main": "Róbmy rzeczy,",
-    "heading_italic": "które mają sens.",
-    "description": "Sokołek Studio to nasz wspólny, poznański projekt. Łączymy lata inżynieryjnego doświadczenia z wyczuciem estetyki, żeby pomagać firmom działać mądrzej i wyglądać lepiej.",
-    "contact": "POGADAJMY O TWOIM BIZNESIE",
-    "meta": "Butikowe studio design / AI",
-    "location": "Poznań / zdalnie"
+    "contact": "POGADAJMY O TWOIM BIZNESIE"
   }
 }

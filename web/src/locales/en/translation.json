@@ -8,7 +8,6 @@
   "common": {
     "startProject": "Start a project",
     "visitLiveSite": "Visit live site",
-    "similarWork": "Ask about similar work",
     "about": "About",
     "builtIn": "Built in Poland"
   },
@@ -81,6 +80,11 @@
       "Design the smallest system that can carry the ambition.",
       "Remove everything that does not help the user."
     ]
+  },
+  "contact": {
+    "heading_part1": "Have something difficult?",
+    "heading_part2": "Good.",
+    "description": "Tell us what you want to build, organize, or accelerate. We will answer plainly: what makes sense, where to start, and how to make it lighter."
   },
   "footer": {
     "heading_main": "Let’s make things",

@@ -70,8 +70,12 @@
 }
 
 html {
-  scroll-behavior: smooth;
   background-color: var(--color-paper);
+}
+
+html.site-loading,
+html.site-loading body {
+  background-color: #0a0a0a;
 }
 
 html,
@@ -106,6 +110,41 @@ button {
   border-radius: 0;
 }
 
+.type-micro {
+  font-size: 10px;
+  line-height: 1.1;
+}
+
+.type-body {
+  font-size: 1rem;
+  line-height: 1.1;
+}
+
+.type-body-lg {
+  font-size: 1.125rem;
+  line-height: 1.1;
+}
+
+.type-heading-sm {
+  font-size: clamp(1.875rem, 4vw, 3rem);
+  line-height: 1.1;
+}
+
+.type-heading-md {
+  font-size: clamp(3rem, 7vw, 4.5rem);
+  line-height: 1.1;
+}
+
+.type-heading-xl {
+  font-size: clamp(3.75rem, 14vw, 10rem);
+  line-height: 1.1;
+}
+
+.type-hero {
+  font-size: clamp(3.2rem, 12vw, 11.5rem);
+  line-height: 1.1;
+}
+
 .site-shell {
   transition:
     --color-paper 900ms cubic-bezier(0.76, 0, 0.24, 1),
@@ -123,6 +162,10 @@ button {
   --color-line: #2b2b2b;
 }
 
+.theme-color-transition {
+  transition: color 900ms cubic-bezier(0.76, 0, 0.24, 1);
+}
+
 .accent-gradient {
   background-image: linear-gradient(
     135deg,
@@ -132,12 +175,12 @@ button {
   );
   background-size: 220% 220%;
   box-shadow:
-    0 0 20px 2px color-mix(in srgb, var(--color-sunset-yellow) 20%, transparent),
-    0 0 44px 4px color-mix(in srgb, var(--color-sunset-amber) 14%, transparent);
+    0 0 12px 1px color-mix(in srgb, var(--color-sunset-yellow) 10%, transparent),
+    0 0 26px 2px color-mix(in srgb, var(--color-sunset-amber) 7%, transparent);
   filter:
-    saturate(1.08)
-    drop-shadow(0 0 8px color-mix(in srgb, var(--color-sunset-yellow) 32%, transparent))
-    drop-shadow(0 0 18px color-mix(in srgb, var(--color-sunset-amber) 20%, transparent));
+    saturate(1.04)
+    drop-shadow(0 0 4px color-mix(in srgb, var(--color-sunset-yellow) 16%, transparent))
+    drop-shadow(0 0 10px color-mix(in srgb, var(--color-sunset-amber) 10%, transparent));
   will-change: background-position, box-shadow, filter, opacity;
   animation:
     accent-gradient-drift 12s ease-in-out infinite alternate,
@@ -159,6 +202,140 @@ button {
   animation: accent-gradient-drift 12s ease-in-out infinite alternate;
 }
 
+.interactive-accent-link {
+  position: relative;
+  display: inline-block;
+}
+
+.interactive-accent-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.28em;
+  height: 2px;
+  pointer-events: none;
+  background-image: linear-gradient(
+    135deg,
+    var(--color-sunset-orange) 0%,
+    var(--color-sunset-yellow) 58%,
+    var(--color-sunset-amber) 100%
+  );
+  background-size: 220% 220%;
+  box-shadow:
+    0 0 6px color-mix(in srgb, var(--color-sunset-yellow) 24%, transparent),
+    0 0 14px color-mix(in srgb, var(--color-sunset-amber) 12%, transparent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 320ms ease-in-out;
+  animation: accent-gradient-drift 12s ease-in-out infinite alternate;
+}
+
+.interactive-accent-link:hover::after,
+.interactive-accent-link:focus-visible::after,
+.group:hover .interactive-accent-link::after,
+.group:focus-within .interactive-accent-link::after {
+  transform: scaleX(1);
+}
+
+.primary-cta {
+  position: relative;
+  isolation: isolate;
+  color: var(--color-ink);
+  transition: color 320ms ease-in-out;
+}
+
+.primary-cta::before,
+.primary-cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.primary-cta::before {
+  border: 1px solid var(--color-ink);
+  opacity: 1;
+  transition: opacity 320ms ease-in-out;
+}
+
+.primary-cta::after {
+  z-index: -1;
+  background-image: linear-gradient(
+    135deg,
+    var(--color-sunset-orange) 0%,
+    var(--color-sunset-yellow) 58%,
+    var(--color-sunset-amber) 100%
+  );
+  background-size: 220% 220%;
+  box-shadow:
+    0 0 12px 1px color-mix(in srgb, var(--color-sunset-yellow) 10%, transparent),
+    0 0 26px 2px color-mix(in srgb, var(--color-sunset-amber) 7%, transparent);
+  filter:
+    saturate(1.04)
+    drop-shadow(0 0 4px color-mix(in srgb, var(--color-sunset-yellow) 16%, transparent))
+    drop-shadow(0 0 10px color-mix(in srgb, var(--color-sunset-amber) 10%, transparent));
+  opacity: 0;
+  transition: opacity 320ms ease-in-out;
+  animation:
+    accent-gradient-drift 12s ease-in-out infinite alternate,
+    accent-glow-wave 7s ease-in-out infinite alternate;
+}
+
+.primary-cta > * {
+  transition:
+    color 320ms ease-in-out,
+    transform 320ms ease-in-out;
+}
+
+.primary-cta-icon {
+  transform: translate3d(0, 0, 0);
+}
+
+.primary-cta:hover .primary-cta-icon,
+.primary-cta:focus-visible .primary-cta-icon {
+  transform: translate3d(0.125rem, -0.125rem, 0);
+}
+
+.interactive-link-icon {
+  transform: translate3d(0, 0, 0);
+  transition: transform 320ms ease-in-out;
+}
+
+.group:hover .interactive-link-icon,
+.group:focus-visible .interactive-link-icon,
+.group:focus-within .interactive-link-icon {
+  transform: translate3d(0.125rem, -0.125rem, 0);
+}
+
+.primary-cta:hover,
+.primary-cta:focus-visible {
+  color: var(--color-paper);
+}
+
+.primary-cta:hover::before,
+.primary-cta:focus-visible::before {
+  opacity: 0;
+}
+
+.primary-cta:hover::after,
+.primary-cta:focus-visible::after {
+  opacity: 1;
+}
+
+.primary-cta--inverted {
+  color: var(--color-paper);
+}
+
+.primary-cta--inverted::before {
+  border-color: var(--color-paper);
+}
+
+.primary-cta--inverted:hover,
+.primary-cta--inverted:focus-visible {
+  color: var(--color-ink);
+}
+
 @keyframes accent-gradient-drift {
   0% {
     background-position: 0% 50%;
@@ -172,32 +349,32 @@ button {
 @keyframes accent-glow-wave {
   0% {
     box-shadow:
-      0 0 18px 1px color-mix(in srgb, var(--color-sunset-yellow) 16%, transparent),
-      0 0 34px 3px color-mix(in srgb, var(--color-sunset-amber) 10%, transparent);
+      0 0 10px 1px color-mix(in srgb, var(--color-sunset-yellow) 8%, transparent),
+      0 0 22px 2px color-mix(in srgb, var(--color-sunset-amber) 5%, transparent);
     filter:
-      saturate(1.04)
-      drop-shadow(0 0 6px color-mix(in srgb, var(--color-sunset-yellow) 24%, transparent))
-      drop-shadow(0 0 14px color-mix(in srgb, var(--color-sunset-amber) 14%, transparent));
+      saturate(1.02)
+      drop-shadow(0 0 3px color-mix(in srgb, var(--color-sunset-yellow) 12%, transparent))
+      drop-shadow(0 0 8px color-mix(in srgb, var(--color-sunset-amber) 7%, transparent));
   }
 
   48% {
     box-shadow:
-      0 0 26px 4px color-mix(in srgb, var(--color-sunset-yellow) 28%, transparent),
-      0 0 54px 7px color-mix(in srgb, var(--color-sunset-amber) 18%, transparent);
+      0 0 16px 2px color-mix(in srgb, var(--color-sunset-yellow) 14%, transparent),
+      0 0 34px 4px color-mix(in srgb, var(--color-sunset-amber) 9%, transparent);
     filter:
-      saturate(1.12)
-      drop-shadow(0 0 10px color-mix(in srgb, var(--color-sunset-yellow) 38%, transparent))
-      drop-shadow(0 0 24px color-mix(in srgb, var(--color-sunset-amber) 24%, transparent));
+      saturate(1.06)
+      drop-shadow(0 0 5px color-mix(in srgb, var(--color-sunset-yellow) 18%, transparent))
+      drop-shadow(0 0 12px color-mix(in srgb, var(--color-sunset-amber) 12%, transparent));
   }
 
   100% {
     box-shadow:
-      0 0 20px 2px color-mix(in srgb, var(--color-sunset-orange) 20%, transparent),
-      0 0 42px 5px color-mix(in srgb, var(--color-sunset-yellow) 15%, transparent);
+      0 0 12px 1px color-mix(in srgb, var(--color-sunset-orange) 10%, transparent),
+      0 0 26px 3px color-mix(in srgb, var(--color-sunset-yellow) 8%, transparent);
     filter:
-      saturate(1.08)
-      drop-shadow(0 0 8px color-mix(in srgb, var(--color-sunset-orange) 30%, transparent))
-      drop-shadow(0 0 18px color-mix(in srgb, var(--color-sunset-yellow) 20%, transparent));
+      saturate(1.04)
+      drop-shadow(0 0 4px color-mix(in srgb, var(--color-sunset-orange) 15%, transparent))
+      drop-shadow(0 0 10px color-mix(in srgb, var(--color-sunset-yellow) 10%, transparent));
   }
 }
 

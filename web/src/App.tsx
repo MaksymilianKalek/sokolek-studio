@@ -1,13 +1,22 @@
-import { useState } from 'react'
-import { Contact } from './components/home/contact'
+import { useCallback, useState } from 'react'
+import { LoadingCurtain } from './components/loading-curtain'
 import { Footer } from './components/home/footer'
 import { Hero } from './components/home/hero'
 import { Philosophy } from './components/home/philosophy'
 import { PortfolioPreview } from './components/home/portfolio-preview'
 import { Services } from './components/home/services'
+import { useSmoothScroll } from './hooks/use-smooth-scroll'
 
 function App() {
+  useSmoothScroll()
+
   const [portfolioThemeActive, setPortfolioThemeActive] = useState(false)
+  const [isIntroTypingActive, setIsIntroTypingActive] = useState(false)
+  const [isIntroDismissing, setIsIntroDismissing] = useState(false)
+  const [isIntroComplete, setIsIntroComplete] = useState(false)
+  const completeIntroTyping = useCallback(() => {
+    setIsIntroDismissing(true)
+  }, [])
 
   return (
     <main
@@ -15,12 +24,21 @@ function App() {
         portfolioThemeActive ? 'site-shell--portfolio' : ''
       }`}
     >
-      <Hero />
+      <Hero
+        isIntroActive={!isIntroComplete}
+        isIntroDismissing={isIntroDismissing}
+        onIntroTypingComplete={completeIntroTyping}
+        startTyping={isIntroTypingActive}
+      />
       <Services />
       <PortfolioPreview onActiveChange={setPortfolioThemeActive} />
       <Philosophy />
-      <Contact />
       <Footer />
+      <LoadingCurtain
+        isDismissing={isIntroDismissing}
+        onComplete={() => setIsIntroComplete(true)}
+        onReadyToType={() => setIsIntroTypingActive(true)}
+      />
     </main>
   )
 }

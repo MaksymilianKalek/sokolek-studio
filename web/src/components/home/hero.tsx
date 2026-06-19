@@ -1,46 +1,95 @@
+import { type CSSProperties, useEffect, useRef, useState } from 'react'
 import { ArrowUpRight } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { TerminalWordmark } from './terminal-wordmark'
 
-export function Hero() {
+type HeroProps = {
+  isIntroActive: boolean
+  isIntroDismissing: boolean
+  onIntroTypingComplete: () => void
+  startTyping: boolean
+}
+
+function getSecondWordAxisPrefix(value: string) {
+  const firstSpaceIndex = value.indexOf(' ')
+
+  if (firstSpaceIndex === -1) {
+    return ''
+  }
+
+  return value.slice(0, firstSpaceIndex + 1)
+}
+
+export function Hero({
+  isIntroActive,
+  isIntroDismissing,
+  onIntroTypingComplete,
+  startTyping,
+}: HeroProps) {
   const { i18n, t } = useTranslation()
+  const heroTitle = t('hero.title')
+  const studioAxisPrefix = getSecondWordAxisPrefix(heroTitle)
+  const studioAxisMeasureRef = useRef<HTMLSpanElement>(null)
+  const [studioAxis, setStudioAxis] = useState<number | null>(null)
   const navItems = [
     { label: t('nav.services'), href: '#services' },
     { label: t('nav.portfolio'), href: '#portfolio' },
     { label: t('nav.contact'), href: '#contact' },
   ]
   const activeLanguage = i18n.language.startsWith('en') ? 'en' : 'pl'
+  const heroGridStyle = studioAxis
+    ? ({ '--studio-axis': `${studioAxis}px` } as CSSProperties)
+    : undefined
+
+  useEffect(() => {
+    const measureNode = studioAxisMeasureRef.current
+
+    if (!measureNode || studioAxisPrefix.length === 0) {
+      return
+    }
+
+    const updateStudioAxis = () => {
+      setStudioAxis(Math.ceil(measureNode.getBoundingClientRect().width))
+    }
+    const resizeObserver = new ResizeObserver(updateStudioAxis)
+
+    updateStudioAxis()
+    resizeObserver.observe(measureNode)
+    window.addEventListener('resize', updateStudioAxis)
+
+    return () => {
+      resizeObserver.disconnect()
+      window.removeEventListener('resize', updateStudioAxis)
+    }
+  }, [studioAxisPrefix])
 
   return (
-    <section className="relative flex min-h-dvh flex-col px-5 py-5 sm:px-8 lg:px-10">
+    <section className="relative flex min-h-svh flex-col px-5 py-5 sm:min-h-dvh sm:px-8 lg:px-10">
       <header className="flex items-center justify-between gap-6">
-        <a
-          href="#top"
-          className="font-satoshi text-sm font-semibold tracking-tight outline-none transition-opacity hover:opacity-60 focus-visible:ring-2 focus-visible:ring-ink"
-        >
+        <span className="font-satoshi type-body font-medium tracking-tight">
           Sokołek
-        </a>
+        </span>
 
         <nav aria-label="Main navigation" className="hidden items-center gap-7 sm:flex">
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="font-mono text-[10px] uppercase tracking-widest text-ink-soft outline-none transition-colors hover:text-ink focus-visible:ring-2 focus-visible:ring-ink"
+              className="interactive-accent-link font-satoshi type-body font-medium tracking-tight text-ink-soft outline-none focus-visible:ring-2 focus-visible:ring-ink"
             >
               {item.label}
             </a>
           ))}
           <div
             aria-label={t('nav.language')}
-            className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-ink-muted"
+            className="flex items-center gap-2 font-satoshi type-body font-medium tracking-tight text-ink-muted"
           >
             {(['pl', 'en'] as const).map((language) => (
               <button
                 key={language}
                 type="button"
                 onClick={() => i18n.changeLanguage(language)}
-                className={`outline-none transition-colors hover:text-ink focus-visible:ring-2 focus-visible:ring-ink ${
+                className={`interactive-accent-link cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-ink ${
                   activeLanguage === language ? 'text-ink' : 'text-ink-muted'
                 }`}
               >
@@ -56,30 +105,42 @@ export function Hero() {
         className="flex flex-1 flex-col justify-end gap-10 pb-10 pt-28 sm:pb-14 lg:pb-16"
       >
         <div className="max-w-[94rem]">
-          <p className="mb-5 font-mono text-[10px] font-medium uppercase tracking-[0.24em] text-ink-muted">
-            {t('hero.subtitle')}
-          </p>
-          <h1 aria-label={t('hero.title')} className="font-satoshi">
-            <TerminalWordmark key={t('hero.title')} word={t('hero.title')} />
+          <h1 aria-label={heroTitle} className="relative font-satoshi">
+            <span
+              ref={studioAxisMeasureRef}
+              aria-hidden="true"
+              className="pointer-events-none absolute left-0 top-0 -z-10 whitespace-pre font-satoshi type-hero font-semibold leading-[1.1] tracking-[-0.04em] opacity-0"
+            >
+              {studioAxisPrefix}
+            </span>
+            <TerminalWordmark
+              key={heroTitle}
+              isActive={startTyping}
+              isOnIntroCurtain={isIntroActive && !isIntroDismissing}
+              onTyped={onIntroTypingComplete}
+              word={heroTitle}
+            />
           </h1>
         </div>
 
-        <div className="grid gap-8 border-t border-line pt-6 md:grid-cols-[1.1fr_0.9fr_auto] md:items-end">
-          <p className="max-w-2xl font-satoshi text-2xl font-medium leading-[1.06] tracking-[-0.035em] text-ink sm:text-4xl md:text-5xl">
+        <div
+          className="grid gap-8 pt-4 md:grid-cols-[minmax(0,var(--studio-axis,1.1fr))_minmax(18rem,1fr)_auto] md:items-start"
+          style={heroGridStyle}
+        >
+          <p className="max-w-2xl font-satoshi type-heading-sm font-medium leading-[1.1] tracking-[-0.035em] text-ink">
             {t('hero.subtitle')}
           </p>
 
-          <p className="max-w-md font-inter text-base leading-7 text-ink-soft">
+          <p className="max-w-md font-inter type-body leading-[1.1] text-ink-soft">
             {t('hero.description')}
           </p>
 
           <a
             href="mailto:hello@sokolek.com"
-            className="group relative inline-flex w-fit items-center gap-3 px-5 py-3 font-mono text-[10px] font-medium uppercase tracking-widest text-ink outline-none transition-colors duration-700 ease-in-out before:absolute before:inset-0 before:ring-1 before:ring-ink before:transition-opacity before:duration-700 before:ease-in-out hover:text-paper hover:before:opacity-0 focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-4 focus-visible:ring-offset-paper"
+            className="primary-cta group inline-flex w-fit items-center gap-3 px-5 py-3 font-mono type-micro font-medium uppercase tracking-widest outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-4 focus-visible:ring-offset-paper"
           >
-            <span className="accent-gradient absolute inset-0 opacity-0 transition-opacity duration-700 ease-in-out group-hover:opacity-100" />
             <span className="relative z-10">{t('common.startProject')}</span>
-            <ArrowUpRight className="relative z-10 size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            <ArrowUpRight className="primary-cta-icon relative z-10 size-4" />
           </a>
         </div>
       </div>

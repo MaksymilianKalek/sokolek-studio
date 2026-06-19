@@ -14,7 +14,7 @@ export function Reveal({ children, className = '', delay = 0 }: RevealProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.15 }}
       transition={{
-        duration: 0.9,
+        duration: 0.8,
         delay,
         ease: [0.16, 1, 0.3, 1],
       }}

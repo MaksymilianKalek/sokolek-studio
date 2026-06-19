@@ -37,20 +37,29 @@ export function PortfolioPreview({ onActiveChange }: PortfolioPreviewProps) {
       return
     }
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        onActiveChange(entry.isIntersecting)
-      },
-      {
-        rootMargin: '-58% 0px -35% 0px',
-        threshold: 0,
-      },
-    )
+    const mobileQuery = window.matchMedia('(max-width: 767px)')
+    let observer: IntersectionObserver | null = null
 
-    observer.observe(section)
+    const observeSection = () => {
+      observer?.disconnect()
+      observer = new IntersectionObserver(
+        ([entry]) => {
+          onActiveChange(entry.isIntersecting)
+        },
+        {
+          rootMargin: mobileQuery.matches ? '-52% 0px -32% 0px' : '-65% 0px -35% 0px',
+          threshold: 0,
+        },
+      )
+      observer.observe(section)
+    }
+
+    observeSection()
+    mobileQuery.addEventListener('change', observeSection)
 
     return () => {
-      observer.disconnect()
+      mobileQuery.removeEventListener('change', observeSection)
+      observer?.disconnect()
       onActiveChange(false)
     }
   }, [onActiveChange])
@@ -58,55 +67,64 @@ export function PortfolioPreview({ onActiveChange }: PortfolioPreviewProps) {
   return (
     <section
       ref={sectionRef}
-      id="portfolio"
-      className="bg-paper px-5 py-24 text-ink sm:px-8 lg:px-10 lg:py-32"
+      className="bg-paper px-5 py-20 text-ink sm:px-8 lg:px-10 lg:py-24"
     >
-      <div className="mx-auto max-w-[92rem]">
+      <div id="portfolio" className="mx-auto max-w-[92rem] scroll-mt-6">
         <Reveal>
-          <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
+          <SectionLabel>{t('portfolio.label')}</SectionLabel>
+        </Reveal>
+
+        <Reveal>
+          <div className="mt-8 flex flex-col justify-between gap-8 md:flex-row md:items-start">
             <div>
-              <SectionLabel>{t('portfolio.label')}</SectionLabel>
-              <h2 className="mt-5 max-w-4xl font-satoshi text-5xl font-semibold leading-[0.95] tracking-[-0.055em] text-ink sm:text-7xl">
+              <h2 className="max-w-4xl font-satoshi type-heading-md font-semibold leading-[1.1] tracking-[-0.04em] text-ink">
                 {t('portfolio.heading')}
               </h2>
             </div>
-            <p className="max-w-sm font-inter text-sm leading-6 text-ink-soft">
+            <p className="max-w-sm font-inter type-body leading-[1.1] text-ink-soft">
               {t('portfolio.description')}
             </p>
           </div>
         </Reveal>
 
         <Reveal delay={0.12}>
-          <article className="mt-14 grid items-stretch overflow-hidden border border-line lg:grid-cols-[1.2fr_0.8fr]">
-            <div className="relative min-h-[26rem] overflow-hidden text-paper lg:min-h-0">
+          <article className="mt-10 grid items-stretch overflow-hidden lg:grid-cols-[1.1fr_0.9fr] lg:gap-10">
+            <div className="relative h-[20rem] overflow-hidden text-paper sm:h-[24rem] lg:h-[30rem]">
               <div className="accent-gradient absolute inset-x-0 top-0 z-10 h-1" />
-              <div className="h-full overflow-hidden shadow-[0_28px_80px_rgba(0,0,0,0.22)]">
+              <div className="h-full overflow-hidden">
                 <img
-                  src="/portfolio/dogtok.webp"
+                  src="/portfolio/dogtok-1600.webp"
+                  srcSet="/portfolio/dogtok-1600.webp 1600w, /portfolio/dogtok-2400.webp 2400w"
+                  sizes="(min-width: 1024px) 52vw, calc(100vw - 2.5rem)"
                   alt={`${t('portfolio.dogTok.subtitle')} website designed and developed by Sokołek Studio`}
+                  width="1600"
+                  height="1067"
+                  loading="eager"
+                  decoding="async"
+                  fetchPriority="high"
                   className="h-full w-full object-cover"
                 />
               </div>
             </div>
 
-            <div className="flex flex-col justify-between gap-16 border-t border-line p-6 sm:p-8 lg:border-l lg:border-t-0 lg:p-10">
+            <div className="flex flex-col justify-between gap-10 pt-8 lg:pt-0">
               <div>
-                <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted">
+                <p className="font-mono type-micro uppercase tracking-[0.2em] text-ink-muted">
                   {t('portfolio.dogTok.data.stack')}
                 </p>
-                <h3 className="mt-5 font-satoshi text-4xl font-medium leading-[0.98] tracking-[-0.045em] sm:text-5xl">
+                <h3 className="mt-5 font-satoshi type-heading-sm font-medium leading-[1.1] tracking-[-0.045em]">
                   {t('portfolio.dogTok.subtitle')}
                 </h3>
-                <p className="mt-6 font-inter text-base leading-7 text-ink-soft">
+                <p className="mt-5 font-inter type-body leading-[1.1] text-ink-soft">
                   {t('portfolio.dogTok.summary')}
                 </p>
-                <dl className="mt-8 grid gap-5 border-t border-line pt-6 sm:grid-cols-2">
+                <dl className="mt-7 grid gap-x-8 gap-y-6 sm:grid-cols-2">
                   {specs.map((spec) => (
                     <div key={spec.label}>
-                      <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted">
+                      <dt className="font-mono type-micro uppercase tracking-[0.2em] text-ink-muted">
                         {spec.label}
                       </dt>
-                      <dd className="mt-2 font-mono text-[10px] uppercase leading-relaxed tracking-widest text-ink-soft">
+                      <dd className="mt-2 font-mono type-micro uppercase leading-[1.1] tracking-widest text-ink-soft">
                         {spec.value}
                       </dd>
                     </div>
@@ -114,26 +132,17 @@ export function PortfolioPreview({ onActiveChange }: PortfolioPreviewProps) {
                 </dl>
               </div>
 
-              <div className="flex flex-col gap-3 sm:flex-row">
+              <div className="flex flex-col gap-3 sm:flex-row sm:gap-6">
                 <a
                   href="https://dogtok.pl"
                   target="_blank"
                   rel="noreferrer"
-                  className="group relative inline-flex w-fit items-center gap-3 px-5 py-3 font-mono text-[10px] font-medium uppercase tracking-widest text-ink outline-none transition-colors duration-700 ease-in-out before:absolute before:inset-0 before:ring-1 before:ring-ink/35 before:transition-opacity before:duration-700 before:ease-in-out hover:text-paper hover:before:opacity-0 focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-4 focus-visible:ring-offset-paper"
+                  className="group inline-flex w-fit items-center gap-3 py-3 font-mono type-micro font-medium uppercase tracking-widest text-ink outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-4 focus-visible:ring-offset-paper"
                 >
-                  <span className="accent-gradient absolute inset-0 opacity-0 transition-opacity duration-700 ease-in-out group-hover:opacity-100" />
-                  <span className="relative z-10">{t('common.visitLiveSite')}</span>
-                  <ArrowUpRight className="relative z-10 size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                </a>
-
-                <a
-                  href="mailto:hello@sokolek.com?subject=Portfolio%20case%20inquiry"
-                  className="group inline-flex w-fit items-center gap-3 py-3 font-mono text-[10px] font-medium uppercase tracking-widest text-ink-soft outline-none transition-colors hover:text-ink focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-4 focus-visible:ring-offset-paper"
-                >
-                  <span className="border-b border-line pb-0.5 transition-colors group-hover:border-ink-muted">
-                    {t('common.similarWork')}
+                  <span className="interactive-accent-link pb-0.5">
+                    {t('common.visitLiveSite')}
                   </span>
-                  <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                  <ArrowUpRight className="interactive-link-icon size-4" />
                 </a>
               </div>
             </div>

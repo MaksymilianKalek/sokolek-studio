@@ -1,46 +1,89 @@
 import { useEffect, useState } from 'react'
 import { motion, useReducedMotion } from 'motion/react'
 
+const cursorBlinkDuration = 1
+const introDismissDelay = 500
+const typingInterval = 118
+
 type TerminalWordmarkProps = {
+  isActive: boolean
+  isOnIntroCurtain: boolean
+  onTyped: () => void
   word: string
 }
 
-export function TerminalWordmark({ word }: TerminalWordmarkProps) {
+export function TerminalWordmark({
+  isActive,
+  isOnIntroCurtain,
+  onTyped,
+  word,
+}: TerminalWordmarkProps) {
   const prefersReducedMotion = useReducedMotion()
   const [typedText, setTypedText] = useState('')
-  const visibleText = prefersReducedMotion ? word : typedText
+  const visibleText = isActive ? (prefersReducedMotion ? word : typedText) : ''
+  const isTypingComplete = typedText === word
 
   useEffect(() => {
+    if (!isActive) {
+      return
+    }
+
     if (prefersReducedMotion) {
+      onTyped()
       return
     }
 
     let index = 0
-    const timer = window.setInterval(() => {
+    const timers: number[] = []
+    const typingTimer = window.setInterval(() => {
       index += 1
       setTypedText(word.slice(0, index))
 
       if (index === word.length) {
-        window.clearInterval(timer)
-      }
-    }, 92)
+        window.clearInterval(typingTimer)
 
-    return () => window.clearInterval(timer)
-  }, [prefersReducedMotion, word])
+        const dismissIntroTimer = window.setTimeout(() => {
+          onTyped()
+        }, introDismissDelay)
+
+        timers.push(dismissIntroTimer)
+      }
+    }, typingInterval)
+
+    timers.push(typingTimer)
+
+    return () => {
+      timers.forEach((timer) => window.clearTimeout(timer))
+    }
+  }, [isActive, onTyped, prefersReducedMotion, word])
 
   return (
     <span
       aria-hidden="true"
-      className="inline-flex min-h-[1.08em] items-center gap-2 font-mono text-[clamp(3.2rem,12vw,11.5rem)] font-semibold leading-[0.88] tracking-[-0.055em] text-ink"
+      className={`theme-color-transition relative z-[10000] inline-flex min-h-[1.08em] items-center gap-2 font-satoshi type-hero font-semibold leading-[1.1] tracking-[-0.04em] ${
+        isOnIntroCurtain ? 'text-paper' : 'text-ink'
+      }`}
     >
       <span>{visibleText}</span>
       <motion.span
+        key={isTypingComplete ? 'cursor-complete' : 'cursor-active'}
         className="accent-gradient mt-[0.08em] h-[0.72em] w-[0.08em]"
-        animate={prefersReducedMotion ? { opacity: 1 } : { opacity: [1, 1, 0, 0] }}
+        animate={
+          prefersReducedMotion
+            ? { opacity: 0 }
+            : {
+                opacity: isTypingComplete ? [1, 1, 0, 0] : [1, 1, 0, 0],
+              }
+        }
         transition={
           prefersReducedMotion
             ? { duration: 0 }
-            : { duration: 1.45, repeat: Infinity, ease: 'easeInOut' }
+            : {
+                duration: cursorBlinkDuration,
+                times: [0, 0.5, 0.5, 1],
+                repeat: isTypingComplete ? 2 : Infinity,
+                ease: 'linear',
+              }
         }
       />
     </span>
