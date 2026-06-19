@@ -1,20 +1,53 @@
-function App() {
-  return (
-    <main className="relative flex min-h-[100dvh] w-full flex-col items-center justify-center pb-16 md:pb-24 bg-black antialiased">
-      <h1 className="font-satoshi text-5xl font-bold tracking-tight text-white sm:text-7xl md:text-8xl">
-        Sokołek Studio
-      </h1>
-      
-      <a
-        href="mailto:hello@sokolek.com"
-        className="font-inter mt-6 text-lg text-white sm:text-xl relative after:absolute after:-bottom-1 after:left-0 after:h-[1px] after:w-full after:origin-bottom-left after:scale-x-0 after:bg-white after:transition-transform after:duration-300 after:ease-out hover:after:scale-x-100"
-      >
-        hello@sokolek.com
-      </a>
+import { useCallback, useState } from 'react'
+import { AnimatePresence } from 'motion/react'
+import { CookieConsentBanner } from './components/cookie-consent-banner'
+import { LoadingCurtain } from './components/loading-curtain'
+import { Footer } from './components/home/footer'
+import { Hero } from './components/home/hero'
+import { Philosophy } from './components/home/philosophy'
+import { PortfolioPreview } from './components/home/portfolio-preview'
+import { Services } from './components/home/services'
+import { useCookieConsent } from './hooks/use-cookie-consent'
+import { useSmoothScroll } from './hooks/use-smooth-scroll'
 
-      <div className="absolute top-6 left-6 md:top-8 md:left-8 font-inter text-xs text-white/30 tracking-widest uppercase select-none">
-        Wkrótce
-      </div>
+function App() {
+  useSmoothScroll()
+
+  const { acceptConsent, consent, rejectConsent } = useCookieConsent()
+  const [portfolioThemeActive, setPortfolioThemeActive] = useState(false)
+  const [isIntroTypingActive, setIsIntroTypingActive] = useState(false)
+  const [isIntroDismissing, setIsIntroDismissing] = useState(false)
+  const [isIntroComplete, setIsIntroComplete] = useState(false)
+  const completeIntroTyping = useCallback(() => {
+    setIsIntroDismissing(true)
+  }, [])
+
+  return (
+    <main
+      className={`site-shell min-h-dvh bg-paper text-ink antialiased ${
+        portfolioThemeActive ? 'site-shell--portfolio' : ''
+      }`}
+    >
+      <Hero
+        isIntroActive={!isIntroComplete}
+        isIntroDismissing={isIntroDismissing}
+        onIntroTypingComplete={completeIntroTyping}
+        startTyping={isIntroTypingActive}
+      />
+      <Services />
+      <PortfolioPreview onActiveChange={setPortfolioThemeActive} />
+      <Philosophy />
+      <Footer />
+      <AnimatePresence>
+        {consent === 'pending' ? (
+          <CookieConsentBanner onAccept={acceptConsent} onReject={rejectConsent} />
+        ) : null}
+      </AnimatePresence>
+      <LoadingCurtain
+        isDismissing={isIntroDismissing}
+        onComplete={() => setIsIntroComplete(true)}
+        onReadyToType={() => setIsIntroTypingActive(true)}
+      />
     </main>
   )
 }

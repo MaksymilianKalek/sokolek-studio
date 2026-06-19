@@ -1,5 +1,6 @@
 import { type ReactNode } from 'react'
 import { motion } from 'motion/react'
+import { motionTransition } from '../lib/motion'
 
 type RevealProps = {
   children: ReactNode
@@ -14,9 +15,8 @@ export function Reveal({ children, className = '', delay = 0 }: RevealProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.15 }}
       transition={{
-        duration: 0.9,
+        ...motionTransition.entrance,
         delay,
-        ease: [0.16, 1, 0.3, 1],
       }}
       className={className}
     >

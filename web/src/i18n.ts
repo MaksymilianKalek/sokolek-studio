@@ -1,9 +1,9 @@
-import i18n from 'i18next';
-import { initReactI18next } from '../node_modules/react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector/cjs';
+import i18n from 'i18next'
+import LanguageDetector from 'i18next-browser-languagedetector'
+import { initReactI18next } from 'react-i18next'
 
-import enTranslation from './locales/en/translation.json';
-import plTranslation from './locales/pl/translation.json';
+import enTranslation from './locales/en/translation.json'
+import plTranslation from './locales/pl/translation.json'
 
 i18n
   .use(LanguageDetector)
@@ -13,14 +13,19 @@ i18n
       en: { translation: enTranslation },
       pl: { translation: plTranslation },
     },
-    fallbackLng: 'en',
+    fallbackLng: 'pl',
+    supportedLngs: ['pl', 'en'],
     interpolation: {
-      escapeValue: false, // React already safely escapes strings
+      escapeValue: false,
     },
     detection: {
-      order: ['localStorage', 'navigator', 'htmlTag'],
+      order: ['localStorage', 'htmlTag', 'navigator'],
       caches: ['localStorage'],
-    }
-  });
+    },
+  })
 
-export default i18n;
+i18n.on('languageChanged', (language) => {
+  document.documentElement.lang = language
+})
+
+export default i18n

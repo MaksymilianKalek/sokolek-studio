@@ -1,72 +1,105 @@
 {
   "nav": {
-    "work": "Projekty",
-    "philosophy": "O nas",
-    "contact": "Kontakt"
+    "services": "Usługi",
+    "portfolio": "Portfolio",
+    "contact": "Kontakt",
+    "language": "Język"
+  },
+  "common": {
+    "startProject": "Porozmawiajmy",
+    "visitLiveSite": "Zobacz stronę",
+    "about": "O studiu",
+    "builtIn": "Zaprojektowane i zbudowane w Poznaniu"
   },
   "hero": {
-    "label": "Butikowe rzemiosło cyfrowe — Poznań",
-    "heading": "Zamieniamy <0>czysty kod</0> i <1>świetny design</1> w produkty z duszą",
-    "description": "Jesteśmy butikowym studiem. Tworzymy wydajne aplikacje i piękne marki dla ludzi, którzy cenią rzemiosło i dbałość o każdy detal.",
-    "cta": "Porozmawiajmy o projekcie"
+    "title": "Sokołek Studio",
+    "subtitle": "Technologia i design w jednym miejscu.",
+    "description": "Jesteśmy autorskim studiem technologicznym z Poznania łączącym inżynierię z kreatywnością. Z nami zbudujesz swoją markę od podstaw. Od tożsamości wizualnej po zaawansowane systemy. Projektujemy z intencją. Odczarowujemy sztuczną inteligencję, wykorzystując ją etycznie i tylko tam, gdzie to naprawdę potrzebne. Wierzymy w technologię, która ma prawdziwe znaczenie i realnie ułatwia codzienną pracę."
   },
-  "disciplines": {
-    "label": "W czym pomagamy",
-    "heading": "Technologia spotyka <0>wrażliwość wizualną</0>",
-    "items": {
-      "0": {
-        "title": "Dedykowane aplikacje",
-        "label": "systemy",
-        "desc": "Budujemy szybkie i stabilne aplikacje webowe. Piszemy czysty kod, który rozwiązuje realne problemy biznesowe, zamiast generować nowe.",
-        "stack": "React · TypeScript · Next.js · AI Integrations"
+  "services": {
+    "label": "Usługi",
+    "heading": "Małe studio. Pełna uwaga.",
+    "description": "Marka, strona, technologia i komunikacja powinny mówić jednym głosem. Dlatego patrzymy na firmę jako całość i dobieramy zakres pracy do tego, czego naprawdę potrzebuje.",
+    "items": [
+      {
+        "index": "01",
+        "title": "AI",
+        "description": "Tworzymy narzędzia, które upraszczają pracę z dokumentami, wiedzą i powtarzalnymi procesami.",
+        "tags": "ASYSTENCI · AUTOMATYZACJE · NARZĘDZIA"
       },
-      "1": {
-        "title": "Identyfikacja wizualna",
-        "label": "kierunek artystyczny",
-        "desc": "Tworzymy wizerunek marek od podstaw. Od spójnego systemu wizualnego po typografię, która precyzyjnie oddaje Twój charakter.",
-        "stack": "Systemy Designu · Identyfikacja · Figma"
+      {
+        "index": "02",
+        "title": "Web Design",
+        "description": "Projektujemy dopracowane strony oraz produkty cyfrowe, które wyglądają i brzmią jak Twoja marka.",
+        "tags": "UX/UI · DEVELOPMENT · SEO"
       },
-      "2": {
-        "title": "Projektowanie doświadczeń",
-        "label": "interfejsy",
-        "desc": "Projektujemy intuicyjne interfejsy. Łączymy inżynieryjną precyzję z empatią i zrozumieniem potrzeb użytkownika.",
-        "stack": "UX/UI · Mikrointerakcje · Dostępność"
+      {
+        "index": "03",
+        "title": "Branding",
+        "description": "Budujemy marki - od pomysłu i strategii po nazwę, identyfikację wizualną i język komunikacji.",
+        "tags": "STRATEGIA · IDENTYFIKACJA · PR"
       },
-      "3": {
-        "title": "Niezawodna infrastruktura",
-        "label": "backend & devops",
-        "desc": "Dbamy o to, by wszystko działało bezbłędnie pod maską. Od chmury po bazy danych – budujemy fundamenty, na których możesz polegać.",
-        "stack": "AWS · Docker · CI/CD · PostgreSQL"
+      {
+        "index": "04",
+        "title": "Content",
+        "description": "Tworzymy treści do social mediów - zdjęcia, wideo i copywriting - tak, by dopełniały spójny obraz marki.",
+        "tags": "SOCIAL MEDIA · FOTO I WIDEO · COPYWRITING"
+      }
+    ]
+  },
+  "portfolio": {
+    "label": "Portfolio",
+    "heading": "Cyfrowa przestrzeń dla miejsca stworzonego z pasji.",
+    "dogTok": {
+      "title": "DOG TOK",
+      "subtitle": "DOG TOK - Szkoleniowy Raj",
+      "summary": "Uporządkowaliśmy rozbudowaną ofertę DOG TOK-a w prostą i czytelną strukturę. Zaprojektowaliśmy stronę, która oddaje atmosferę miejsca, ułatwia znalezienie najważniejszych informacji i prowadzi użytkownika przez warsztaty, obozy, noclegi oraz harmonogram wydarzeń.",
+      "labels": {
+        "client": "KLIENT",
+        "industry": "BRANŻA",
+        "stack": "ZAKRES",
+        "year": "ROK"
+      },
+      "data": {
+        "client": "DOG TOK - SZKOLENIOWY RAJ",
+        "industry": "KYNOLOGIA / TURYSTYKA",
+        "stack": "DESIGN / WEB / COPYWRITING",
+        "year": "2026"
       }
     }
   },
-  "philosophy": {
-    "label": "Nasze podejście",
-    "heading": "Kim jesteśmy",
-    "quote": "Nie wierzymy w masowe szablony. Tworzymy <0>autorskie</0>, przemyślane rozwiązania, które zostają na lata.",
-    "p1": "Sokołek Studio narodziło się z miłości do rzemiosła i zmęczenia bylejakością w świecie IT. Wierzymy, że to, jak aplikacja działa pod maską, jest tak samo ważne, jak to, w jaki sposób z nią obcujemy. Kod i design są dla nas nierozłączne.",
-    "p2": "Jesteśmy zgranym duetem – w życiu i w pracy. Dbamy o każdy piksel, animację i linijkę kodu. Najchętniej współpracujemy z ludźmi, którzy tak jak my cenią rzetelną pracę, szczerość i bezkompromisową jakość.",
-    "caption": "Maks i Klaudia, Założyciele",
-    "alt": "Maks i Klaudia Sokołek, Założyciele Sokołek Studio"
+  "manifesto": {
+    "label": "O nas",
+    "sectionOne": {
+      "heading": "Trochę o nas, tej!",
+      "description": "Techniczny co-founder studia. Od lat tworzy oprogramowanie i systemy AI dla startupów oraz dużych firm. Łączy doświadczenie inżynierskie z dużą ciekawością nowych technologii, ale nie wdraża ich dla samego efektu. Lubi proste rozwiązania, czysty kod i projekty dopracowane do ostatniego szczegółu."
+    },
+    "sectionTwo": {
+      "heading_part1": "Maksymilian",
+      "heading_part2": "Klaudia",
+      "description": "Kreatywna co-founderka studia. Łączy doświadczenie w PR i komunikacji z fotografią, montażem oraz social mediami. Ma dobre oko do obrazu, wyczucie trendów i wie, jak przełożyć charakter marki na treści. Dba o to, żeby całość była spójna, naturalna i po prostu dobrze wyglądała."
+    },
+    "principles": [
+      "Pro, but make it fun",
+      "AI tam, gdzie ma sens",
+      "Cyfrowo, ale realnie",
+      "Prosta i dobra komunikacja"
+    ]
   },
   "contact": {
-    "label": "Poznajmy się",
-    "heading": "Zróbmy coś <0>wspólnie</0>",
-    "description": "Opowiedz nam o swoim pomyśle. Niezależnie od tego, czy potrzebujesz zaawansowanej platformy, czy nowej tożsamości dla swojej marki – po prostu napisz.",
-    "success": {
-      "label": "Wysłano",
-      "heading": "Otrzymaliśmy Twoją wiadomość",
-      "desc": "Odezwiemy się do Ciebie najszybciej, jak to możliwe."
-    },
-    "form": {
-      "email_label": "Twój email",
-      "email_placeholder": "czesc@twojafirma.pl",
-      "vision_label": "O czym chciałbyś porozmawiać?",
-      "vision_placeholder": "Opisz krótko swój cel lub projekt...",
-      "submit": "Wyślij wiadomość"
-    }
+    "heading_part1": "Masz pomysł?",
+    "heading_part2": "Porozmawiajmy.",
+    "description": "Opowiedz nam o swojej firmie, pomyśle albo wyzwaniu. Wspólnie zrozumiemy, czego naprawdę potrzebujesz i jak możemy zamienić to w dobrze zaprojektowane rozwiązanie."
   },
   "footer": {
-    "location": "Poznań · Cyfrowe Rzemiosło"
+    "contact": "Napisz do nas"
+  },
+  "cookieConsent": {
+    "label": "Zgoda na cookies",
+    "heading": "Czy możemy używać cookies analitycznych?",
+    "description": "Korzystamy z Google Analytics, żeby lepiej rozumieć, jak odwiedzający korzystają z naszej strony. Analitykę uruchomimy dopiero po Twojej zgodzie.",
+    "accept": "Akceptuję analitykę",
+    "reject": "Odrzucam",
+    "settings": "Ustawienia cookies"
   }
 }

@@ -1,72 +1,105 @@
 {
   "nav": {
-    "work": "Work",
-    "philosophy": "Philosophy",
-    "contact": "Contact"
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "language": "Language"
+  },
+  "common": {
+    "startProject": "Let's talk",
+    "visitLiveSite": "View website",
+    "about": "About us",
+    "builtIn": "Designed and built in Poznań"
   },
   "hero": {
-    "label": "Boutique digital craftsmanship — Warsaw",
-    "heading": "We shape <0>raw code</0> and <1>pure design</1> into lasting digital craft",
-    "description": "A boutique studio engineering high-performance software systems and sculpting visual brand narratives for clients seeking uncompromising excellence.",
-    "cta": "Start a project"
+    "title": "Sokołek Studio",
+    "subtitle": "Technology and design, all in one place.",
+    "description": "We are an independent technology studio from Poznań, bringing engineering and creativity together. With us, you can build your brand from the ground up — from visual identity to advanced digital systems. We design with intention. We make artificial intelligence easier to understand, using it responsibly and only where it genuinely makes sense. We believe in technology that matters and makes everyday work easier."
   },
-  "disciplines": {
-    "label": "Core disciplines",
-    "heading": "Engineering meets <0>visual architecture</0>",
-    "items": {
-      "0": {
-        "title": "Bespoke software engineering",
-        "label": "systems",
-        "desc": "Handcrafted frontend architectures, high-performance web applications, and custom developer tooling — built with absolute technical rigor.",
-        "stack": "React · Vite · Bun · TypeScript · Next.js"
+  "services": {
+    "label": "Services",
+    "heading": "Small studio. Full attention.",
+    "description": "Your brand, website, technology and communication should all speak the same language. That is why we look at your business as a whole and shape the scope around what it actually needs.",
+    "items": [
+      {
+        "index": "01",
+        "title": "AI",
+        "description": "We build tools that simplify working with documents, knowledge and repetitive processes.",
+        "tags": "ASSISTANTS · AUTOMATION · TOOLS"
       },
-      "1": {
-        "title": "Visual identity & branding",
-        "label": "art direction",
-        "desc": "Sculpting unique corporate identities, pristine design systems, typography standards, and brand strategy guidelines.",
-        "stack": "Design Systems · Identity · Figma · Typography"
+      {
+        "index": "02",
+        "title": "Web Design",
+        "description": "We design refined websites and digital products that look and sound like your brand.",
+        "tags": "UX/UI · DEVELOPMENT · SEO"
       },
-      "2": {
-        "title": "Immersive UX architecture",
-        "label": "interface",
-        "desc": "Interactive, responsive digital layouts where technical logic and visual elegance achieve complete synergy.",
-        "stack": "Micro-interactions · Motion · Responsive Grid"
+      {
+        "index": "03",
+        "title": "Branding",
+        "description": "We build brands — from the initial idea and strategy to naming, visual identity and tone of voice.",
+        "tags": "STRATEGY · VISUAL IDENTITY · PR"
       },
-      "3": {
-        "title": "Systems & pragmatic devops",
-        "label": "infrastructure",
-        "desc": "Resilient cloud infrastructure, optimized APIs, automated integration pipelines, and performant database architectures.",
-        "stack": "AWS · Docker · CI/CD · PostgreSQL · Edge"
+      {
+        "index": "04",
+        "title": "Content",
+        "description": "We create social media content — photography, video and copywriting — that completes a consistent brand image.",
+        "tags": "SOCIAL MEDIA · PHOTO & VIDEO · COPYWRITING"
+      }
+    ]
+  },
+  "portfolio": {
+    "label": "Portfolio",
+    "heading": "A digital space for a place built with passion.",
+    "dogTok": {
+      "title": "DOG TOK",
+      "subtitle": "DOG TOK — Training Paradise",
+      "summary": "We organised DOG TOK's extensive offering into a clear and intuitive structure. We designed a website that captures the atmosphere of the place, makes key information easy to find and guides visitors through workshops, camps, accommodation and the events calendar.",
+      "labels": {
+        "client": "CLIENT",
+        "industry": "INDUSTRY",
+        "stack": "SCOPE",
+        "year": "YEAR"
+      },
+      "data": {
+        "client": "DOG TOK — TRAINING PARADISE",
+        "industry": "DOG TRAINING / TOURISM",
+        "stack": "DESIGN / WEB / COPYWRITING",
+        "year": "2026"
       }
     }
   },
-  "philosophy": {
-    "label": "Philosophy",
-    "heading": "Our creed",
-    "quote": "We do not build templates. We sculpt <0>custom</0>, highly cohesive architectures that stand the test of time.",
-    "p1": "Sokołek Studio was created from a simple frustration with generic software and design packages. We believe code and visual identity are inseparable — premium systems demand optimal visual frames.",
-    "p2": "Every layout pixel, database query, font weight, and micro-interaction is scrutinized. We partner with visionary founders who respect design and demand impeccable digital engineering.",
-    "caption": "Maks & Klaudia, Co-founders",
-    "alt": "Maks & Klaudia, Co-founders of Sokołek Studio"
+  "manifesto": {
+    "label": "About us",
+    "sectionOne": {
+      "heading": "A little about us, hey!",
+      "description": "The technical co-founder of the studio. He has spent years building software and AI systems for startups and large companies. He combines solid engineering experience with a strong curiosity for new technology, without implementing it just for the sake of it. He likes simple solutions, clean code and projects refined down to the smallest detail."
+    },
+    "sectionTwo": {
+      "heading_part1": "Maksymilian",
+      "heading_part2": "Klaudia",
+      "description": "The creative co-founder of the studio. She combines experience in PR and communication with photography, editing and social media. She has a strong eye for visuals, a feel for trends and knows how to translate a brand's character into content. She makes sure everything feels consistent, natural and simply looks good."
+    },
+    "principles": [
+      "Pro, but make it fun",
+      "AI where it makes sense",
+      "Digital, but grounded in reality",
+      "Clear and straightforward communication"
+    ]
   },
   "contact": {
-    "label": "Get in touch",
-    "heading": "Let's build something <0>together</0>",
-    "description": "Tell us about your technical requirements or visual aspirations. We review every brief within one business day.",
-    "success": {
-      "label": "Sent",
-      "heading": "Inquiry received",
-      "desc": "We will review your objectives and respond shortly."
-    },
-    "form": {
-      "email_label": "Your email",
-      "email_placeholder": "hello@company.com",
-      "vision_label": "Describe your vision",
-      "vision_placeholder": "Tell us about your project goals...",
-      "submit": "Send inquiry"
-    }
+    "heading_part1": "Got an idea?",
+    "heading_part2": "Let's talk.",
+    "description": "Tell us about your business, idea or challenge. Together, we will work out what you actually need and how we can turn it into a thoughtfully designed solution."
   },
   "footer": {
-    "location": "Warsaw · Digital Craft"
+    "contact": "Get in touch"
+  },
+  "cookieConsent": {
+    "label": "Cookie consent",
+    "heading": "Can we use analytics cookies?",
+    "description": "We use Google Analytics to better understand how visitors use our website. Analytics will only be enabled after you give us your consent.",
+    "accept": "Accept analytics",
+    "reject": "Reject",
+    "settings": "Cookie settings"
   }
 }
