@@ -111,7 +111,7 @@ export function Hero({
 
       <div
         id="top"
-        className="flex flex-1 flex-col justify-end gap-10 pb-10 pt-28 sm:pb-14 lg:pb-16"
+        className="flex flex-1 flex-col justify-center gap-7 pb-12 pt-16 sm:justify-end sm:gap-10 sm:pb-14 sm:pt-28 lg:pb-16"
       >
         <div className="max-w-[94rem]">
           <h1 aria-label={heroTitle} className="relative font-satoshi">
@@ -134,14 +134,14 @@ export function Hero({
         </div>
 
         <div
-          className="grid gap-y-8 pt-4 md:grid-cols-[minmax(0,var(--studio-axis,1.1fr))_minmax(18rem,1fr)_auto] md:items-start"
+          className="grid gap-y-6 md:grid-cols-[minmax(0,var(--studio-axis,1.1fr))_minmax(18rem,1fr)_auto] md:items-start md:gap-y-8 md:pt-4"
           style={heroGridStyle}
         >
-          <p className="heading-sm max-w-2xl text-ink">
+          <p className="heading-sm max-w-2xl text-[2.125rem] leading-[1.04] text-ink sm:text-[clamp(1.875rem,4vw,3rem)] sm:leading-[1.1]">
             {t('hero.subtitle')}
           </p>
 
-          <p className="body-copy max-w-md">
+          <p className="body-copy max-w-md text-[1.0625rem] leading-[1.14] sm:text-base sm:leading-[1.1]">
             {t('hero.description')}
           </p>
 
