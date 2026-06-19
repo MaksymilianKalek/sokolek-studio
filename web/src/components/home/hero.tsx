@@ -17,7 +17,7 @@ function LanguageSwitch() {
   return (
     <div
       aria-label={t('nav.language')}
-      className="nav-text flex items-center gap-2 text-ink-muted"
+      className="flex items-center gap-2 font-mono text-base font-medium leading-[1.1] tracking-[-0.025em] text-ink-muted"
     >
       {(['pl', 'en'] as const).map((language) => (
         <button
@@ -103,12 +103,15 @@ export function Hero({
           />
         </div>
 
-        <nav aria-label="Main navigation" className="hidden items-center gap-7 sm:flex">
+        <nav
+          aria-label="Main navigation"
+          className="hidden items-center gap-7 font-mono text-base font-medium leading-[1.1] tracking-[-0.025em] sm:flex"
+        >
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="interactive-accent-link focus-ring nav-text text-ink-soft"
+              className="interactive-accent-link focus-ring text-ink-soft"
             >
               {item.label}
             </a>

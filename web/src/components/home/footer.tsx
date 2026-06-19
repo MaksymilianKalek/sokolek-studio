@@ -14,8 +14,11 @@ export function Footer() {
     <footer className="footer-inverted overflow-hidden bg-ink px-5 pb-6 text-paper sm:px-8 lg:px-10">
       <div className="site-container">
         <Contact inverted />
-        <div className="nav-text grid gap-8 text-paper/42 sm:grid-cols-[1fr_auto] sm:items-end">
-          <nav aria-label="Footer navigation" className="flex flex-wrap gap-x-6 gap-y-3">
+        <div className="grid gap-8 text-paper/42 sm:grid-cols-[1fr_auto] sm:items-end">
+          <nav
+            aria-label="Footer navigation"
+            className="flex flex-wrap gap-x-6 gap-y-3 font-mono text-base font-medium leading-[1.1] tracking-[-0.025em]"
+          >
             {footerLinks.map((link) => (
               <a
                 key={link.href}
@@ -27,7 +30,7 @@ export function Footer() {
             ))}
           </nav>
 
-          <div className="flex flex-wrap gap-x-6 gap-y-3 sm:justify-end">
+          <div className="nav-text flex flex-wrap gap-x-6 gap-y-3 sm:justify-end">
             <p>© 2026 Sokołek Studio</p>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { type PointerEvent, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import { ArrowUpRight } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Reveal } from '../reveal'
@@ -11,11 +11,6 @@ type PortfolioPreviewProps = {
 export function PortfolioPreview({ onActiveChange }: PortfolioPreviewProps) {
   const { t } = useTranslation()
   const sectionRef = useRef<HTMLElement>(null)
-  const [portfolioCursor, setPortfolioCursor] = useState({
-    isVisible: false,
-    x: 0,
-    y: 0,
-  })
   const specs = [
     {
       label: t('portfolio.dogTok.labels.client'),
@@ -69,37 +64,6 @@ export function PortfolioPreview({ onActiveChange }: PortfolioPreviewProps) {
     }
   }, [onActiveChange])
 
-  const showPortfolioCursor = (event: PointerEvent<HTMLAnchorElement>) => {
-    if (event.pointerType !== 'mouse') {
-      return
-    }
-
-    setPortfolioCursor({
-      isVisible: true,
-      x: event.clientX,
-      y: event.clientY,
-    })
-  }
-
-  const movePortfolioCursor = (event: PointerEvent<HTMLAnchorElement>) => {
-    if (event.pointerType !== 'mouse') {
-      return
-    }
-
-    setPortfolioCursor((currentCursor) => ({
-      ...currentCursor,
-      x: event.clientX,
-      y: event.clientY,
-    }))
-  }
-
-  const hidePortfolioCursor = () => {
-    setPortfolioCursor((currentCursor) => ({
-      ...currentCursor,
-      isVisible: false,
-    }))
-  }
-
   return (
     <section
       ref={sectionRef}
@@ -124,11 +88,7 @@ export function PortfolioPreview({ onActiveChange }: PortfolioPreviewProps) {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={`${t('common.visitLiveSite')}: ${t('portfolio.dogTok.subtitle')}`}
-                onPointerEnter={showPortfolioCursor}
-                onPointerMove={movePortfolioCursor}
-                onPointerLeave={hidePortfolioCursor}
-                onPointerCancel={hidePortfolioCursor}
-                className="focus-ring group/image relative block h-full overflow-hidden lg:cursor-none"
+                className="focus-ring group/image relative block h-full overflow-hidden"
               >
                 <img
                   src="/portfolio/dogtok-screenshot-1600.webp"
@@ -188,34 +148,6 @@ export function PortfolioPreview({ onActiveChange }: PortfolioPreviewProps) {
           </article>
         </Reveal>
       </div>
-
-      <span
-        aria-hidden="true"
-        className="pointer-events-none fixed left-0 top-0 z-[99999] hidden lg:block"
-        style={{
-          transform: `translate3d(${portfolioCursor.x}px, ${portfolioCursor.y}px, 0) translate(-50%, -50%)`,
-        }}
-      >
-        <span
-          className={`flex size-10 items-center justify-center ${
-            portfolioCursor.isVisible ? 'opacity-100' : 'opacity-0'
-          }`}
-          style={{
-            transform: `scale(${portfolioCursor.isVisible ? 1 : 0.92})`,
-            transitionDuration: 'var(--motion-fast)',
-            transitionTimingFunction: 'var(--ease-expressive)',
-            transitionProperty: 'opacity, transform',
-          }}
-        >
-          <img
-            src="/logo.svg"
-            alt=""
-            width="77"
-            height="78"
-            className="size-10"
-          />
-        </span>
-      </span>
     </section>
   )
 }
