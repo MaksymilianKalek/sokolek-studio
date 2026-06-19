@@ -9,7 +9,7 @@
     "startProject": "Porozmawiajmy",
     "visitLiveSite": "Zobacz stronę",
     "about": "O studiu",
-    "builtIn": "Zaprojektowane i zbudowane z troską w Poznaniu"
+    "builtIn": "Zaprojektowane i zbudowane w Poznaniu"
   },
   "hero": {
     "title": "Sokołek Studio",
@@ -30,31 +30,30 @@
       {
         "index": "02",
         "title": "Web Design",
-        "description": "Projektujemy szybkie i dopracowane strony oraz produkty cyfrowe, które wyglądają i brzmią jak Twoja marka.",
+        "description": "Projektujemy dopracowane strony oraz produkty cyfrowe, które wyglądają i brzmią jak Twoja marka.",
         "tags": "UX/UI · DEVELOPMENT · SEO"
       },
       {
         "index": "03",
-        "title": "Marka od podstaw",
-        "description": "Nadajemy firmom wyrazisty charakter — od pierwszej myśli po język, obraz i najmniejszy detal.",
-        "tags": "BRANDING · IDENTYFIKACJA WIZUALNA · STRATEGIA"
+        "title": "Branding",
+        "description": "Budujemy marki - od pomysłu i strategii po nazwę, identyfikację wizualną i język komunikacji.",
+        "tags": "STRATEGIA · IDENTYFIKACJA · PR"
       },
       {
         "index": "04",
-        "title": "Marka na co dzień",
-        "description": "Tworzymy treści, sesje i rytm komunikacji, dzięki którym marka pozostaje spójna także długo po premierze.",
-        "tags": "SOCIAL MEDIA · FOTO I WIDEO · OPIEKA KREATYWNA"
+        "title": "Content",
+        "description": "Tworzymy treści do social mediów - zdjęcia, wideo i copywriting - tak, by dopełniały spójny obraz marki.",
+        "tags": "SOCIAL MEDIA · FOTO I WIDEO · COPYWRITING"
       }
     ]
   },
   "portfolio": {
     "label": "Portfolio",
-    "heading": "Miejsce z charakterem zasługiwało na własny język.",
-    "description": "DOG TOK to 3,5 hektara przestrzeni stworzonej dla psów i ich przewodników. Warsztaty, obozy, noclegi, staw i rozbudowana infrastruktura tworzą wyjątkowe miejsce, którego różnorodna oferta potrzebowała czytelnej i spójnej oprawy.",
+    "heading": "Cyfrowa przestrzeń dla miejsca stworzonego z pasji.",
     "dogTok": {
       "title": "DOG TOK",
-      "subtitle": "Szkoleniowy Raj w Magicznym Lesie",
-      "summary": "Zaprojektowaliśmy spokojną, przejrzystą stronę, która oddaje charakter miejsca i prowadzi użytkownika przez jego rozbudowaną ofertę. Warsztaty, obozy, noclegi, udogodnienia i harmonogram wydarzeń na 2026 rok zamknęliśmy w prostej strukturze, po której łatwo się poruszać.",
+      "subtitle": "DOG TOK - Szkoleniowy Raj",
+      "summary": "Uporządkowaliśmy rozbudowaną ofertę DOG TOK-a w prostą i czytelną strukturę. Zaprojektowaliśmy stronę, która oddaje atmosferę miejsca, ułatwia znalezienie najważniejszych informacji i prowadzi użytkownika przez warsztaty, obozy, noclegi oraz harmonogram wydarzeń.",
       "labels": {
         "client": "KLIENT",
         "industry": "BRANŻA",
@@ -62,42 +61,43 @@
         "year": "ROK"
       },
       "data": {
-        "client": "DOG TOK SZKOLENIOWY RAJ",
+        "client": "DOG TOK - SZKOLENIOWY RAJ",
         "industry": "KYNOLOGIA / TURYSTYKA",
-        "stack": "STRATEGIA / DESIGN / WEB",
+        "stack": "DESIGN / WEB / COPYWRITING",
         "year": "2026"
       }
     }
   },
   "manifesto": {
-    "label": "Nasze podejście",
+    "label": "O nas",
     "sectionOne": {
-      "heading": "Dobra praca zaczyna się od uważności.",
-      "description": "Traktujemy design i technologię jak rzemiosło. Najpierw słuchamy, poznajemy firmę i szukamy tego, co naprawdę ma znaczenie. Dopiero później projektujemy. Każdy element powinien mieć swoje miejsce, każda funkcja swoje zadanie, a całość służyć ludziom, którzy będą z niej korzystać."
+      "heading": "Trochę o nas, tej!",
+      "description": "Techniczny co-founder studia. Od lat tworzy oprogramowanie i systemy AI dla startupów oraz dużych firm. Łączy doświadczenie inżynierskie z dużą ciekawością nowych technologii, ale nie wdraża ich dla samego efektu. Lubi proste rozwiązania, czysty kod i projekty dopracowane do ostatniego szczegółu."
     },
     "sectionTwo": {
-      "heading_part1": "Przynieś nam swój pomysł.",
-      "heading_part2": "Nadamy mu właściwą formę.",
-      "description": "Możesz przyjść do nas z gotową wizją, luźnym szkicem albo problemem, którego nie potrafisz jeszcze nazwać. Wspólnie określimy kierunek i zaproponujemy rozwiązanie dopasowane do skali, charakteru i ambicji Twojej firmy."
+      "heading_part1": "Maksymilian",
+      "heading_part2": "Klaudia",
+      "description": "Kreatywna co-founderka studia. Łączy doświadczenie w PR i komunikacji z fotografią, montażem oraz social mediami. Ma dobre oko do obrazu, wyczucie trendów i wie, jak przełożyć charakter marki na treści. Dba o to, żeby całość była spójna, naturalna i po prostu dobrze wyglądała."
     },
     "principles": [
-      "Najpierw rozumiemy. Dopiero później projektujemy.",
-      "Tworzymy na miarę, nie według gotowego schematu.",
-      "Dbamy o szczegóły, ale nie komplikujemy."
+      "Pro, but make it fun",
+      "AI tam, gdzie ma sens",
+      "Cyfrowo, ale realnie",
+      "Prosta i dobra komunikacja"
     ]
   },
   "contact": {
-    "heading_part1": "Masz coś trudnego?",
-    "heading_part2": "Dobrze.",
-    "description": "Napisz, nad czym pracujesz i czego dziś potrzebuje Twoja firma. Odpowiemy konkretnie: co warto zrobić, od czego zacząć i jak może wyglądać nasza wspólna praca."
+    "heading_part1": "Masz pomysł?",
+    "heading_part2": "Porozmawiajmy.",
+    "description": "Opowiedz nam o swojej firmie, pomyśle albo wyzwaniu. Wspólnie zrozumiemy, czego naprawdę potrzebujesz i jak możemy zamienić to w dobrze zaprojektowane rozwiązanie."
   },
   "footer": {
-    "contact": "POROZMAWIAJMY O TYM, CO TWORZYSZ"
+    "contact": "Napisz do nas"
   },
   "cookieConsent": {
     "label": "Zgoda na cookies",
     "heading": "Czy możemy używać cookies analitycznych?",
-    "description": "Korzystamy z Google Analytics tylko po to, żeby lepiej rozumieć, jak odwiedzający używają strony. Uruchomimy je dopiero po Twojej zgodzie.",
+    "description": "Korzystamy z Google Analytics, żeby lepiej rozumieć, jak odwiedzający korzystają z naszej strony. Analitykę uruchomimy dopiero po Twojej zgodzie.",
     "accept": "Akceptuję analitykę",
     "reject": "Odrzucam",
     "settings": "Ustawienia cookies"

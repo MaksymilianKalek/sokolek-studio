@@ -1,6 +1,7 @@
 import { ShieldCheck } from 'lucide-react'
 import { motion } from 'motion/react'
 import { useTranslation } from 'react-i18next'
+import { motionTransition } from '../lib/motion'
 
 type CookieConsentBannerProps = {
   onAccept: () => void
@@ -17,7 +18,7 @@ export function CookieConsentBanner({ onAccept, onReject }: CookieConsentBannerP
       initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 24 }}
-      transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+      transition={motionTransition.panel}
     >
       <div className="flex flex-col gap-5 border border-ink bg-paper p-5 text-ink sm:p-6">
         <div className="max-w-2xl">
@@ -37,14 +38,14 @@ export function CookieConsentBanner({ onAccept, onReject }: CookieConsentBannerP
           <button
             type="button"
             onClick={onAccept}
-            className="action-text focus-ring flex-1 cursor-pointer border border-ink bg-ink px-4 py-3 text-paper transition-colors duration-200 hover:bg-ink-soft"
+            className="action-text focus-ring flex-1 cursor-pointer border border-ink bg-ink px-4 py-3 text-paper transition-colors hover:bg-ink-soft"
           >
             {t('cookieConsent.accept')}
           </button>
           <button
             type="button"
             onClick={onReject}
-            className="action-text focus-ring flex-1 cursor-pointer border border-ink px-4 py-3 text-ink transition-colors duration-200 hover:bg-ink hover:text-paper"
+            className="action-text focus-ring flex-1 cursor-pointer border border-ink px-4 py-3 text-ink transition-colors hover:bg-ink hover:text-paper"
           >
             {t('cookieConsent.reject')}
           </button>

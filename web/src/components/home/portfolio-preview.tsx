@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { type PointerEvent, useEffect, useRef, useState } from 'react'
 import { ArrowUpRight } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Reveal } from '../reveal'
@@ -11,6 +11,11 @@ type PortfolioPreviewProps = {
 export function PortfolioPreview({ onActiveChange }: PortfolioPreviewProps) {
   const { t } = useTranslation()
   const sectionRef = useRef<HTMLElement>(null)
+  const [portfolioCursor, setPortfolioCursor] = useState({
+    isVisible: false,
+    x: 0,
+    y: 0,
+  })
   const specs = [
     {
       label: t('portfolio.dogTok.labels.client'),
@@ -64,6 +69,37 @@ export function PortfolioPreview({ onActiveChange }: PortfolioPreviewProps) {
     }
   }, [onActiveChange])
 
+  const showPortfolioCursor = (event: PointerEvent<HTMLAnchorElement>) => {
+    if (event.pointerType !== 'mouse') {
+      return
+    }
+
+    setPortfolioCursor({
+      isVisible: true,
+      x: event.clientX,
+      y: event.clientY,
+    })
+  }
+
+  const movePortfolioCursor = (event: PointerEvent<HTMLAnchorElement>) => {
+    if (event.pointerType !== 'mouse') {
+      return
+    }
+
+    setPortfolioCursor((currentCursor) => ({
+      ...currentCursor,
+      x: event.clientX,
+      y: event.clientY,
+    }))
+  }
+
+  const hidePortfolioCursor = () => {
+    setPortfolioCursor((currentCursor) => ({
+      ...currentCursor,
+      isVisible: false,
+    }))
+  }
+
   return (
     <section
       ref={sectionRef}
@@ -75,32 +111,28 @@ export function PortfolioPreview({ onActiveChange }: PortfolioPreviewProps) {
         </Reveal>
 
         <Reveal>
-          <div className="mt-8 flex flex-col justify-between gap-8 md:flex-row md:items-start">
-            <div>
-              <h2 className="heading-md max-w-4xl text-ink">
-                {t('portfolio.heading')}
-              </h2>
-            </div>
-            <p className="body-copy max-w-sm">
-              {t('portfolio.description')}
-            </p>
-          </div>
+          <h2 className="heading-md mt-8 max-w-6xl text-ink">
+            {t('portfolio.heading')}
+          </h2>
         </Reveal>
 
         <Reveal delay={0.12}>
           <article className="mt-10 grid items-stretch overflow-hidden lg:grid-cols-[1.1fr_0.9fr] lg:gap-10">
             <div className="relative h-[20rem] overflow-hidden text-paper sm:h-[24rem] lg:h-[30rem]">
-              <div className="accent-gradient absolute inset-x-0 top-0 z-10 h-1" />
               <a
                 href="https://dogtok.pl"
                 target="_blank"
                 rel="noreferrer"
                 aria-label={`${t('common.visitLiveSite')}: ${t('portfolio.dogTok.subtitle')}`}
-                className="focus-ring block h-full overflow-hidden"
+                onPointerEnter={showPortfolioCursor}
+                onPointerMove={movePortfolioCursor}
+                onPointerLeave={hidePortfolioCursor}
+                onPointerCancel={hidePortfolioCursor}
+                className="focus-ring group/image relative block h-full overflow-hidden lg:cursor-none"
               >
                 <img
                   src="/portfolio/dogtok-screenshot-1600.webp"
-                  srcSet="/portfolio/dogtok-screenshot-1600.webp 1600w, /portfolio/dogtok-screenshot-2400.webp 2400w"
+                  srcSet="/portfolio/dogtok-screenshot-1600.webp 1600w, /portfolio/dogtok-screenshot-2400.webp 2400w, /portfolio/dogtok-screenshot-3200.webp 3200w"
                   sizes="(min-width: 1024px) 52vw, calc(100vw - 2.5rem)"
                   alt={`${t('portfolio.dogTok.subtitle')} website designed and developed by Sokołek Studio`}
                   width="1600"
@@ -108,7 +140,11 @@ export function PortfolioPreview({ onActiveChange }: PortfolioPreviewProps) {
                   loading="eager"
                   decoding="async"
                   fetchPriority="high"
-                  className="h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.02]"
+                  className="h-full w-full object-cover"
+                />
+                <span
+                  aria-hidden="true"
+                  className="portfolio-image-dim absolute inset-0 bg-ink-fixed/0 group-hover/image:bg-ink-fixed/18 group-focus-visible/image:bg-ink-fixed/18"
                 />
               </a>
             </div>
@@ -152,6 +188,34 @@ export function PortfolioPreview({ onActiveChange }: PortfolioPreviewProps) {
           </article>
         </Reveal>
       </div>
+
+      <span
+        aria-hidden="true"
+        className="pointer-events-none fixed left-0 top-0 z-[99999] hidden lg:block"
+        style={{
+          transform: `translate3d(${portfolioCursor.x}px, ${portfolioCursor.y}px, 0) translate(-50%, -50%)`,
+        }}
+      >
+        <span
+          className={`flex size-10 items-center justify-center ${
+            portfolioCursor.isVisible ? 'opacity-100' : 'opacity-0'
+          }`}
+          style={{
+            transform: `scale(${portfolioCursor.isVisible ? 1 : 0.92})`,
+            transitionDuration: 'var(--motion-fast)',
+            transitionTimingFunction: 'var(--ease-expressive)',
+            transitionProperty: 'opacity, transform',
+          }}
+        >
+          <img
+            src="/logo.svg"
+            alt=""
+            width="77"
+            height="78"
+            className="size-10"
+          />
+        </span>
+      </span>
     </section>
   )
 }

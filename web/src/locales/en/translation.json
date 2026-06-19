@@ -6,98 +6,98 @@
     "language": "Language"
   },
   "common": {
-    "startProject": "Start a project",
-    "visitLiveSite": "Visit live site",
-    "about": "About",
-    "builtIn": "Built in Poland"
+    "startProject": "Let's talk",
+    "visitLiveSite": "View website",
+    "about": "About us",
+    "builtIn": "Designed and built in Poznań"
   },
   "hero": {
     "title": "Sokołek Studio",
-    "subtitle": "Calm. Order. Craft.",
-    "description": "We are a compact studio from Poznań. We create intelligent websites, AI automations, and brand presence for companies that value quality. No corporate jargon, no mass templates. Just technology that makes life easier."
+    "subtitle": "Technology and design, all in one place.",
+    "description": "We are an independent technology studio from Poznań, bringing engineering and creativity together. With us, you can build your brand from the ground up — from visual identity to advanced digital systems. We design with intention. We make artificial intelligence easier to understand, using it responsibly and only where it genuinely makes sense. We believe in technology that matters and makes everyday work easier."
   },
   "services": {
     "label": "Services",
-    "heading": "We solve concrete problems.",
+    "heading": "Small studio. Full attention.",
+    "description": "Your brand, website, technology and communication should all speak the same language. That is why we look at your business as a whole and shape the scope around what it actually needs.",
     "items": [
       {
         "index": "01",
-        "title": "Brand Identity",
-        "tags": "[CLEAR IDENTITY] [CLEAN DESIGN] [TYPOGRAPHY]"
+        "title": "AI",
+        "description": "We build tools that simplify working with documents, knowledge and repetitive processes.",
+        "tags": "ASSISTANTS · AUTOMATION · TOOLS"
       },
       {
         "index": "02",
-        "title": "Intelligent Automations",
-        "tags": "[DOCUMENT ORDER] [TIME SAVED] [LOCAL DATA]"
+        "title": "Web Design",
+        "description": "We design refined websites and digital products that look and sound like your brand.",
+        "tags": "UX/UI · DEVELOPMENT · SEO"
       },
       {
         "index": "03",
-        "title": "Websites",
-        "tags": "[FAST PERFORMANCE] [CLEAN CODE] [NO USELESS PLUGINS]"
+        "title": "Branding",
+        "description": "We build brands — from the initial idea and strategy to naming, visual identity and tone of voice.",
+        "tags": "STRATEGY · VISUAL IDENTITY · PR"
       },
       {
         "index": "04",
-        "title": "IT Advisory",
-        "tags": "[TECH CHOICES] [SECURITY] [PROCESS OPTIMIZATION]"
+        "title": "Content",
+        "description": "We create social media content — photography, video and copywriting — that completes a consistent brand image.",
+        "tags": "SOCIAL MEDIA · PHOTO & VIDEO · COPYWRITING"
       }
     ]
   },
   "portfolio": {
     "label": "Portfolio",
-    "heading": "A digital home for a place built with real care.",
-    "description": "DOG TOK is a training retreat for dogs and their handlers: 3.5 hectares of fenced space, workshops, camps, cabins, water, and infrastructure designed for focus.",
+    "heading": "A digital space for a place built with passion.",
     "dogTok": {
       "title": "DOG TOK",
-      "subtitle": "DOG TOK Szkoleniowy Raj",
-      "summary": "A minimal bilingual site for a place in Magiczny Las. Workshops, camps, lodging, dog-friendly facilities, and a 2026 schedule are organized into a clear editorial structure.",
+      "subtitle": "DOG TOK — Training Paradise",
+      "summary": "We organised DOG TOK's extensive offering into a clear and intuitive structure. We designed a website that captures the atmosphere of the place, makes key information easy to find and guides visitors through workshops, camps, accommodation and the events calendar.",
       "labels": {
         "client": "CLIENT",
         "industry": "INDUSTRY",
-        "stack": "TECHNOLOGY",
+        "stack": "SCOPE",
         "year": "YEAR"
       },
       "data": {
-        "client": "DOG TOK SZKOLENIOWY RAJ",
-        "industry": "EDUCATION / LOCAL BUSINESS",
-        "stack": "REACT / AUTOMATION",
+        "client": "DOG TOK — TRAINING PARADISE",
+        "industry": "DOG TRAINING / TOURISM",
+        "stack": "DESIGN / WEB / COPYWRITING",
         "year": "2026"
       }
     }
   },
   "manifesto": {
-    "label": "Philosophy",
+    "label": "About us",
     "sectionOne": {
-      "heading": "Good work defends itself before it has to shout.",
-      "description": "We believe in digital craft. Just as lasting objects are made from honest, high-quality materials, we build systems from scratch with clean code. Every button and every function has to make work easier. If something is not useful, we remove it."
+      "heading": "A little about us, hey!",
+      "description": "The technical co-founder of the studio. He has spent years building software and AI systems for startups and large companies. He combines solid engineering experience with a strong curiosity for new technology, without implementing it just for the sake of it. He likes simple solutions, clean code and projects refined down to the smallest detail."
     },
     "sectionTwo": {
-      "heading_part1": "Bring us your chaos.",
-      "heading_part2": "We will put it in order.",
-      "description": "Tell us what you are building, what needs to work better, and where design or AI can remove friction. We will respond with a concrete next step."
+      "heading_part1": "Maksymilian",
+      "heading_part2": "Klaudia",
+      "description": "The creative co-founder of the studio. She combines experience in PR and communication with photography, editing and social media. She has a strong eye for visuals, a feel for trends and knows how to translate a brand's character into content. She makes sure everything feels consistent, natural and simply looks good."
     },
     "principles": [
-      "Start with what must become obvious.",
-      "Design the smallest system that can carry the ambition.",
-      "Remove everything that does not help the user."
+      "Pro, but make it fun",
+      "AI where it makes sense",
+      "Digital, but grounded in reality",
+      "Clear and straightforward communication"
     ]
   },
   "contact": {
-    "heading_part1": "Have something difficult?",
-    "heading_part2": "Good.",
-    "description": "Tell us what you want to build, organize, or accelerate. We will answer plainly: what makes sense, where to start, and how to make it lighter."
+    "heading_part1": "Got an idea?",
+    "heading_part2": "Let's talk.",
+    "description": "Tell us about your business, idea or challenge. Together, we will work out what you actually need and how we can turn it into a thoughtfully designed solution."
   },
   "footer": {
-    "heading_main": "Let’s make things",
-    "heading_italic": "that make sense.",
-    "description": "Sokołek Studio is our shared Poznań project. We combine years of engineering experience with aesthetic judgment to help companies work smarter and look sharper.",
-    "contact": "LET’S TALK ABOUT YOUR BUSINESS",
-    "meta": "Boutique design / AI studio",
-    "location": "Poznań / remote"
+    "contact": "Get in touch"
   },
   "cookieConsent": {
     "label": "Cookie consent",
     "heading": "Can we use analytics cookies?",
-    "description": "We use Google Analytics only to understand how people use this site. It starts only after you accept.",
+    "description": "We use Google Analytics to better understand how visitors use our website. Analytics will only be enabled after you give us your consent.",
     "accept": "Accept analytics",
     "reject": "Reject",
     "settings": "Cookie settings"

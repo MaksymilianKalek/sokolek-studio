@@ -22,22 +22,28 @@ export function Philosophy() {
 
           <div className="space-y-12">
             <Reveal delay={0.08}>
-              <p className="heading-sm text-ink">
-                {t('manifesto.sectionTwo.heading_part1')}{' '}
-                <span className="font-serif font-normal italic tracking-[-0.035em]">
-                  {t('manifesto.sectionTwo.heading_part2')}
-                </span>
-              </p>
-            </Reveal>
+              <div className="grid gap-8 sm:grid-cols-2">
+                <div>
+                  <h3 className="heading-sm text-ink">
+                    {t('manifesto.sectionTwo.heading_part1')}
+                  </h3>
+                  <p className="body-copy mt-5">
+                    {t('manifesto.sectionOne.description')}
+                  </p>
+                </div>
 
-            <Reveal delay={0.16}>
-              <div className="body-copy grid gap-5 sm:grid-cols-2">
-                <p>{t('manifesto.sectionOne.description')}</p>
-                <p>{t('manifesto.sectionTwo.description')}</p>
+                <div>
+                  <h3 className="heading-sm font-serif font-normal italic tracking-[-0.035em] text-ink">
+                    {t('manifesto.sectionTwo.heading_part2')}
+                  </h3>
+                  <p className="body-copy mt-5">
+                    {t('manifesto.sectionTwo.description')}
+                  </p>
+                </div>
               </div>
             </Reveal>
 
-            <Reveal delay={0.24}>
+            <Reveal delay={0.16}>
               <ol className="grid gap-5">
                 {principles.map((principle, index) => (
                   <li

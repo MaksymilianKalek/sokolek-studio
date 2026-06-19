@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { motion, useReducedMotion } from 'motion/react'
+import { motionDuration, motionTransition } from '../lib/motion'
 
 type LoadingCurtainProps = {
   isDismissing: boolean
@@ -41,8 +42,8 @@ export function LoadingCurtain({ isDismissing, onComplete, onReadyToType }: Load
       animate={{ opacity: isDismissing ? 0 : 1 }}
       transition={
         prefersReducedMotion
-          ? { duration: 0 }
-          : { duration: 0.65, ease: [0.76, 0, 0.24, 1] }
+          ? { duration: motionDuration.instant }
+          : motionTransition.theme
       }
       onAnimationComplete={() => {
         if (isDismissing) {

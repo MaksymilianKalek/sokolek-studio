@@ -7,11 +7,7 @@ const footerLinks = [
   { labelKey: 'nav.contact', href: '#contact' },
 ]
 
-type FooterProps = {
-  onCookieSettingsClick: () => void
-}
-
-export function Footer({ onCookieSettingsClick }: FooterProps) {
+export function Footer() {
   const { t } = useTranslation()
 
   return (
@@ -24,7 +20,7 @@ export function Footer({ onCookieSettingsClick }: FooterProps) {
               <a
                 key={link.href}
                 href={link.href}
-                className="interactive-accent-link focus-ring-inverted transition-colors duration-300 ease-in-out hover:text-paper"
+                className="interactive-accent-link focus-ring-inverted transition-colors hover:text-paper"
               >
                 {t(link.labelKey)}
               </a>
@@ -33,14 +29,6 @@ export function Footer({ onCookieSettingsClick }: FooterProps) {
 
           <div className="flex flex-wrap gap-x-6 gap-y-3 sm:justify-end">
             <p>© 2026 Sokołek Studio</p>
-            <p>{t('common.builtIn')}</p>
-            <button
-              type="button"
-              onClick={onCookieSettingsClick}
-              className="interactive-accent-link focus-ring-inverted cursor-pointer text-left transition-colors duration-300 ease-in-out hover:text-paper"
-            >
-              {t('cookieConsent.settings')}
-            </button>
           </div>
         </div>
       </div>

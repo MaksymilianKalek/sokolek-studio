@@ -13,7 +13,7 @@ import { useSmoothScroll } from './hooks/use-smooth-scroll'
 function App() {
   useSmoothScroll()
 
-  const { acceptConsent, consent, rejectConsent, resetConsent } = useCookieConsent()
+  const { acceptConsent, consent, rejectConsent } = useCookieConsent()
   const [portfolioThemeActive, setPortfolioThemeActive] = useState(false)
   const [isIntroTypingActive, setIsIntroTypingActive] = useState(false)
   const [isIntroDismissing, setIsIntroDismissing] = useState(false)
@@ -37,7 +37,7 @@ function App() {
       <Services />
       <PortfolioPreview onActiveChange={setPortfolioThemeActive} />
       <Philosophy />
-      <Footer onCookieSettingsClick={resetConsent} />
+      <Footer />
       <AnimatePresence>
         {consent === 'pending' ? (
           <CookieConsentBanner onAccept={acceptConsent} onReject={rejectConsent} />
