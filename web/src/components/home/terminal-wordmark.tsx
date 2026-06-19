@@ -7,6 +7,7 @@ const typingInterval = 118
 
 type TerminalWordmarkProps = {
   isActive: boolean
+  isIntroActive: boolean
   isOnIntroCurtain: boolean
   onTyped: () => void
   word: string
@@ -14,6 +15,7 @@ type TerminalWordmarkProps = {
 
 export function TerminalWordmark({
   isActive,
+  isIntroActive,
   isOnIntroCurtain,
   onTyped,
   word,
@@ -60,7 +62,9 @@ export function TerminalWordmark({
   return (
     <span
       aria-hidden="true"
-      className={`theme-color-transition relative z-[10000] inline-flex min-h-[1.08em] items-center gap-2 font-satoshi type-hero font-semibold leading-[1.1] tracking-[-0.04em] ${
+      className={`hero-wordmark relative z-[10000] inline-flex min-h-[1.08em] items-center gap-2 ${
+        isIntroActive ? 'intro-wordmark-color-transition' : ''
+      } ${
         isOnIntroCurtain ? 'text-paper' : 'text-ink'
       }`}
     >

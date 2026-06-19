@@ -11,18 +11,19 @@ export function Contact({ inverted = false }: ContactProps) {
   const { t } = useTranslation()
   const sectionClassName = inverted
     ? 'px-0 py-20 text-paper lg:py-28'
-    : 'px-5 py-24 sm:px-8 lg:px-10 lg:py-32'
+    : 'site-section'
   const labelClassName = inverted ? 'text-paper/42' : undefined
   const descriptionClassName = inverted ? 'text-paper/62' : 'text-ink-soft'
   const ctaClassName = inverted ? 'primary-cta primary-cta--inverted' : 'primary-cta'
+  const focusClassName = inverted ? 'focus-ring-inverted' : 'focus-ring'
 
   return (
     <section className={sectionClassName}>
       <Reveal>
-        <div id="contact" className="mx-auto max-w-[92rem] scroll-mt-6">
+        <div id="contact" className="site-container site-anchor">
           <SectionLabel className={labelClassName}>{t('nav.contact')}</SectionLabel>
           <div className="mt-8 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
-            <h2 className="font-satoshi type-heading-md font-semibold leading-[1.1] tracking-[-0.04em]">
+            <h2 className="heading-md">
               {t('contact.heading_part1')}{' '}
               <span className="font-serif font-normal italic tracking-[-0.035em]">
                 {t('contact.heading_part2')}
@@ -30,12 +31,12 @@ export function Contact({ inverted = false }: ContactProps) {
             </h2>
 
             <div>
-              <p className={`max-w-xl font-inter type-body-lg leading-[1.1] ${descriptionClassName}`}>
+              <p className={`body-copy-lg max-w-xl ${descriptionClassName}`}>
                 {t('contact.description')}
               </p>
               <a
                 href="mailto:hello@sokolek.com"
-                className={`${ctaClassName} group mt-8 inline-flex w-fit items-center gap-3 px-5 py-3 font-mono type-micro font-medium uppercase tracking-widest outline-none focus-visible:ring-2 focus-visible:ring-paper focus-visible:ring-offset-4 focus-visible:ring-offset-ink`}
+                className={`${ctaClassName} ${focusClassName} action-text group mt-8 inline-flex w-fit items-center gap-3 px-5 py-3`}
               >
                 <span className="relative z-10">{t('footer.contact')}</span>
                 <ArrowUpRight className="primary-cta-icon relative z-10 size-4" />

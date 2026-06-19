@@ -67,9 +67,9 @@ export function PortfolioPreview({ onActiveChange }: PortfolioPreviewProps) {
   return (
     <section
       ref={sectionRef}
-      className="bg-paper px-5 py-20 text-ink sm:px-8 lg:px-10 lg:py-24"
+      className="site-section-compact bg-paper text-ink"
     >
-      <div id="portfolio" className="mx-auto max-w-[92rem] scroll-mt-6">
+      <div id="portfolio" className="site-container site-anchor">
         <Reveal>
           <SectionLabel>{t('portfolio.label')}</SectionLabel>
         </Reveal>
@@ -77,11 +77,11 @@ export function PortfolioPreview({ onActiveChange }: PortfolioPreviewProps) {
         <Reveal>
           <div className="mt-8 flex flex-col justify-between gap-8 md:flex-row md:items-start">
             <div>
-              <h2 className="max-w-4xl font-satoshi type-heading-md font-semibold leading-[1.1] tracking-[-0.04em] text-ink">
+              <h2 className="heading-md max-w-4xl text-ink">
                 {t('portfolio.heading')}
               </h2>
             </div>
-            <p className="max-w-sm font-inter type-body leading-[1.1] text-ink-soft">
+            <p className="body-copy max-w-sm">
               {t('portfolio.description')}
             </p>
           </div>
@@ -91,40 +91,43 @@ export function PortfolioPreview({ onActiveChange }: PortfolioPreviewProps) {
           <article className="mt-10 grid items-stretch overflow-hidden lg:grid-cols-[1.1fr_0.9fr] lg:gap-10">
             <div className="relative h-[20rem] overflow-hidden text-paper sm:h-[24rem] lg:h-[30rem]">
               <div className="accent-gradient absolute inset-x-0 top-0 z-10 h-1" />
-              <div className="h-full overflow-hidden">
+              <a
+                href="https://dogtok.pl"
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`${t('common.visitLiveSite')}: ${t('portfolio.dogTok.subtitle')}`}
+                className="focus-ring block h-full overflow-hidden"
+              >
                 <img
-                  src="/portfolio/dogtok-1600.webp"
-                  srcSet="/portfolio/dogtok-1600.webp 1600w, /portfolio/dogtok-2400.webp 2400w"
+                  src="/portfolio/dogtok-screenshot-1600.webp"
+                  srcSet="/portfolio/dogtok-screenshot-1600.webp 1600w, /portfolio/dogtok-screenshot-2400.webp 2400w"
                   sizes="(min-width: 1024px) 52vw, calc(100vw - 2.5rem)"
                   alt={`${t('portfolio.dogTok.subtitle')} website designed and developed by Sokołek Studio`}
                   width="1600"
-                  height="1067"
+                  height="766"
                   loading="eager"
                   decoding="async"
                   fetchPriority="high"
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.02]"
                 />
-              </div>
+              </a>
             </div>
 
             <div className="flex flex-col justify-between gap-10 pt-8 lg:pt-0">
               <div>
-                <p className="font-mono type-micro uppercase tracking-[0.2em] text-ink-muted">
-                  {t('portfolio.dogTok.data.stack')}
-                </p>
-                <h3 className="mt-5 font-satoshi type-heading-sm font-medium leading-[1.1] tracking-[-0.045em]">
+                <h3 className="heading-sm tracking-[-0.045em]">
                   {t('portfolio.dogTok.subtitle')}
                 </h3>
-                <p className="mt-5 font-inter type-body leading-[1.1] text-ink-soft">
+                <p className="body-copy mt-5">
                   {t('portfolio.dogTok.summary')}
                 </p>
                 <dl className="mt-7 grid gap-x-8 gap-y-6 sm:grid-cols-2">
                   {specs.map((spec) => (
                     <div key={spec.label}>
-                      <dt className="font-mono type-micro uppercase tracking-[0.2em] text-ink-muted">
+                      <dt className="meta-text tracking-[0.2em] text-ink-muted">
                         {spec.label}
                       </dt>
-                      <dd className="mt-2 font-mono type-micro uppercase leading-[1.1] tracking-widest text-ink-soft">
+                      <dd className="meta-text mt-2 text-ink-soft">
                         {spec.value}
                       </dd>
                     </div>
@@ -137,7 +140,7 @@ export function PortfolioPreview({ onActiveChange }: PortfolioPreviewProps) {
                   href="https://dogtok.pl"
                   target="_blank"
                   rel="noreferrer"
-                  className="group inline-flex w-fit items-center gap-3 py-3 font-mono type-micro font-medium uppercase tracking-widest text-ink outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-4 focus-visible:ring-offset-paper"
+                  className="action-text focus-ring group inline-flex w-fit items-center gap-3 py-3 text-ink"
                 >
                   <span className="interactive-accent-link pb-0.5">
                     {t('common.visitLiveSite')}

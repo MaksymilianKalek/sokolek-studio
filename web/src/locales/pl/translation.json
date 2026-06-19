@@ -6,87 +6,100 @@
     "language": "Język"
   },
   "common": {
-    "startProject": "Zacznij projekt",
-    "visitLiveSite": "Live",
-    "about": "O nas",
-    "builtIn": "Stworzone z troską w Poznaniu"
+    "startProject": "Porozmawiajmy",
+    "visitLiveSite": "Zobacz stronę",
+    "about": "O studiu",
+    "builtIn": "Zaprojektowane i zbudowane z troską w Poznaniu"
   },
   "hero": {
     "title": "Sokołek Studio",
-    "subtitle": "AI i design, które mają sens",
-    "description": "Jesteśmy kameralnym studiem z Poznania. Tworzymy zaawansowane systemy AI, inteligentne strony i wizerunek dla firm, które cenią jakość. Po prostu technologia, która ma znaczenie i ułatwia życie."
+    "subtitle": "Technologia i design w jednym miejscu.",
+    "description": "Jesteśmy autorskim studiem technologicznym z Poznania łączącym inżynierię z kreatywnością. Z nami zbudujesz swoją markę od podstaw. Od tożsamości wizualnej po zaawansowane systemy. Projektujemy z intencją. Odczarowujemy sztuczną inteligencję, wykorzystując ją etycznie i tylko tam, gdzie to naprawdę potrzebne. Wierzymy w technologię, która ma prawdziwe znaczenie i realnie ułatwia codzienną pracę."
   },
   "services": {
     "label": "Usługi",
-    "heading": "Rozwiązujemy konkretne problemy.",
+    "heading": "Małe studio. Pełna uwaga.",
+    "description": "Marka, strona, technologia i komunikacja powinny mówić jednym głosem. Dlatego patrzymy na firmę jako całość i dobieramy zakres pracy do tego, czego naprawdę potrzebuje.",
     "items": [
       {
         "index": "01",
-        "title": "Wizerunek Marki",
-        "tags": "[AUTENTYCZNA TOŻSAMOŚĆ] [CZYSTY DESIGN] [TYPOGRAFIA]"
+        "title": "AI",
+        "description": "Tworzymy narzędzia, które upraszczają pracę z dokumentami, wiedzą i powtarzalnymi procesami.",
+        "tags": "ASYSTENCI · AUTOMATYZACJE · NARZĘDZIA"
       },
       {
         "index": "02",
-        "title": "Systemy AI",
-        "tags": "[PORZĄDEK W DOKUMENTACH] [OSZCZĘDNOŚĆ CZASU] [REALNA WARTOŚĆ]"
+        "title": "Web Design",
+        "description": "Projektujemy szybkie i dopracowane strony oraz produkty cyfrowe, które wyglądają i brzmią jak Twoja marka.",
+        "tags": "UX/UI · DEVELOPMENT · SEO"
       },
       {
         "index": "03",
-        "title": "Strony Internetowe",
-        "tags": "[SZYBKIE DZIAŁANIE] [CZYSTY KOD] [BEZ ZBĘDNYCH WTYCZEK]"
+        "title": "Marka od podstaw",
+        "description": "Nadajemy firmom wyrazisty charakter — od pierwszej myśli po język, obraz i najmniejszy detal.",
+        "tags": "BRANDING · IDENTYFIKACJA WIZUALNA · STRATEGIA"
       },
       {
         "index": "04",
-        "title": "Sesje wizerunkowe",
-        "tags": "[WYBÓR TECHNOLOGII] [BEZPIECZEŃSTWO] [OPTYMALIZACJA PROCESÓW]"
+        "title": "Marka na co dzień",
+        "description": "Tworzymy treści, sesje i rytm komunikacji, dzięki którym marka pozostaje spójna także długo po premierze.",
+        "tags": "SOCIAL MEDIA · FOTO I WIDEO · OPIEKA KREATYWNA"
       }
     ]
   },
   "portfolio": {
     "label": "Portfolio",
-    "heading": "Cyfrowy dom dla miejsca stworzonego z prawdziwą pasją.",
-    "description": "DOG TOK to szkoleniowy raj dla psów i ich przewodników: 3,5 hektara ogrodzonej przestrzeni, warsztaty, obozy, domki, staw i infrastruktura zaprojektowana z myślą o skupieniu.",
+    "heading": "Miejsce z charakterem zasługiwało na własny język.",
+    "description": "DOG TOK to 3,5 hektara przestrzeni stworzonej dla psów i ich przewodników. Warsztaty, obozy, noclegi, staw i rozbudowana infrastruktura tworzą wyjątkowe miejsce, którego różnorodna oferta potrzebowała czytelnej i spójnej oprawy.",
     "dogTok": {
       "title": "DOG TOK",
-      "subtitle": "DOG TOK Szkoleniowy Raj",
-      "summary": "Minimalna, strona-wizytówka dla miejsca w Magicznym Lesie. Różnorodną ofertę warsztatów, obozów, noclegów, psich udogodnień i harmonogramu 2026 porządkujemy w czytelną strukturę.",
+      "subtitle": "Szkoleniowy Raj w Magicznym Lesie",
+      "summary": "Zaprojektowaliśmy spokojną, przejrzystą stronę, która oddaje charakter miejsca i prowadzi użytkownika przez jego rozbudowaną ofertę. Warsztaty, obozy, noclegi, udogodnienia i harmonogram wydarzeń na 2026 rok zamknęliśmy w prostej strukturze, po której łatwo się poruszać.",
       "labels": {
         "client": "KLIENT",
         "industry": "BRANŻA",
-        "stack": "TECHNOLOGIA",
+        "stack": "ZAKRES",
         "year": "ROK"
       },
       "data": {
         "client": "DOG TOK SZKOLENIOWY RAJ",
-        "industry": "KYNOLOGIA / LOKALNY BIZNES",
-        "stack": "WEB / AUTOMATYZACJA",
+        "industry": "KYNOLOGIA / TURYSTYKA",
+        "stack": "STRATEGIA / DESIGN / WEB",
         "year": "2026"
       }
     }
   },
   "manifesto": {
-    "label": "Filozofia",
+    "label": "Nasze podejście",
     "sectionOne": {
-      "heading": "Dobra praca broni się sama.",
-      "description": "Wierzymy w cyfrowe rzemiosło. Tak jak porządne rzeczy tworzy się z naturalnych, wysokich jakościowo materiałów, tak nasze systemy budujemy od zera, z czystego kodu. Każdy przycisk i każda funkcja ma ułatwiać Ci pracę. Jeśli coś nie jest przydatne – po prostu to wyrzucamy."
+      "heading": "Dobra praca zaczyna się od uważności.",
+      "description": "Traktujemy design i technologię jak rzemiosło. Najpierw słuchamy, poznajemy firmę i szukamy tego, co naprawdę ma znaczenie. Dopiero później projektujemy. Każdy element powinien mieć swoje miejsce, każda funkcja swoje zadanie, a całość służyć ludziom, którzy będą z niej korzystać."
     },
     "sectionTwo": {
-      "heading_part1": "Przynieś nam swój chaos.",
-      "heading_part2": "Zrobimy z nim porządek.",
-      "description": "Opowiedz nam, co budujesz, co musi działać lepiej i gdzie design albo AI mogą zdjąć z Ciebie tarcie. Odpowiemy z konkretnym następnym krokiem."
+      "heading_part1": "Przynieś nam swój pomysł.",
+      "heading_part2": "Nadamy mu właściwą formę.",
+      "description": "Możesz przyjść do nas z gotową wizją, luźnym szkicem albo problemem, którego nie potrafisz jeszcze nazwać. Wspólnie określimy kierunek i zaproponujemy rozwiązanie dopasowane do skali, charakteru i ambicji Twojej firmy."
     },
     "principles": [
-      "Zacznij od tego, co musi stać się oczywiste.",
-      "Zaprojektuj najmniejszy system, który uniesie ambicję.",
-      "Usuń wszystko, co nie pomaga użytkownikowi."
+      "Najpierw rozumiemy. Dopiero później projektujemy.",
+      "Tworzymy na miarę, nie według gotowego schematu.",
+      "Dbamy o szczegóły, ale nie komplikujemy."
     ]
   },
   "contact": {
     "heading_part1": "Masz coś trudnego?",
     "heading_part2": "Dobrze.",
-    "description": "Napisz, co chcesz zbudować, uporządkować albo przyspieszyć. Odpowiemy konkretnie: co ma sens, od czego zacząć i jak zrobić to bez zbędnego ciężaru."
+    "description": "Napisz, nad czym pracujesz i czego dziś potrzebuje Twoja firma. Odpowiemy konkretnie: co warto zrobić, od czego zacząć i jak może wyglądać nasza wspólna praca."
   },
   "footer": {
-    "contact": "POGADAJMY O TWOIM BIZNESIE"
+    "contact": "POROZMAWIAJMY O TYM, CO TWORZYSZ"
+  },
+  "cookieConsent": {
+    "label": "Zgoda na cookies",
+    "heading": "Czy możemy używać cookies analitycznych?",
+    "description": "Korzystamy z Google Analytics tylko po to, żeby lepiej rozumieć, jak odwiedzający używają strony. Uruchomimy je dopiero po Twojej zgodzie.",
+    "accept": "Akceptuję analitykę",
+    "reject": "Odrzucam",
+    "settings": "Ustawienia cookies"
   }
 }

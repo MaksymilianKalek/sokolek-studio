@@ -66,30 +66,39 @@ export function Hero({
   return (
     <section className="relative flex min-h-svh flex-col px-5 py-5 sm:min-h-dvh sm:px-8 lg:px-10">
       <header className="flex items-center justify-between gap-6">
-        <span className="font-satoshi type-body font-medium tracking-tight">
-          Sokołek
-        </span>
+        <div
+          aria-label={heroTitle}
+          className="inline-flex size-9 items-center justify-center sm:size-10"
+        >
+          <img
+            src="/logo.svg"
+            alt=""
+            width="77"
+            height="78"
+            className="h-full w-full"
+          />
+        </div>
 
         <nav aria-label="Main navigation" className="hidden items-center gap-7 sm:flex">
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="interactive-accent-link font-satoshi type-body font-medium tracking-tight text-ink-soft outline-none focus-visible:ring-2 focus-visible:ring-ink"
+              className="interactive-accent-link focus-ring nav-text text-ink-soft"
             >
               {item.label}
             </a>
           ))}
           <div
             aria-label={t('nav.language')}
-            className="flex items-center gap-2 font-satoshi type-body font-medium tracking-tight text-ink-muted"
+            className="nav-text flex items-center gap-2 text-ink-muted"
           >
             {(['pl', 'en'] as const).map((language) => (
               <button
                 key={language}
                 type="button"
                 onClick={() => i18n.changeLanguage(language)}
-                className={`interactive-accent-link cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-ink ${
+                className={`interactive-accent-link focus-ring cursor-pointer ${
                   activeLanguage === language ? 'text-ink' : 'text-ink-muted'
                 }`}
               >
@@ -109,13 +118,14 @@ export function Hero({
             <span
               ref={studioAxisMeasureRef}
               aria-hidden="true"
-              className="pointer-events-none absolute left-0 top-0 -z-10 whitespace-pre font-satoshi type-hero font-semibold leading-[1.1] tracking-[-0.04em] opacity-0"
+              className="hero-wordmark pointer-events-none absolute left-0 top-0 -z-10 whitespace-pre opacity-0"
             >
               {studioAxisPrefix}
             </span>
             <TerminalWordmark
               key={heroTitle}
               isActive={startTyping}
+              isIntroActive={isIntroActive}
               isOnIntroCurtain={isIntroActive && !isIntroDismissing}
               onTyped={onIntroTypingComplete}
               word={heroTitle}
@@ -124,20 +134,20 @@ export function Hero({
         </div>
 
         <div
-          className="grid gap-8 pt-4 md:grid-cols-[minmax(0,var(--studio-axis,1.1fr))_minmax(18rem,1fr)_auto] md:items-start"
+          className="grid gap-y-8 pt-4 md:grid-cols-[minmax(0,var(--studio-axis,1.1fr))_minmax(18rem,1fr)_auto] md:items-start"
           style={heroGridStyle}
         >
-          <p className="max-w-2xl font-satoshi type-heading-sm font-medium leading-[1.1] tracking-[-0.035em] text-ink">
+          <p className="heading-sm max-w-2xl text-ink">
             {t('hero.subtitle')}
           </p>
 
-          <p className="max-w-md font-inter type-body leading-[1.1] text-ink-soft">
+          <p className="body-copy max-w-md">
             {t('hero.description')}
           </p>
 
           <a
             href="mailto:hello@sokolek.com"
-            className="primary-cta group inline-flex w-fit items-center gap-3 px-5 py-3 font-mono type-micro font-medium uppercase tracking-widest outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-4 focus-visible:ring-offset-paper"
+            className="primary-cta focus-ring action-text group inline-flex w-fit items-center gap-3 px-5 py-3 md:ml-8"
           >
             <span className="relative z-10">{t('common.startProject')}</span>
             <ArrowUpRight className="primary-cta-icon relative z-10 size-4" />

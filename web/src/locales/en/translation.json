@@ -93,5 +93,13 @@
     "contact": "LET’S TALK ABOUT YOUR BUSINESS",
     "meta": "Boutique design / AI studio",
     "location": "Poznań / remote"
+  },
+  "cookieConsent": {
+    "label": "Cookie consent",
+    "heading": "Can we use analytics cookies?",
+    "description": "We use Google Analytics only to understand how people use this site. It starts only after you accept.",
+    "accept": "Accept analytics",
+    "reject": "Reject",
+    "settings": "Cookie settings"
   }
 }
