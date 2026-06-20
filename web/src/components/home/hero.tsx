@@ -134,7 +134,7 @@ export function Hero({
 
       <div
         id="top"
-        className="flex flex-1 flex-col pb-12 pt-16 sm:justify-end sm:gap-10 sm:pb-14 sm:pt-28 lg:pb-16"
+        className="flex flex-1 flex-col justify-between pb-0 pt-6 sm:justify-end sm:gap-10 sm:pb-14 sm:pt-28 lg:pb-16"
       >
         <div className="flex min-h-0 flex-1 flex-col justify-center sm:flex-none sm:justify-start">
           <div className="max-w-[94rem]">
@@ -164,7 +164,7 @@ export function Hero({
         </div>
 
         <div
-          className={`relative z-10 grid gap-y-6 transition-all duration-700 ease-[var(--ease-expressive)] md:grid-cols-[minmax(0,var(--studio-axis,1.1fr))_minmax(18rem,1fr)_auto] md:items-start md:gap-y-8 md:pt-4 ${introRevealClassName}`}
+          className={`relative z-10 grid gap-y-6 transition-all duration-700 ease-[var(--ease-expressive)] sm:mt-0 md:grid-cols-[minmax(0,var(--studio-axis,1.1fr))_minmax(18rem,1fr)_auto] md:items-start md:gap-y-8 md:pt-4 ${introRevealClassName}`}
           style={heroGridStyle}
         >
           <p className="heading-sm hidden max-w-2xl text-[2.125rem] leading-[1.04] text-ink sm:block sm:text-[clamp(1.875rem,4vw,3rem)] sm:leading-[1.1]">

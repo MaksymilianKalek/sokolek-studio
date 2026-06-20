@@ -48,7 +48,7 @@ function App() {
       <Philosophy />
       <Footer />
       <AnimatePresence>
-        {consent === 'pending' ? (
+        {isIntroComplete && consent === 'pending' ? (
           <CookieConsentBanner onAccept={acceptConsent} onReject={rejectConsent} />
         ) : null}
       </AnimatePresence>
