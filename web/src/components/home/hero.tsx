@@ -164,13 +164,13 @@ export function Hero({
             {t('hero.subtitle')}
           </p>
 
-          <p className="body-copy order-3 max-w-md text-[1.0625rem] leading-[1.14] sm:order-none sm:text-base sm:leading-[1.1]">
+          <p className="body-copy max-w-md text-[1.0625rem] leading-[1.14] sm:text-base sm:leading-[1.1]">
             {t('hero.description')}
           </p>
 
           <a
             href="mailto:hello@sokolek.com"
-            className="primary-cta focus-ring action-text group order-2 inline-flex w-fit items-center gap-3 px-5 py-3 sm:order-none md:ml-8"
+            className="primary-cta focus-ring action-text group inline-flex w-fit items-center gap-3 px-5 py-3 md:ml-8"
           >
             <span className="relative z-10">{t('common.startProject')}</span>
             <ArrowUpRight className="primary-cta-icon relative z-10 size-4" />

@@ -8,6 +8,31 @@ type PortfolioPreviewProps = {
   onActiveChange: (isActive: boolean) => void
 }
 
+const dogTokScreenshotSrc = '/portfolio/dogtok-screenshot-960.webp'
+const dogTokScreenshotSrcSet = '/portfolio/dogtok-screenshot-640.webp 640w, /portfolio/dogtok-screenshot-960.webp 960w, /portfolio/dogtok-screenshot-1200.webp 1200w, /portfolio/dogtok-screenshot-1600.webp 1600w, /portfolio/dogtok-screenshot-2400.webp 2400w, /portfolio/dogtok-screenshot-3200.webp 3200w'
+const dogTokScreenshotSizes = '(min-width: 1024px) 52vw, calc(100vw - 2.5rem)'
+const dogTokPreloadSelector = 'link[data-dogtok-screenshot-preload="true"]'
+
+let hasRequestedDogTokPreload = false
+
+function preloadDogTokScreenshot() {
+  if (hasRequestedDogTokPreload || document.querySelector(dogTokPreloadSelector)) {
+    return
+  }
+
+  hasRequestedDogTokPreload = true
+
+  const preloadLink = document.createElement('link')
+  preloadLink.rel = 'preload'
+  preloadLink.as = 'image'
+  preloadLink.href = dogTokScreenshotSrc
+  preloadLink.type = 'image/webp'
+  preloadLink.setAttribute('imagesrcset', dogTokScreenshotSrcSet)
+  preloadLink.setAttribute('imagesizes', dogTokScreenshotSizes)
+  preloadLink.setAttribute('data-dogtok-screenshot-preload', 'true')
+  document.head.append(preloadLink)
+}
+
 export function PortfolioPreview({ onActiveChange }: PortfolioPreviewProps) {
   const { t } = useTranslation()
   const sectionRef = useRef<HTMLElement>(null)
@@ -64,6 +89,21 @@ export function PortfolioPreview({ onActiveChange }: PortfolioPreviewProps) {
     }
   }, [onActiveChange])
 
+  useEffect(() => {
+    const preloadOnScrollIntent = () => {
+      preloadDogTokScreenshot()
+    }
+
+    const options = { once: true, passive: true }
+    window.addEventListener('wheel', preloadOnScrollIntent, options)
+    window.addEventListener('touchmove', preloadOnScrollIntent, options)
+
+    return () => {
+      window.removeEventListener('wheel', preloadOnScrollIntent)
+      window.removeEventListener('touchmove', preloadOnScrollIntent)
+    }
+  }, [])
+
   return (
     <section
       ref={sectionRef}
@@ -91,15 +131,15 @@ export function PortfolioPreview({ onActiveChange }: PortfolioPreviewProps) {
                 className="focus-ring group/image relative block h-full overflow-hidden"
               >
                 <img
-                  src="/portfolio/dogtok-screenshot-960.webp"
-                  srcSet="/portfolio/dogtok-screenshot-640.webp 640w, /portfolio/dogtok-screenshot-960.webp 960w, /portfolio/dogtok-screenshot-1200.webp 1200w, /portfolio/dogtok-screenshot-1600.webp 1600w, /portfolio/dogtok-screenshot-2400.webp 2400w, /portfolio/dogtok-screenshot-3200.webp 3200w"
-                  sizes="(min-width: 1024px) 52vw, calc(100vw - 2.5rem)"
+                  src={dogTokScreenshotSrc}
+                  srcSet={dogTokScreenshotSrcSet}
+                  sizes={dogTokScreenshotSizes}
                   alt={`${t('portfolio.dogTok.subtitle')} website designed and developed by Sokołek Studio`}
                   width="960"
                   height="460"
-                  loading="eager"
+                  loading="lazy"
                   decoding="async"
-                  fetchPriority="high"
+                  fetchPriority="auto"
                   className="h-full w-full object-cover"
                 />
                 <span
