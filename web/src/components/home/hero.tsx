@@ -6,7 +6,7 @@ import { TerminalWordmark } from './terminal-wordmark'
 
 type HeroProps = {
   isIntroActive: boolean
-  isIntroComplete: boolean
+  isIntroDismissing: boolean
   onIntroTypingComplete: () => void
   startTyping: boolean
 }
@@ -48,7 +48,7 @@ function getSecondWordAxisPrefix(value: string) {
 
 export function Hero({
   isIntroActive,
-  isIntroComplete,
+  isIntroDismissing,
   onIntroTypingComplete,
   startTyping,
 }: HeroProps) {
@@ -65,10 +65,6 @@ export function Hero({
   const heroGridStyle = studioAxis
     ? ({ '--studio-axis': `${studioAxis}px` } as CSSProperties)
     : undefined
-  const introRevealClassName = isIntroComplete
-    ? 'opacity-100 translate-y-0'
-    : 'pointer-events-none opacity-0 translate-y-3'
-
   useEffect(() => {
     const measureNode = studioAxisMeasureRef.current
 
@@ -95,9 +91,7 @@ export function Hero({
     <section className="hero-shader-shell relative flex min-h-svh flex-col overflow-hidden px-5 py-5 sm:min-h-dvh sm:px-8 lg:px-10">
       <ShaderGradientBackground />
 
-      <header
-        className={`relative z-10 flex items-center justify-between gap-6 transition-all duration-700 ease-[var(--ease-expressive)] ${introRevealClassName}`}
-      >
+      <header className="relative z-10 flex items-center justify-between gap-6">
         <div
           aria-label={heroTitle}
           className="inline-flex size-9 items-center justify-center sm:size-10"
@@ -150,34 +144,33 @@ export function Hero({
                 key={heroTitle}
                 isActive={startTyping}
                 isIntroActive={isIntroActive}
+                isOnIntroCurtain={isIntroActive && !isIntroDismissing}
                 onTyped={onIntroTypingComplete}
                 word={heroTitle}
               />
             </h1>
 
-            <p
-              className={`heading-sm relative z-10 mt-6 max-w-2xl text-[2.125rem] leading-[1.04] text-ink transition-all duration-700 ease-[var(--ease-expressive)] sm:hidden ${introRevealClassName}`}
-            >
+            <p className="heading-sm relative z-10 mt-6 max-w-2xl text-[2.125rem] leading-[1.04] text-ink sm:hidden">
               {t('hero.subtitle')}
             </p>
           </div>
         </div>
 
         <div
-          className={`relative z-10 grid gap-y-6 transition-all duration-700 ease-[var(--ease-expressive)] sm:mt-0 md:grid-cols-[minmax(0,var(--studio-axis,1.1fr))_minmax(18rem,1fr)_auto] md:items-start md:gap-y-8 md:pt-4 ${introRevealClassName}`}
+          className="relative z-10 grid gap-y-6 sm:mt-0 md:grid-cols-[minmax(0,var(--studio-axis,1.1fr))_minmax(18rem,1fr)_auto] md:items-start md:gap-y-8 md:pt-4"
           style={heroGridStyle}
         >
           <p className="heading-sm hidden max-w-2xl text-[2.125rem] leading-[1.04] text-ink sm:block sm:text-[clamp(1.875rem,4vw,3rem)] sm:leading-[1.1]">
             {t('hero.subtitle')}
           </p>
 
-          <p className="body-copy max-w-md text-[1.0625rem] leading-[1.14] sm:text-base sm:leading-[1.1]">
+          <p className="body-copy order-3 max-w-md text-[1.0625rem] leading-[1.14] sm:order-none sm:text-base sm:leading-[1.1]">
             {t('hero.description')}
           </p>
 
           <a
             href="mailto:hello@sokolek.com"
-            className="primary-cta focus-ring action-text group inline-flex w-fit items-center gap-3 px-5 py-3 md:ml-8"
+            className="primary-cta focus-ring action-text group order-2 inline-flex w-fit items-center gap-3 px-5 py-3 sm:order-none md:ml-8"
           >
             <span className="relative z-10">{t('common.startProject')}</span>
             <ArrowUpRight className="primary-cta-icon relative z-10 size-4" />

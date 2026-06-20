@@ -63,7 +63,6 @@ export function ShaderGradientBackground() {
         />
       </ShaderGradientCanvas>
       <div className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(circle_at_top,rgba(17,17,17,0.1),rgba(17,17,17,0.68)_58%,rgba(17,17,17,0.88))]" />
-      <div className="shader-gradient-load-cover absolute inset-0 z-20 bg-[#050505]" />
     </div>
   )
 }

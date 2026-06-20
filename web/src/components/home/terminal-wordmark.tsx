@@ -2,12 +2,13 @@ import { useEffect, useState } from 'react'
 import { motion, useReducedMotion } from 'motion/react'
 
 const cursorBlinkDuration = 1
-const introDismissDelay = 100
+const introDismissDelay = 500
 const typingInterval = 118
 
 type TerminalWordmarkProps = {
   isActive: boolean
   isIntroActive: boolean
+  isOnIntroCurtain: boolean
   onTyped: () => void
   word: string
 }
@@ -15,6 +16,7 @@ type TerminalWordmarkProps = {
 export function TerminalWordmark({
   isActive,
   isIntroActive,
+  isOnIntroCurtain,
   onTyped,
   word,
 }: TerminalWordmarkProps) {
@@ -62,7 +64,9 @@ export function TerminalWordmark({
       aria-hidden="true"
       className={`hero-wordmark relative z-[10000] inline-flex min-h-[1.08em] items-center gap-2 ${
         isIntroActive ? 'intro-wordmark-color-transition' : ''
-      } text-ink`}
+      } ${
+        isOnIntroCurtain ? 'text-[#fafafa]' : 'text-ink'
+      }`}
     >
       <span>{visibleText}</span>
       <motion.span
