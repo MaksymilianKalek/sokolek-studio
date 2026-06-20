@@ -29,12 +29,20 @@ function App() {
         portfolioThemeActive ? 'site-shell--portfolio' : ''
       }`}
     >
-      <Hero
-        isIntroActive={!isIntroComplete}
-        isIntroDismissing={isIntroDismissing}
-        onIntroTypingComplete={completeIntroTyping}
-        startTyping={isIntroTypingActive}
-      />
+      <div className="relative overflow-hidden">
+        <Hero
+          isIntroActive={!isIntroComplete}
+          isIntroDismissing={isIntroDismissing}
+          onIntroTypingComplete={completeIntroTyping}
+          startTyping={isIntroTypingActive}
+        />
+        <LoadingCurtain
+          className="absolute inset-0"
+          isDismissing={isIntroDismissing}
+          onComplete={() => setIsIntroComplete(true)}
+          onReadyToType={() => setIsIntroTypingActive(true)}
+        />
+      </div>
       <Services />
       <PortfolioPreview onActiveChange={setPortfolioThemeActive} />
       <Philosophy />
@@ -44,11 +52,6 @@ function App() {
           <CookieConsentBanner onAccept={acceptConsent} onReject={rejectConsent} />
         ) : null}
       </AnimatePresence>
-      <LoadingCurtain
-        isDismissing={isIntroDismissing}
-        onComplete={() => setIsIntroComplete(true)}
-        onReadyToType={() => setIsIntroTypingActive(true)}
-      />
     </main>
   )
 }

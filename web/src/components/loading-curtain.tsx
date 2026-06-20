@@ -3,12 +3,18 @@ import { motion, useReducedMotion } from 'motion/react'
 import { motionDuration, motionTransition } from '../lib/motion'
 
 type LoadingCurtainProps = {
+  className?: string
   isDismissing: boolean
   onComplete: () => void
   onReadyToType: () => void
 }
 
-export function LoadingCurtain({ isDismissing, onComplete, onReadyToType }: LoadingCurtainProps) {
+export function LoadingCurtain({
+  className = 'fixed inset-0',
+  isDismissing,
+  onComplete,
+  onReadyToType,
+}: LoadingCurtainProps) {
   const prefersReducedMotion = useReducedMotion()
   const [isVisible, setIsVisible] = useState(true)
 
@@ -37,7 +43,7 @@ export function LoadingCurtain({ isDismissing, onComplete, onReadyToType }: Load
   return (
     <motion.div
       aria-hidden="true"
-      className="fixed inset-0 z-[9999] bg-ink"
+      className={`${className} z-[9999] bg-ink`}
       initial={{ opacity: 1 }}
       animate={{ opacity: isDismissing ? 0 : 1 }}
       transition={
