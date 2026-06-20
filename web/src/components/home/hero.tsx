@@ -91,20 +91,7 @@ export function Hero({
     <section className="hero-shader-shell relative flex min-h-svh flex-col overflow-hidden px-5 py-5 sm:min-h-dvh sm:px-8 lg:px-10">
       <ShaderGradientBackground />
 
-      <header className="relative z-10 flex items-center justify-between gap-6">
-        <div
-          aria-label={heroTitle}
-          className="inline-flex size-9 items-center justify-center sm:size-10"
-        >
-          <img
-            src="/logo.svg"
-            alt=""
-            width="77"
-            height="78"
-            className="h-full w-full"
-          />
-        </div>
-
+      <header className="relative z-10 flex items-center justify-end gap-6">
         <nav
           aria-label="Main navigation"
           className="hidden items-center gap-7 font-mono text-base font-medium leading-[1.1] tracking-[-0.025em] sm:flex"
