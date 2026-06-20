@@ -10,7 +10,7 @@ const shaderGradientProps = {
   cAzimuthAngle: 270,
   cDistance: 0.5,
   cPolarAngle: 180,
-  cameraZoom: 35.1,
+  cameraZoom: 15.1,
   color1: '#73bfc4',
   color2: '#ff810a',
   color3: '#8da0ce',
