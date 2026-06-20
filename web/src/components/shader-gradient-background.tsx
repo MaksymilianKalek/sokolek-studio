@@ -4,8 +4,8 @@ import { ShaderGradient, ShaderGradientCanvas } from '@shadergradient/react'
 const shaderGradientProps = {
   animate: 'on',
   axesHelper: 'off',
-  bgColor1: '#000000',
-  bgColor2: '#000000',
+  bgColor1: '#111111',
+  bgColor2: '#111111',
   brightness: 0.8,
   cAzimuthAngle: 270,
   cDistance: 0.5,
@@ -39,7 +39,7 @@ const shaderGradientProps = {
   uAmplitude: 3.2,
   uDensity: 0.8,
   uFrequency: 5.5,
-  uSpeed: 0.1,
+  uSpeed: 0.2,
   uStrength: 0.3,
   uTime: 0,
   wireframe: false,
@@ -62,7 +62,7 @@ export function ShaderGradientBackground() {
           {...(shaderGradientProps as unknown as ComponentProps<typeof ShaderGradient>)}
         />
       </ShaderGradientCanvas>
-      <div className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(circle_at_top,rgba(17,17,17,0.1),rgba(17,17,17,0.68)_58%,rgba(17,17,17,0.88))]" />
+      <div className="shader-gradient-vignette pointer-events-none absolute inset-0 z-10" />
     </div>
   )
 }

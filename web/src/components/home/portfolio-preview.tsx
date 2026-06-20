@@ -91,12 +91,12 @@ export function PortfolioPreview({ onActiveChange }: PortfolioPreviewProps) {
                 className="focus-ring group/image relative block h-full overflow-hidden"
               >
                 <img
-                  src="/portfolio/dogtok-screenshot-1600.webp"
-                  srcSet="/portfolio/dogtok-screenshot-1600.webp 1600w, /portfolio/dogtok-screenshot-2400.webp 2400w, /portfolio/dogtok-screenshot-3200.webp 3200w"
+                  src="/portfolio/dogtok-screenshot-960.webp"
+                  srcSet="/portfolio/dogtok-screenshot-640.webp 640w, /portfolio/dogtok-screenshot-960.webp 960w, /portfolio/dogtok-screenshot-1200.webp 1200w, /portfolio/dogtok-screenshot-1600.webp 1600w, /portfolio/dogtok-screenshot-2400.webp 2400w, /portfolio/dogtok-screenshot-3200.webp 3200w"
                   sizes="(min-width: 1024px) 52vw, calc(100vw - 2.5rem)"
                   alt={`${t('portfolio.dogTok.subtitle')} website designed and developed by Sokołek Studio`}
-                  width="1600"
-                  height="766"
+                  width="960"
+                  height="460"
                   loading="eager"
                   decoding="async"
                   fetchPriority="high"

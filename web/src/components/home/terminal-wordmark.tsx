@@ -65,7 +65,7 @@ export function TerminalWordmark({
       className={`hero-wordmark relative z-[10000] inline-flex min-h-[1.08em] items-center gap-2 ${
         isIntroActive ? 'intro-wordmark-color-transition' : ''
       } ${
-        isOnIntroCurtain ? 'text-[#fafafa]' : 'text-ink'
+        isOnIntroCurtain ? 'text-paper-fixed' : 'text-ink'
       }`}
     >
       <span>{visibleText}</span>
