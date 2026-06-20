@@ -1,7 +1,6 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { AnimatePresence } from 'motion/react'
 import { CookieConsentBanner } from './components/cookie-consent-banner'
-import { LoadingCurtain } from './components/loading-curtain'
 import { Footer } from './components/home/footer'
 import { Hero } from './components/home/hero'
 import { Philosophy } from './components/home/philosophy'
@@ -16,10 +15,20 @@ function App() {
   const { acceptConsent, consent, rejectConsent } = useCookieConsent()
   const [portfolioThemeActive, setPortfolioThemeActive] = useState(false)
   const [isIntroTypingActive, setIsIntroTypingActive] = useState(false)
-  const [isIntroDismissing, setIsIntroDismissing] = useState(false)
   const [isIntroComplete, setIsIntroComplete] = useState(false)
+
   const completeIntroTyping = useCallback(() => {
-    setIsIntroDismissing(true)
+    setIsIntroComplete(true)
+  }, [])
+
+  useEffect(() => {
+    const startTypingTimer = window.setTimeout(() => {
+      setIsIntroTypingActive(true)
+    }, 500)
+
+    return () => {
+      window.clearTimeout(startTypingTimer)
+    }
   }, [])
 
   return (
@@ -30,7 +39,7 @@ function App() {
     >
       <Hero
         isIntroActive={!isIntroComplete}
-        isIntroDismissing={isIntroDismissing}
+        isIntroComplete={isIntroComplete}
         onIntroTypingComplete={completeIntroTyping}
         startTyping={isIntroTypingActive}
       />
@@ -43,11 +52,6 @@ function App() {
           <CookieConsentBanner onAccept={acceptConsent} onReject={rejectConsent} />
         ) : null}
       </AnimatePresence>
-      <LoadingCurtain
-        isDismissing={isIntroDismissing}
-        onComplete={() => setIsIntroComplete(true)}
-        onReadyToType={() => setIsIntroTypingActive(true)}
-      />
     </main>
   )
 }

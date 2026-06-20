@@ -1,11 +1,12 @@
 import { type CSSProperties, useEffect, useRef, useState } from 'react'
 import { ArrowUpRight } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
+import { ShaderGradientBackground } from '../shader-gradient-background'
 import { TerminalWordmark } from './terminal-wordmark'
 
 type HeroProps = {
   isIntroActive: boolean
-  isIntroDismissing: boolean
+  isIntroComplete: boolean
   onIntroTypingComplete: () => void
   startTyping: boolean
 }
@@ -47,7 +48,7 @@ function getSecondWordAxisPrefix(value: string) {
 
 export function Hero({
   isIntroActive,
-  isIntroDismissing,
+  isIntroComplete,
   onIntroTypingComplete,
   startTyping,
 }: HeroProps) {
@@ -64,6 +65,9 @@ export function Hero({
   const heroGridStyle = studioAxis
     ? ({ '--studio-axis': `${studioAxis}px` } as CSSProperties)
     : undefined
+  const introRevealClassName = isIntroComplete
+    ? 'opacity-100 translate-y-0'
+    : 'pointer-events-none opacity-0 translate-y-3'
 
   useEffect(() => {
     const measureNode = studioAxisMeasureRef.current
@@ -88,8 +92,12 @@ export function Hero({
   }, [studioAxisPrefix])
 
   return (
-    <section className="relative flex min-h-svh flex-col px-5 py-5 sm:min-h-dvh sm:px-8 lg:px-10">
-      <header className="flex items-center justify-between gap-6">
+    <section className="hero-shader-shell relative flex min-h-svh flex-col overflow-hidden px-5 py-5 sm:min-h-dvh sm:px-8 lg:px-10">
+      <ShaderGradientBackground />
+
+      <header
+        className={`relative z-10 flex items-center justify-between gap-6 transition-all duration-700 ease-[var(--ease-expressive)] ${introRevealClassName}`}
+      >
         <div
           aria-label={heroTitle}
           className="inline-flex size-9 items-center justify-center sm:size-10"
@@ -142,20 +150,21 @@ export function Hero({
                 key={heroTitle}
                 isActive={startTyping}
                 isIntroActive={isIntroActive}
-                isOnIntroCurtain={isIntroActive && !isIntroDismissing}
                 onTyped={onIntroTypingComplete}
                 word={heroTitle}
               />
             </h1>
 
-            <p className="heading-sm mt-6 max-w-2xl text-[2.125rem] leading-[1.04] text-ink sm:hidden">
+            <p
+              className={`heading-sm relative z-10 mt-6 max-w-2xl text-[2.125rem] leading-[1.04] text-ink transition-all duration-700 ease-[var(--ease-expressive)] sm:hidden ${introRevealClassName}`}
+            >
               {t('hero.subtitle')}
             </p>
           </div>
         </div>
 
         <div
-          className="grid gap-y-6 md:grid-cols-[minmax(0,var(--studio-axis,1.1fr))_minmax(18rem,1fr)_auto] md:items-start md:gap-y-8 md:pt-4"
+          className={`relative z-10 grid gap-y-6 transition-all duration-700 ease-[var(--ease-expressive)] md:grid-cols-[minmax(0,var(--studio-axis,1.1fr))_minmax(18rem,1fr)_auto] md:items-start md:gap-y-8 md:pt-4 ${introRevealClassName}`}
           style={heroGridStyle}
         >
           <p className="heading-sm hidden max-w-2xl text-[2.125rem] leading-[1.04] text-ink sm:block sm:text-[clamp(1.875rem,4vw,3rem)] sm:leading-[1.1]">

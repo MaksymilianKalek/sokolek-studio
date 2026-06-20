@@ -95,11 +95,6 @@
     drop-shadow(0 0 10px color-mix(in srgb, var(--color-sunset-amber) 10%, transparent));
 }
 
-html.site-loading,
-html.site-loading body {
-  background-color: #111111;
-}
-
 html,
 body {
   margin: 0;
@@ -281,6 +276,29 @@ button {
   --color-ink-soft: #c9c9c9;
   --color-ink-muted: #8f8f8f;
   --color-line: #2b2b2b;
+}
+
+.hero-shader-shell {
+  --color-paper: #111111;
+  --color-ink: #fafafa;
+  --color-ink-soft: #d8d8d8;
+  --color-ink-muted: #a6a6a6;
+  --color-line: rgba(255, 255, 255, 0.18);
+}
+
+.shader-gradient-load-cover {
+  animation: shader-gradient-cover-fade 1520ms var(--ease-expressive) 320ms both;
+  will-change: opacity;
+}
+
+@keyframes shader-gradient-cover-fade {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
 }
 
 .intro-wordmark-color-transition {
