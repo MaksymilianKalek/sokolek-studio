@@ -33,7 +33,7 @@ export function Philosophy() {
                 </div>
 
                 <div>
-                  <h3 className="heading-sm font-serif font-normal italic tracking-[-0.035em] text-ink">
+                  <h3 className="heading-sm !font-serif !font-normal italic tracking-[-0.035em] text-ink">
                     {t('manifesto.sectionTwo.heading_part2')}
                   </h3>
                   <p className="body-copy mt-5">
