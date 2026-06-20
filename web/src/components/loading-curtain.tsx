@@ -18,7 +18,7 @@ export function LoadingCurtain({ isDismissing, onComplete, onReadyToType }: Load
       delayTimer = window.setTimeout(() => {
         onReadyToType()
         document.documentElement.classList.remove('site-loading')
-      }, 500)
+      }, 0)
     })
 
     return () => {

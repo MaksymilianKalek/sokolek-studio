@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { motion, useReducedMotion } from 'motion/react'
 
 const cursorBlinkDuration = 1
-const introDismissDelay = 500
+const introDismissDelay = 0
 const typingInterval = 118
 
 type TerminalWordmarkProps = {
