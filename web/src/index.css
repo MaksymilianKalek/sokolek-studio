@@ -29,8 +29,8 @@
   --font-inter: "Inter", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
   --font-serif: Georgia, "Times New Roman", serif;
-  --color-paper: #fafafa;
-  --color-paper-fixed: #fafafa;
+  --color-paper: #FAFAFA;
+  --color-paper-fixed: #FAFAFA;
   --color-ink: #111111;
   --color-ink-fixed: #111111;
   --color-ink-soft: #3f3f3f;
@@ -47,7 +47,7 @@
 @property --color-paper {
   syntax: "<color>";
   inherits: true;
-  initial-value: #fafafa;
+  initial-value: #FAFAFA;
 }
 
 @property --color-ink {
