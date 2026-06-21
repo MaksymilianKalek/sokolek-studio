@@ -1,7 +1,8 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { AnimatePresence } from 'motion/react'
 import { CookieConsentBanner } from './components/cookie-consent-banner'
 import { LoadingCurtain } from './components/loading-curtain'
+import { EngineeringFoundation } from './components/home/engineering-foundation'
 import { Footer } from './components/home/footer'
 import { Hero } from './components/home/hero'
 import { Philosophy } from './components/home/philosophy'
@@ -14,6 +15,7 @@ function App() {
   useSmoothScroll()
 
   const { acceptConsent, consent, rejectConsent } = useCookieConsent()
+  const portfolioProofRegionRef = useRef<HTMLDivElement>(null)
   const [portfolioThemeActive, setPortfolioThemeActive] = useState(false)
   const [isIntroTypingActive, setIsIntroTypingActive] = useState(false)
   const [isIntroDismissing, setIsIntroDismissing] = useState(false)
@@ -21,6 +23,40 @@ function App() {
 
   const completeIntroTyping = useCallback(() => {
     setIsIntroDismissing(true)
+  }, [])
+
+  useEffect(() => {
+    const region = portfolioProofRegionRef.current
+
+    if (!region) {
+      return
+    }
+
+    const mobileQuery = window.matchMedia('(max-width: 767px)')
+    let observer: IntersectionObserver | null = null
+
+    const observeRegion = () => {
+      observer?.disconnect()
+      observer = new IntersectionObserver(
+        ([entry]) => {
+          setPortfolioThemeActive(entry.isIntersecting)
+        },
+        {
+          rootMargin: mobileQuery.matches ? '-52% 0px -32% 0px' : '-65% 0px -35% 0px',
+          threshold: 0,
+        },
+      )
+      observer.observe(region)
+    }
+
+    observeRegion()
+    mobileQuery.addEventListener('change', observeRegion)
+
+    return () => {
+      mobileQuery.removeEventListener('change', observeRegion)
+      observer?.disconnect()
+      setPortfolioThemeActive(false)
+    }
   }, [])
 
   return (
@@ -44,7 +80,10 @@ function App() {
         />
       </div>
       <Services />
-      <PortfolioPreview onActiveChange={setPortfolioThemeActive} />
+      <div ref={portfolioProofRegionRef}>
+        <PortfolioPreview />
+        <EngineeringFoundation />
+      </div>
       <Philosophy />
       <Footer />
       <AnimatePresence>

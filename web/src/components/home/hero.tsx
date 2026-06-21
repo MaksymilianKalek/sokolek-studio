@@ -18,7 +18,7 @@ function LanguageSwitch() {
   return (
     <div
       aria-label={t('nav.language')}
-      className="flex items-center gap-2 font-mono text-base font-medium leading-[1.1] tracking-[-0.025em] text-ink-muted"
+      className="nav-text flex items-center gap-2 text-ink-muted"
     >
       {(['pl', 'en'] as const).map((language) => (
         <button
@@ -28,7 +28,7 @@ function LanguageSwitch() {
           className={`interactive-accent-link focus-ring cursor-pointer ${activeLanguage === language ? 'text-ink' : 'text-ink-muted'
             }`}
         >
-          {language}
+          {language.toUpperCase()}
         </button>
       ))}
     </div>
@@ -99,7 +99,7 @@ export function Hero({
 
         <nav
           aria-label="Main navigation"
-          className="hidden items-center gap-7 font-mono text-base font-medium leading-[1.1] tracking-[-0.025em] sm:flex"
+          className="nav-text hidden items-center gap-7 sm:flex"
         >
           {navItems.map((item) => (
             <a
@@ -142,7 +142,7 @@ export function Hero({
               />
             </h1>
 
-            <p className="heading-sm relative z-10 mt-6 max-w-2xl text-[2.125rem] leading-[1.04] text-ink sm:hidden">
+            <p className="heading-md relative z-10 mt-6 max-w-3xl text-ink sm:hidden">
               {t('hero.subtitle')}
             </p>
           </div>
@@ -152,11 +152,11 @@ export function Hero({
           className="relative z-10 grid gap-y-6 sm:mt-0 md:grid-cols-[minmax(0,var(--studio-axis,1.1fr))_minmax(18rem,1fr)_auto] md:items-start md:gap-y-8 md:pt-4"
           style={heroGridStyle}
         >
-          <p className="heading-sm hidden max-w-2xl text-[2.125rem] leading-[1.04] text-ink sm:block sm:text-[clamp(1.875rem,4vw,3rem)] sm:leading-[1.1]">
+          <p className="heading-md hidden max-w-3xl text-ink sm:block">
             {t('hero.subtitle')}
           </p>
 
-          <p className="body-copy max-w-md text-[1.0625rem] leading-[1.14] sm:text-base sm:leading-[1.1]">
+          <p className="body-copy max-w-md">
             {t('hero.description')}
           </p>
 

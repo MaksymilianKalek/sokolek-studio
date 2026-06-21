@@ -26,7 +26,7 @@ export function CookieConsentBanner({ onAccept, onReject }: CookieConsentBannerP
             <ShieldCheck className="size-4" aria-hidden="true" />
             <span>{t('cookieConsent.label')}</span>
           </div>
-          <h2 className="font-satoshi text-2xl font-semibold leading-[1.05] sm:text-3xl">
+          <h2 className="font-satoshi text-2xl font-semibold leading-[1.05]">
             {t('cookieConsent.heading')}
           </h2>
           <p className="body-copy mt-3 leading-[1.25] text-paper/72">

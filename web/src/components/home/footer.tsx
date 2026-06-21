@@ -17,7 +17,7 @@ export function Footer() {
         <div className="grid gap-8 text-paper/42 sm:grid-cols-[1fr_auto] sm:items-end">
           <nav
             aria-label="Footer navigation"
-            className="flex flex-wrap gap-x-6 gap-y-3 font-mono text-base font-medium leading-[1.1] tracking-[-0.025em]"
+            className="nav-text flex flex-wrap gap-x-6 gap-y-3"
           >
             {footerLinks.map((link) => (
               <a

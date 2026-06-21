@@ -1,12 +1,8 @@
-import { useEffect, useRef } from 'react'
+import { useEffect } from 'react'
 import { ArrowUpRight } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Reveal } from '../reveal'
 import { SectionLabel } from './section-label'
-
-type PortfolioPreviewProps = {
-  onActiveChange: (isActive: boolean) => void
-}
 
 const dogTokScreenshotSrc = '/portfolio/dogtok-screenshot-960.webp'
 const dogTokScreenshotSrcSet = '/portfolio/dogtok-screenshot-640.webp 640w, /portfolio/dogtok-screenshot-960.webp 960w, /portfolio/dogtok-screenshot-1200.webp 1200w, /portfolio/dogtok-screenshot-1600.webp 1600w, /portfolio/dogtok-screenshot-2400.webp 2400w, /portfolio/dogtok-screenshot-3200.webp 3200w'
@@ -33,9 +29,8 @@ function preloadDogTokScreenshot() {
   document.head.append(preloadLink)
 }
 
-export function PortfolioPreview({ onActiveChange }: PortfolioPreviewProps) {
+export function PortfolioPreview() {
   const { t } = useTranslation()
-  const sectionRef = useRef<HTMLElement>(null)
   const specs = [
     {
       label: t('portfolio.dogTok.labels.client'),
@@ -56,40 +51,6 @@ export function PortfolioPreview({ onActiveChange }: PortfolioPreviewProps) {
   ]
 
   useEffect(() => {
-    const section = sectionRef.current
-
-    if (!section) {
-      return
-    }
-
-    const mobileQuery = window.matchMedia('(max-width: 767px)')
-    let observer: IntersectionObserver | null = null
-
-    const observeSection = () => {
-      observer?.disconnect()
-      observer = new IntersectionObserver(
-        ([entry]) => {
-          onActiveChange(entry.isIntersecting)
-        },
-        {
-          rootMargin: mobileQuery.matches ? '-52% 0px -32% 0px' : '-65% 0px -35% 0px',
-          threshold: 0,
-        },
-      )
-      observer.observe(section)
-    }
-
-    observeSection()
-    mobileQuery.addEventListener('change', observeSection)
-
-    return () => {
-      mobileQuery.removeEventListener('change', observeSection)
-      observer?.disconnect()
-      onActiveChange(false)
-    }
-  }, [onActiveChange])
-
-  useEffect(() => {
     const preloadOnScrollIntent = () => {
       preloadDogTokScreenshot()
     }
@@ -105,23 +66,20 @@ export function PortfolioPreview({ onActiveChange }: PortfolioPreviewProps) {
   }, [])
 
   return (
-    <section
-      ref={sectionRef}
-      className="site-section-compact bg-paper text-ink"
-    >
+    <section className="site-section-compact bg-paper text-ink">
       <div id="portfolio" className="site-container site-anchor">
         <Reveal>
           <SectionLabel>{t('portfolio.label')}</SectionLabel>
         </Reveal>
 
         <Reveal>
-          <h2 className="heading-md mt-8 max-w-6xl text-ink">
+          <h2 className="heading-md section-offset max-w-6xl text-ink">
             {t('portfolio.heading')}
           </h2>
         </Reveal>
 
         <Reveal delay={0.12}>
-          <article className="mt-10 grid items-stretch overflow-hidden lg:grid-cols-[1.1fr_0.9fr] lg:gap-10">
+          <article className="media-grid section-offset items-stretch overflow-hidden">
             <div className="relative h-[20rem] overflow-hidden text-paper sm:h-[24rem] lg:h-[30rem]">
               <a
                 href="https://dogtok.pl"
@@ -149,15 +107,15 @@ export function PortfolioPreview({ onActiveChange }: PortfolioPreviewProps) {
               </a>
             </div>
 
-            <div className="flex flex-col justify-between gap-10 pt-8 lg:pt-0">
+            <div className="content-stack content-offset lg:mt-0">
               <div>
                 <h3 className="heading-sm tracking-[-0.045em]">
                   {t('portfolio.dogTok.subtitle')}
                 </h3>
-                <p className="body-copy mt-5">
+                <p className="body-copy content-offset-tight">
                   {t('portfolio.dogTok.summary')}
                 </p>
-                <dl className="mt-7 grid gap-x-8 gap-y-6 sm:grid-cols-2">
+                <dl className="content-offset grid gap-x-8 gap-y-6 sm:grid-cols-2">
                   {specs.map((spec) => (
                     <div key={spec.label}>
                       <dt className="meta-text tracking-[0.2em] text-ink-muted">

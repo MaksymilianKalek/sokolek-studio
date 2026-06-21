@@ -47,6 +47,80 @@
       }
     ]
   },
+  "engineeringFoundation": {
+    "label": "Zaplecze technologiczne",
+    "heading": "Doświadczenie, na którym można polegać.",
+    "description": "Za technologiczną stronę Sokołek Studio odpowiada Maksymilian - senior software engineer z ponad 6-letnim doświadczeniem w tworzeniu systemów AI, aplikacji webowych i architektury chmurowej. Projektował i wdrażał rozwiązania dla startupów oraz globalnych firm z branż medycznej, chemicznej, reklamowej, półprzewodnikowej i finansowej.",
+    "pillars": [
+      {
+        "title": "Platforma AI do pracy z dokumentacją medyczną",
+        "outcome": "Zaprojektowanie i zbudowanie od podstaw aplikacji do pracy z dokumentacją i wiedzą medyczną - od architektury chmurowej i integracji modeli AI po interfejs użytkownika oraz proces wdrożenia.",
+        "role": "Lead Full-Stack AI Software Engineer",
+        "stack": [
+          "React",
+          "TypeScript",
+          "RAG",
+          "Azure OpenAI",
+          "AWS Bedrock",
+          "AWS CDK",
+          "CI/CD"
+        ]
+      },
+      {
+        "title": "System agentów AI dla branży reklamowej",
+        "outcome": "Budowa systemu agentowego, który planuje i wykonuje wieloetapowe zadania, współpracuje z różnymi modelami AI oraz przekazuje ustrukturyzowane wyniki pomiędzy usługami.",
+        "role": "AI Engineer",
+        "stack": [
+          "AI Agents",
+          "Python",
+          "Microservices",
+          "Agent Orchestration",
+          "Structured Outputs",
+          "AWS"
+        ]
+      },
+      {
+        "title": "Infrastruktura MLOps dla branży półprzewodników",
+        "outcome": "Zaprojektowanie i wdrożenie produkcyjnego środowiska MLOps opartego na Kubernetes, które ujednoliciło pracę nad modelami uczenia maszynowego oraz usprawniło ich rozwój i wdrażanie w globalnej organizacji inżynieryjnej.",
+        "role": "Full-Stack AI Software Engineer",
+        "stack": [
+          "Kubernetes",
+          "Kubeflow",
+          "MLflow",
+          "Docker",
+          "CI/CD"
+        ]
+      },
+      {
+        "title": "Architektura danych dla sektora bankowego",
+        "outcome": "Budowa systemów danych analizujących dane i informacje, usprawniających utrzymanie globalnej infrastruktury bankomatowej.",
+        "role": "Software Engineer",
+        "stack": [
+          "Data Pipelines",
+          "Java",
+          "Spring Boot",
+          "Microservices",
+          "SQL",
+          "Docker"
+        ]
+      },
+      {
+        "title": "Platforma wiedzy dla branży chemicznej",
+        "outcome": "Zaprojektowanie platformy, która przetworzyła około 100 000 technicznych dokumentów PDF, uporządkowała zawarte w nich dane i przygotowała je do wyszukiwania oraz wykorzystania przez narzędzia AI.",
+        "role": "Full-Stack AI Engineer",
+        "stack": [
+          "Python",
+          "LangGraph",
+          "LangChain",
+          "OCR",
+          "AWS CDK",
+          "Lambda",
+          "DynamoDB",
+          "S3"
+        ]
+      }
+    ]
+  },
   "portfolio": {
     "label": "Portfolio",
     "heading": "Cyfrowa przestrzeń dla miejsca stworzonego z pasji.",

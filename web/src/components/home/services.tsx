@@ -20,13 +20,13 @@ export function Services() {
           <SectionLabel>{t('services.label')}</SectionLabel>
         </Reveal>
 
-        <div className="mt-10 grid gap-12 lg:grid-cols-[0.75fr_1.25fr]">
+        <div className="editorial-grid section-offset">
           <Reveal>
             <div className="sticky top-10">
-              <h2 className="heading-md max-w-xl">
+              <h2 className="heading-md max-w-2xl">
                 {t('services.heading')}
               </h2>
-              <p className="body-copy mt-6 max-w-md">
+              <p className="body-copy content-offset max-w-md">
                 {t('services.description')}
               </p>
             </div>
@@ -35,7 +35,7 @@ export function Services() {
           <div className="border-t border-line">
             {services.map((service, itemIndex) => (
               <Reveal key={service.index} delay={itemIndex * 0.08}>
-                <article className="grid gap-5 border-b border-line py-8 sm:grid-cols-[6rem_0.75fr_1fr] sm:py-10">
+                <article className="service-row-grid section-row-padding border-b border-line">
                   <p className="meta-text text-ink-muted">
                     {service.index}
                   </p>
@@ -46,7 +46,7 @@ export function Services() {
                     <p className="body-copy max-w-md">
                       {service.description}
                     </p>
-                    <p className="meta-text mt-5 text-ink-soft">
+                    <p className="meta-text content-offset-tight text-ink-soft">
                       {service.tags}
                     </p>
                   </div>

@@ -47,6 +47,80 @@
       }
     ]
   },
+  "engineeringFoundation": {
+    "label": "Technology Expertise",
+    "heading": "Experience you can dependend on.",
+    "description": "The technology side of Sokołek Studio is led by Maksymilian Sokołek, a senior software engineer with nearly six years of experience building AI systems, web applications and cloud architectures. He currently develops AI systems at Brahma AI. Previously, he designed and delivered solutions for startups and global companies across the healthcare, chemical, advertising, semiconductor and financial industries.",
+    "pillars": [
+      {
+        "title": "AI Platform for Medical Documentation",
+        "outcome": "Designed and built an application for working with medical documentation and knowledge from the ground up - from cloud architecture and AI model integrations to the user interface and deployment process.",
+        "role": "Lead Full-Stack AI Software Engineer",
+        "stack": [
+          "React",
+          "TypeScript",
+          "RAG",
+          "Azure OpenAI",
+          "AWS Bedrock",
+          "AWS CDK",
+          "CI/CD"
+        ]
+      },
+      {
+        "title": "AI Agent System for Advertising",
+        "outcome": "Built an agentic system capable of planning and executing multi-step tasks, working with different AI models and passing structured results between services.",
+        "role": "AI Engineer",
+        "stack": [
+          "AI Agents",
+          "Python",
+          "Microservices",
+          "Agent Orchestration",
+          "Structured Outputs",
+          "AWS"
+        ]
+      },
+      {
+        "title": "MLOps Infrastructure for the Semiconductor Industry",
+        "outcome": "Designed and implemented a production MLOps environment based on Kubernetes that standardised machine learning workflows and streamlined model development and deployment across a global engineering organisation.",
+        "role": "Full-Stack AI Software Engineer",
+        "stack": [
+          "Kubernetes",
+          "Kubeflow",
+          "MLflow",
+          "Docker",
+          "CI/CD"
+        ]
+      },
+      {
+        "title": "Data Architecture for the Banking Sector",
+        "outcome": "Built pipelines that analysed data and information that supported the maintenance of a global ATM infrastructure.",
+        "role": "Software Engineer",
+        "stack": [
+          "Data Pipelines",
+          "Java",
+          "Spring Boot",
+          "Microservices",
+          "SQL",
+          "Docker"
+        ]
+      },
+      {
+        "title": "Knowledge Platform for the Chemical Industry",
+        "outcome": "Designed a platform that processed approximately 100,000 technical PDF documents, structured the data they contained and prepared it for search and use by AI-powered tools.",
+        "role": "Full-Stack AI Engineer",
+        "stack": [
+          "Python",
+          "LangGraph",
+          "LangChain",
+          "OCR",
+          "AWS CDK",
+          "Lambda",
+          "DynamoDB",
+          "S3"
+        ]
+      }
+    ]
+  },
   "portfolio": {
     "label": "Portfolio",
     "heading": "A digital space for a place built with passion.",

@@ -10,7 +10,7 @@ type ContactProps = {
 export function Contact({ inverted = false }: ContactProps) {
   const { t } = useTranslation()
   const sectionClassName = inverted
-    ? 'px-0 py-20 text-paper lg:py-28'
+    ? 'footer-contact-section text-paper'
     : 'site-section'
   const labelClassName = inverted ? 'text-paper/42' : undefined
   const descriptionClassName = inverted ? 'text-paper/62' : 'text-ink-soft'
@@ -22,7 +22,7 @@ export function Contact({ inverted = false }: ContactProps) {
       <Reveal>
         <div id="contact" className="site-container site-anchor">
           <SectionLabel className={labelClassName}>{t('nav.contact')}</SectionLabel>
-          <div className="mt-8 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+          <div className="editorial-grid section-offset lg:items-end">
             <h2 className="heading-md">
               {t('contact.heading_part1')}{' '}
               <span className="font-serif font-normal italic tracking-[-0.035em]">
@@ -36,7 +36,7 @@ export function Contact({ inverted = false }: ContactProps) {
               </p>
               <a
                 href="mailto:hello@sokolek.com"
-                className={`${ctaClassName} ${focusClassName} action-text group mt-8 inline-flex w-fit items-center gap-3 px-5 py-3`}
+                className={`${ctaClassName} ${focusClassName} action-text group action-offset inline-flex w-fit items-center gap-3 px-5 py-3`}
               >
                 <span className="relative z-10">{t('footer.contact')}</span>
                 <ArrowUpRight className="primary-cta-icon relative z-10 size-4" />

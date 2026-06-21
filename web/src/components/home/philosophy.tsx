@@ -13,21 +13,21 @@ export function Philosophy() {
           <SectionLabel>{t('manifesto.label')}</SectionLabel>
         </Reveal>
 
-        <div className="mt-10 grid gap-14 lg:grid-cols-[1fr_1fr] lg:items-start">
+        <div className="editorial-grid section-offset lg:items-start">
           <Reveal>
             <h2 className="heading-md">
               {t('manifesto.sectionOne.heading')}
             </h2>
           </Reveal>
 
-          <div className="space-y-12">
+          <div className="section-stack">
             <Reveal delay={0.08}>
               <div className="grid gap-8 sm:grid-cols-2">
                 <div>
                   <h3 className="heading-sm text-ink">
                     {t('manifesto.sectionTwo.heading_part1')}
                   </h3>
-                  <p className="body-copy mt-5">
+                  <p className="body-copy content-offset-tight">
                     {t('manifesto.sectionOne.description')}
                   </p>
                 </div>
@@ -36,7 +36,7 @@ export function Philosophy() {
                   <h3 className="heading-sm !font-serif !font-normal italic tracking-[-0.035em] text-ink">
                     {t('manifesto.sectionTwo.heading_part2')}
                   </h3>
-                  <p className="body-copy mt-5">
+                  <p className="body-copy content-offset-tight">
                     {t('manifesto.sectionTwo.description')}
                   </p>
                 </div>
