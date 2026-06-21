@@ -14,6 +14,7 @@ export function Contact({ inverted = false }: ContactProps) {
     : 'site-section'
   const labelClassName = inverted ? 'text-paper/42' : undefined
   const descriptionClassName = inverted ? 'text-paper/62' : 'text-ink-soft'
+  const secondaryDescriptionClassName = inverted ? 'text-paper/82' : 'text-ink'
   const ctaClassName = inverted ? 'primary-cta primary-cta--inverted' : 'primary-cta'
   const focusClassName = inverted ? 'focus-ring-inverted' : 'focus-ring'
 
@@ -33,6 +34,9 @@ export function Contact({ inverted = false }: ContactProps) {
             <div>
               <p className={`body-copy-lg max-w-xl ${descriptionClassName}`}>
                 {t('contact.description')}
+              </p>
+              <p className={`body-copy content-offset-tight max-w-xl ${secondaryDescriptionClassName}`}>
+                {t('contact.secondaryDescription')}
               </p>
               <a
                 href="mailto:hello@sokolek.com"

@@ -1,7 +1,7 @@
 {
   "nav": {
-    "services": "Usługi",
-    "portfolio": "Portfolio",
+    "services": "Oferta",
+    "portfolio": "Realizacje",
     "contact": "Kontakt",
     "language": "Język"
   },
@@ -12,45 +12,107 @@
     "builtIn": "Zaprojektowane i zbudowane w Poznaniu"
   },
   "hero": {
+    "eyebrow": "YOUR AI IMPLEMENTATION PARTNER",
     "title": "Sokołek Studio",
-    "subtitle": "Technologia i design w jednym miejscu.",
-    "description": "Jesteśmy autorskim studiem technologicznym z Poznania łączącym inżynierię z kreatywnością. Z nami zbudujesz swoją markę od podstaw. Od tożsamości wizualnej po zaawansowane systemy. Projektujemy z intencją. Odczarowujemy sztuczną inteligencję, wykorzystując ją etycznie i tylko tam, gdzie to naprawdę potrzebne. Wierzymy w technologię, która ma prawdziwe znaczenie i realnie ułatwia codzienną pracę."
+    "subtitle": "AI, które wspiera ludzi.",
+    "description": "Jesteśmy autorskim studiem technologicznym z Poznania, łączącym inżynierię z kreatywnością. Pomagamy firmom wdrażać sztuczną inteligencję tam, gdzie naprawdę ułatwia pracę, porządkuje wiedzę i wspiera rozwój zespołu. Projektujemy z intencją - od pierwszego pomysłu i prototypu po gotowy system, markę i stronę. Wierzymy w technologię, która ma prawdziwe znaczenie i realnie ułatwia codzienną pracę."
   },
   "services": {
-    "label": "Usługi",
+    "label": "Oferta",
     "heading": "Małe studio. Pełna uwaga.",
-    "description": "Marka, strona, technologia i komunikacja powinny mówić jednym głosem. Dlatego patrzymy na firmę jako całość i dobieramy zakres pracy do tego, czego naprawdę potrzebuje.",
+    "description": "Marka, strona, technologia i komunikacja powinny mówić jednym głosem. Dlatego patrzymy na firmę jako całość i dobieramy zakres pracy do tego, czego naprawdę potrzebuje - od pierwszego pomysłu po rozwiązanie gotowe do codziennej pracy.",
     "items": [
       {
         "index": "01",
-        "title": "AI",
-        "description": "Tworzymy narzędzia, które upraszczają pracę z dokumentami, wiedzą i powtarzalnymi procesami.",
-        "tags": "ASYSTENCI · AUTOMATYZACJE · NARZĘDZIA"
+        "title": "Audyt i strategia AI",
+        "description": "Pomagamy znaleźć miejsca, w których AI naprawdę ma sens. Przyglądamy się procesom, wiedzy i celom firmy, a następnie porządkujemy pomysły, wybieramy najważniejsze kierunki i przygotowujemy plan wdrożenia.",
+        "tags": "PROCESY · USE CASE · ROADMAPA"
       },
       {
         "index": "02",
-        "title": "Web Design",
-        "description": "Projektujemy dopracowane strony oraz produkty cyfrowe, które wyglądają i brzmią jak Twoja marka.",
-        "tags": "UX/UI · DEVELOPMENT · SEO"
+        "title": "Wdrożenia AI",
+        "featuredLabel": "FLAGOWA OFERTA",
+        "description": "Tworzymy narzędzia, które upraszczają pracę z dokumentami, wiedzą i powtarzalnymi procesami. Projektujemy je od podstaw - od prototypu i integracji po bezpieczny system gotowy do codziennego użycia.",
+        "tags": "PROTOTYP · INTEGRACJE · PRODUKCJA"
       },
       {
         "index": "03",
-        "title": "Branding",
-        "description": "Budujemy marki - od pomysłu i strategii po nazwę, identyfikację wizualną i język komunikacji.",
-        "tags": "STRATEGIA · IDENTYFIKACJA · PR"
+        "title": "Digital Foundation",
+        "description": "Z nami zbudujesz swoją markę od podstaw - od pozycjonowania i tożsamości wizualnej po stronę internetową i jedno kluczowe wdrożenie AI. Łączymy je w spójny cyfrowy fundament, który wspiera dalszy rozwój firmy.",
+        "tags": "STRATEGIA · BRANDING · WEB · AI"
       },
       {
         "index": "04",
-        "title": "Content",
-        "description": "Tworzymy treści do social mediów - zdjęcia, wideo i copywriting - tak, by dopełniały spójny obraz marki.",
-        "tags": "SOCIAL MEDIA · FOTO I WIDEO · COPYWRITING"
+        "title": "Brand & Web",
+        "description": "Projektujemy dopracowane marki, strony i produkty cyfrowe, które wyglądają i brzmią jak Twoja firma. Od strategii i identyfikacji po UX/UI, development i język komunikacji.",
+        "tags": "IDENTYFIKACJA · UX/UI · DEVELOPMENT"
       }
     ]
   },
+  "targetAudience": {
+    "label": "Dla kogo",
+    "heading": "Dla biznesów, które chcą rosnąć mądrze.",
+    "description": "Najlepiej pomagamy firmom, które mają dużo wiedzy, dokumentów i powtarzalnej pracy, ale nie chcą wdrażać technologii dla samego efektu. Szukamy rozwiązań, które naprawdę ułatwiają codzienną pracę i wspierają rozwój zespołu.",
+    "items": [
+      {
+        "index": "01",
+        "title": "Praca z dokumentami zajmuje zbyt dużo czasu",
+        "description": "Zespół traci czas na wyszukiwanie, porównywanie i przepisywanie informacji, zamiast wykorzystywać swoją wiedzę w pracy z klientami, projektami i decyzjami."
+      },
+      {
+        "index": "02",
+        "title": "Wiedza jest rozproszona między ludźmi i narzędziami",
+        "description": "Najważniejsze informacje znajdują się w mailach, plikach, rozmowach i głowach kilku osób, przez co trudno je znaleźć, przekazać i dobrze wykorzystać."
+      },
+      {
+        "index": "03",
+        "title": "Powtarzalne procesy blokują rozwój",
+        "description": "Firma rośnie, ale część pracy nadal wymaga ręcznego pilnowania, kopiowania danych i odtwarzania tych samych kroków przy każdym kolejnym zleceniu."
+      },
+      {
+        "index": "04",
+        "title": "Potrzebna jest nowa cyfrowa podstawa",
+        "description": "Marka, strona, komunikacja i używane narzędzia przestały nadążać za tym, dokąd zmierza firma i jakiego doświadczenia oczekują jej klienci oraz zespół."
+      }
+    ]
+  },
+  "process": {
+    "label": "Proces",
+    "heading": "Od pomysłu do działającego rozwiązania.",
+    "description": "Najpierw wspólnie rozumiemy, czego naprawdę potrzebujesz. Potem sprawdzamy pomysł na małą skalę i dopiero wtedy budujemy rozwiązanie, które może dobrze działać w codziennym rytmie firmy.",
+    "items": [
+      {
+        "index": "01",
+        "title": "Rozpoznanie",
+        "description": "Poznajemy firmę, ludzi, dane i proces. Szukamy miejsca, w którym technologia może przynieść realną wartość."
+      },
+      {
+        "index": "02",
+        "title": "Prototyp",
+        "description": "Sprawdzamy najważniejsze założenia na konkretnym, ograniczonym zakresie, zanim rozwiązanie urośnie do produkcyjnej skali."
+      },
+      {
+        "index": "03",
+        "title": "Wdrożenie",
+        "description": "Budujemy system, łączymy go z istniejącymi narzędziami i dbamy o użyteczność, bezpieczeństwo oraz niezawodne działanie."
+      },
+      {
+        "index": "04",
+        "title": "Rozwój",
+        "description": "Obserwujemy, jak rozwiązanie działa w praktyce, rozwijamy je i dopasowujemy do zmieniających się potrzeb firmy oraz zespołu."
+      }
+    ]
+  },
+  "philosophy": {
+    "label": "Nasze podejście",
+    "heading": "AI tam, gdzie ma sens.",
+    "description": "Odczarowujemy sztuczną inteligencję, wykorzystując ją etycznie i tylko tam, gdzie jest naprawdę potrzebna. Nie traktujemy AI jako celu samego w sobie ani prostego sposobu na zastępowanie ludzi. Projektujemy rozwiązania, które zdejmują z zespołów mechaniczną pracę, porządkują wiedzę i wspierają podejmowanie decyzji. Dzięki temu ludzie mogą poświęcić więcej czasu zadaniom wymagającym doświadczenia, kreatywności, odpowiedzialności i relacji."
+  },
   "engineeringFoundation": {
     "label": "Zaplecze technologiczne",
+    "note": "Wybrane doświadczenie zawodowe współzałożyciela studia.",
     "heading": "Doświadczenie, na którym można polegać.",
-    "description": "Za technologiczną stronę Sokołek Studio odpowiada Maksymilian - senior software engineer z ponad 6-letnim doświadczeniem w tworzeniu systemów AI, aplikacji webowych i architektury chmurowej. Projektował i wdrażał rozwiązania dla startupów oraz globalnych firm z branż medycznej, chemicznej, reklamowej, półprzewodnikowej i finansowej.",
+    "description": "Za technologiczną stronę Sokołek Studio odpowiada Maksymilian - senior software engineer z ponad 6-letnim doświadczeniem w tworzeniu systemów AI, aplikacji webowych i architektury chmurowej. Projektował i wdrażał rozwiązania od pierwszych prototypów po systemy działające w produkcji, dla startupów oraz globalnych firm z branż medycznej, chemicznej, reklamowej, półprzewodnikowej i finansowej.",
     "pillars": [
       {
         "title": "Platforma AI do pracy z dokumentacją medyczną",
@@ -93,7 +155,7 @@
       },
       {
         "title": "Architektura danych dla sektora bankowego",
-        "outcome": "Budowa systemów danych analizujących dane i informacje, usprawniających utrzymanie globalnej infrastruktury bankomatowej.",
+        "outcome": "Budowa systemów danych analizujących informacje i wspierających utrzymanie globalnej infrastruktury bankomatowej.",
         "role": "Software Engineer",
         "stack": [
           "Data Pipelines",
@@ -122,7 +184,7 @@
     ]
   },
   "portfolio": {
-    "label": "Portfolio",
+    "label": "Realizacje",
     "heading": "Cyfrowa przestrzeń dla miejsca stworzonego z pasji.",
     "dogTok": {
       "title": "DOG TOK",
@@ -137,7 +199,7 @@
       "data": {
         "client": "DOG TOK - SZKOLENIOWY RAJ",
         "industry": "KYNOLOGIA / TURYSTYKA",
-        "stack": "DESIGN / WEB / COPYWRITING",
+        "stack": "STRATEGIA / UX/UI / WEB DEVELOPMENT / COPYWRITING",
         "year": "2026"
       }
     }
@@ -146,12 +208,12 @@
     "label": "O nas",
     "sectionOne": {
       "heading": "Trochę o nas",
-      "description": "Techniczny co-founder studia. Od lat tworzy oprogramowanie i systemy AI dla startupów oraz dużych firm. Łączy doświadczenie inżynierskie z dużą ciekawością nowych technologii, ale nie wdraża ich dla samego efektu. Lubi proste rozwiązania, czysty kod i projekty dopracowane do ostatniego szczegółu."
+      "description": "Za technologiczną stronę studia odpowiada Maksymilian. Od lat tworzy oprogramowanie i systemy AI dla startupów oraz dużych firm. Łączy doświadczenie inżynierskie z dużą ciekawością nowych technologii, ale nie wdraża ich dla samego efektu. Lubi proste rozwiązania, czysty kod i projekty dopracowane do ostatniego szczegółu."
     },
     "sectionTwo": {
       "heading_part1": "Maksymilian",
       "heading_part2": "Klaudia",
-      "description": "Kreatywna co-founderka studia. Łączy doświadczenie w PR i komunikacji z fotografią, montażem oraz social mediami. Ma dobre oko do obrazu, wyczucie trendów i wie, jak przełożyć charakter marki na treści. Dba o to, żeby całość była spójna, naturalna i po prostu dobrze wyglądała."
+      "description": "Za kreatywną stronę studia odpowiada Klaudia. Łączy doświadczenie w PR i komunikacji z UX, fotografią, montażem oraz social mediami. Ma dobre oko do obrazu, wyczucie trendów i wie, jak przełożyć charakter marki oraz złożoną technologię na prosty, naturalny język. Dba o to, żeby całość była spójna, użyteczna i po prostu dobrze wyglądała."
     },
     "principles": [
       "Pro, but make it fun",
@@ -163,17 +225,17 @@
   "contact": {
     "heading_part1": "Masz pomysł?",
     "heading_part2": "Porozmawiajmy.",
-    "description": "Opowiedz nam o swojej firmie, pomyśle albo wyzwaniu. Wspólnie zrozumiemy, czego naprawdę potrzebujesz i jak możemy zamienić to w dobrze zaprojektowane rozwiązanie."
+    "description": "Opowiedz nam o swojej firmie, pomyśle albo wyzwaniu. Wspólnie zrozumiemy, czego naprawdę potrzebujesz, i sprawdzimy, gdzie AI może realnie ułatwić pracę lub pomóc firmie rosnąć.",
+    "secondaryDescription": "Możemy też zbudować dla Ciebie nową markę, stronę albo kompleksową Digital Foundation, łączącą design, technologię i komunikację w jednym spójnym rozwiązaniu."
   },
   "footer": {
     "contact": "Napisz do nas"
   },
   "cookieConsent": {
-    "label": "Zgoda na cookies",
-    "heading": "Czy możemy używać cookies analitycznych?",
-    "description": "Korzystamy z Google Analytics, żeby lepiej rozumieć, jak odwiedzający korzystają z naszej strony.",
-    "accept": "Akceptuję",
-    "reject": "Odrzucam",
+    "label": "Cookies",
+    "heading": "Korzystamy z cookies analitycznych.",
+    "description": "Używamy Google Analytics, żeby lepiej rozumieć, jak odwiedzający korzystają z naszej strony i jak możemy ją ulepszać.",
+    "dismiss": "Rozumiem",
     "settings": "Ustawienia cookies"
   }
 }

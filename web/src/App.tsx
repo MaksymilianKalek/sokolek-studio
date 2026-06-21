@@ -2,19 +2,22 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { AnimatePresence } from 'motion/react'
 import { CookieConsentBanner } from './components/cookie-consent-banner'
 import { LoadingCurtain } from './components/loading-curtain'
+import { AiPhilosophy } from './components/home/ai-philosophy'
 import { EngineeringFoundation } from './components/home/engineering-foundation'
 import { Footer } from './components/home/footer'
 import { Hero } from './components/home/hero'
 import { Philosophy } from './components/home/philosophy'
 import { PortfolioPreview } from './components/home/portfolio-preview'
+import { Process } from './components/home/process'
 import { Services } from './components/home/services'
+import { TargetAudience } from './components/home/target-audience'
 import { useCookieConsent } from './hooks/use-cookie-consent'
 import { useSmoothScroll } from './hooks/use-smooth-scroll'
 
 function App() {
   useSmoothScroll()
 
-  const { acceptConsent, consent, rejectConsent } = useCookieConsent()
+  const { dismissNotice, shouldShowNotice } = useCookieConsent()
   const portfolioProofRegionRef = useRef<HTMLDivElement>(null)
   const [portfolioThemeActive, setPortfolioThemeActive] = useState(false)
   const [isIntroTypingActive, setIsIntroTypingActive] = useState(false)
@@ -42,7 +45,7 @@ function App() {
           setPortfolioThemeActive(entry.isIntersecting)
         },
         {
-          rootMargin: mobileQuery.matches ? '-52% 0px -32% 0px' : '-65% 0px -35% 0px',
+          rootMargin: mobileQuery.matches ? '-52% 0px -32% 0px' : '-60% 0px -35% 0px',
           threshold: 0,
         },
       )
@@ -80,15 +83,18 @@ function App() {
         />
       </div>
       <Services />
+      <TargetAudience />
       <div ref={portfolioProofRegionRef}>
         <PortfolioPreview />
-        <EngineeringFoundation />
       </div>
+      <Process />
+      <AiPhilosophy />
+      <EngineeringFoundation />
       <Philosophy />
       <Footer />
       <AnimatePresence>
-        {(isIntroDismissing || isIntroComplete) && consent === 'pending' ? (
-          <CookieConsentBanner onAccept={acceptConsent} onReject={rejectConsent} />
+        {(isIntroDismissing || isIntroComplete) && shouldShowNotice ? (
+          <CookieConsentBanner onDismiss={dismissNotice} />
         ) : null}
       </AnimatePresence>
     </main>

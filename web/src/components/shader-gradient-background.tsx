@@ -1,4 +1,4 @@
-import type { ComponentProps } from 'react'
+import { type ComponentProps, useState } from 'react'
 import { ShaderGradient, ShaderGradientCanvas } from '@shadergradient/react'
 
 const shaderGradientProps = {
@@ -45,7 +45,49 @@ const shaderGradientProps = {
   wireframe: false,
 } as const
 
+let hasLoggedWebGLFallback = false
+
+function browserSupportsWebGL() {
+  const canvas = document.createElement('canvas')
+
+  try {
+    const context = canvas.getContext('webgl') ?? canvas.getContext('experimental-webgl')
+
+    return context !== null
+  } catch (error) {
+    console.error('Unable to detect WebGL support for the hero background.', error)
+    return false
+  }
+}
+
+function logWebGLFallback() {
+  if (hasLoggedWebGLFallback) {
+    return
+  }
+
+  hasLoggedWebGLFallback = true
+  console.error('WebGL is unavailable. Rendering the static hero background fallback.')
+}
+
+function StaticHeroBackground() {
+  return (
+    <div
+      aria-hidden="true"
+      className="pointer-events-none absolute inset-0 overflow-hidden bg-ink-fixed"
+    >
+      <div className="shader-gradient-vignette pointer-events-none absolute inset-0 z-10" />
+    </div>
+  )
+}
+
 export function ShaderGradientBackground() {
+  const [canRenderShader] = useState(browserSupportsWebGL)
+
+  if (!canRenderShader) {
+    logWebGLFallback()
+    return <StaticHeroBackground />
+  }
+
   return (
     <div
       aria-hidden="true"

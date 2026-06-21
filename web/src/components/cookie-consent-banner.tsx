@@ -4,11 +4,10 @@ import { useTranslation } from 'react-i18next'
 import { motionTransition } from '../lib/motion'
 
 type CookieConsentBannerProps = {
-  onAccept: () => void
-  onReject: () => void
+  onDismiss: () => void
 }
 
-export function CookieConsentBanner({ onAccept, onReject }: CookieConsentBannerProps) {
+export function CookieConsentBanner({ onDismiss }: CookieConsentBannerProps) {
   const { t } = useTranslation()
 
   return (
@@ -37,17 +36,10 @@ export function CookieConsentBanner({ onAccept, onReject }: CookieConsentBannerP
         <div className="flex flex-col gap-3 sm:flex-row">
           <button
             type="button"
-            onClick={onAccept}
+            onClick={onDismiss}
             className="action-text focus-ring-inverted flex-1 cursor-pointer border border-paper bg-paper px-4 py-3 text-ink transition-colors hover:bg-paper/82"
           >
-            {t('cookieConsent.accept')}
-          </button>
-          <button
-            type="button"
-            onClick={onReject}
-            className="action-text focus-ring-inverted flex-1 cursor-pointer border border-paper px-4 py-3 text-paper transition-colors hover:bg-paper hover:text-ink"
-          >
-            {t('cookieConsent.reject')}
+            {t('cookieConsent.dismiss')}
           </button>
         </div>
       </div>

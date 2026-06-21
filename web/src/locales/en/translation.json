@@ -1,60 +1,122 @@
 {
   "nav": {
     "services": "Services",
-    "portfolio": "Portfolio",
+    "portfolio": "Work",
     "contact": "Contact",
     "language": "Language"
   },
   "common": {
     "startProject": "Let's talk",
     "visitLiveSite": "View website",
-    "about": "About us",
+    "about": "About the studio",
     "builtIn": "Designed and built in Poznań"
   },
   "hero": {
+    "eyebrow": "YOUR AI IMPLEMENTATION PARTNER",
     "title": "Sokołek Studio",
-    "subtitle": "Technology and design, all in one place.",
-    "description": "We are an independent technology studio from Poznań, bringing engineering and creativity together. With us, you can build your brand from the ground up - from visual identity to advanced digital systems. We design with intention. We make artificial intelligence easier to understand, using it responsibly and only where it genuinely makes sense. We believe in technology that matters and makes everyday work easier."
+    "subtitle": "AI supporting people.",
+    "description": "We are an independent technology studio from Poznań, bringing engineering and creativity together. We help companies implement artificial intelligence where it genuinely makes work easier, organises knowledge and supports the growth of their teams. We design with intention - from the first idea and prototype to a finished system, brand and website. We believe in technology that matters and makes everyday work easier."
   },
   "services": {
     "label": "Services",
     "heading": "Small studio. Full attention.",
-    "description": "Your brand, website, technology and communication should all speak the same language. That is why we look at your business as a whole and shape the scope around what it actually needs.",
+    "description": "Your brand, website, technology and communication should all speak with one voice. That is why we look at your business as a whole and shape the scope around what it genuinely needs - from the first idea to a solution ready for everyday use.",
     "items": [
       {
         "index": "01",
-        "title": "AI",
-        "description": "We build tools that simplify working with documents, knowledge and repetitive processes.",
-        "tags": "ASSISTANTS · AUTOMATION · TOOLS"
+        "title": "AI Audit & Strategy",
+        "description": "We help identify where AI genuinely makes sense. We look at your processes, knowledge and business goals, then organise the ideas, choose the most valuable directions and prepare a practical implementation roadmap.",
+        "tags": "PROCESSES · USE CASES · ROADMAP"
       },
       {
         "index": "02",
-        "title": "Web Design",
-        "description": "We design refined websites and digital products that look and sound like your brand.",
-        "tags": "UX/UI · DEVELOPMENT · SEO"
+        "title": "AI Implementation",
+        "featuredLabel": "FLAGSHIP OFFER",
+        "description": "We create tools that simplify working with documents, knowledge and repetitive processes. We design them from the ground up - from the prototype and integrations to a secure system ready for everyday use.",
+        "tags": "PROTOTYPE · INTEGRATIONS · PRODUCTION"
       },
       {
         "index": "03",
-        "title": "Branding",
-        "description": "We build brands - from the initial idea and strategy to naming, visual identity and tone of voice.",
-        "tags": "STRATEGY · VISUAL IDENTITY · PR"
+        "title": "Digital Foundation",
+        "description": "Build your brand with us from the ground up - from positioning and visual identity to a website and one key AI implementation. We bring everything together into a coherent digital foundation that supports the future growth of your business.",
+        "tags": "STRATEGY · BRANDING · WEB · AI"
       },
       {
         "index": "04",
-        "title": "Content",
-        "description": "We create social media content - photography, video and copywriting - that completes a consistent brand image.",
-        "tags": "SOCIAL MEDIA · PHOTO & VIDEO · COPYWRITING"
+        "title": "Brand & Web",
+        "description": "We design refined brands, websites and digital products that look and sound like your business. From strategy and visual identity to UX/UI, development and the language of your communication.",
+        "tags": "IDENTITY · UX/UI · DEVELOPMENT"
       }
     ]
   },
+  "targetAudience": {
+    "label": "Who we help",
+    "heading": "For businesses that want to grow thoughtfully.",
+    "description": "We work best with companies that manage a great deal of knowledge, documentation and repetitive work, but do not want to introduce technology simply for the sake of it. We look for solutions that genuinely improve everyday work and support the growth of the team.",
+    "items": [
+      {
+        "index": "01",
+        "title": "Working with documents takes too much time",
+        "description": "The team spends its time searching, comparing and rewriting information instead of applying its knowledge to clients, projects and important decisions."
+      },
+      {
+        "index": "02",
+        "title": "Knowledge is scattered across people and tools",
+        "description": "Important information is buried in emails, files, conversations and the minds of a few people, making it difficult to find, share and use effectively."
+      },
+      {
+        "index": "03",
+        "title": "Repetitive processes are holding back growth",
+        "description": "The business is growing, but some of the work still requires manual supervision, copying data and repeating the same steps with every new project."
+      },
+      {
+        "index": "04",
+        "title": "The business needs a new digital foundation",
+        "description": "The brand, website, communication and existing tools are no longer keeping pace with where the company is heading or the experience its clients and team expect."
+      }
+    ]
+  },
+  "process": {
+    "label": "Process",
+    "heading": "From an idea to a working solution.",
+    "description": "We begin by understanding what you genuinely need. Then we test the idea on a smaller scale before building a solution that can work reliably within the everyday rhythm of your business.",
+    "items": [
+      {
+        "index": "01",
+        "title": "Discovery",
+        "description": "We get to know the business, its people, data and processes. We look for the place where technology can create real value."
+      },
+      {
+        "index": "02",
+        "title": "Prototype",
+        "description": "We test the most important assumptions within a focused, clearly defined scope before the solution grows to production scale."
+      },
+      {
+        "index": "03",
+        "title": "Implementation",
+        "description": "We build the system, connect it with your existing tools and take care of usability, security and reliable operation."
+      },
+      {
+        "index": "04",
+        "title": "Growth",
+        "description": "We observe how the solution performs in practice, develop it further and adapt it to the changing needs of the business and its team."
+      }
+    ]
+  },
+  "philosophy": {
+    "label": "Our approach",
+    "heading": "AI where it makes sense.",
+    "description": "We demystify artificial intelligence, using it responsibly and only where it is genuinely needed. We do not treat AI as a goal in itself or as a simple way to replace people. We design solutions that remove mechanical work from teams, organise knowledge and support better decision-making. This gives people more time for work that requires experience, creativity, responsibility and human relationships."
+  },
   "engineeringFoundation": {
-    "label": "Technology Expertise",
-    "heading": "Experience you can dependend on.",
-    "description": "The technology side of Sokołek Studio is led by Maksymilian, a senior software engineer with nearly six years of experience building AI systems, web applications and cloud architectures. He currently develops AI systems at Brahma AI. Previously, he designed and delivered solutions for startups and global companies across the healthcare, chemical, advertising, semiconductor and financial industries.",
+    "label": "Engineering foundation",
+    "note": "Selected professional experience of the studio's co-founder.",
+    "heading": "Experience you can rely on.",
+    "description": "Maksymilian leads the technology side of Sokołek Studio. He is a senior software engineer with more than six years of experience building AI systems, web applications and cloud architecture. He has designed and implemented solutions ranging from early prototypes to production systems for startups and global companies across the medical, chemical, advertising, semiconductor and financial sectors.",
     "pillars": [
       {
-        "title": "AI Platform for Medical Documentation",
-        "outcome": "Designed and built an application for working with medical documentation and knowledge from the ground up - from cloud architecture and AI model integrations to the user interface and deployment process.",
+        "title": "AI platform for medical documentation",
+        "outcome": "Designing and building an application for working with medical documentation and knowledge from the ground up - from cloud architecture and AI model integrations to the user interface and deployment process.",
         "role": "Lead Full-Stack AI Software Engineer",
         "stack": [
           "React",
@@ -67,8 +129,8 @@
         ]
       },
       {
-        "title": "AI Agent System for Advertising",
-        "outcome": "Built an agentic system capable of planning and executing multi-step tasks, working with different AI models and passing structured results between services.",
+        "title": "AI agent system for the advertising industry",
+        "outcome": "Building an agent-based system that plans and executes multi-stage tasks, works with different AI models and passes structured results between services.",
         "role": "AI Engineer",
         "stack": [
           "AI Agents",
@@ -80,8 +142,8 @@
         ]
       },
       {
-        "title": "MLOps Infrastructure for the Semiconductor Industry",
-        "outcome": "Designed and implemented a production MLOps environment based on Kubernetes that standardised machine learning workflows and streamlined model development and deployment across a global engineering organisation.",
+        "title": "MLOps infrastructure for the semiconductor industry",
+        "outcome": "Designing and implementing a production MLOps environment based on Kubernetes, standardising work with machine-learning models and improving their development and deployment across a global engineering organisation.",
         "role": "Full-Stack AI Software Engineer",
         "stack": [
           "Kubernetes",
@@ -92,8 +154,8 @@
         ]
       },
       {
-        "title": "Data Architecture for the Banking Sector",
-        "outcome": "Built pipelines that analysed data and information that supported the maintenance of a global ATM infrastructure.",
+        "title": "Data architecture for the banking sector",
+        "outcome": "Building data systems that analysed information and supported the maintenance of a global ATM infrastructure.",
         "role": "Software Engineer",
         "stack": [
           "Data Pipelines",
@@ -105,8 +167,8 @@
         ]
       },
       {
-        "title": "Knowledge Platform for the Chemical Industry",
-        "outcome": "Designed a platform that processed approximately 100,000 technical PDF documents, structured the data they contained and prepared it for search and use by AI-powered tools.",
+        "title": "Knowledge platform for the chemical industry",
+        "outcome": "Designing a platform that processed approximately 100,000 technical PDF documents, organised the information they contained and prepared it for search and use by AI-powered tools.",
         "role": "Full-Stack AI Engineer",
         "stack": [
           "Python",
@@ -122,12 +184,12 @@
     ]
   },
   "portfolio": {
-    "label": "Portfolio",
+    "label": "Work",
     "heading": "A digital space for a place built with passion.",
     "dogTok": {
       "title": "DOG TOK",
-      "subtitle": "DOG TOK - Szkoleniowy Raj",
-      "summary": "We organised DOG TOK's extensive offering into a clear and intuitive structure. We designed a website that captures the atmosphere of the place, makes key information easy to find and guides visitors through workshops, camps, accommodation and the events calendar.",
+      "subtitle": "DOG TOK - Training Paradise",
+      "summary": "We transformed DOG TOK's extensive offer into a simple and intuitive structure. We designed a website that captures the atmosphere of the place, makes essential information easy to find and guides visitors through workshops, camps, accommodation and the event schedule.",
       "labels": {
         "client": "CLIENT",
         "industry": "INDUSTRY",
@@ -135,9 +197,9 @@
         "year": "YEAR"
       },
       "data": {
-        "client": "DOG TOK - Szkoleniowy Raj",
+        "client": "DOG TOK - SZKOLENIOWY RAJ",
         "industry": "DOG TRAINING / TOURISM",
-        "stack": "DESIGN / WEB / COPYWRITING",
+        "stack": "STRATEGY / UX/UI / WEB DEVELOPMENT / COPYWRITING",
         "year": "2026"
       }
     }
@@ -145,35 +207,35 @@
   "manifesto": {
     "label": "About us",
     "sectionOne": {
-      "heading": "A little about us, hey!",
-      "description": "The technical co-founder of the studio. He has spent years building software and AI systems for startups and large companies. He combines solid engineering experience with a strong curiosity for new technology, without implementing it just for the sake of it. He likes simple solutions, clean code and projects refined down to the smallest detail."
+      "heading": "A little about us",
+      "description": "Maksymilian leads the technology side of the studio. He has spent years building software and AI systems for startups and large organisations. He combines a strong engineering background with a genuine curiosity for new technologies, but never introduces them simply for effect. He values straightforward solutions, clean code and projects refined down to the smallest detail."
     },
     "sectionTwo": {
       "heading_part1": "Maksymilian",
       "heading_part2": "Klaudia",
-      "description": "The creative co-founder of the studio. She combines experience in PR and communication with photography, editing and social media. She has a strong eye for visuals, a feel for trends and knows how to translate a brand's character into content. She makes sure everything feels consistent, natural and simply looks good."
+      "description": "Klaudia leads the creative side of the studio. She combines experience in PR and communication with UX, photography, editing and social media. She has a strong eye for imagery, an instinct for emerging trends and a talent for translating both a brand's character and complex technology into simple, natural language. She makes sure the final result is coherent, useful and simply looks good."
     },
     "principles": [
       "Pro, but make it fun",
       "AI where it makes sense",
-      "Digital, but grounded in reality",
-      "Clear and straightforward communication"
+      "Digital, but grounded",
+      "Simple, clear communication"
     ]
   },
   "contact": {
-    "heading_part1": "Got an idea?",
+    "heading_part1": "Have an idea?",
     "heading_part2": "Let's talk.",
-    "description": "Tell us about your business, idea or challenge. Together, we will work out what you actually need and how we can turn it into a thoughtfully designed solution."
+    "description": "Tell us about your business, idea or challenge. Together, we will understand what you genuinely need and explore where AI could make work easier or help your company grow.",
+    "secondaryDescription": "We can also build a new brand, website or complete Digital Foundation for you, bringing design, technology and communication together into one coherent solution."
   },
   "footer": {
     "contact": "Get in touch"
   },
   "cookieConsent": {
-    "label": "Cookie consent",
-    "heading": "Can we use analytics cookies?",
-    "description": "We use Google Analytics to better understand how visitors use our website.",
-    "accept": "Accept",
-    "reject": "Reject",
+    "label": "Cookies",
+    "heading": "We use analytics cookies.",
+    "description": "We use Google Analytics to better understand how visitors use our website and how we can improve it.",
+    "dismiss": "Got it",
     "settings": "Cookie settings"
   }
 }

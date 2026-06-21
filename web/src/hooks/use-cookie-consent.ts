@@ -1,74 +1,36 @@
-import { useCallback, useEffect, useState } from 'react'
-import { denyGoogleAnalyticsConsent, startGoogleAnalytics } from '../lib/analytics'
+import { useCallback, useState } from 'react';
 
-const COOKIE_CONSENT_STORAGE_KEY = 'sokolek-cookie-consent'
+const COOKIE_NOTICE_STORAGE_KEY = 'sokolek-cookie-notice-dismissed';
 
-type CookieConsent = 'accepted' | 'pending' | 'rejected'
-
-function readStoredConsent(): CookieConsent {
+function readNoticeDismissed() {
   try {
-    const storedConsent = window.localStorage.getItem(COOKIE_CONSENT_STORAGE_KEY)
-
-    if (storedConsent === 'accepted' || storedConsent === 'rejected') {
-      return storedConsent
-    }
+    return window.localStorage.getItem(COOKIE_NOTICE_STORAGE_KEY) === 'true';
   } catch (error) {
-    console.error('Failed to read cookie consent preference.', error)
+    console.error('Failed to read cookie notice preference.', error);
   }
 
-  return 'pending'
+  return false;
 }
 
-function storeConsent(consent: Exclude<CookieConsent, 'pending'>) {
+function storeNoticeDismissed() {
   try {
-    window.localStorage.setItem(COOKIE_CONSENT_STORAGE_KEY, consent)
+    window.localStorage.setItem(COOKIE_NOTICE_STORAGE_KEY, 'true');
   } catch (error) {
-    console.error('Failed to store cookie consent preference.', error)
-  }
-}
-
-function clearStoredConsent() {
-  try {
-    window.localStorage.removeItem(COOKIE_CONSENT_STORAGE_KEY)
-  } catch (error) {
-    console.error('Failed to clear cookie consent preference.', error)
+    console.error('Failed to store cookie notice preference.', error);
   }
 }
 
 export function useCookieConsent() {
-  const [consent, setConsent] = useState<CookieConsent>(() => readStoredConsent())
+  const [isNoticeDismissed, setIsNoticeDismissed] = useState(readNoticeDismissed);
 
-  useEffect(() => {
-    if (consent === 'accepted') {
-      startGoogleAnalytics()
-      return
-    }
 
-    if (consent === 'rejected') {
-      denyGoogleAnalyticsConsent()
-    }
-  }, [consent])
-
-  const acceptConsent = useCallback(() => {
-    storeConsent('accepted')
-    setConsent('accepted')
-  }, [])
-
-  const rejectConsent = useCallback(() => {
-    storeConsent('rejected')
-    setConsent('rejected')
-  }, [])
-
-  const resetConsent = useCallback(() => {
-    clearStoredConsent()
-    denyGoogleAnalyticsConsent()
-    setConsent('pending')
-  }, [])
+  const dismissNotice = useCallback(() => {
+    storeNoticeDismissed();
+    setIsNoticeDismissed(true);
+  }, []);
 
   return {
-    acceptConsent,
-    consent,
-    rejectConsent,
-    resetConsent,
-  }
+    dismissNotice,
+    shouldShowNotice: !isNoticeDismissed,
+  };
 }

@@ -12,6 +12,7 @@ type EngineeringPillar = {
 }
 
 const horizontalLockTopOffset = '1.5rem'
+const horizontalLockScrollOffset = '24px'
 
 export function EngineeringFoundation() {
   const { t } = useTranslation()
@@ -26,7 +27,7 @@ export function EngineeringFoundation() {
   const pillars = t('engineeringFoundation.pillars', { returnObjects: true }) as EngineeringPillar[]
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ['start start', 'end end'],
+    offset: [`start ${horizontalLockScrollOffset}`, 'end end'],
   })
   const x = useTransform(scrollYProgress, [0, 1], [0, -horizontalDistance])
 
@@ -73,59 +74,73 @@ export function EngineeringFoundation() {
     }
   }, [])
 
-  const shouldLockCards = canLockHorizontally && !prefersReducedMotion && horizontalDistance > 0 && lockContentHeight > 0
+  const canUseHorizontalLayout = canLockHorizontally && !prefersReducedMotion
+  const shouldLockCards = canUseHorizontalLayout && horizontalDistance > 0 && lockContentHeight > 0
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative bg-paper text-ink"
-      style={{
-        height: shouldLockCards ? `${lockContentHeight + horizontalDistance}px` : undefined,
-      }}
-    >
-      <div
-        ref={stickyContentRef}
-        className={shouldLockCards ? 'sticky overflow-hidden px-5 py-20 sm:px-8 lg:px-10' : 'site-section'}
-        style={shouldLockCards ? {
-          top: horizontalLockTopOffset,
-        } : undefined}
+    <div className={shouldLockCards ? 'bg-paper pt-20 lg:pt-24' : undefined}>
+      <section
+        ref={sectionRef}
+        className="relative bg-paper text-ink"
+        style={{
+          height: shouldLockCards ? `${lockContentHeight + horizontalDistance}px` : undefined,
+        }}
       >
-        <div className="site-container">
-          <Reveal>
-            <SectionLabel className="text-ink-muted">
-              {t('engineeringFoundation.label')}
-            </SectionLabel>
-          </Reveal>
-
-          <div className="section-offset">
+        <div
+          ref={stickyContentRef}
+          className={shouldLockCards ? 'sticky overflow-hidden px-5 pb-20 pt-0 sm:px-8 lg:px-10' : 'site-section'}
+          style={shouldLockCards ? {
+            top: horizontalLockTopOffset,
+          } : undefined}
+        >
+          <div className="site-container">
             <Reveal>
-              <IntroCopy />
+              <SectionLabel className="text-ink-muted">
+                {t('engineeringFoundation.label')}
+              </SectionLabel>
             </Reveal>
 
-            <div
-              ref={viewportRef}
-              className={`section-offset min-w-0 ${shouldLockCards ? 'overflow-hidden' : ''}`}
-            >
-              <motion.div
-                ref={trackRef}
-                className={shouldLockCards ? 'flex gap-4 pb-3' : 'grid gap-4 md:flex md:snap-x md:snap-mandatory md:overflow-x-auto md:pb-3'}
-                style={shouldLockCards ? { x } : undefined}
+            <div className="section-offset">
+              <Reveal>
+                <IntroCopy />
+              </Reveal>
+
+              <div
+                ref={viewportRef}
+                className={`section-offset min-w-0 ${canUseHorizontalLayout ? 'overflow-hidden' : ''}`}
               >
-                {pillars.map((pillar, index) => (
-                  <Reveal
-                    key={pillar.title}
-                    className={shouldLockCards ? 'w-[90vw] max-w-[40rem] shrink-0 snap-start sm:w-[34rem] lg:w-[38rem]' : 'md:w-[90vw] md:max-w-[40rem] md:shrink-0 md:snap-start lg:w-[38rem]'}
-                    delay={index * 0.08}
-                  >
-                    <PillarCard index={index} pillar={pillar} />
-                  </Reveal>
-                ))}
-              </motion.div>
+                <motion.div
+                  ref={trackRef}
+                  className={canUseHorizontalLayout ? 'flex gap-4 pb-3' : 'grid gap-4'}
+                  style={shouldLockCards ? { x } : undefined}
+                >
+                  {pillars.map((pillar, index) => {
+                    const card = <PillarCard index={index} pillar={pillar} />
+
+                    if (canUseHorizontalLayout) {
+                      return (
+                        <div
+                          key={pillar.title}
+                          className="w-[90vw] max-w-[40rem] shrink-0 snap-start sm:w-[34rem] lg:w-[38rem]"
+                        >
+                          {card}
+                        </div>
+                      )
+                    }
+
+                    return (
+                      <Reveal key={pillar.title} delay={index * 0.08}>
+                        {card}
+                      </Reveal>
+                    )
+                  })}
+                </motion.div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   )
 }
 
@@ -134,9 +149,14 @@ function IntroCopy() {
 
   return (
     <div className="editorial-grid">
-      <h2 className="heading-md max-w-4xl text-ink">
-        {t('engineeringFoundation.heading')}
-      </h2>
+      <div>
+        <p className="meta-text text-ink-muted">
+          {t('engineeringFoundation.note')}
+        </p>
+        <h2 className="heading-md content-offset-tight max-w-4xl text-ink">
+          {t('engineeringFoundation.heading')}
+        </h2>
+      </div>
       <p className="body-copy max-w-xl text-ink-soft lg:pt-2">
         {t('engineeringFoundation.description')}
       </p>

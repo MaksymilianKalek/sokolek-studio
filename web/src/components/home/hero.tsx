@@ -13,8 +13,8 @@ type HeroProps = {
 
 function LanguageSwitch() {
   const { i18n, t } = useTranslation();
-  const activeLanguage = i18n.language.startsWith('en') ? 'pl' : 'en';
-  const nextLanguage = activeLanguage === 'en' ? 'pl' : 'en';
+  const currentLanguage = i18n.resolvedLanguage ?? i18n.language;
+  const nextLanguage = currentLanguage.startsWith('en') ? 'pl' : 'en';
 
   return (
     <button
@@ -23,7 +23,7 @@ function LanguageSwitch() {
       onClick={() => i18n.changeLanguage(nextLanguage)}
       className="nav-text interactive-accent-link focus-ring cursor-pointer text-ink"
     >
-      {activeLanguage.toUpperCase()}
+      {nextLanguage.toUpperCase()}
     </button>
   );
 }
@@ -52,6 +52,7 @@ export function Hero({
   const navItems = [
     { label: t('nav.services'), href: '#services' },
     { label: t('nav.portfolio'), href: '#portfolio' },
+    { label: t('common.about'), href: '#about' },
     { label: t('nav.contact'), href: '#contact' },
   ];
   const heroGridStyle = studioAxis
@@ -135,9 +136,6 @@ export function Hero({
               />
             </h1>
 
-            <p className="heading-md relative z-10 mt-6 max-w-3xl text-ink sm:hidden">
-              {t('hero.subtitle')}
-            </p>
           </div>
         </div>
 
@@ -145,9 +143,15 @@ export function Hero({
           className="relative z-10 grid gap-y-6 sm:mt-0 md:grid-cols-[minmax(0,var(--studio-axis,1.1fr))_minmax(18rem,1fr)_auto] md:items-start md:gap-y-8 md:pt-4"
           style={heroGridStyle}
         >
-          <p className="heading-md hidden max-w-3xl text-ink sm:block">
-            {t('hero.subtitle')}
-          </p>
+          <div className="hidden sm:block">
+            <p className="heading-md mt-4 max-w-3xl text-ink">
+              {t('hero.subtitle')}
+            </p>
+          </div>
+
+          <p className="heading-md relative z-10 mt-6 max-w-3xl text-ink sm:hidden">
+              {t('hero.subtitle')}
+            </p>
 
           <p className="body-copy max-w-md">
             {t('hero.description')}

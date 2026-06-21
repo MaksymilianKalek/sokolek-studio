@@ -8,7 +8,7 @@ export function Philosophy() {
 
   return (
     <section className="site-section">
-      <div className="site-container">
+      <div id="about" className="site-container site-anchor">
         <Reveal>
           <SectionLabel>{t('manifesto.label')}</SectionLabel>
         </Reveal>
