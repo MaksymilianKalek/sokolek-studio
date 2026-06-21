@@ -13,7 +13,7 @@ type HeroProps = {
 
 function LanguageSwitch() {
   const { i18n, t } = useTranslation();
-  const activeLanguage = i18n.language.startsWith('en') ? 'en' : 'pl';
+  const activeLanguage = i18n.language.startsWith('en') ? 'pl' : 'en';
   const nextLanguage = activeLanguage === 'en' ? 'pl' : 'en';
 
   return (
