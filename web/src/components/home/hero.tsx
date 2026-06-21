@@ -94,7 +94,7 @@ export function Hero({
         <img
           src="/logo_new_white.svg"
           alt=""
-          className="h-auto w-14 sm:w-16 lg:w-[3.5rem]"
+          className="h-auto w-10"
         />
 
         <nav
