@@ -1,19 +1,19 @@
-import { type CSSProperties, useEffect, useRef, useState } from 'react'
-import { ArrowUpRight } from 'lucide-react'
-import { useTranslation } from 'react-i18next'
-import { ShaderGradientBackground } from '../shader-gradient-background'
-import { TerminalWordmark } from './terminal-wordmark'
+import { type CSSProperties, useEffect, useRef, useState } from 'react';
+import { ArrowUpRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { ShaderGradientBackground } from '../shader-gradient-background';
+import { TerminalWordmark } from './terminal-wordmark';
 
 type HeroProps = {
-  isIntroActive: boolean
-  isIntroDismissing: boolean
-  onIntroTypingComplete: () => void
-  startTyping: boolean
-}
+  isIntroActive: boolean;
+  isIntroDismissing: boolean;
+  onIntroTypingComplete: () => void;
+  startTyping: boolean;
+};
 
 function LanguageSwitch() {
-  const { i18n, t } = useTranslation()
-  const activeLanguage = i18n.language.startsWith('en') ? 'en' : 'pl'
+  const { i18n, t } = useTranslation();
+  const activeLanguage = i18n.language.startsWith('en') ? 'en' : 'pl';
 
   return (
     <div
@@ -25,25 +25,24 @@ function LanguageSwitch() {
           key={language}
           type="button"
           onClick={() => i18n.changeLanguage(language)}
-          className={`interactive-accent-link focus-ring cursor-pointer ${
-            activeLanguage === language ? 'text-ink' : 'text-ink-muted'
-          }`}
+          className={`interactive-accent-link focus-ring cursor-pointer ${activeLanguage === language ? 'text-ink' : 'text-ink-muted'
+            }`}
         >
           {language}
         </button>
       ))}
     </div>
-  )
+  );
 }
 
 function getSecondWordAxisPrefix(value: string) {
-  const firstSpaceIndex = value.indexOf(' ')
+  const firstSpaceIndex = value.indexOf(' ');
 
   if (firstSpaceIndex === -1) {
-    return ''
+    return '';
   }
 
-  return value.slice(0, firstSpaceIndex + 1)
+  return value.slice(0, firstSpaceIndex + 1);
 }
 
 export function Hero({
@@ -52,46 +51,52 @@ export function Hero({
   onIntroTypingComplete,
   startTyping,
 }: HeroProps) {
-  const { t } = useTranslation()
-  const heroTitle = t('hero.title')
-  const studioAxisPrefix = getSecondWordAxisPrefix(heroTitle)
-  const studioAxisMeasureRef = useRef<HTMLSpanElement>(null)
-  const [studioAxis, setStudioAxis] = useState<number | null>(null)
+  const { t } = useTranslation();
+  const heroTitle = t('hero.title');
+  const studioAxisPrefix = getSecondWordAxisPrefix(heroTitle);
+  const studioAxisMeasureRef = useRef<HTMLSpanElement>(null);
+  const [studioAxis, setStudioAxis] = useState<number | null>(null);
   const navItems = [
     { label: t('nav.services'), href: '#services' },
     { label: t('nav.portfolio'), href: '#portfolio' },
     { label: t('nav.contact'), href: '#contact' },
-  ]
+  ];
   const heroGridStyle = studioAxis
     ? ({ '--studio-axis': `${studioAxis}px` } as CSSProperties)
-    : undefined
+    : undefined;
   useEffect(() => {
-    const measureNode = studioAxisMeasureRef.current
+    const measureNode = studioAxisMeasureRef.current;
 
     if (!measureNode || studioAxisPrefix.length === 0) {
-      return
+      return;
     }
 
     const updateStudioAxis = () => {
-      setStudioAxis(Math.ceil(measureNode.getBoundingClientRect().width))
-    }
-    const resizeObserver = new ResizeObserver(updateStudioAxis)
+      setStudioAxis(Math.ceil(measureNode.getBoundingClientRect().width));
+    };
+    const resizeObserver = new ResizeObserver(updateStudioAxis);
 
-    updateStudioAxis()
-    resizeObserver.observe(measureNode)
-    window.addEventListener('resize', updateStudioAxis)
+    updateStudioAxis();
+    resizeObserver.observe(measureNode);
+    window.addEventListener('resize', updateStudioAxis);
 
     return () => {
-      resizeObserver.disconnect()
-      window.removeEventListener('resize', updateStudioAxis)
-    }
-  }, [studioAxisPrefix])
+      resizeObserver.disconnect();
+      window.removeEventListener('resize', updateStudioAxis);
+    };
+  }, [studioAxisPrefix]);
 
   return (
     <section className="hero-shader-shell relative flex min-h-svh flex-col overflow-hidden px-5 py-5 sm:min-h-dvh sm:px-8 lg:px-10">
       <ShaderGradientBackground />
 
-      <header className="relative z-10 flex items-center justify-end gap-6">
+      <header className="relative z-10 flex items-center justify-between gap-6">
+        <img
+          src="/logo_new_white.svg"
+          alt=""
+          className="h-auto w-14 sm:w-16 lg:w-[3.5rem]"
+        />
+
         <nav
           aria-label="Main navigation"
           className="hidden items-center gap-7 font-mono text-base font-medium leading-[1.1] tracking-[-0.025em] sm:flex"
@@ -165,5 +170,5 @@ export function Hero({
         </div>
       </div>
     </section>
-  )
+  );
 }
