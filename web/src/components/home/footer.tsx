@@ -17,21 +17,21 @@ export function Footer() {
         <div className="grid gap-8 text-paper/42 sm:grid-cols-[1fr_auto] sm:items-end">
           <nav
             aria-label="Footer navigation"
-            className="nav-text flex flex-wrap gap-x-6 gap-y-3"
+            className="flex flex-wrap gap-x-6 gap-y-3"
           >
             {footerLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="interactive-accent-link focus-ring-inverted transition-colors hover:text-paper"
+                className="nav-text interactive-accent-link focus-ring-inverted transition-colors hover:text-paper"
               >
                 {t(link.labelKey)}
               </a>
             ))}
           </nav>
 
-          <div className="nav-text flex flex-wrap gap-x-6 gap-y-3 sm:justify-end">
-            <p>© 2026 Sokołek Studio</p>
+          <div className="flex flex-wrap gap-x-6 gap-y-3 sm:justify-end">
+            <p className="nav-text">© 2026 Sokołek Studio</p>
           </div>
         </div>
       </div>

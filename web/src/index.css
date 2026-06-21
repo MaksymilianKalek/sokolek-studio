@@ -290,6 +290,13 @@ button {
   text-transform: uppercase;
 }
 
+.nav-text a,
+.nav-text button {
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+
 .meta-text,
 .action-text {
   font-family: var(--font-mono);

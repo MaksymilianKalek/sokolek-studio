@@ -14,24 +14,17 @@ type HeroProps = {
 function LanguageSwitch() {
   const { i18n, t } = useTranslation();
   const activeLanguage = i18n.language.startsWith('en') ? 'en' : 'pl';
+  const nextLanguage = activeLanguage === 'en' ? 'pl' : 'en';
 
   return (
-    <div
+    <button
       aria-label={t('nav.language')}
-      className="nav-text flex items-center gap-2 text-ink-muted"
+      type="button"
+      onClick={() => i18n.changeLanguage(nextLanguage)}
+      className="nav-text interactive-accent-link focus-ring cursor-pointer text-ink"
     >
-      {(['pl', 'en'] as const).map((language) => (
-        <button
-          key={language}
-          type="button"
-          onClick={() => i18n.changeLanguage(language)}
-          className={`interactive-accent-link focus-ring cursor-pointer ${activeLanguage === language ? 'text-ink' : 'text-ink-muted'
-            }`}
-        >
-          {language.toUpperCase()}
-        </button>
-      ))}
-    </div>
+      {activeLanguage.toUpperCase()}
+    </button>
   );
 }
 
