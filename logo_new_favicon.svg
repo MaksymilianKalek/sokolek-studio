@@ -1,6 +1,6 @@
 <svg width="97" height="84" viewBox="0 0 97 84" fill="none" xmlns="http://www.w3.org/2000/svg">
 <style>
-.favicon-mark { fill: #0A0A0A; }
+.favicon-mark { fill: #111111; }
 @media (prefers-color-scheme: dark) {
   .favicon-mark { fill: #FAFAFA; }
 }
