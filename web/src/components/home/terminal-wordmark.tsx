@@ -72,7 +72,7 @@ export function TerminalWordmark({
       <span>{visibleText}</span>
       <motion.span
         key={isTypingComplete ? 'cursor-complete' : 'cursor-active'}
-        className="accent-gradient mt-[0.08em] h-[0.72em] w-[0.08em]"
+        className="typing-cursor mt-[0.08em] h-[0.72em] w-[0.08em]"
         animate={
           prefersReducedMotion
             ? { opacity: 0 }

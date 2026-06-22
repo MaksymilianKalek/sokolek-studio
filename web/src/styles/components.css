@@ -70,15 +70,8 @@
   transition: color var(--motion-overlay) var(--ease-theme);
 }
 
-.accent-gradient {
-  background-image: var(--sunset-gradient);
-  background-size: 220% 220%;
-  box-shadow: var(--sunset-glow);
-  filter: var(--sunset-filter);
-  will-change: background-position, box-shadow, filter, opacity;
-  animation:
-    accent-gradient-drift 12s var(--ease-ambient) infinite alternate,
-    accent-glow-wave 7s var(--ease-ambient) infinite alternate;
+.typing-cursor {
+  background-color: var(--color-sunset-orange);
 }
 
 .interactive-accent-link {
@@ -169,48 +162,6 @@
 .primary-cta--inverted:focus-visible::before {
   background-color: color-mix(in srgb, var(--color-sunset-orange) 14%, transparent);
   border-color: color-mix(in srgb, var(--color-sunset-orange) 78%, transparent);
-}
-
-@keyframes accent-gradient-drift {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  100% {
-    background-position: 100% 50%;
-  }
-}
-
-@keyframes accent-glow-wave {
-  0% {
-    box-shadow:
-      0 0 10px 1px color-mix(in srgb, var(--color-sunset-yellow) 8%, transparent),
-      0 0 22px 2px color-mix(in srgb, var(--color-sunset-amber) 5%, transparent);
-    filter:
-      saturate(1.02)
-      drop-shadow(0 0 3px color-mix(in srgb, var(--color-sunset-yellow) 12%, transparent))
-      drop-shadow(0 0 8px color-mix(in srgb, var(--color-sunset-amber) 7%, transparent));
-  }
-
-  48% {
-    box-shadow:
-      0 0 16px 2px color-mix(in srgb, var(--color-sunset-yellow) 14%, transparent),
-      0 0 34px 4px color-mix(in srgb, var(--color-sunset-amber) 9%, transparent);
-    filter:
-      saturate(1.06)
-      drop-shadow(0 0 5px color-mix(in srgb, var(--color-sunset-yellow) 18%, transparent))
-      drop-shadow(0 0 12px color-mix(in srgb, var(--color-sunset-amber) 12%, transparent));
-  }
-
-  100% {
-    box-shadow:
-      0 0 12px 1px color-mix(in srgb, var(--color-sunset-orange) 10%, transparent),
-      0 0 26px 3px color-mix(in srgb, var(--color-sunset-yellow) 8%, transparent);
-    filter:
-      saturate(1.04)
-      drop-shadow(0 0 4px color-mix(in srgb, var(--color-sunset-orange) 15%, transparent))
-      drop-shadow(0 0 10px color-mix(in srgb, var(--color-sunset-yellow) 10%, transparent));
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

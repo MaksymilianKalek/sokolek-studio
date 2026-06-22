@@ -41,8 +41,6 @@
   --color-line: #e4e4e4;
   --color-line-fixed: #e4e4e4;
   --color-sunset-orange: #ffae35;
-  --color-sunset-yellow: #ffc252;
-  --color-sunset-amber: #ffd987;
 }
 
 @property --color-paper {
@@ -94,19 +92,6 @@
   --motion-entrance: 800ms;
   --motion-reveal-slow: 1000ms;
   --motion-theme: 900ms;
-  --sunset-gradient: linear-gradient(
-    135deg,
-    var(--color-sunset-orange) 0%,
-    var(--color-sunset-yellow) 58%,
-    var(--color-sunset-amber) 100%
-  );
-  --sunset-glow:
-    0 0 12px 1px color-mix(in srgb, var(--color-sunset-yellow) 10%, transparent),
-    0 0 26px 2px color-mix(in srgb, var(--color-sunset-amber) 7%, transparent);
-  --sunset-filter:
-    saturate(1.04)
-    drop-shadow(0 0 4px color-mix(in srgb, var(--color-sunset-yellow) 16%, transparent))
-    drop-shadow(0 0 10px color-mix(in srgb, var(--color-sunset-amber) 10%, transparent));
 }
 
 html.site-loading,
