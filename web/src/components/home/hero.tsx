@@ -1,6 +1,7 @@
 import { type CSSProperties, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ShaderGradientBackground } from '../shader-gradient-background';
+import { SiteHeader } from '../site-header';
 import { cx } from '../../lib/class-names';
 import { TerminalWordmark } from './terminal-wordmark';
 import { PrimaryCtaLink } from './ui';
@@ -11,23 +12,6 @@ type HeroProps = {
   onIntroTypingComplete: () => void;
   startTyping: boolean;
 };
-
-function LanguageSwitch() {
-  const { i18n, t } = useTranslation();
-  const currentLanguage = i18n.resolvedLanguage ?? i18n.language;
-  const nextLanguage = currentLanguage.startsWith('en') ? 'pl' : 'en';
-
-  return (
-    <button
-      aria-label={t('nav.language')}
-      type="button"
-      onClick={() => i18n.changeLanguage(nextLanguage)}
-      className="nav-text interactive-accent-link focus-ring cursor-pointer text-ink"
-    >
-      {nextLanguage.toUpperCase()}
-    </button>
-  );
-}
 
 function getSecondWordAxisPrefix(value: string) {
   const firstSpaceIndex = value.indexOf(' ');
@@ -50,12 +34,6 @@ export function Hero({
   const studioAxisPrefix = getSecondWordAxisPrefix(heroTitle);
   const studioAxisMeasureRef = useRef<HTMLSpanElement>(null);
   const [studioAxis, setStudioAxis] = useState<number | null>(null);
-  const navItems = [
-    { label: t('nav.services'), href: '#services' },
-    { label: t('nav.portfolio'), href: '#portfolio' },
-    { label: t('common.about'), href: '#about' },
-    { label: t('nav.contact'), href: '#contact' },
-  ];
   const heroGridStyle = studioAxis
     ? ({ '--studio-axis': `${studioAxis}px` } as CSSProperties)
     : undefined;
@@ -85,33 +63,7 @@ export function Hero({
     <section className="hero-shader-shell relative flex min-h-svh flex-col overflow-hidden px-5 py-5 sm:min-h-dvh sm:px-8 lg:px-10">
       <ShaderGradientBackground />
 
-      <header className="relative z-10 flex items-center justify-between gap-6">
-        <img
-          src="/logo_new_white.svg"
-          alt=""
-          className="h-auto w-10"
-        />
-
-        <nav
-          aria-label="Main navigation"
-          className="nav-text hidden items-center gap-7 sm:flex"
-        >
-          {navItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="interactive-accent-link focus-ring text-ink-soft"
-            >
-              {item.label}
-            </a>
-          ))}
-          <LanguageSwitch />
-        </nav>
-
-        <div className="sm:hidden">
-          <LanguageSwitch />
-        </div>
-      </header>
+      <SiteHeader logoSrc="/logo_new_white.svg" />
 
       <div
         id="top"

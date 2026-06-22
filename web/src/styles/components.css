@@ -41,7 +41,7 @@
     --color-line var(--motion-theme) var(--ease-theme);
 }
 
-.site-shell--portfolio {
+.site-shell--focus {
   --color-paper: var(--color-ink-fixed);
   --color-ink: var(--color-paper-fixed);
   --color-ink-soft: var(--color-line-fixed);

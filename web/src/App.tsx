@@ -8,30 +8,49 @@ import { Footer } from './components/home/footer'
 import { Hero } from './components/home/hero'
 import { MidPageCta } from './components/home/mid-page-cta'
 import { Philosophy } from './components/home/philosophy'
-import { PortfolioPreview } from './components/home/portfolio-preview'
 import { Process } from './components/home/process'
 import { Services } from './components/home/services'
 import { TargetAudience } from './components/home/target-audience'
 import { useCookieConsent } from './hooks/use-cookie-consent'
 import { useSmoothScroll } from './hooks/use-smooth-scroll'
 import { cx } from './lib/class-names'
+import { RealizacjePage } from './pages/realizacje'
+
+function getCurrentPath() {
+  return window.location.pathname.replace(/\/$/, '') || '/'
+}
 
 function App() {
   useSmoothScroll()
 
   const { dismissNotice, shouldShowNotice } = useCookieConsent()
-  const portfolioProofRegionRef = useRef<HTMLDivElement>(null)
-  const [portfolioThemeActive, setPortfolioThemeActive] = useState(false)
+  const audienceRegionRef = useRef<HTMLDivElement>(null)
+  const [audienceThemeActive, setAudienceThemeActive] = useState(false)
   const [isIntroTypingActive, setIsIntroTypingActive] = useState(false)
   const [isIntroDismissing, setIsIntroDismissing] = useState(false)
   const [isIntroComplete, setIsIntroComplete] = useState(false)
+  const [currentPath, setCurrentPath] = useState(getCurrentPath)
 
   const completeIntroTyping = useCallback(() => {
     setIsIntroDismissing(true)
   }, [])
 
   useEffect(() => {
-    const region = portfolioProofRegionRef.current
+    const handlePopState = () => setCurrentPath(getCurrentPath())
+
+    window.addEventListener('popstate', handlePopState)
+
+    return () => {
+      window.removeEventListener('popstate', handlePopState)
+    }
+  }, [])
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0 })
+  }, [currentPath])
+
+  useEffect(() => {
+    const region = audienceRegionRef.current
 
     if (!region) {
       return
@@ -44,7 +63,7 @@ function App() {
       observer?.disconnect()
       observer = new IntersectionObserver(
         ([entry]) => {
-          setPortfolioThemeActive(entry.isIntersecting)
+          setAudienceThemeActive(entry.isIntersecting)
         },
         {
           rootMargin: mobileQuery.matches ? '-52% 0px -32% 0px' : '-60% 0px -35% 0px',
@@ -60,15 +79,28 @@ function App() {
     return () => {
       mobileQuery.removeEventListener('change', observeRegion)
       observer?.disconnect()
-      setPortfolioThemeActive(false)
+      setAudienceThemeActive(false)
     }
-  }, [])
+  }, [currentPath])
+
+  if (currentPath === '/realizacje') {
+    return (
+      <>
+        <RealizacjePage />
+        <AnimatePresence>
+          {shouldShowNotice ? (
+            <CookieConsentBanner onDismiss={dismissNotice} />
+          ) : null}
+        </AnimatePresence>
+      </>
+    )
+  }
 
   return (
     <main
       className={cx(
         'site-shell min-h-dvh bg-paper text-ink antialiased',
-        portfolioThemeActive && 'site-shell--portfolio',
+        audienceThemeActive && 'site-shell--focus',
       )}
     >
       <div className="relative overflow-hidden">
@@ -86,14 +118,13 @@ function App() {
         />
       </div>
       <Services />
-      <TargetAudience />
+      <div ref={audienceRegionRef}>
+        <TargetAudience />
+      </div>
       <Process />
       <MidPageCta />
       <AiPhilosophy />
       <EngineeringFoundation />
-      <div ref={portfolioProofRegionRef}>
-        <PortfolioPreview />
-      </div>
       <Philosophy />
       <Footer />
       <AnimatePresence>

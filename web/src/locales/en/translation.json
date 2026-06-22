@@ -185,11 +185,13 @@
   },
   "portfolio": {
     "label": "Work",
-    "heading": "A digital space for a place built with passion.",
+    "heading": "Work with rhythm, purpose and character.",
+    "intro": "We do not collect random projects. We show work where strategy, technology, imagery and language move together.",
     "dogTok": {
       "title": "DOG TOK",
       "subtitle": "DOG TOK - Training Paradise",
       "summary": "We transformed DOG TOK's extensive offer into a simple and intuitive structure. We designed a website that captures the atmosphere of the place, makes essential information easy to find and guides visitors through workshops, camps, accommodation and the event schedule.",
+      "imageAlt": "DOG TOK - Training Paradise website designed and developed by Sokołek Studio",
       "labels": {
         "client": "CLIENT",
         "industry": "INDUSTRY",
@@ -226,7 +228,11 @@
       "AI where it makes sense",
       "Digital, but grounded",
       "Simple, clear communication"
-    ]
+    ],
+    "openScope": {
+      "heading": "We work across the full digital layer.",
+      "description": "If you did not find exactly what you were looking for on our website, but you would still like to work with us, write to us. We are sure we will find a shared language."
+    }
   },
   "contact": {
     "heading_part1": "We can't wait,",

@@ -56,6 +56,17 @@ export function Philosophy() {
                 ))}
               </ol>
             </Reveal>
+
+            <Reveal delay={0.2}>
+              <div>
+                <p className="heading-sm max-w-3xl text-ink">
+                  {t('manifesto.openScope.heading')}
+                </p>
+                <p className="body-copy content-offset-tight max-w-2xl">
+                  {t('manifesto.openScope.description')}
+                </p>
+              </div>
+            </Reveal>
           </div>
         </div>
       </div>

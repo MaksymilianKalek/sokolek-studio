@@ -185,11 +185,13 @@
   },
   "portfolio": {
     "label": "Realizacje",
-    "heading": "Cyfrowa przestrzeń dla miejsca stworzonego z pasji.",
+    "heading": "Projekty, z których jesteśmy dumni.",
+    "intro": "Najlepiej pracuje nam się z ludźmi, którzy naprawdę znają i lubią to, co robią. Tworzymy dla nich rozwiązania, w których strategia, technologia, obraz i język pracują razem.",
     "dogTok": {
       "title": "DOG TOK",
       "subtitle": "DOG TOK - Szkoleniowy Raj",
       "summary": "Uporządkowaliśmy rozbudowaną ofertę DOG TOK-a w prostą i czytelną strukturę. Zaprojektowaliśmy stronę, która oddaje atmosferę miejsca, ułatwia znalezienie najważniejszych informacji i prowadzi użytkownika przez warsztaty, obozy, noclegi oraz harmonogram wydarzeń.",
+      "imageAlt": "Strona DOG TOK - Szkoleniowy Raj zaprojektowana i wdrożona przez Sokołek Studio",
       "labels": {
         "client": "KLIENT",
         "industry": "BRANŻA",
@@ -199,7 +201,7 @@
       "data": {
         "client": "DOG TOK - SZKOLENIOWY RAJ",
         "industry": "KYNOLOGIA / TURYSTYKA",
-        "stack": "STRATEGIA / UX/UI / WEB DEVELOPMENT / COPYWRITING",
+        "stack": "UX/UI / WEB DEVELOPMENT / COPYWRITING",
         "year": "2026"
       }
     }
@@ -226,7 +228,11 @@
       "AI tam, gdzie ma sens",
       "Cyfrowo, ale realnie",
       "Prosta i dobra komunikacja"
-    ]
+    ],
+    "openScope": {
+      "heading": "Zajmujemy się wszechstronną warstwą cyfrową.",
+      "description": "Jeśli czegoś nie znaleźliście na naszej stronie, ale i tak chcielibyście z nami współpracować, piszcie śmiało. Na pewno uda nam się znaleźć wspólny język."
+    }
   },
   "contact": {
     "heading_part1": "Nie możemy się doczekać,",
