@@ -173,8 +173,7 @@ function PillarCard({
 }) {
   return (
     <article
-      className="card-padding flex flex-col justify-between border border-line"
-      style={{ minHeight: 'clamp(26rem, 42svh, 33rem)' }}
+      className="engineering-pillar-card card-padding flex flex-col justify-between border border-line"
     >
       <div>
         <p className="meta-text text-ink-muted">

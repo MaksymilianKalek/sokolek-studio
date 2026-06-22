@@ -1,8 +1,9 @@
 import { type CSSProperties, useEffect, useRef, useState } from 'react';
-import { ArrowUpRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { ShaderGradientBackground } from '../shader-gradient-background';
+import { cx } from '../../lib/class-names';
 import { TerminalWordmark } from './terminal-wordmark';
+import { PrimaryCtaLink } from './ui';
 
 type HeroProps = {
   isIntroActive: boolean;
@@ -140,7 +141,10 @@ export function Hero({
         </div>
 
         <div
-          className="relative z-10 grid gap-y-6 sm:mt-0 md:grid-cols-[minmax(0,var(--studio-axis,1.1fr))_minmax(18rem,1fr)_auto] md:items-start md:gap-y-8 md:pt-4"
+          className={cx(
+            'relative z-10 grid gap-y-6 sm:mt-0',
+            'md:grid-cols-[minmax(0,var(--studio-axis,1.1fr))_minmax(18rem,1fr)_auto] md:items-start md:gap-y-8 md:pt-4',
+          )}
           style={heroGridStyle}
         >
           <div className="hidden sm:block">
@@ -157,13 +161,12 @@ export function Hero({
             {t('hero.description')}
           </p>
 
-          <a
+          <PrimaryCtaLink
             href="mailto:hello@sokolek.com"
-            className="primary-cta focus-ring action-text group inline-flex w-fit items-center gap-3 px-5 py-3 md:ml-8"
+            className="md:ml-8"
           >
-            <span className="relative z-10">{t('common.startProject')}</span>
-            <ArrowUpRight className="primary-cta-icon relative z-10 size-4" />
-          </a>
+            {t('common.startProject')}
+          </PrimaryCtaLink>
         </div>
       </div>
     </section>

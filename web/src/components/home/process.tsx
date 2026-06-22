@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { Reveal } from '../reveal'
-import { SectionLabel } from './section-label'
+import { SectionIntro } from './ui'
 
 type ProcessItem = {
   description: string
@@ -15,23 +15,11 @@ export function Process() {
   return (
     <section className="site-section section-related-process bg-paper text-ink">
       <div className="site-container">
-        <Reveal>
-          <SectionLabel>{t('process.label')}</SectionLabel>
-        </Reveal>
-
-        <div className="editorial-grid editorial-grid-compact section-offset">
-          <Reveal>
-            <h2 className="heading-md max-w-4xl">
-              {t('process.heading')}
-            </h2>
-          </Reveal>
-
-          <Reveal delay={0.08}>
-            <p className="body-copy max-w-xl text-ink-soft lg:pt-2">
-              {t('process.description')}
-            </p>
-          </Reveal>
-        </div>
+        <SectionIntro
+          label={t('process.label')}
+          heading={t('process.heading')}
+          description={t('process.description')}
+        />
 
         <ol className="section-offset-compact grid gap-0 border-t border-line md:grid-cols-4">
           {items.map((item, index) => (

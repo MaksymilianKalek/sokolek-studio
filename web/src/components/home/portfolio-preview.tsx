@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
-import { ArrowUpRight } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Reveal } from '../reveal'
 import { SectionLabel } from './section-label'
+import { AccentTextLink } from './ui'
 
 const dogTokScreenshotSrc = '/portfolio/dogtok-screenshot-960.webp'
 const dogTokScreenshotSrcSet = '/portfolio/dogtok-screenshot-640.webp 640w, /portfolio/dogtok-screenshot-960.webp 960w, /portfolio/dogtok-screenshot-1200.webp 1200w, /portfolio/dogtok-screenshot-1600.webp 1600w, /portfolio/dogtok-screenshot-2400.webp 2400w, /portfolio/dogtok-screenshot-3200.webp 3200w'
@@ -130,17 +130,11 @@ export function PortfolioPreview() {
               </div>
 
               <div className="flex flex-col gap-3 sm:flex-row sm:gap-6">
-                <a
+                <AccentTextLink
                   href="https://dogtok.pl"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="action-text focus-ring group inline-flex w-fit items-center gap-3 py-3 text-ink"
                 >
-                  <span className="interactive-accent-link pb-0.5">
-                    {t('common.visitLiveSite')}
-                  </span>
-                  <ArrowUpRight className="interactive-link-icon size-4" />
-                </a>
+                  {t('common.visitLiveSite')}
+                </AccentTextLink>
               </div>
             </div>
           </article>

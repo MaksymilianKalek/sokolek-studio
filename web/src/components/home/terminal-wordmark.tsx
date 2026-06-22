@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { motion, useReducedMotion } from 'motion/react'
+import { cx } from '../../lib/class-names'
 
 const cursorBlinkDuration = 1
 const introDismissDelay = 0
@@ -36,7 +37,7 @@ export function TerminalWordmark({
     }
 
     let index = 0
-    const timers: number[] = []
+    let dismissIntroTimer: number | undefined
     const typingTimer = window.setInterval(() => {
       index += 1
       setTypedText(word.slice(0, index))
@@ -44,29 +45,29 @@ export function TerminalWordmark({
       if (index === word.length) {
         window.clearInterval(typingTimer)
 
-        const dismissIntroTimer = window.setTimeout(() => {
+        dismissIntroTimer = window.setTimeout(() => {
           onTyped()
         }, introDismissDelay)
-
-        timers.push(dismissIntroTimer)
       }
     }, typingInterval)
 
-    timers.push(typingTimer)
-
     return () => {
-      timers.forEach((timer) => window.clearTimeout(timer))
+      window.clearInterval(typingTimer)
+
+      if (dismissIntroTimer) {
+        window.clearTimeout(dismissIntroTimer)
+      }
     }
   }, [isActive, onTyped, prefersReducedMotion, word])
 
   return (
     <span
       aria-hidden="true"
-      className={`hero-wordmark relative z-[10000] inline-flex min-h-[1.08em] items-center gap-2 ${
-        isIntroActive ? 'intro-wordmark-color-transition' : ''
-      } ${
-        isOnIntroCurtain ? 'text-paper-fixed' : 'text-ink'
-      }`}
+      className={cx(
+        'hero-wordmark relative z-[10000] inline-flex min-h-[1.08em] items-center gap-2',
+        isIntroActive && 'intro-wordmark-color-transition',
+        isOnIntroCurtain ? 'text-paper-fixed' : 'text-ink',
+      )}
     >
       <span>{visibleText}</span>
       <motion.span

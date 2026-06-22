@@ -1,0 +1,155 @@
+@font-face {
+  font-family: "Satoshi";
+  src: url("../../fonts/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Variable.woff2") format("woff2");
+  font-weight: 300 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("../../fonts/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-VariableItalic.woff2") format("woff2");
+  font-weight: 300 900;
+  font-display: swap;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../../fonts/Inter.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+@theme {
+  --font-satoshi: "Satoshi", sans-serif;
+  --font-inter: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-serif: Georgia, "Times New Roman", serif;
+  --text-4xl: 2rem;
+  --text-4xl--line-height: 1.05;
+  --color-paper: #FAFAFA;
+  --color-paper-warm: #8da0ce;
+  --color-paper-fixed: #FAFAFA;
+  --color-ink: #111111;
+  --color-ink-fixed: #111111;
+  --color-ink-soft: #3f3f3f;
+  --color-ink-soft-fixed: #3f3f3f;
+  --color-ink-muted: #777777;
+  --color-ink-muted-fixed: #777777;
+  --color-line: #e4e4e4;
+  --color-line-fixed: #e4e4e4;
+  --color-sunset-orange: #ffae35;
+  --color-sunset-yellow: #ffc252;
+  --color-sunset-amber: #ffd987;
+}
+
+@property --color-paper {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #FAFAFA;
+}
+
+@property --color-ink {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #111111;
+}
+
+@property --color-ink-soft {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #3f3f3f;
+}
+
+@property --color-ink-muted {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #777777;
+}
+
+@property --color-line {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #e4e4e4;
+}
+
+:root {
+  --ease-expressive: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-ambient: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-theme: cubic-bezier(0.76, 0, 0.24, 1);
+  --space-section-offset: 2.25rem;
+  --space-section-offset-compact: 1.75rem;
+  --space-block-gap: 2.75rem;
+  --space-block-gap-compact: 1.75rem;
+  --space-content-offset: 1.5rem;
+  --space-content-offset-tight: 1.25rem;
+  --space-action-offset: 2rem;
+  --space-card-padding: 1.25rem;
+  --space-row-padding: 1.75rem;
+  --motion-fast: 420ms;
+  --motion-panel: 450ms;
+  --motion-overlay: 700ms;
+  --motion-entrance: 800ms;
+  --motion-reveal-slow: 1000ms;
+  --motion-theme: 900ms;
+  --sunset-gradient: linear-gradient(
+    135deg,
+    var(--color-sunset-orange) 0%,
+    var(--color-sunset-yellow) 58%,
+    var(--color-sunset-amber) 100%
+  );
+  --sunset-glow:
+    0 0 12px 1px color-mix(in srgb, var(--color-sunset-yellow) 10%, transparent),
+    0 0 26px 2px color-mix(in srgb, var(--color-sunset-amber) 7%, transparent);
+  --sunset-filter:
+    saturate(1.04)
+    drop-shadow(0 0 4px color-mix(in srgb, var(--color-sunset-yellow) 16%, transparent))
+    drop-shadow(0 0 10px color-mix(in srgb, var(--color-sunset-amber) 10%, transparent));
+}
+
+html.site-loading,
+html.site-loading body {
+  background-color: var(--color-ink-fixed);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+#root {
+  min-height: 100%;
+  width: 100%;
+}
+
+::selection {
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.footer-inverted ::selection {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+}
+
+a,
+button {
+  border-radius: 0;
+}
+
+.transition,
+.transition-colors,
+.transition-opacity,
+.transition-transform {
+  transition-duration: var(--motion-fast);
+  transition-timing-function: var(--ease-expressive);
+}

@@ -14,6 +14,7 @@ import { Services } from './components/home/services'
 import { TargetAudience } from './components/home/target-audience'
 import { useCookieConsent } from './hooks/use-cookie-consent'
 import { useSmoothScroll } from './hooks/use-smooth-scroll'
+import { cx } from './lib/class-names'
 
 function App() {
   useSmoothScroll()
@@ -65,9 +66,10 @@ function App() {
 
   return (
     <main
-      className={`site-shell min-h-dvh bg-paper text-ink antialiased ${
-        portfolioThemeActive ? 'site-shell--portfolio' : ''
-      }`}
+      className={cx(
+        'site-shell min-h-dvh bg-paper text-ink antialiased',
+        portfolioThemeActive && 'site-shell--portfolio',
+      )}
     >
       <div className="relative overflow-hidden">
         <Hero

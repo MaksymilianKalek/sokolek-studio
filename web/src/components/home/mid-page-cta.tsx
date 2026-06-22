@@ -1,7 +1,7 @@
-import { ArrowUpRight } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Reveal } from '../reveal'
 import { SectionLabel } from './section-label'
+import { PrimaryCtaLink } from './ui'
 
 export function MidPageCta() {
   const { t } = useTranslation()
@@ -20,13 +20,12 @@ export function MidPageCta() {
               <p className="body-copy-lg max-w-xl text-ink-soft">
                 {t('midPageCta.description')}
               </p>
-              <a
+              <PrimaryCtaLink
                 href="mailto:hello@sokolek.com"
-                className="primary-cta focus-ring action-text group action-offset inline-flex w-fit items-center gap-3 px-5 py-3"
+                className="action-offset"
               >
-                <span className="relative z-10">{t('midPageCta.cta')}</span>
-                <ArrowUpRight className="primary-cta-icon relative z-10 size-4" />
-              </a>
+                {t('midPageCta.cta')}
+              </PrimaryCtaLink>
             </div>
           </div>
         </div>

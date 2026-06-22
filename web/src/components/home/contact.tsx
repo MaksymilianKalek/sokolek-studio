@@ -1,7 +1,8 @@
-import { ArrowUpRight } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Reveal } from '../reveal'
+import { cx } from '../../lib/class-names'
 import { SectionLabel } from './section-label'
+import { PrimaryCtaLink } from './ui'
 
 type ContactProps = {
   inverted?: boolean
@@ -15,8 +16,6 @@ export function Contact({ inverted = false }: ContactProps) {
   const labelClassName = inverted ? 'text-paper/42' : undefined
   const descriptionClassName = inverted ? 'text-paper/72' : 'text-ink-soft'
   const secondaryDescriptionClassName = inverted ? 'text-paper/88' : 'text-ink'
-  const ctaClassName = inverted ? 'primary-cta primary-cta--inverted' : 'primary-cta'
-  const focusClassName = inverted ? 'focus-ring-inverted' : 'focus-ring'
 
   return (
     <section className={sectionClassName}>
@@ -32,19 +31,19 @@ export function Contact({ inverted = false }: ContactProps) {
             </h2>
 
             <div>
-              <p className={`body-copy-lg max-w-xl ${descriptionClassName}`}>
+              <p className={cx('body-copy-lg max-w-xl', descriptionClassName)}>
                 {t('contact.description')}
               </p>
-              <p className={`body-copy content-offset-tight max-w-xl ${secondaryDescriptionClassName}`}>
+              <p className={cx('body-copy content-offset-tight max-w-xl', secondaryDescriptionClassName)}>
                 {t('contact.secondaryDescription')}
               </p>
-              <a
+              <PrimaryCtaLink
                 href="mailto:hello@sokolek.com"
-                className={`${ctaClassName} ${focusClassName} action-text group action-offset inline-flex w-fit items-center gap-3 px-5 py-3`}
+                inverted={inverted}
+                className="action-offset"
               >
-                <span className="relative z-10">{t('footer.contact')}</span>
-                <ArrowUpRight className="primary-cta-icon relative z-10 size-4" />
-              </a>
+                {t('footer.contact')}
+              </PrimaryCtaLink>
             </div>
           </div>
         </div>

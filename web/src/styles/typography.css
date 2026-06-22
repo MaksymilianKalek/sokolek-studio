@@ -1,0 +1,64 @@
+.heading-md,
+.heading-sm {
+  font-family: var(--font-satoshi);
+  line-height: 1.1;
+}
+
+.heading-md {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+.heading-sm {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+}
+
+.body-copy {
+  font-family: var(--font-inter);
+  font-size: 1rem;
+  line-height: 1.1;
+  color: var(--color-ink-soft);
+}
+
+.body-copy-lg {
+  font-family: var(--font-inter);
+  font-size: 1rem;
+  line-height: 1.1;
+}
+
+.nav-text {
+  font-family: var(--font-satoshi);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.nav-text a,
+.nav-text button {
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+
+.meta-text,
+.action-text {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.hero-wordmark {
+  font-family: var(--font-satoshi);
+  font-size: clamp(3.2rem, 12vw, 11.5rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
