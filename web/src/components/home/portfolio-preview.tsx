@@ -66,7 +66,7 @@ export function PortfolioPreview() {
   }, [])
 
   return (
-    <section className="site-section-compact bg-paper text-ink">
+    <section className="site-section-compact section-major-chapter bg-paper text-ink">
       <div id="portfolio" className="site-container site-anchor">
         <Reveal>
           <SectionLabel>{t('portfolio.label')}</SectionLabel>

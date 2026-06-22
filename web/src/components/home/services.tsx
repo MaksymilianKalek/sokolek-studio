@@ -15,7 +15,7 @@ export function Services() {
   const services = t('services.items', { returnObjects: true }) as ServiceItem[]
 
   return (
-    <section className="site-section">
+    <section className="site-section section-chapter-hero-follow">
       <div id="services" className="site-container site-anchor">
         <Reveal>
           <SectionLabel>{t('services.label')}</SectionLabel>

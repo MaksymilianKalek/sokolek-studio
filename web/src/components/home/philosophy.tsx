@@ -7,7 +7,7 @@ export function Philosophy() {
   const principles = t('manifesto.principles', { returnObjects: true }) as string[]
 
   return (
-    <section className="site-section">
+    <section className="site-section section-about-chapter">
       <div id="about" className="site-container site-anchor">
         <Reveal>
           <SectionLabel>{t('manifesto.label')}</SectionLabel>

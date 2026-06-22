@@ -32,6 +32,7 @@
   --text-4xl: 2rem;
   --text-4xl--line-height: 1.05;
   --color-paper: #FAFAFA;
+  --color-paper-warm: #8da0ce;
   --color-paper-fixed: #FAFAFA;
   --color-ink: #111111;
   --color-ink-fixed: #111111;
@@ -81,7 +82,9 @@
   --ease-ambient: cubic-bezier(0.65, 0, 0.35, 1);
   --ease-theme: cubic-bezier(0.76, 0, 0.24, 1);
   --space-section-offset: 2.25rem;
+  --space-section-offset-compact: 1.75rem;
   --space-block-gap: 2.75rem;
+  --space-block-gap-compact: 1.75rem;
   --space-content-offset: 1.5rem;
   --space-content-offset-tight: 1.25rem;
   --space-action-offset: 2rem;
@@ -161,6 +164,45 @@ button {
   padding: 5rem 1.25rem;
 }
 
+.section-chapter-hero-follow {
+  padding-block-start: clamp(4.5rem, 8vw, 6.875rem);
+  padding-block-end: clamp(4rem, 6vw, 5rem);
+}
+
+.section-related-target {
+  padding-block-start: clamp(3rem, 6vw, 5rem);
+  padding-block-end: clamp(3.5rem, 6.5vw, 5.625rem);
+}
+
+.section-related-process {
+  padding-block-start: clamp(3.5rem, 6.5vw, 5.625rem);
+  padding-block-end: clamp(3rem, 5vw, 4.375rem);
+}
+
+.section-commercial-close {
+  padding-block-start: clamp(3rem, 5.5vw, 4.6875rem);
+  padding-block-end: clamp(3.5rem, 6vw, 5.3125rem);
+}
+
+.section-major-chapter {
+  padding-block-start: clamp(4.5rem, 8vw, 7.5rem);
+  padding-block-end: clamp(4.5rem, 8vw, 7.5rem);
+}
+
+.section-engineering-chapter {
+  padding-block-start: clamp(4.5rem, 8vw, 6.875rem);
+  padding-block-end: clamp(4.75rem, 8.5vw, 7.5rem);
+}
+
+.section-about-chapter {
+  padding-block-start: clamp(5rem, 8vw, 7.25rem);
+  padding-block-end: clamp(4.5rem, 7vw, 6.5rem);
+}
+
+.chapter-surface-warm {
+  background-color: var(--color-paper);
+}
+
 .site-container {
   width: 100%;
   max-width: 92rem;
@@ -173,6 +215,10 @@ button {
 
 .section-offset {
   margin-top: var(--space-section-offset);
+}
+
+.section-offset-compact {
+  margin-top: var(--space-section-offset-compact);
 }
 
 .content-offset {
@@ -208,12 +254,16 @@ button {
 }
 
 .footer-contact-section {
-  padding: 5rem 0;
+  padding-block: clamp(4.5rem, 8vw, 7.5rem) clamp(4rem, 7vw, 6.5rem);
 }
 
 .editorial-grid {
   display: grid;
   gap: var(--space-block-gap);
+}
+
+.editorial-grid-compact {
+  gap: var(--space-block-gap-compact);
 }
 
 .media-grid {
@@ -357,16 +407,13 @@ button {
 }
 
 @media (min-width: 64rem) {
-  .site-section {
-    padding: 6rem 2.5rem;
-  }
-
+  .site-section,
   .site-section-compact {
-    padding: 6rem 2.5rem;
+    padding-inline: 2.5rem;
   }
 
   .footer-contact-section {
-    padding: 6rem 0;
+    padding-block: clamp(4.5rem, 8vw, 7.5rem) clamp(4rem, 7vw, 6.5rem);
   }
 }
 

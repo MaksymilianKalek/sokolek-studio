@@ -88,7 +88,7 @@ export function EngineeringFoundation() {
       >
         <div
           ref={stickyContentRef}
-          className={shouldLockCards ? 'sticky overflow-hidden px-5 pb-20 pt-0 sm:px-8 lg:px-10' : 'site-section'}
+          className={shouldLockCards ? 'sticky overflow-hidden px-5 pb-20 pt-0 sm:px-8 lg:px-10' : 'site-section section-engineering-chapter'}
           style={shouldLockCards ? {
             top: horizontalLockTopOffset,
           } : undefined}
@@ -107,7 +107,7 @@ export function EngineeringFoundation() {
 
               <div
                 ref={viewportRef}
-                className={`section-offset min-w-0 ${canUseHorizontalLayout ? 'overflow-hidden' : ''}`}
+                className={`section-offset-compact min-w-0 ${canUseHorizontalLayout ? 'overflow-hidden' : ''}`}
               >
                 <motion.div
                   ref={trackRef}
@@ -121,7 +121,7 @@ export function EngineeringFoundation() {
                       return (
                         <div
                           key={pillar.title}
-                          className="w-[90vw] max-w-[40rem] shrink-0 snap-start sm:w-[34rem] lg:w-[38rem]"
+                          className="w-[82vw] max-w-[40rem] shrink-0 snap-start sm:w-[34rem] lg:w-[38rem]"
                         >
                           {card}
                         </div>

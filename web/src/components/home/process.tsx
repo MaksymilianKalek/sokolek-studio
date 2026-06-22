@@ -13,13 +13,13 @@ export function Process() {
   const items = t('process.items', { returnObjects: true }) as ProcessItem[]
 
   return (
-    <section className="site-section bg-paper text-ink">
+    <section className="site-section section-related-process bg-paper text-ink">
       <div className="site-container">
         <Reveal>
           <SectionLabel>{t('process.label')}</SectionLabel>
         </Reveal>
 
-        <div className="editorial-grid section-offset">
+        <div className="editorial-grid editorial-grid-compact section-offset">
           <Reveal>
             <h2 className="heading-md max-w-4xl">
               {t('process.heading')}
@@ -33,7 +33,7 @@ export function Process() {
           </Reveal>
         </div>
 
-        <ol className="section-offset grid gap-0 border-t border-line md:grid-cols-4">
+        <ol className="section-offset-compact grid gap-0 border-t border-line md:grid-cols-4">
           {items.map((item, index) => (
             <Reveal key={item.index} delay={index * 0.08}>
               <li className="relative min-h-full border-b border-line py-8 md:border-r md:px-5 md:last:border-r-0">

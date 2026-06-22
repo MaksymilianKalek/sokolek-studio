@@ -13,13 +13,13 @@ export function TargetAudience() {
   const items = t('targetAudience.items', { returnObjects: true }) as TargetAudienceItem[]
 
   return (
-    <section className="site-section-compact bg-paper text-ink">
+    <section className="site-section-compact section-related-target chapter-surface-warm text-ink">
       <div className="site-container">
         <Reveal>
           <SectionLabel>{t('targetAudience.label')}</SectionLabel>
         </Reveal>
 
-        <div className="editorial-grid section-offset">
+        <div className="editorial-grid editorial-grid-compact section-offset">
           <Reveal>
             <h2 className="heading-md max-w-4xl">
               {t('targetAudience.heading')}
