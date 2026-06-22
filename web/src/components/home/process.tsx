@@ -21,10 +21,10 @@ export function Process() {
           description={t('process.description')}
         />
 
-        <ol className="section-offset-compact grid gap-0 border-t border-line md:grid-cols-4">
+        <ol className="section-offset-compact grid gap-0 md:grid-cols-4">
           {items.map((item, index) => (
             <Reveal key={item.index} delay={index * 0.08}>
-              <li className="relative min-h-full border-b border-line py-8 md:border-r md:px-5 md:last:border-r-0">
+              <li className="relative min-h-full border-b border-line py-8 last:border-b-0 md:border-r md:px-5 md:last:border-r-0">
                 <p className="meta-text text-ink-muted">
                   {item.index}
                 </p>

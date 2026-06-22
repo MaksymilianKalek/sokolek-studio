@@ -33,10 +33,10 @@ export function Services() {
             </div>
           </Reveal>
 
-          <div className="border-t border-line">
+          <div>
             {services.map((service, itemIndex) => (
               <Reveal key={service.index} delay={itemIndex * 0.08}>
-                <article className={`service-row-grid section-row-padding border-b border-line ${service.featuredLabel ? 'bg-ink px-4 text-paper sm:px-5' : ''}`}>
+                <article className={`service-row-grid section-row-padding ${service.featuredLabel ? 'bg-ink px-4 text-paper sm:px-5' : ''}`}>
                   <p className={`meta-text ${service.featuredLabel ? 'text-paper/42' : 'text-ink-muted'}`}>
                     {service.index}
                   </p>
