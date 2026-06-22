@@ -9,7 +9,7 @@ type SiteHeaderProps = {
 const navItems = [
   { labelKey: 'nav.services', href: '/#services' },
   { labelKey: 'nav.portfolio', href: '/realizacje' },
-  { labelKey: 'common.about', href: '/#about' },
+  { labelKey: 'common.about', href: '/#founder-background' },
   { labelKey: 'nav.contact', href: '/#contact' },
 ]
 

@@ -93,7 +93,7 @@ export function EngineeringFoundation() {
             top: horizontalLockTopOffset,
           } : undefined}
         >
-          <div className="site-container">
+          <div id="founder-background" className="site-container site-anchor">
             <Reveal>
               <SectionLabel className="text-ink-muted">
                 {t('engineeringFoundation.label')}

@@ -4,7 +4,7 @@ import { Contact } from './contact'
 const footerLinks = [
   { labelKey: 'nav.services', href: '/#services' },
   { labelKey: 'nav.portfolio', href: '/realizacje' },
-  { labelKey: 'common.about', href: '/#about' },
+  { labelKey: 'common.about', href: '/#founder-background' },
   { labelKey: 'nav.contact', href: '/#contact' },
 ]
 
