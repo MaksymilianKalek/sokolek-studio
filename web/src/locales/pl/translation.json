@@ -204,6 +204,12 @@
       }
     }
   },
+  "midPageCta": {
+    "label": "Następny krok",
+    "heading": "Nie musisz mieć gotowego pomysłu. Znajdziemy go razem.",
+    "description": "Masz wyzwanie, ale jeszcze nie gotowy brief? Napisz. Pomożemy nazwać problem, znaleźć kierunek i zdecydować, co naprawdę warto zbudować.",
+    "cta": "Porozmawiajmy"
+  },
   "manifesto": {
     "label": "O nas",
     "sectionOne": {
@@ -223,9 +229,9 @@
     ]
   },
   "contact": {
-    "heading_part1": "Masz pomysł?",
-    "heading_part2": "Porozmawiajmy.",
-    "description": "Opowiedz nam o swojej firmie, pomyśle albo wyzwaniu. Wspólnie zrozumiemy, czego naprawdę potrzebujesz, i sprawdzimy, gdzie AI może realnie ułatwić pracę lub pomóc firmie rosnąć.",
+    "heading_part1": "Nie możemy się doczekać,",
+    "heading_part2": "aż zobaczymy rozwój Twojej firmy.",
+    "description": "Opowiedz nam o swojej firmie, sytuacji albo wyzwaniu. Pomożemy nazwać problem, znaleźć sensowny kierunek i sprawdzić, gdzie AI, technologia albo komunikacja mogą realnie ułatwić pracę.",
     "secondaryDescription": "Możemy też zbudować dla Ciebie nową markę, stronę albo kompleksową Digital Foundation, łączącą design, technologię i komunikację w jednym spójnym rozwiązaniu."
   },
   "footer": {

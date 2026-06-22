@@ -204,6 +204,12 @@
       }
     }
   },
+  "midPageCta": {
+    "label": "Next step",
+    "heading": "You do not need a finished idea. We will help you find one.",
+    "description": "Have a challenge, but not a finished brief? Tell us. We will help name the problem, find the direction and decide what is actually worth building.",
+    "cta": "Let's talk"
+  },
   "manifesto": {
     "label": "About us",
     "sectionOne": {
@@ -223,9 +229,9 @@
     ]
   },
   "contact": {
-    "heading_part1": "Have an idea?",
-    "heading_part2": "Let's talk.",
-    "description": "Tell us about your business, idea or challenge. Together, we will understand what you genuinely need and explore where AI could make work easier or help your company grow.",
+    "heading_part1": "We can't wait,",
+    "heading_part2": "to see your company grow.",
+    "description": "Tell us about your business, situation or challenge. We will help name the problem, find a practical direction and explore where AI, technology or communication can genuinely make work easier.",
     "secondaryDescription": "We can also build a new brand, website or complete Digital Foundation for you, bringing design, technology and communication together into one coherent solution."
   },
   "footer": {

@@ -6,6 +6,7 @@ import { AiPhilosophy } from './components/home/ai-philosophy'
 import { EngineeringFoundation } from './components/home/engineering-foundation'
 import { Footer } from './components/home/footer'
 import { Hero } from './components/home/hero'
+import { MidPageCta } from './components/home/mid-page-cta'
 import { Philosophy } from './components/home/philosophy'
 import { PortfolioPreview } from './components/home/portfolio-preview'
 import { Process } from './components/home/process'
@@ -84,12 +85,13 @@ function App() {
       </div>
       <Services />
       <TargetAudience />
+      <Process />
+      <MidPageCta />
+      <AiPhilosophy />
+      <EngineeringFoundation />
       <div ref={portfolioProofRegionRef}>
         <PortfolioPreview />
       </div>
-      <Process />
-      <AiPhilosophy />
-      <EngineeringFoundation />
       <Philosophy />
       <Footer />
       <AnimatePresence>
