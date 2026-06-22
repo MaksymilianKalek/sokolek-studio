@@ -6,9 +6,11 @@ type SiteHeaderProps = {
   logoSrc?: string
 }
 
+const portfolioNavItem = { labelKey: 'nav.portfolio', href: '/portfolio' }
+
 const navItems = [
   { labelKey: 'nav.services', href: '/#services' },
-  { labelKey: 'nav.portfolio', href: '/realizacje' },
+  portfolioNavItem,
   { labelKey: 'common.about', href: '/#founder-background' },
   { labelKey: 'nav.contact', href: '/#contact' },
 ]
@@ -62,7 +64,13 @@ export function SiteHeader({
         <LanguageSwitch />
       </nav>
 
-      <div className="sm:hidden">
+      <div className="nav-text flex items-center gap-5 sm:hidden">
+        <a
+          href={portfolioNavItem.href}
+          className="interactive-accent-link focus-ring text-ink-soft"
+        >
+          {t(portfolioNavItem.labelKey)}
+        </a>
         <LanguageSwitch />
       </div>
     </header>

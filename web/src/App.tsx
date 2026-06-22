@@ -83,7 +83,7 @@ function App() {
     }
   }, [currentPath])
 
-  if (currentPath === '/realizacje') {
+  if (currentPath === '/portfolio') {
     return (
       <>
         <RealizacjePage />
