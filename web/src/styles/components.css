@@ -86,32 +86,6 @@
   display: inline-block;
 }
 
-.interactive-accent-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -0.28em;
-  height: 2px;
-  pointer-events: none;
-  background-image: var(--sunset-gradient);
-  background-size: 220% 220%;
-  box-shadow:
-    0 0 6px color-mix(in srgb, var(--color-sunset-yellow) 24%, transparent),
-    0 0 14px color-mix(in srgb, var(--color-sunset-amber) 12%, transparent);
-  transform: scaleX(0);
-  transform-origin: left center;
-  transition: transform var(--motion-fast) var(--ease-expressive);
-  animation: accent-gradient-drift 12s var(--ease-ambient) infinite alternate;
-}
-
-.interactive-accent-link:hover::after,
-.interactive-accent-link:focus-visible::after,
-.group:hover .interactive-accent-link::after,
-.group:focus-within .interactive-accent-link::after {
-  transform: scaleX(1);
-}
-
 .primary-cta {
   position: relative;
   isolation: isolate;
@@ -130,20 +104,14 @@
 .primary-cta::before {
   border: 1px solid var(--color-ink);
   opacity: 1;
-  transition: opacity var(--motion-fast) var(--ease-expressive);
+  transition:
+    background-color var(--motion-fast) var(--ease-expressive),
+    border-color var(--motion-fast) var(--ease-expressive),
+    opacity var(--motion-fast) var(--ease-expressive);
 }
 
 .primary-cta::after {
-  z-index: -1;
-  background-image: var(--sunset-gradient);
-  background-size: 220% 220%;
-  box-shadow: var(--sunset-glow);
-  filter: var(--sunset-filter);
-  opacity: 0;
-  transition: opacity var(--motion-fast) var(--ease-expressive);
-  animation:
-    accent-gradient-drift 12s var(--ease-ambient) infinite alternate,
-    accent-glow-wave 7s var(--ease-ambient) infinite alternate;
+  display: none;
 }
 
 .primary-cta > * {
@@ -158,6 +126,7 @@
 
 .primary-cta:hover .primary-cta-icon,
 .primary-cta:focus-visible .primary-cta-icon {
+  color: var(--color-sunset-orange);
   transform: translate3d(0.125rem, -0.125rem, 0);
 }
 
@@ -174,17 +143,13 @@
 
 .primary-cta:hover,
 .primary-cta:focus-visible {
-  color: var(--color-paper);
+  color: var(--color-ink);
 }
 
 .primary-cta:hover::before,
 .primary-cta:focus-visible::before {
-  opacity: 0;
-}
-
-.primary-cta:hover::after,
-.primary-cta:focus-visible::after {
-  opacity: 1;
+  background-color: color-mix(in srgb, var(--color-sunset-orange) 9%, transparent);
+  border-color: color-mix(in srgb, var(--color-sunset-orange) 72%, transparent);
 }
 
 .primary-cta--inverted {
@@ -197,7 +162,13 @@
 
 .primary-cta--inverted:hover,
 .primary-cta--inverted:focus-visible {
-  color: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.primary-cta--inverted:hover::before,
+.primary-cta--inverted:focus-visible::before {
+  background-color: color-mix(in srgb, var(--color-sunset-orange) 14%, transparent);
+  border-color: color-mix(in srgb, var(--color-sunset-orange) 78%, transparent);
 }
 
 @keyframes accent-gradient-drift {
