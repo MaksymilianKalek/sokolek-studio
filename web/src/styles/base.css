@@ -40,7 +40,8 @@
   --color-ink-muted-fixed: #777777;
   --color-line: #e4e4e4;
   --color-line-fixed: #e4e4e4;
-  --color-sunset-orange: #ffae35;
+  --color-accent: #ffae35;
+  --color-sunset-orange: var(--color-accent);
 }
 
 @property --color-paper {

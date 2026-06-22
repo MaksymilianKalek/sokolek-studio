@@ -136,7 +136,7 @@
 
 .primary-cta:hover,
 .primary-cta:focus-visible {
-  color: var(--color-ink);
+  color: var(--color-accent);
 }
 
 .primary-cta:hover::before,
@@ -155,7 +155,7 @@
 
 .primary-cta--inverted:hover,
 .primary-cta--inverted:focus-visible {
-  color: var(--color-paper);
+  color: var(--color-accent);
 }
 
 .primary-cta--inverted:hover::before,

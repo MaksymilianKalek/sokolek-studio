@@ -5,17 +5,23 @@ import { Reveal } from '../reveal'
 import { SectionLabel } from './section-label'
 
 type PrimaryCtaLinkProps = {
+  ariaLabel?: string
   children: ReactNode
   className?: string
   href: string
   inverted?: boolean
+  rel?: string
+  target?: string
 }
 
 export function PrimaryCtaLink({
+  ariaLabel,
   children,
   className = '',
   href,
   inverted = false,
+  rel,
+  target,
 }: PrimaryCtaLinkProps) {
   const toneClassName = inverted
     ? 'primary-cta primary-cta--inverted focus-ring-inverted'
@@ -24,6 +30,9 @@ export function PrimaryCtaLink({
   return (
     <a
       href={href}
+      aria-label={ariaLabel}
+      rel={rel}
+      target={target}
       className={cx(
         toneClassName,
         'action-text group inline-flex w-fit items-center gap-3 px-5 py-3',

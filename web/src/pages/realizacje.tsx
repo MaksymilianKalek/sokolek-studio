@@ -1,4 +1,3 @@
-import { ArrowUpRight } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'motion/react'
 import { SiteHeader } from '../components/site-header'
@@ -115,20 +114,11 @@ function PortfolioProjectItem({
       <motion.article
         className="overflow-hidden border border-line bg-paper"
       >
-        <div className="overflow-hidden bg-ink">
-          <img
-            src={project.image}
-            srcSet={project.imageSrcSet}
-            sizes={project.imageSizes}
-            alt={project.imageAlt}
-            width="960"
-            height="460"
-            loading={isFirst ? 'eager' : 'lazy'}
-            decoding="async"
-            fetchPriority={isFirst ? 'high' : 'auto'}
-            className="aspect-[16/9] w-full object-cover"
-          />
-        </div>
+        <ProjectImage
+          isFirst={isFirst}
+          project={project}
+          visitLabel={t('common.visitLiveSite')}
+        />
 
         <div className="grid gap-8 bg-ink px-5 py-4 text-paper sm:px-6 sm:py-5 lg:grid-cols-[minmax(15rem,0.38fr)_minmax(0,0.42fr)_minmax(17rem,0.3fr)] lg:gap-10 lg:px-8 lg:py-7">
           <div>
@@ -148,23 +138,72 @@ function PortfolioProjectItem({
             <ProjectMetadata project={project} />
 
             {project.liveUrl ? (
-              <a
+              <PrimaryCtaLink
                 href={project.liveUrl}
+                ariaLabel={`${t('common.visitLiveSite')}: ${project.title}`}
+                className="mt-1"
+                inverted
                 target="_blank"
                 rel="noreferrer"
-                aria-label={`${t('common.visitLiveSite')}: ${project.title}`}
-                className="action-text focus-ring-inverted group inline-flex w-fit items-center gap-3 text-paper"
               >
-                <span className="interactive-accent-link pb-0.5">
-                  {t('common.visitLiveSite')}
-                </span>
-                <ArrowUpRight className="interactive-link-icon size-4" />
-              </a>
+                {t('common.visitLiveSite')}
+              </PrimaryCtaLink>
             ) : null}
           </div>
         </div>
       </motion.article>
     </Reveal>
+  )
+}
+
+function ProjectImage({
+  isFirst,
+  project,
+  visitLabel,
+}: {
+  isFirst: boolean
+  project: PortfolioProject
+  visitLabel: string
+}) {
+  const image = (
+    <>
+      <img
+        src={project.image}
+        srcSet={project.imageSrcSet}
+        sizes={project.imageSizes}
+        alt={project.imageAlt}
+        width="960"
+        height="460"
+        loading={isFirst ? 'eager' : 'lazy'}
+        decoding="async"
+        fetchPriority={isFirst ? 'high' : 'auto'}
+        className="aspect-[16/9] w-full object-cover"
+      />
+      <span
+        aria-hidden="true"
+        className="portfolio-image-dim absolute inset-0 bg-ink-fixed/0 group-hover/image:bg-ink-fixed/18 group-focus-visible/image:bg-ink-fixed/18"
+      />
+    </>
+  )
+
+  if (!project.liveUrl) {
+    return (
+      <div className="relative overflow-hidden bg-ink">
+        {image}
+      </div>
+    )
+  }
+
+  return (
+    <a
+      href={project.liveUrl}
+      target="_blank"
+      rel="noreferrer"
+      aria-label={`${visitLabel}: ${project.title}`}
+      className="focus-ring-inverted group/image relative block overflow-hidden bg-ink"
+    >
+      {image}
+    </a>
   )
 }
 

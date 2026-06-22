@@ -15,7 +15,7 @@ export function Contact({ inverted = false }: ContactProps) {
     : 'site-section'
   const labelClassName = inverted ? 'text-paper/42' : undefined
   const descriptionClassName = inverted ? 'text-paper/72' : 'text-ink-soft'
-  const secondaryDescriptionClassName = inverted ? 'text-paper/88' : 'text-ink'
+  const secondaryDescriptionClassName = inverted ? '!text-paper/72' : '!text-ink-soft'
 
   return (
     <section className={sectionClassName}>
