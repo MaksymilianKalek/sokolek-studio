@@ -35,14 +35,12 @@
   font-weight: 500;
   line-height: 1.1;
   letter-spacing: 0.06em;
-  text-transform: uppercase;
 }
 
 .nav-text a,
 .nav-text button {
   font: inherit;
   letter-spacing: inherit;
-  text-transform: inherit;
 }
 
 .meta-text,

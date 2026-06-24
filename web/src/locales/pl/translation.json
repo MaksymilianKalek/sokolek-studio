@@ -12,10 +12,10 @@
     "builtIn": "Zaprojektowane i zbudowane w Poznaniu"
   },
   "hero": {
-    "eyebrow": "YOUR AI IMPLEMENTATION PARTNER",
+    "eyebrow": "STUDIO TECHNOLOGICZNE Z POZNANIA",
     "title": "Sokołek Studio",
-    "subtitle": "Technologia dla ludzi.",
-    "description": "Jesteśmy autorskim studiem technologicznym z Poznania, łączącym inżynierię z kreatywnością. Pomagamy firmom wdrażać sztuczną inteligencję tam, gdzie naprawdę ułatwia pracę, porządkuje wiedzę i wspiera rozwój zespołu. Projektujemy z intencją - od pierwszego pomysłu i prototypu po gotowy system, markę i stronę. Wierzymy w technologię, która ma prawdziwe znaczenie i realnie ułatwia codzienną pracę."
+    "subtitle": "Technologia, która ma sens.",
+    "description": "Jesteśmy autorskim studiem technologicznym z Poznania, łączącym inżynierię z kreatywnością. Pomagamy firmom tworzyć i rozwijać rozwiązania cyfrowe, które ułatwiają pracę, porządkują wiedzę i wspierają rozwój zespołu. Projektujemy z intencją - od pierwszego pomysłu i prototypu po gotowy system, markę i stronę. Wierzymy w technologię, która ma prawdziwe znaczenie i realnie ułatwia codzienną pracę."
   },
   "services": {
     "label": "Oferta",
@@ -24,13 +24,13 @@
     "items": [
       {
         "index": "01",
-        "title": "Audyt i strategia AI",
-        "description": "Pomagamy znaleźć miejsca, w których AI naprawdę ma sens. Przyglądamy się procesom, wiedzy i celom firmy, a następnie porządkujemy pomysły, wybieramy najważniejsze kierunki i przygotowujemy plan wdrożenia.",
-        "tags": "PROCESY · USE CASE · ROADMAPA"
+        "title": "Audyt i strategia technologiczna",
+        "description": "Pomagamy znaleźć miejsca, w których technologia naprawdę ma sens. Przyglądamy się procesom, wiedzy i celom firmy, a następnie porządkujemy pomysły, wybieramy najważniejsze kierunki i przygotowujemy plan wdrożenia.",
+        "tags": "PROCESY · POTRZEBY · ROADMAPA"
       },
       {
         "index": "02",
-        "title": "Wdrożenia AI",
+        "title": "Systemy i automatyzacje",
         "featuredLabel": "FLAGOWA OFERTA",
         "description": "Tworzymy narzędzia, które upraszczają pracę z dokumentami, wiedzą i powtarzalnymi procesami. Projektujemy je od podstaw - od prototypu i integracji po bezpieczny system gotowy do codziennego użycia.",
         "tags": "PROTOTYP · INTEGRACJE · PRODUKCJA"
@@ -38,8 +38,8 @@
       {
         "index": "03",
         "title": "Digital Foundation",
-        "description": "Z nami zbudujesz swoją markę od podstaw - od pozycjonowania i tożsamości wizualnej po stronę internetową i jedno kluczowe wdrożenie AI. Łączymy je w spójny cyfrowy fundament, który wspiera dalszy rozwój firmy.",
-        "tags": "STRATEGIA · BRANDING · WEB · AI"
+        "description": "Z nami zbudujesz swoją markę od podstaw - od pozycjonowania i tożsamości wizualnej po stronę internetową i jedno kluczowe wdrożenie technologiczne. Łączymy je w spójny cyfrowy fundament, który wspiera dalszy rozwój firmy.",
+        "tags": "STRATEGIA · BRANDING · WEB · TECHNOLOGIA"
       },
       {
         "index": "04",
@@ -105,8 +105,8 @@
   },
   "philosophy": {
     "label": "Nasze podejście",
-    "heading": "AI tam, gdzie ma sens.",
-    "description": "Odczarowujemy sztuczną inteligencję, wykorzystując ją etycznie i tylko tam, gdzie jest naprawdę potrzebna. Nie traktujemy AI jako celu samego w sobie ani prostego sposobu na zastępowanie ludzi. Projektujemy rozwiązania, które zdejmują z zespołów mechaniczną pracę, porządkują wiedzę i wspierają podejmowanie decyzji. Dzięki temu ludzie mogą poświęcić więcej czasu zadaniom wymagającym doświadczenia, kreatywności, odpowiedzialności i relacji."
+    "heading": "Technologia tam, gdzie ma sens.",
+    "description": "Wykorzystujemy nowe technologie etycznie i tylko tam, gdzie są naprawdę potrzebne. Nie traktujemy ich jako celu samego w sobie ani prostego sposobu na zastępowanie ludzi. Projektujemy rozwiązania, które zdejmują z zespołów mechaniczną pracę, porządkują wiedzę i wspierają podejmowanie decyzji. Dzięki temu ludzie mogą poświęcić więcej czasu zadaniom wymagającym doświadczenia, kreatywności, odpowiedzialności i relacji."
   },
   "engineeringFoundation": {
     "label": "Zaplecze technologiczne",
@@ -225,7 +225,7 @@
     },
     "principles": [
       "Pro, but make it fun",
-      "AI tam, gdzie ma sens",
+      "Technologia tam, gdzie ma sens",
       "Cyfrowo, ale realnie",
       "Prosta i dobra komunikacja"
     ],
@@ -237,7 +237,7 @@
   "contact": {
     "heading_part1": "Nie możemy się doczekać,",
     "heading_part2": "aż zobaczymy rozwój Twojej firmy.",
-    "description": "Opowiedz nam o swojej firmie, sytuacji albo wyzwaniu. Pomożemy nazwać problem, znaleźć sensowny kierunek i sprawdzić, gdzie AI, technologia albo komunikacja mogą realnie ułatwić pracę.",
+    "description": "Opowiedz nam o swojej firmie, sytuacji albo wyzwaniu. Pomożemy nazwać problem, znaleźć sensowny kierunek i sprawdzić, gdzie technologia albo komunikacja mogą realnie ułatwić pracę.",
     "secondaryDescription": "Możemy też zbudować dla Ciebie nową markę, stronę albo kompleksową Digital Foundation, łączącą design, technologię i komunikację w jednym spójnym rozwiązaniu."
   },
   "footer": {

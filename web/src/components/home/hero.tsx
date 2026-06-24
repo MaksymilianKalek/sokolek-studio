@@ -100,7 +100,7 @@ export function Hero({
           style={heroGridStyle}
         >
           <div className="hidden sm:block">
-            <p className="heading-md mt-4 max-w-3xl text-ink">
+            <p className="heading-md max-w-3xl text-ink">
               {t('hero.subtitle')}
             </p>
           </div>

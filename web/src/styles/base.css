@@ -24,7 +24,7 @@
 
 @theme {
   --font-satoshi: "Satoshi", sans-serif;
-  --font-inter: "Inter", sans-serif;
+  --font-inter: "IBM Plex Sans", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
   --font-serif: Georgia, "Times New Roman", serif;
   --text-4xl: 2rem;
