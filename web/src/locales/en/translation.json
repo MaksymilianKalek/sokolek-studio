@@ -12,111 +12,110 @@
     "builtIn": "Designed and built in Poznań"
   },
   "hero": {
-    "eyebrow": "YOUR AI IMPLEMENTATION PARTNER",
     "title": "Sokołek Studio",
-    "subtitle": "Technology for the people.",
-    "description": "We are an independent technology studio from Poznań, bringing engineering and creativity together. We help companies implement artificial intelligence where it genuinely makes work easier, organises knowledge and supports the growth of their teams. We design with intention - from the first idea and prototype to a finished system, brand and website. We believe in technology that matters and makes everyday work easier."
+    "subtitle": "Technology that makes sense.",
+    "description": "We are an independent technology studio from Poznań, bringing engineering and creativity together. We help companies improve the way they work with knowledge, documents and repetitive processes by designing AI systems, automations and digital products. We work from problem discovery and prototyping through to secure solutions ready for everyday use. When a project calls for it, we bring technology together with UX, communication, branding and web design."
   },
   "services": {
     "label": "Services",
     "heading": "Small studio. Full attention.",
-    "description": "Your brand, website, technology and communication should all speak with one voice. That is why we look at your business as a whole and shape the scope around what it genuinely needs - from the first idea to a solution ready for everyday use.",
+    "description": "Your brand, website, technology and communication should all speak with one voice. That is why we look at the business as a whole and shape the scope around what it genuinely needs — from the first idea to a solution ready for everyday use.",
     "items": [
       {
         "index": "01",
-        "title": "AI Audit & Strategy",
-        "description": "We help identify where AI genuinely makes sense. We look at your processes, knowledge and business goals, then organise the ideas, choose the most valuable directions and prepare a practical implementation roadmap.",
-        "tags": "PROCESSES · USE CASES · ROADMAP"
+        "title": "Process Audit & AI Strategy",
+        "description": "We identify where AI or automation can genuinely make a difference. We examine your company's processes, knowledge and goals, then structure the ideas, prioritise the most promising directions and prepare a concrete plan for a pilot or full implementation.",
+        "tags": "PROCESSES · NEEDS · ROADMAP"
       },
       {
         "index": "02",
-        "title": "AI Implementation",
-        "featuredLabel": "FLAGSHIP OFFER",
-        "description": "We create tools that simplify working with documents, knowledge and repetitive processes. We design them from the ground up - from the prototype and integrations to a secure system ready for everyday use.",
+        "title": "AI Systems & Automation",
+        "featuredLabel": "FLAGSHIP SERVICE",
+        "description": "We build tools that simplify working with documents, knowledge and repetitive processes. We design them end to end — from the prototype and integration with data and existing tools to a secure system ready for everyday use.",
         "tags": "PROTOTYPE · INTEGRATIONS · PRODUCTION"
       },
       {
         "index": "03",
         "title": "Digital Foundation",
-        "description": "Build your brand with us from the ground up - from positioning and visual identity to a website and one key AI implementation. We bring everything together into a coherent digital foundation that supports the future growth of your business.",
-        "tags": "STRATEGY · BRANDING · WEB · AI"
+        "description": "Build your brand from the ground up with us — from positioning and visual identity to your website and one key technology implementation. We bring it all together into a coherent digital foundation that supports the next stage of your company's growth.",
+        "tags": "STRATEGY · BRANDING · WEB · TECHNOLOGY"
       },
       {
         "index": "04",
         "title": "Brand & Web",
-        "description": "We design refined brands, websites and digital products that look and sound like your business. From strategy and visual identity to UX/UI, development and the language of your communication.",
+        "description": "We design refined brands, websites and digital products that look and sound like your business. From strategy and identity to UX/UI, development and tone of voice.",
         "tags": "IDENTITY · UX/UI · DEVELOPMENT"
       }
     ]
   },
   "targetAudience": {
     "label": "Who we help",
-    "heading": "For businesses that want to grow thoughtfully.",
-    "description": "We work best with companies that manage a great deal of knowledge, documentation and repetitive work, but do not want to introduce technology simply for the sake of it. We look for solutions that genuinely improve everyday work and support the growth of the team.",
+    "heading": "For companies with a lot of knowledge, documents and manual work.",
+    "description": "We are at our best in organisations where important information is scattered, experts lose time to repetitive tasks and existing tools no longer keep up with the company's growth. We do not implement technology for the sake of it — we look for solutions that genuinely make everyday work easier and support the team as it develops.",
     "items": [
       {
         "index": "01",
         "title": "Working with documents takes too much time",
-        "description": "The team spends its time searching, comparing and rewriting information instead of applying its knowledge to clients, projects and important decisions."
+        "description": "The team spends its time searching, comparing and re-entering information instead of using its expertise to work with clients, projects and decisions."
       },
       {
         "index": "02",
         "title": "Knowledge is scattered across people and tools",
-        "description": "Important information is buried in emails, files, conversations and the minds of a few people, making it difficult to find, share and use effectively."
+        "description": "The most important information lives in emails, files, conversations and the heads of a few key people, making it difficult to find, share and use effectively."
       },
       {
         "index": "03",
         "title": "Repetitive processes are holding back growth",
-        "description": "The business is growing, but some of the work still requires manual supervision, copying data and repeating the same steps with every new project."
+        "description": "The company is growing, but part of the work still depends on manual follow-ups, copying data and repeating the same steps for every new project."
       },
       {
         "index": "04",
         "title": "The business needs a new digital foundation",
-        "description": "The brand, website, communication and existing tools are no longer keeping pace with where the company is heading or the experience its clients and team expect."
+        "description": "The brand, website, communication and tools no longer reflect where the company is heading or the experience its clients and team now expect."
       }
     ]
   },
   "process": {
     "label": "Process",
     "heading": "From an idea to a working solution.",
-    "description": "We begin by understanding what you genuinely need. Then we test the idea on a smaller scale before building a solution that can work reliably within the everyday rhythm of your business.",
+    "description": "First, we work together to understand what you actually need. Then we test the idea on a small scale before building a solution that can work reliably in the day-to-day rhythm of the business.",
     "items": [
       {
         "index": "01",
         "title": "Discovery",
-        "description": "We get to know the business, its people, data and processes. We look for the place where technology can create real value."
+        "description": "We get to know the company, its people, data and processes. We look for the point where technology can create real value."
       },
       {
         "index": "02",
         "title": "Prototype",
-        "description": "We test the most important assumptions within a focused, clearly defined scope before the solution grows to production scale."
+        "description": "We test the most important assumptions within a concrete, limited scope before the solution grows to production scale."
       },
       {
         "index": "03",
         "title": "Implementation",
-        "description": "We build the system, connect it with your existing tools and take care of usability, security and reliable operation."
+        "description": "We build the system, connect it with existing tools and take care of usability, security and reliable performance."
       },
       {
         "index": "04",
-        "title": "Growth",
-        "description": "We observe how the solution performs in practice, develop it further and adapt it to the changing needs of the business and its team."
+        "title": "Development",
+        "description": "We observe how the solution performs in practice, improve it and adapt it to the changing needs of the company and its team."
       }
     ]
   },
   "philosophy": {
     "label": "Our approach",
-    "heading": "AI where it makes sense.",
-    "description": "We demystify artificial intelligence, using it responsibly and only where it is genuinely needed. We do not treat AI as a goal in itself or as a simple way to replace people. We design solutions that remove mechanical work from teams, organise knowledge and support better decision-making. This gives people more time for work that requires experience, creativity, responsibility and human relationships."
+    "heading": "Technology where it makes sense.",
+    "description": "We use new technologies responsibly and only where they are genuinely needed. We do not treat them as an end in themselves or as a shortcut to replacing people. We design solutions that take repetitive work off teams' plates, organise knowledge and support better decision-making. This gives people more time for work that requires experience, creativity, judgement and human connection."
   },
   "engineeringFoundation": {
     "label": "Engineering foundation",
     "note": "Selected professional experience of the studio's co-founder.",
     "heading": "Experience you can rely on.",
-    "description": "Maksymilian leads the technology side of Sokołek Studio. He is a senior software engineer with more than six years of experience building AI systems, web applications and cloud architecture. He has designed and implemented solutions ranging from early prototypes to production systems for startups and global companies across the medical, chemical, advertising, semiconductor and financial sectors.",
+    "description": "Maksymilian leads the technology side of Sokołek Studio. He is a senior software engineer with more than six years of experience building AI systems, web applications and cloud architecture. He has designed and delivered solutions from early prototypes to production systems for startups and global companies across healthcare, chemicals, advertising, semiconductors and finance.",
     "pillars": [
       {
-        "title": "AI platform for medical documentation",
-        "outcome": "Designing and building an application for working with medical documentation and knowledge from the ground up - from cloud architecture and AI model integrations to the user interface and deployment process.",
+        "title": "AI Platform for Medical Documentation",
+        "outcome": "Designed and built an application for working with medical documentation and knowledge — from cloud architecture and AI model integration to the user interface and deployment process.",
         "role": "Lead Full-Stack AI Software Engineer",
         "stack": [
           "React",
@@ -129,8 +128,8 @@
         ]
       },
       {
-        "title": "AI agent system for the advertising industry",
-        "outcome": "Building an agent-based system that plans and executes multi-stage tasks, works with different AI models and passes structured results between services.",
+        "title": "AI Agent System for the Advertising Industry",
+        "outcome": "Built an agentic system that plans and executes multi-step tasks, works with multiple AI models and passes structured outputs between services.",
         "role": "AI Engineer",
         "stack": [
           "AI Agents",
@@ -142,8 +141,8 @@
         ]
       },
       {
-        "title": "MLOps infrastructure for the semiconductor industry",
-        "outcome": "Designing and implementing a production MLOps environment based on Kubernetes, standardising work with machine-learning models and improving their development and deployment across a global engineering organisation.",
+        "title": "MLOps Infrastructure for the Semiconductor Industry",
+        "outcome": "Designed and implemented a production MLOps environment built on Kubernetes, standardising the way machine learning models were developed and deployed across a global engineering organisation.",
         "role": "Full-Stack AI Software Engineer",
         "stack": [
           "Kubernetes",
@@ -154,8 +153,8 @@
         ]
       },
       {
-        "title": "Data architecture for the banking sector",
-        "outcome": "Building data systems that analysed information and supported the maintenance of a global ATM infrastructure.",
+        "title": "Data Architecture for the Banking Sector",
+        "outcome": "Built data systems that analysed information and supported the maintenance of a global ATM infrastructure.",
         "role": "Software Engineer",
         "stack": [
           "Data Pipelines",
@@ -167,8 +166,8 @@
         ]
       },
       {
-        "title": "Knowledge platform for the chemical industry",
-        "outcome": "Designing a platform that processed approximately 100,000 technical PDF documents, organised the information they contained and prepared it for search and use by AI-powered tools.",
+        "title": "Knowledge Platform for the Chemical Industry",
+        "outcome": "Designed a platform that processed approximately 100,000 technical PDF documents, structured the data they contained and prepared it for search and use by AI-powered tools.",
         "role": "Full-Stack AI Engineer",
         "stack": [
           "Python",
@@ -184,14 +183,14 @@
     ]
   },
   "portfolio": {
-    "label": "Work",
-    "heading": "Work with rhythm, purpose and character.",
-    "intro": "We do not collect random projects. We show work where strategy, technology, imagery and language move together.",
+    "label": "Selected work",
+    "heading": "Projects we are proud of.",
+    "intro": "We do our best work with people who truly know and care about what they do. For them, we create solutions where strategy, technology, visuals and language work as one.",
     "dogTok": {
       "title": "DOG TOK",
-      "subtitle": "DOG TOK - Training Paradise",
-      "summary": "We transformed DOG TOK's extensive offer into a simple and intuitive structure. We designed a website that captures the atmosphere of the place, makes essential information easy to find and guides visitors through workshops, camps, accommodation and the event schedule.",
-      "imageAlt": "DOG TOK - Training Paradise website designed and developed by Sokołek Studio",
+      "subtitle": "DOG TOK — Szkoleniowy Raj",
+      "summary": "We transformed DOG TOK's extensive offering into a simple, easy-to-navigate structure. We designed a website that captures the atmosphere of the place, makes essential information easy to find and guides visitors through workshops, camps, accommodation and the events calendar.",
+      "imageAlt": "The DOG TOK — Szkoleniowy Raj website, designed and developed by Sokołek Studio",
       "labels": {
         "client": "CLIENT",
         "industry": "INDUSTRY",
@@ -199,46 +198,46 @@
         "year": "YEAR"
       },
       "data": {
-        "client": "DOG TOK - SZKOLENIOWY RAJ",
+        "client": "DOG TOK — SZKOLENIOWY RAJ",
         "industry": "DOG TRAINING / TOURISM",
-        "stack": "STRATEGY / UX/UI / WEB DEVELOPMENT / COPYWRITING",
+        "stack": "UX/UI / WEB DEVELOPMENT / COPYWRITING",
         "year": "2026"
       }
     }
   },
   "midPageCta": {
     "label": "Next step",
-    "heading": "You do not need a finished idea. We will help you find one.",
-    "description": "Have a challenge, but not a finished brief? Tell us. We will help name the problem, find the direction and decide what is actually worth building.",
-    "cta": "Let's talk"
+    "heading": "Does one of your processes take up too much of your team's time?",
+    "description": "You do not need to know how to automate it or whether AI is the right solution. Tell us how it works today. We will help you define the problem, find a sensible direction and decide what is genuinely worth building.",
+    "cta": "Let's talk about the process"
   },
   "manifesto": {
     "label": "About us",
     "sectionOne": {
       "heading": "A little about us",
-      "description": "Maksymilian leads the technology side of the studio. He has spent years building software and AI systems for startups and large organisations. He combines a strong engineering background with a genuine curiosity for new technologies, but never introduces them simply for effect. He values straightforward solutions, clean code and projects refined down to the smallest detail."
+      "description": "Maksymilian leads the technology side of the studio. He has spent years building software and AI systems for startups and large organisations. He combines engineering experience with a strong curiosity for new technologies, but never implements them for the sake of novelty. He values simple solutions, clean code and projects refined down to the last detail."
     },
     "sectionTwo": {
       "heading_part1": "Maksymilian",
       "heading_part2": "Klaudia",
-      "description": "Klaudia leads the creative side of the studio. She combines experience in PR and communication with UX, photography, editing and social media. She has a strong eye for imagery, an instinct for emerging trends and a talent for translating both a brand's character and complex technology into simple, natural language. She makes sure the final result is coherent, useful and simply looks good."
+      "description": "Klaudia leads the creative side of the studio. She combines experience in PR and communication with UX, photography, video editing and social media. She has a strong eye for visuals, a feel for trends and knows how to translate the character of a brand and complex technology into clear, natural language. She makes sure the whole experience is coherent, useful and simply looks right."
     },
     "principles": [
       "Pro, but make it fun",
-      "AI where it makes sense",
+      "Technology where it makes sense",
       "Digital, but grounded",
-      "Simple, clear communication"
+      "Clear, straightforward communication"
     ],
     "openScope": {
-      "heading": "We work across the full digital layer.",
-      "description": "If you did not find exactly what you were looking for on our website, but you would still like to work with us, write to us. We are sure we will find a shared language."
+      "heading": "We bring technology, design and communication together.",
+      "description": "We do not start with a list of services or a predetermined technology. First, we understand the company's situation. Then we shape the scope around solving a specific problem and achieving a meaningful result."
     }
   },
   "contact": {
-    "heading_part1": "We can't wait,",
-    "heading_part2": "to see your company grow.",
-    "description": "Tell us about your business, situation or challenge. We will help name the problem, find a practical direction and explore where AI, technology or communication can genuinely make work easier.",
-    "secondaryDescription": "We can also build a new brand, website or complete Digital Foundation for you, bringing design, technology and communication together into one coherent solution."
+    "heading_part1": "Let's start with the problem,",
+    "heading_part2": "not the technology.",
+    "description": "Tell us about a process that takes too much time, knowledge that is difficult to find or a digital solution that no longer keeps up with your company's growth. We will help you make sense of the situation and decide what the next step should be.",
+    "secondaryDescription": "If you need a new brand, website or a complete Digital Foundation, we can bring design, technology and communication together in one coherent solution."
   },
   "footer": {
     "contact": "Get in touch"

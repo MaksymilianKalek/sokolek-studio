@@ -12,10 +12,9 @@
     "builtIn": "Zaprojektowane i zbudowane w Poznaniu"
   },
   "hero": {
-    "eyebrow": "STUDIO TECHNOLOGICZNE Z POZNANIA",
     "title": "Sokołek Studio",
     "subtitle": "Technologia, która ma sens.",
-    "description": "Jesteśmy autorskim studiem technologicznym z Poznania, łączącym inżynierię z kreatywnością. Pomagamy firmom tworzyć i rozwijać rozwiązania cyfrowe, które ułatwiają pracę, porządkują wiedzę i wspierają rozwój zespołu. Projektujemy z intencją - od pierwszego pomysłu i prototypu po gotowy system, markę i stronę. Wierzymy w technologię, która ma prawdziwe znaczenie i realnie ułatwia codzienną pracę."
+    "description": "Jesteśmy autorskim studiem technologicznym z Poznania, łączącym inżynierię z kreatywnością. Pomagamy firmom usprawniać pracę z wiedzą, dokumentami i powtarzalnymi procesami, projektując systemy AI, automatyzacje oraz produkty cyfrowe. Działamy od rozpoznania problemu i prototypu po bezpieczne rozwiązanie gotowe do codziennego użycia. Gdy projekt tego wymaga, łączymy technologię z UX, komunikacją, marką i stroną internetową."
   },
   "services": {
     "label": "Oferta",
@@ -24,15 +23,15 @@
     "items": [
       {
         "index": "01",
-        "title": "Audyt i strategia technologiczna",
-        "description": "Pomagamy znaleźć miejsca, w których technologia naprawdę ma sens. Przyglądamy się procesom, wiedzy i celom firmy, a następnie porządkujemy pomysły, wybieramy najważniejsze kierunki i przygotowujemy plan wdrożenia.",
+        "title": "Audyt procesów i strategia AI",
+        "description": "Pomagamy znaleźć miejsca, w których AI lub automatyzacja naprawdę mają sens. Przyglądamy się procesom, wiedzy i celom firmy, a następnie porządkujemy pomysły, wybieramy najważniejsze kierunki i przygotowujemy konkretny plan pilota lub wdrożenia.",
         "tags": "PROCESY · POTRZEBY · ROADMAPA"
       },
       {
         "index": "02",
-        "title": "Systemy i automatyzacje",
+        "title": "Systemy AI i automatyzacje",
         "featuredLabel": "FLAGOWA OFERTA",
-        "description": "Tworzymy narzędzia, które upraszczają pracę z dokumentami, wiedzą i powtarzalnymi procesami. Projektujemy je od podstaw - od prototypu i integracji po bezpieczny system gotowy do codziennego użycia.",
+        "description": "Tworzymy narzędzia, które upraszczają pracę z dokumentami, wiedzą i powtarzalnymi procesami. Projektujemy je od podstaw - od prototypu i integracji z danymi oraz istniejącymi narzędziami po bezpieczny system gotowy do codziennego użycia.",
         "tags": "PROTOTYP · INTEGRACJE · PRODUKCJA"
       },
       {
@@ -51,8 +50,8 @@
   },
   "targetAudience": {
     "label": "Dla kogo",
-    "heading": "Dla biznesów, które chcą rosnąć mądrze.",
-    "description": "Najlepiej pomagamy firmom, które mają dużo wiedzy, dokumentów i powtarzalnej pracy, ale nie chcą wdrażać technologii dla samego efektu. Szukamy rozwiązań, które naprawdę ułatwiają codzienną pracę i wspierają rozwój zespołu.",
+    "heading": "Dla firm, które mają dużo wiedzy, dokumentów i ręcznej pracy.",
+    "description": "Najlepiej pomagamy organizacjom, w których ważne informacje są rozproszone, eksperci tracą czas na powtarzalne zadania, a istniejące narzędzia nie nadążają za rozwojem firmy. Nie wdrażamy technologii dla samego efektu - szukamy rozwiązań, które realnie ułatwiają codzienną pracę i wspierają rozwój zespołu.",
     "items": [
       {
         "index": "01",
@@ -208,9 +207,9 @@
   },
   "midPageCta": {
     "label": "Następny krok",
-    "heading": "Nie musisz mieć gotowego pomysłu. Znajdziemy go razem.",
-    "description": "Masz wyzwanie, ale jeszcze nie gotowy brief? Napisz. Pomożemy nazwać problem, znaleźć kierunek i zdecydować, co naprawdę warto zbudować.",
-    "cta": "Porozmawiajmy"
+    "heading": "Masz proces, który zabiera zespołowi zbyt dużo czasu?",
+    "description": "Nie musisz wiedzieć, jak go zautomatyzować ani czy AI jest właściwym rozwiązaniem. Opowiedz nam, jak wygląda dziś. Pomożemy nazwać problem, znaleźć sensowny kierunek i zdecydować, co naprawdę warto zbudować.",
+    "cta": "Porozmawiajmy o procesie"
   },
   "manifesto": {
     "label": "O nas",
@@ -230,15 +229,15 @@
       "Prosta i dobra komunikacja"
     ],
     "openScope": {
-      "heading": "Zajmujemy się wszechstronną warstwą cyfrową.",
-      "description": "Jeśli czegoś nie znaleźliście na naszej stronie, ale i tak chcielibyście z nami współpracować, piszcie śmiało. Na pewno uda nam się znaleźć wspólny język."
+      "heading": "Łączymy technologię, design i komunikację.",
+      "description": "Nie zaczynamy od listy usług ani wybranej technologii. Najpierw poznajemy sytuację firmy, a następnie dobieramy zakres potrzebny do rozwiązania konkretnego problemu i osiągnięcia realnego rezultatu."
     }
   },
   "contact": {
-    "heading_part1": "Nie możemy się doczekać,",
-    "heading_part2": "aż zobaczymy rozwój Twojej firmy.",
-    "description": "Opowiedz nam o swojej firmie, sytuacji albo wyzwaniu. Pomożemy nazwać problem, znaleźć sensowny kierunek i sprawdzić, gdzie technologia albo komunikacja mogą realnie ułatwić pracę.",
-    "secondaryDescription": "Możemy też zbudować dla Ciebie nową markę, stronę albo kompleksową Digital Foundation, łączącą design, technologię i komunikację w jednym spójnym rozwiązaniu."
+    "heading_part1": "Zacznijmy od problemu,",
+    "heading_part2": "nie od technologii.",
+    "description": "Opowiedz nam o procesie, który zabiera zbyt dużo czasu, wiedzy trudnej do odnalezienia albo rozwiązaniu cyfrowym, które przestało nadążać za rozwojem firmy. Pomożemy uporządkować sytuację i sprawdzić, jaki następny krok ma sens.",
+    "secondaryDescription": "Jeżeli potrzebujesz nowej marki, strony albo kompleksowej Digital Foundation, możemy połączyć design, technologię i komunikację w jednym spójnym rozwiązaniu."
   },
   "footer": {
     "contact": "Napisz do nas"
