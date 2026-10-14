@@ -3,7 +3,9 @@
     "services": "Oferta",
     "portfolio": "Portfolio",
     "contact": "Kontakt",
-    "language": "Język"
+    "language": "Język",
+    "mainLabel": "Główna nawigacja",
+    "footerLabel": "Nawigacja w stopce"
   },
   "common": {
     "startProject": "Porozmawiajmy",
@@ -14,6 +16,7 @@
   "hero": {
     "title": "Sokołek Studio",
     "subtitle": "Technologia, która ma sens.",
+    "subtitleLines": ["Technologia,", "która ma sens."],
     "description": "Jesteśmy autorskim studiem technologicznym z Poznania, łączącym inżynierię z kreatywnością. Pomagamy firmom usprawniać pracę z wiedzą, dokumentami i powtarzalnymi procesami, projektując systemy AI, automatyzacje oraz produkty cyfrowe. Działamy od rozpoznania problemu i prototypu po bezpieczne rozwiązanie gotowe do codziennego użycia. Gdy projekt tego wymaga, łączymy technologię z UX, komunikacją, marką i stroną internetową."
   },
   "services": {
@@ -51,6 +54,7 @@
   "targetAudience": {
     "label": "Dla kogo",
     "heading": "Dla firm, które mają dużo wiedzy, dokumentów i ręcznej pracy.",
+    "accentWord": "wiedzy",
     "description": "Najlepiej pomagamy organizacjom, w których ważne informacje są rozproszone, eksperci tracą czas na powtarzalne zadania, a istniejące narzędzia nie nadążają za rozwojem firmy. Nie wdrażamy technologii dla samego efektu - szukamy rozwiązań, które realnie ułatwiają codzienną pracę i wspierają rozwój zespołu.",
     "items": [
       {
@@ -105,6 +109,7 @@
   "philosophy": {
     "label": "Nasze podejście",
     "heading": "Technologia tam, gdzie ma sens.",
+    "accentWord": "sens",
     "description": "Wykorzystujemy nowe technologie etycznie i tylko tam, gdzie są naprawdę potrzebne. Nie traktujemy ich jako celu samego w sobie ani prostego sposobu na zastępowanie ludzi. Projektujemy rozwiązania, które zdejmują z zespołów mechaniczną pracę, porządkują wiedzę i wspierają podejmowanie decyzji. Dzięki temu ludzie mogą poświęcić więcej czasu zadaniom wymagającym doświadczenia, kreatywności, odpowiedzialności i relacji."
   },
   "engineeringFoundation": {
@@ -179,6 +184,21 @@
           "DynamoDB",
           "S3"
         ]
+      },
+      {
+        "title": "Infrastruktura generatywnej AI dla wideo i audio",
+        "outcome": "Projektowanie infrastruktury Kubernetes dla produkcyjnych obciążeń AI, w tym potoków generowania wideo i audio wykorzystujących GPU. Rozwój usług backendowych, workflow ML i orkiestracji agentów oraz usprawnianie wdrożeń, obserwowalności i niezawodności.",
+        "role": "Full-Stack Engineer · Brahma AI · 04.2026–obecnie",
+        "stack": [
+          "Kubernetes",
+          "GPU Workloads",
+          "Generative AI",
+          "Agent Orchestration",
+          "ML Workflows",
+          "Backend Services",
+          "Observability",
+          "CI/CD"
+        ]
       }
     ]
   },
@@ -213,14 +233,15 @@
   },
   "manifesto": {
     "label": "O nas",
+    "imageAlt": "Maksymilian i Klaudia, założyciele Sokołek Studio",
     "sectionOne": {
       "heading": "Trochę o nas",
-      "description": "Za technologiczną stronę studia odpowiada Maksymilian. Od lat tworzy oprogramowanie i systemy AI dla startupów oraz dużych firm. Łączy doświadczenie inżynierskie z dużą ciekawością nowych technologii, ale nie wdraża ich dla samego efektu. Lubi proste rozwiązania, czysty kod i projekty dopracowane do ostatniego szczegółu."
+      "description": "Za technologiczną stronę studia odpowiada Maksymilian. Od lat tworzy oprogramowanie i systemy AI, zarówno dla startupów, jak i dużych korporacji. Łączy doświadczenie inżynierskie z dużą ciekawością nowych technologii, ale nie wdraża ich dla samego efektu. Lubi proste rozwiązania, czysty kod i projekty dopracowane do ostatniego szczegółu."
     },
     "sectionTwo": {
       "heading_part1": "Maksymilian",
       "heading_part2": "Klaudia",
-      "description": "Za kreatywną stronę studia odpowiada Klaudia. Łączy doświadczenie w PR i komunikacji z UX, fotografią, montażem oraz social mediami. Ma dobre oko do obrazu, wyczucie trendów i wie, jak przełożyć charakter marki oraz złożoną technologię na prosty, naturalny język. Dba o to, żeby całość była spójna, użyteczna i po prostu dobrze wyglądała."
+      "description": "Za kreatywną stronę studia odpowiada Klaudia. Łączy doświadczenie w PR i komunikacji z UX, fotografią, montażem video oraz social mediami. Ma dobre oko do obrazu, wyczucie trendów i wie, jak przełożyć charakter marki oraz złożoną technologię na prosty, naturalny język. Dba o to, żeby całość była spójna, użyteczna i po prostu dobrze wyglądała."
     },
     "principles": [
       "Pro, but make it fun",
@@ -246,7 +267,7 @@
     "label": "Cookies",
     "heading": "Korzystamy z cookies analitycznych.",
     "description": "Używamy Google Analytics, żeby lepiej rozumieć, jak odwiedzający korzystają z naszej strony i jak możemy ją ulepszać.",
-    "dismiss": "Rozumiem",
-    "settings": "Ustawienia cookies"
+    "accept": "Akceptuję",
+    "reject": "Tylko niezbędne"
   }
 }

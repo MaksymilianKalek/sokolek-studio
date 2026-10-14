@@ -1,26 +1,37 @@
 import { useTranslation } from 'react-i18next'
 import { Reveal } from '../reveal'
-import { SectionLabel } from './section-label'
+import { SectionIntro } from './ui'
 
 export function Philosophy() {
   const { t } = useTranslation()
   const principles = t('manifesto.principles', { returnObjects: true }) as string[]
 
   return (
-    <section className="site-section section-about-chapter">
+    <section className="site-section">
       <div id="about" className="site-container site-anchor">
-        <Reveal>
-          <SectionLabel>{t('manifesto.label')}</SectionLabel>
-        </Reveal>
+        <SectionIntro
+          label={t('manifesto.label')}
+          heading={t('manifesto.sectionOne.heading')}
+          headingClassName="max-w-[11ch]"
+          description={t('hero.description')}
+        />
 
-        <div className="editorial-grid section-offset lg:items-start">
+        <div className="section-content-offset grid gap-6 lg:grid-cols-[minmax(20rem,0.78fr)_minmax(0,1.22fr)] lg:items-start lg:gap-10">
           <Reveal>
-            <h2 className="heading-md">
-              {t('manifesto.sectionOne.heading')}
-            </h2>
+            <figure className="overflow-hidden bg-ink">
+              <img
+                src="/photos/KiM-23.jpg"
+                alt={t('manifesto.imageAlt')}
+                width="1536"
+                height="2308"
+                loading="lazy"
+                decoding="async"
+                className="aspect-[3/4] w-full object-cover object-[center_42%]"
+              />
+            </figure>
           </Reveal>
 
-          <div className="section-stack">
+          <div className="surface-dark section-stack card-padding">
             <Reveal delay={0.08}>
               <div className="grid gap-8 sm:grid-cols-2">
                 <div>

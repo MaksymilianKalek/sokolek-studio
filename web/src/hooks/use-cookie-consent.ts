@@ -1,36 +1,54 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react'
+import { enableAnalytics } from '../lib/analytics'
 
-const COOKIE_NOTICE_STORAGE_KEY = 'sokolek-cookie-notice-dismissed';
+const COOKIE_CONSENT_STORAGE_KEY = 'sokolek-cookie-consent'
 
-function readNoticeDismissed() {
+type CookieConsent = 'accepted' | 'rejected' | null
+
+function readCookieConsent(): CookieConsent {
   try {
-    return window.localStorage.getItem(COOKIE_NOTICE_STORAGE_KEY) === 'true';
+    const storedConsent = window.localStorage.getItem(COOKIE_CONSENT_STORAGE_KEY)
+
+    if (storedConsent === 'accepted' || storedConsent === 'rejected') {
+      return storedConsent
+    }
   } catch (error) {
-    console.error('Failed to read cookie notice preference.', error);
+    console.error('Failed to read cookie consent preference.', error)
   }
 
-  return false;
+  return null
 }
 
-function storeNoticeDismissed() {
+function storeCookieConsent(consent: Exclude<CookieConsent, null>) {
   try {
-    window.localStorage.setItem(COOKIE_NOTICE_STORAGE_KEY, 'true');
+    window.localStorage.setItem(COOKIE_CONSENT_STORAGE_KEY, consent)
   } catch (error) {
-    console.error('Failed to store cookie notice preference.', error);
+    console.error('Failed to store cookie consent preference.', error)
   }
 }
 
 export function useCookieConsent() {
-  const [isNoticeDismissed, setIsNoticeDismissed] = useState(readNoticeDismissed);
+  const [consent, setConsent] = useState<CookieConsent>(readCookieConsent)
 
+  useEffect(() => {
+    if (consent === 'accepted') {
+      enableAnalytics()
+    }
+  }, [consent])
 
-  const dismissNotice = useCallback(() => {
-    storeNoticeDismissed();
-    setIsNoticeDismissed(true);
-  }, []);
+  const acceptAnalytics = useCallback(() => {
+    storeCookieConsent('accepted')
+    setConsent('accepted')
+  }, [])
+
+  const rejectAnalytics = useCallback(() => {
+    storeCookieConsent('rejected')
+    setConsent('rejected')
+  }, [])
 
   return {
-    dismissNotice,
-    shouldShowNotice: !isNoticeDismissed,
-  };
+    acceptAnalytics,
+    rejectAnalytics,
+    shouldShowNotice: consent === null,
+  }
 }

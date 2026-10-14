@@ -1,27 +1,23 @@
 import { useTranslation } from 'react-i18next'
 import { Reveal } from '../reveal'
-import { cx } from '../../lib/class-names'
 import { SectionLabel } from './section-label'
 import { PrimaryCtaLink } from './ui'
 
 type ContactProps = {
-  inverted?: boolean
+  embedded?: boolean
 }
 
-export function Contact({ inverted = false }: ContactProps) {
+export function Contact({ embedded = false }: ContactProps) {
   const { t } = useTranslation()
-  const sectionClassName = inverted
-    ? 'footer-contact-section text-paper'
+  const sectionClassName = embedded
+    ? 'footer-contact-section'
     : 'site-section'
-  const labelClassName = inverted ? 'text-paper/42' : undefined
-  const descriptionClassName = inverted ? 'text-paper/72' : 'text-ink-soft'
-  const secondaryDescriptionClassName = inverted ? '!text-paper/72' : '!text-ink-soft'
 
   return (
     <section className={sectionClassName}>
       <Reveal>
         <div id="contact" className="site-container site-anchor">
-          <SectionLabel className={labelClassName}>{t('nav.contact')}</SectionLabel>
+          <SectionLabel>{t('nav.contact')}</SectionLabel>
           <div className="editorial-grid section-offset lg:items-end">
             <h2 className="heading-md">
               {t('contact.heading_part1')}{' '}
@@ -31,15 +27,14 @@ export function Contact({ inverted = false }: ContactProps) {
             </h2>
 
             <div>
-              <p className={cx('body-copy-lg max-w-xl', descriptionClassName)}>
+              <p className="body-copy max-w-xl">
                 {t('contact.description')}
               </p>
-              <p className={cx('body-copy content-offset-tight max-w-xl', secondaryDescriptionClassName)}>
+              <p className="body-copy content-offset-tight max-w-xl">
                 {t('contact.secondaryDescription')}
               </p>
               <PrimaryCtaLink
                 href="mailto:hello@sokolek.com"
-                inverted={inverted}
                 className="action-offset"
               >
                 {t('footer.contact')}

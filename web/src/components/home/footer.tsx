@@ -12,19 +12,19 @@ export function Footer() {
   const { t } = useTranslation()
 
   return (
-    <footer className="footer-inverted overflow-hidden bg-ink px-5 pb-6 text-paper sm:px-8 lg:px-10">
+    <footer className="surface-dark site-gutter overflow-hidden pb-6">
       <div className="site-container">
-        <Contact inverted />
-        <div className="grid gap-8 text-paper/42 sm:grid-cols-[1fr_auto] sm:items-end">
+        <Contact embedded />
+        <div className="grid gap-8 text-ink-muted sm:grid-cols-[1fr_auto] sm:items-end">
           <nav
-            aria-label="Footer navigation"
+            aria-label={t('nav.footerLabel')}
             className="flex flex-wrap gap-x-6 gap-y-3"
           >
             {footerLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="nav-text interactive-accent-link focus-ring-inverted transition-colors hover:text-paper"
+                className="nav-text interactive-accent-link focus-ring transition-colors hover:text-ink"
               >
                 {t(link.labelKey)}
               </a>

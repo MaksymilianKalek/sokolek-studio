@@ -48,17 +48,17 @@ export function RealizacjePage() {
 
   return (
     <main className="site-shell min-h-dvh bg-paper text-ink antialiased">
-      <section className="relative overflow-hidden px-5 py-5 sm:px-8 lg:px-10">
+      <section className="site-gutter relative overflow-hidden py-5">
         <SiteHeader />
 
-        <div className="site-container pt-16 sm:pt-22 lg:pt-24">
+        <div className="site-container section-content-offset">
           <Reveal>
             <SectionLabel>{t('portfolio.label')}</SectionLabel>
           </Reveal>
 
           <div className="section-offset grid gap-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(18rem,0.42fr)] lg:items-end">
             <Reveal>
-              <h1 className="max-w-[11ch] font-satoshi text-[clamp(4.5rem,8vw,8.5rem)] font-semibold leading-[0.92] tracking-[-0.065em]">
+              <h1 className="heading-display max-w-[11ch]">
                 {t('portfolio.heading')}
               </h1>
             </Reveal>
@@ -86,8 +86,8 @@ export function RealizacjePage() {
 
 function PortfolioProjectList({ projects }: { projects: PortfolioProject[] }) {
   return (
-    <section className="site-section-compact pt-12 sm:pt-16 lg:pt-20">
-      <div className="site-container grid gap-28 lg:gap-36">
+    <section className="site-section-compact">
+      <div className="site-container chapter-stack">
         {projects.map((project, index) => (
           <PortfolioProjectItem
             key={project.id}
@@ -120,17 +120,17 @@ function PortfolioProjectItem({
           visitLabel={t('common.visitLiveSite')}
         />
 
-        <div className="grid gap-8 bg-ink px-5 py-4 text-paper sm:px-6 sm:py-5 lg:grid-cols-[minmax(15rem,0.38fr)_minmax(0,0.42fr)_minmax(17rem,0.3fr)] lg:gap-10 lg:px-8 lg:py-7">
+        <div className="surface-dark card-padding grid gap-8 lg:grid-cols-[minmax(15rem,0.38fr)_minmax(0,0.42fr)_minmax(17rem,0.3fr)] lg:gap-10">
           <div>
-            <p className="meta-text text-paper/50">
+            <p className="meta-text text-ink-muted">
               {project.index}
             </p>
-            <h2 className="heading-sm mt-4 max-w-lg text-paper">
+            <h2 className="heading-sm content-offset-tight max-w-lg text-ink">
               {project.title}
             </h2>
           </div>
 
-          <p className="body-copy max-w-2xl !text-paper lg:pt-8">
+          <p className="body-copy max-w-2xl lg:pt-8">
             {project.summary}
           </p>
 
@@ -142,7 +142,6 @@ function PortfolioProjectItem({
                 href={project.liveUrl}
                 ariaLabel={`${t('common.visitLiveSite')}: ${project.title}`}
                 className="mt-1"
-                inverted
                 target="_blank"
                 rel="noreferrer"
               >
@@ -232,10 +231,10 @@ function ProjectMetadata({ project }: { project: PortfolioProject }) {
     <dl className="grid gap-x-6 gap-y-5 sm:grid-cols-2 lg:grid-cols-1">
       {metadata.map((item) => (
         <div key={item.label}>
-          <dt className="meta-text text-paper/44">
+          <dt className="meta-text text-ink-muted">
             {item.label}
           </dt>
-          <dd className="meta-text mt-2 text-paper">
+          <dd className="meta-text mt-2 text-ink">
             {Array.isArray(item.value) ? (
               <span className="flex max-w-[24rem] flex-wrap gap-x-2 gap-y-1 leading-[1.35] tracking-[0.08em]">
                 {item.value.map((part, index) => (

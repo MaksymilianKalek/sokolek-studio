@@ -1,5 +1,5 @@
 import { type ReactNode } from 'react'
-import { motion } from 'motion/react'
+import { motion, useReducedMotion } from 'motion/react'
 import { motionTransition } from '../lib/motion'
 
 type RevealProps = {
@@ -9,6 +9,12 @@ type RevealProps = {
 }
 
 export function Reveal({ children, className = '', delay = 0 }: RevealProps) {
+  const prefersReducedMotion = useReducedMotion()
+
+  if (prefersReducedMotion) {
+    return <div className={className}>{children}</div>
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}

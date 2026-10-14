@@ -7,9 +7,9 @@ export function MidPageCta() {
   const { t } = useTranslation()
 
   return (
-    <section className="site-section section-commercial-close chapter-surface-warm text-ink">
+    <section className="site-section">
       <Reveal>
-        <div className="site-container py-8 sm:py-10">
+        <div className="site-container">
           <SectionLabel>{t('midPageCta.label')}</SectionLabel>
           <div className="editorial-grid editorial-grid-compact section-offset lg:items-end">
             <h2 className="heading-md max-w-5xl">
@@ -17,7 +17,7 @@ export function MidPageCta() {
             </h2>
 
             <div>
-              <p className="body-copy-lg max-w-xl text-ink-soft">
+              <p className="body-copy max-w-xl">
                 {t('midPageCta.description')}
               </p>
               <PrimaryCtaLink

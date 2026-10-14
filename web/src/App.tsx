@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { AnimatePresence } from 'motion/react'
 import { CookieConsentBanner } from './components/cookie-consent-banner'
 import { LoadingCurtain } from './components/loading-curtain'
@@ -13,7 +13,6 @@ import { Services } from './components/home/services'
 import { TargetAudience } from './components/home/target-audience'
 import { useCookieConsent } from './hooks/use-cookie-consent'
 import { useSmoothScroll } from './hooks/use-smooth-scroll'
-import { cx } from './lib/class-names'
 import { RealizacjePage } from './pages/realizacje'
 
 function getCurrentPath() {
@@ -23,9 +22,7 @@ function getCurrentPath() {
 function App() {
   useSmoothScroll()
 
-  const { dismissNotice, shouldShowNotice } = useCookieConsent()
-  const audienceRegionRef = useRef<HTMLDivElement>(null)
-  const [audienceThemeActive, setAudienceThemeActive] = useState(false)
+  const { acceptAnalytics, rejectAnalytics, shouldShowNotice } = useCookieConsent()
   const [isIntroTypingActive, setIsIntroTypingActive] = useState(false)
   const [isIntroDismissing, setIsIntroDismissing] = useState(false)
   const [isIntroComplete, setIsIntroComplete] = useState(false)
@@ -49,47 +46,13 @@ function App() {
     window.scrollTo({ top: 0, left: 0 })
   }, [currentPath])
 
-  useEffect(() => {
-    const region = audienceRegionRef.current
-
-    if (!region) {
-      return
-    }
-
-    const mobileQuery = window.matchMedia('(max-width: 767px)')
-    let observer: IntersectionObserver | null = null
-
-    const observeRegion = () => {
-      observer?.disconnect()
-      observer = new IntersectionObserver(
-        ([entry]) => {
-          setAudienceThemeActive(entry.isIntersecting)
-        },
-        {
-          rootMargin: mobileQuery.matches ? '-52% 0px -32% 0px' : '-60% 0px -35% 0px',
-          threshold: 0,
-        },
-      )
-      observer.observe(region)
-    }
-
-    observeRegion()
-    mobileQuery.addEventListener('change', observeRegion)
-
-    return () => {
-      mobileQuery.removeEventListener('change', observeRegion)
-      observer?.disconnect()
-      setAudienceThemeActive(false)
-    }
-  }, [currentPath])
-
   if (currentPath === '/portfolio') {
     return (
       <>
         <RealizacjePage />
         <AnimatePresence>
           {shouldShowNotice ? (
-            <CookieConsentBanner onDismiss={dismissNotice} />
+            <CookieConsentBanner onAccept={acceptAnalytics} onReject={rejectAnalytics} />
           ) : null}
         </AnimatePresence>
       </>
@@ -97,12 +60,7 @@ function App() {
   }
 
   return (
-    <main
-      className={cx(
-        'site-shell min-h-dvh bg-paper text-ink antialiased',
-        audienceThemeActive && 'site-shell--focus',
-      )}
-    >
+    <main className="site-shell min-h-dvh bg-paper text-ink antialiased">
       <div className="relative overflow-hidden">
         <Hero
           isIntroActive={!isIntroComplete}
@@ -118,9 +76,7 @@ function App() {
         />
       </div>
       <Services />
-      <div ref={audienceRegionRef}>
-        <TargetAudience />
-      </div>
+      <TargetAudience />
       <Process />
       <MidPageCta />
       <AiPhilosophy />
@@ -129,7 +85,7 @@ function App() {
       <Footer />
       <AnimatePresence>
         {(isIntroDismissing || isIntroComplete) && shouldShowNotice ? (
-          <CookieConsentBanner onDismiss={dismissNotice} />
+          <CookieConsentBanner onAccept={acceptAnalytics} onReject={rejectAnalytics} />
         ) : null}
       </AnimatePresence>
     </main>

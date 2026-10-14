@@ -3,7 +3,9 @@
     "services": "Services",
     "portfolio": "Portfolio",
     "contact": "Contact",
-    "language": "Language"
+    "language": "Language",
+    "mainLabel": "Main navigation",
+    "footerLabel": "Footer navigation"
   },
   "common": {
     "startProject": "Let's talk",
@@ -14,6 +16,7 @@
   "hero": {
     "title": "Sokołek Studio",
     "subtitle": "Technology that makes sense.",
+    "subtitleLines": ["Technology", "that makes sense."],
     "description": "We are an independent technology studio from Poznań, bringing engineering and creativity together. We help companies improve the way they work with knowledge, documents and repetitive processes by designing AI systems, automations and digital products. We work from problem discovery and prototyping through to secure solutions ready for everyday use. When a project calls for it, we bring technology together with UX, communication, branding and web design."
   },
   "services": {
@@ -51,6 +54,7 @@
   "targetAudience": {
     "label": "Who we help",
     "heading": "For companies with a lot of knowledge, documents and manual work.",
+    "accentWord": "knowledge",
     "description": "We are at our best in organisations where important information is scattered, experts lose time to repetitive tasks and existing tools no longer keep up with the company's growth. We do not implement technology for the sake of it — we look for solutions that genuinely make everyday work easier and support the team as it develops.",
     "items": [
       {
@@ -105,6 +109,7 @@
   "philosophy": {
     "label": "Our approach",
     "heading": "Technology where it makes sense.",
+    "accentWord": "sense",
     "description": "We use new technologies responsibly and only where they are genuinely needed. We do not treat them as an end in themselves or as a shortcut to replacing people. We design solutions that take repetitive work off teams' plates, organise knowledge and support better decision-making. This gives people more time for work that requires experience, creativity, judgement and human connection."
   },
   "engineeringFoundation": {
@@ -179,6 +184,21 @@
           "DynamoDB",
           "S3"
         ]
+      },
+      {
+        "title": "Generative AI Infrastructure for Video and Audio",
+        "outcome": "Designing Kubernetes infrastructure for production AI workloads, including GPU-intensive video and audio generation pipelines. Developing backend services, ML workflows and agent orchestration while improving deployments, observability and reliability.",
+        "role": "Full-Stack Engineer · Brahma AI · April 2026–Present",
+        "stack": [
+          "Kubernetes",
+          "GPU Workloads",
+          "Generative AI",
+          "Agent Orchestration",
+          "ML Workflows",
+          "Backend Services",
+          "Observability",
+          "CI/CD"
+        ]
       }
     ]
   },
@@ -213,6 +233,7 @@
   },
   "manifesto": {
     "label": "About us",
+    "imageAlt": "Maksymilian and Klaudia, founders of Sokołek Studio",
     "sectionOne": {
       "heading": "A little about us",
       "description": "Maksymilian leads the technology side of the studio. He has spent years building software and AI systems for startups and large organisations. He combines engineering experience with a strong curiosity for new technologies, but never implements them for the sake of novelty. He values simple solutions, clean code and projects refined down to the last detail."
@@ -246,7 +267,7 @@
     "label": "Cookies",
     "heading": "We use analytics cookies.",
     "description": "We use Google Analytics to better understand how visitors use our website and how we can improve it.",
-    "dismiss": "Got it",
-    "settings": "Cookie settings"
+    "accept": "Accept",
+    "reject": "Essential only"
   }
 }
