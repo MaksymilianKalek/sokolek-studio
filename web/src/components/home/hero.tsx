@@ -22,7 +22,7 @@ type HeroSubtitleProps = {
 function HeroSubtitle({ className = '', label, lines }: HeroSubtitleProps) {
   return (
     <p aria-label={label} className={cx('heading-md text-balance text-ink', className)}>
-      <span aria-hidden="true" className="hero-contrast-surface hero-subtitle-surface">
+      <span aria-hidden="true" className="hero-subtitle-surface">
         {lines.map((line) => (
           <span key={line} className="whitespace-nowrap">
             {line}
@@ -98,7 +98,7 @@ export function Hero({
       <div className="site-container flex flex-1 flex-col">
         <SiteHeader
           logoSrc="/logo_new_white.svg"
-          navigationClassName="hero-contrast-surface hero-navigation-surface"
+          navigationClassName="hero-navigation-surface"
           onDesktopNavOffsetChange={setDesktopNavOffset}
         />
 
@@ -111,7 +111,7 @@ export function Hero({
               <h1
                 aria-label={heroTitle}
                 className={cx(
-                  'hero-contrast-surface hero-wordmark-surface relative w-fit max-w-full font-satoshi',
+                  'relative w-fit max-w-full font-satoshi',
                   isIntroActive && 'z-[10000]',
                 )}
               >
@@ -156,10 +156,7 @@ export function Hero({
             />
 
             <div className="hero-nav-aligned-action md:col-span-3 md:col-start-1 md:row-start-1 md:self-end">
-              <PrimaryCtaLink
-                href="mailto:hello@sokolek.com"
-                className="hero-contrast-surface"
-              >
+              <PrimaryCtaLink href="mailto:hello@sokolek.com">
                 {t('common.startProject')}
               </PrimaryCtaLink>
             </div>

@@ -25,10 +25,6 @@ export function TerminalWordmark({
   const [typedText, setTypedText] = useState('')
   const visibleText = isActive ? (prefersReducedMotion ? word : typedText) : ''
   const isTypingComplete = typedText === word
-  const accentStart = word.indexOf(' ') + 1
-  const hasAccentWord = accentStart > 0
-  const visiblePrefix = hasAccentWord ? visibleText.slice(0, accentStart) : visibleText
-  const visibleAccent = hasAccentWord ? visibleText.slice(accentStart) : ''
 
   useEffect(() => {
     if (!isActive) {
@@ -73,15 +69,7 @@ export function TerminalWordmark({
         isOnIntroCurtain ? 'text-paper-fixed' : 'text-ink',
       )}
     >
-      <span>
-        {visiblePrefix}
-        {visibleAccent ? (
-          <>
-            <span className="text-accent">{visibleAccent[0]}</span>
-            {visibleAccent.slice(1)}
-          </>
-        ) : null}
-      </span>
+      <span>{visibleText}</span>
       <motion.span
         key={isTypingComplete ? 'cursor-complete' : 'cursor-active'}
         className="typing-cursor h-[1em] w-[0.05em]"
