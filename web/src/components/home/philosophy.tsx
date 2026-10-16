@@ -16,17 +16,17 @@ export function Philosophy() {
           description={t('hero.description')}
         />
 
-        <div className="section-content-offset grid gap-6 lg:grid-cols-[minmax(20rem,0.78fr)_minmax(0,1.22fr)] lg:items-start lg:gap-10">
-          <Reveal>
-            <figure className="overflow-hidden bg-ink">
+        <div className="section-content-offset grid gap-6 lg:grid-cols-[minmax(20rem,0.78fr)_minmax(0,1.22fr)] lg:gap-10">
+          <Reveal className="lg:h-full">
+            <figure className="h-full overflow-hidden bg-ink">
               <img
                 src="/photos/KiM-23bw.jpg"
                 alt={t('manifesto.imageAlt')}
                 width="1536"
-                height="2308"
+                height="1536"
                 loading="lazy"
                 decoding="async"
-                className="aspect-square w-full object-cover object-[center_42%]"
+                className="aspect-square w-full object-cover object-[center_42%] lg:h-full lg:aspect-auto"
               />
             </figure>
           </Reveal>

@@ -11,21 +11,17 @@ type EngineeringPillar = {
   title: string
 }
 
-const horizontalLockHeadingTopPadding = 24
+const horizontalLockHeadingTopPadding = 16
 
-function getLayoutOffsetTop(element: HTMLElement, ancestor: HTMLElement) {
+function getDocumentLayoutOffsetTop(element: HTMLElement) {
   let offsetTop = 0
   let currentElement: HTMLElement | null = element
 
-  while (currentElement && currentElement !== ancestor) {
+  while (currentElement) {
     offsetTop += currentElement.offsetTop
     currentElement = currentElement.offsetParent instanceof HTMLElement
       ? currentElement.offsetParent
       : null
-  }
-
-  if (currentElement !== ancestor) {
-    throw new Error('Unable to position the engineering section heading within its sticky container.')
   }
 
   return offsetTop
@@ -67,18 +63,24 @@ export function EngineeringFoundation() {
 
     const updateLockMetrics = () => {
       const stickyContentBounds = stickyContent.getBoundingClientRect()
+
+      setHorizontalDistance(Math.max(track.scrollWidth - viewport.clientWidth, 0))
+      setLockContentHeight(Math.ceil(stickyContentBounds.height))
+      setLockViewportHeight(window.innerHeight)
+
+      if (!canUseHorizontalLayout) {
+        return
+      }
+
       const heading = stickyContent.querySelector<HTMLElement>('h2')
 
       if (!heading) {
         throw new Error('Unable to position the engineering section: missing section heading.')
       }
 
-      const headingOffset = getLayoutOffsetTop(heading, stickyContent)
-
-      setHorizontalDistance(Math.max(track.scrollWidth - viewport.clientWidth, 0))
-      setLockContentHeight(Math.ceil(stickyContentBounds.height))
+      const headingOffset = getDocumentLayoutOffsetTop(heading)
+        - getDocumentLayoutOffsetTop(stickyContent)
       setLockTopOffset(Math.floor(horizontalLockHeadingTopPadding - headingOffset))
-      setLockViewportHeight(window.innerHeight)
     }
 
     updateLockMetrics()
