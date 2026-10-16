@@ -20,13 +20,13 @@ export function Philosophy() {
           <Reveal>
             <figure className="overflow-hidden bg-ink">
               <img
-                src="/photos/KiM-23.jpg"
+                src="/photos/KiM-23bw.jpg"
                 alt={t('manifesto.imageAlt')}
                 width="1536"
                 height="2308"
                 loading="lazy"
                 decoding="async"
-                className="aspect-[3/4] w-full object-cover object-[center_42%]"
+                className="aspect-square w-full object-cover object-[center_42%]"
               />
             </figure>
           </Reveal>

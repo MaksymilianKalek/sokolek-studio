@@ -5,6 +5,7 @@ import { cx } from '../../lib/class-names';
 // import { ShaderGradientBackground } from '../shader-gradient-background';
 import { TerminalWordmark } from './terminal-wordmark';
 import { PrimaryCtaLink } from './ui';
+import { ShaderGradientBackground } from '../shader-gradient-background';
 
 type HeroProps = {
   isIntroActive: boolean;
@@ -85,17 +86,17 @@ export function Hero({
 
   return (
     <section className="hero-surface site-gutter relative flex min-h-svh flex-col overflow-hidden py-5 sm:min-h-dvh">
-      {/* <ShaderGradientBackground /> */}
-      <img
+      <ShaderGradientBackground />
+      {/* <img
         aria-hidden="true"
         alt=""
-        src="/photos/grain_black_white.jpg"
+        src="/photos/DSCF4059.jpeg"
         width="3864"
         height="2576"
         className="pointer-events-none absolute inset-0 h-full w-full object-cover object-center"
-      />
+      /> */}
 
-      <div className="site-container flex flex-1 flex-col">
+      <div className="site-container relative flex flex-1 flex-col">
         <SiteHeader
           logoSrc="/logo_new_white.svg"
           navigationClassName="hero-navigation-surface"
