@@ -13,6 +13,24 @@ type EngineeringPillar = {
 
 const horizontalLockHeadingTopPadding = 24
 
+function getLayoutOffsetTop(element: HTMLElement, ancestor: HTMLElement) {
+  let offsetTop = 0
+  let currentElement: HTMLElement | null = element
+
+  while (currentElement && currentElement !== ancestor) {
+    offsetTop += currentElement.offsetTop
+    currentElement = currentElement.offsetParent instanceof HTMLElement
+      ? currentElement.offsetParent
+      : null
+  }
+
+  if (currentElement !== ancestor) {
+    throw new Error('Unable to position the engineering section heading within its sticky container.')
+  }
+
+  return offsetTop
+}
+
 export function EngineeringFoundation() {
   const { t } = useTranslation()
   const sectionRef = useRef<HTMLElement>(null)
@@ -31,6 +49,12 @@ export function EngineeringFoundation() {
     offset: [`start ${lockTopOffset}px`, 'end end'],
   })
   const x = useTransform(scrollYProgress, [0, 1], [0, -horizontalDistance])
+  const canUseHorizontalLayout = canLockHorizontally && !prefersReducedMotion
+  const shouldLockCards = canUseHorizontalLayout
+    && horizontalDistance > 0
+    && lockContentHeight > 0
+    && lockViewportHeight > 0
+  const lockedSectionHeight = lockViewportHeight - lockTopOffset + horizontalDistance
 
   useLayoutEffect(() => {
     const viewport = viewportRef.current
@@ -43,13 +67,13 @@ export function EngineeringFoundation() {
 
     const updateLockMetrics = () => {
       const stickyContentBounds = stickyContent.getBoundingClientRect()
-      const heading = stickyContent.querySelector('h2')
+      const heading = stickyContent.querySelector<HTMLElement>('h2')
 
       if (!heading) {
         throw new Error('Unable to position the engineering section: missing section heading.')
       }
 
-      const headingOffset = heading.getBoundingClientRect().top - stickyContentBounds.top
+      const headingOffset = getLayoutOffsetTop(heading, stickyContent)
 
       setHorizontalDistance(Math.max(track.scrollWidth - viewport.clientWidth, 0))
       setLockContentHeight(Math.ceil(stickyContentBounds.height))
@@ -69,7 +93,7 @@ export function EngineeringFoundation() {
       resizeObserver.disconnect()
       window.removeEventListener('resize', updateLockMetrics)
     }
-  }, [])
+  }, [canUseHorizontalLayout])
 
   useLayoutEffect(() => {
     const mediaQuery = window.matchMedia('(min-width: 768px)')
@@ -85,13 +109,6 @@ export function EngineeringFoundation() {
       mediaQuery.removeEventListener('change', updateLockAvailability)
     }
   }, [])
-
-  const canUseHorizontalLayout = canLockHorizontally && !prefersReducedMotion
-  const shouldLockCards = canUseHorizontalLayout
-    && horizontalDistance > 0
-    && lockContentHeight > 0
-    && lockViewportHeight > 0
-  const lockedSectionHeight = lockViewportHeight - lockTopOffset + horizontalDistance
 
   return (
     <div className={shouldLockCards ? 'surface-dark section-top-padding section-bottom-padding' : 'surface-dark'}>
