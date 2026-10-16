@@ -11,8 +11,7 @@ type EngineeringPillar = {
   title: string
 }
 
-const horizontalLockTopOffset = '1.5rem'
-const horizontalLockScrollOffset = '24px'
+const horizontalLockHeadingTopPadding = 24
 
 export function EngineeringFoundation() {
   const { t } = useTranslation()
@@ -24,10 +23,12 @@ export function EngineeringFoundation() {
   const [canLockHorizontally, setCanLockHorizontally] = useState(false)
   const [horizontalDistance, setHorizontalDistance] = useState(0)
   const [lockContentHeight, setLockContentHeight] = useState(0)
+  const [lockTopOffset, setLockTopOffset] = useState(horizontalLockHeadingTopPadding)
+  const [lockViewportHeight, setLockViewportHeight] = useState(0)
   const pillars = t('engineeringFoundation.pillars', { returnObjects: true }) as EngineeringPillar[]
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: [`start ${horizontalLockScrollOffset}`, 'end end'],
+    offset: [`start ${lockTopOffset}px`, 'end end'],
   })
   const x = useTransform(scrollYProgress, [0, 1], [0, -horizontalDistance])
 
@@ -41,8 +42,19 @@ export function EngineeringFoundation() {
     }
 
     const updateLockMetrics = () => {
+      const stickyContentBounds = stickyContent.getBoundingClientRect()
+      const heading = stickyContent.querySelector('h2')
+
+      if (!heading) {
+        throw new Error('Unable to position the engineering section: missing section heading.')
+      }
+
+      const headingOffset = heading.getBoundingClientRect().top - stickyContentBounds.top
+
       setHorizontalDistance(Math.max(track.scrollWidth - viewport.clientWidth, 0))
-      setLockContentHeight(Math.ceil(stickyContent.getBoundingClientRect().height))
+      setLockContentHeight(Math.ceil(stickyContentBounds.height))
+      setLockTopOffset(Math.floor(horizontalLockHeadingTopPadding - headingOffset))
+      setLockViewportHeight(window.innerHeight)
     }
 
     updateLockMetrics()
@@ -75,22 +87,26 @@ export function EngineeringFoundation() {
   }, [])
 
   const canUseHorizontalLayout = canLockHorizontally && !prefersReducedMotion
-  const shouldLockCards = canUseHorizontalLayout && horizontalDistance > 0 && lockContentHeight > 0
+  const shouldLockCards = canUseHorizontalLayout
+    && horizontalDistance > 0
+    && lockContentHeight > 0
+    && lockViewportHeight > 0
+  const lockedSectionHeight = lockViewportHeight - lockTopOffset + horizontalDistance
 
   return (
-    <div className={shouldLockCards ? 'surface-dark section-top-padding' : 'surface-dark'}>
+    <div className={shouldLockCards ? 'surface-dark section-top-padding section-bottom-padding' : 'surface-dark'}>
       <section
         ref={sectionRef}
         className="relative"
         style={{
-          height: shouldLockCards ? `${lockContentHeight + horizontalDistance}px` : undefined,
+          height: shouldLockCards ? `${lockedSectionHeight}px` : undefined,
         }}
       >
         <div
           ref={stickyContentRef}
-          className={shouldLockCards ? 'site-gutter section-bottom-padding sticky overflow-hidden' : 'site-section'}
+          className={shouldLockCards ? 'site-gutter sticky overflow-hidden' : 'site-section'}
           style={shouldLockCards ? {
-            top: horizontalLockTopOffset,
+            top: `${lockTopOffset}px`,
           } : undefined}
         >
           <div id="founder-background" className="site-container site-anchor">
