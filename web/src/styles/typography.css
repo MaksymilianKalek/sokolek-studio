@@ -18,6 +18,14 @@
   letter-spacing: -0.05em;
 }
 
+.accent-italic {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: -0.035em;
+  color: var(--color-accent);
+}
+
 .heading-display {
   font-size: clamp(4.5rem, 8vw, 8.5rem);
   font-weight: 600;

@@ -19,7 +19,7 @@ export function AccentWord({ text, word }: AccentWordProps) {
   return (
     <>
       {text.slice(0, wordStart)}
-      <span className="text-accent">{word}</span>
+      <span className="accent-italic">{word}</span>
       {text.slice(wordStart + word.length)}
     </>
   )
@@ -68,6 +68,7 @@ type SectionIntroProps = {
   headingClassName?: string
   label: string
   note?: string
+  headingSecondLine?: string
 }
 
 export function SectionIntro({
@@ -78,6 +79,7 @@ export function SectionIntro({
   headingClassName = '',
   label,
   note,
+  headingSecondLine = '',
 }: SectionIntroProps) {
   return (
     <>
@@ -92,6 +94,7 @@ export function SectionIntro({
             <h2 className={cx('heading-md max-w-6xl', note && 'content-offset-tight', headingClassName)}>
               {heading}
             </h2>
+            {headingSecondLine ? <span className="heading-md max-w-6xl ">{headingSecondLine}</span> : null}
           </div>
         </Reveal>
 

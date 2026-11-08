@@ -22,32 +22,25 @@
   "services": {
     "label": "Services",
     "heading": "Small studio. Full attention.",
-    "description": "Your brand, website, technology and communication should all speak with one voice. That is why we look at the business as a whole and shape the scope around what it genuinely needs — from the first idea to a solution ready for everyday use.",
+    "description": "Your brand, website, technology and communication should all speak with one voice. That is why we look at the business as a whole and shape the scope around what it genuinely needs - from the first idea to a solution ready for everyday use.",
     "items": [
       {
         "index": "01",
-        "title": "Process Audit & AI Strategy",
-        "description": "We identify where AI or automation can genuinely make a difference. We examine your company's processes, knowledge and goals, then structure the ideas, prioritise the most promising directions and prepare a concrete plan for a pilot or full implementation.",
-        "tags": "PROCESSES · NEEDS · ROADMAP"
+        "title": "AI systems and knowledge bases",
+        "description": "We build dedicated AI systems for working with company knowledge and documents. From searching large data collections and RAG systems to specialised AI assistants and agents.",
+        "tags": "RAG · DOCUMENTS · KNOWLEDGE BASES"
       },
       {
         "index": "02",
-        "title": "AI Systems & Automation",
-        "featuredLabel": "FLAGSHIP SERVICE",
-        "description": "We build tools that simplify working with documents, knowledge and repetitive processes. We design them end to end — from the prototype and integration with data and existing tools to a secure system ready for everyday use.",
-        "tags": "PROTOTYPE · INTEGRATIONS · PRODUCTION"
+        "title": "Private AI infrastructure",
+        "description": "We select and run AI models in an environment matched to the company's requirements. We work with open-weight models, European solutions and private infrastructure - from cloud to on-premise. With an emphasis on data control, security and independence.",
+        "tags": "OPEN-WEIGHT · ON-PREMISE · PRIVATE CLOUD"
       },
       {
         "index": "03",
-        "title": "Digital Foundation",
-        "description": "Build your brand from the ground up with us — from positioning and visual identity to your website and one key technology implementation. We bring it all together into a coherent digital foundation that supports the next stage of your company's growth.",
-        "tags": "STRATEGY · BRANDING · WEB · TECHNOLOGY"
-      },
-      {
-        "index": "04",
-        "title": "Brand & Web",
-        "description": "We design refined brands, websites and digital products that look and sound like your business. From strategy and identity to UX/UI, development and tone of voice.",
-        "tags": "IDENTITY · UX/UI · DEVELOPMENT"
+        "title": "Integrations and custom software",
+        "description": "We connect AI systems with databases, APIs and the software the company already uses. When off-the-shelf tools are not enough, we design custom applications, backends and services. We also take care of deployment, monitoring and ongoing development.",
+        "tags": "CUSTOM SOFTWARE · API · MLOPS"
       }
     ]
   },
@@ -55,7 +48,7 @@
     "label": "Who we help",
     "heading": "For companies with a lot of knowledge, documents and manual work.",
     "accentWord": "knowledge",
-    "description": "We are at our best in organisations where important information is scattered, experts lose time to repetitive tasks and existing tools no longer keep up with the company's growth. We do not implement technology for the sake of it — we look for solutions that genuinely make everyday work easier and support the team as it develops.",
+    "description": "We are at our best in organisations where important information is scattered, experts lose time to repetitive tasks and existing tools no longer keep up with the company's growth. We do not implement technology for the sake of it - we look for solutions that genuinely make everyday work easier and support the team as it develops.",
     "items": [
       {
         "index": "01",
@@ -120,7 +113,7 @@
     "pillars": [
       {
         "title": "AI Platform for Medical Documentation",
-        "outcome": "Designed and built an application for working with medical documentation and knowledge — from cloud architecture and AI model integration to the user interface and deployment process.",
+        "outcome": "Designed and built an application for working with medical documentation and knowledge - from cloud architecture and AI model integration to the user interface and deployment process.",
         "role": "Lead Full-Stack AI Software Engineer",
         "stack": [
           "React",
@@ -188,7 +181,7 @@
       {
         "title": "Generative AI Infrastructure for Video and Audio",
         "outcome": "Designing Kubernetes infrastructure for production AI workloads, including GPU-intensive video and audio generation pipelines. Developing backend services, ML workflows and agent orchestration while improving deployments, observability and reliability.",
-        "role": "Full-Stack Engineer · Brahma AI · April 2026–Present",
+        "role": "Full-Stack Engineer",
         "stack": [
           "Kubernetes",
           "GPU Workloads",
@@ -208,9 +201,9 @@
     "intro": "We do our best work with people who truly know and care about what they do. For them, we create solutions where strategy, technology, visuals and language work as one.",
     "dogTok": {
       "title": "DOG TOK",
-      "subtitle": "DOG TOK — Szkoleniowy Raj",
+      "subtitle": "DOG TOK - Szkoleniowy Raj",
       "summary": "We transformed DOG TOK's extensive offering into a simple, easy-to-navigate structure. We designed a website that captures the atmosphere of the place, makes essential information easy to find and guides visitors through workshops, camps, accommodation and the events calendar.",
-      "imageAlt": "The DOG TOK — Szkoleniowy Raj website, designed and developed by Sokołek Studio",
+      "imageAlt": "The DOG TOK - Szkoleniowy Raj website, designed and developed by Sokołek Studio",
       "labels": {
         "client": "CLIENT",
         "industry": "INDUSTRY",
@@ -218,7 +211,7 @@
         "year": "YEAR"
       },
       "data": {
-        "client": "DOG TOK — SZKOLENIOWY RAJ",
+        "client": "DOG TOK - SZKOLENIOWY RAJ",
         "industry": "DOG TRAINING / TOURISM",
         "stack": "UX/UI / WEB DEVELOPMENT / COPYWRITING",
         "year": "2026"

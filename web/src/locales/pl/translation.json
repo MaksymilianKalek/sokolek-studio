@@ -15,112 +15,105 @@
   },
   "hero": {
     "title": "Sokołek Studio",
-    "subtitle": "Technologia, która ma sens.",
-    "subtitleLines": ["Technologia,", "która ma sens."],
-    "description": "Jesteśmy autorskim studiem technologicznym z Poznania, łączącym inżynierię z kreatywnością. Pomagamy firmom usprawniać pracę z wiedzą, dokumentami i powtarzalnymi procesami, projektując systemy AI, automatyzacje oraz produkty cyfrowe. Działamy od rozpoznania problemu i prototypu po bezpieczne rozwiązanie gotowe do codziennego użycia. Gdy projekt tego wymaga, łączymy technologię z UX, komunikacją, marką i stroną internetową."
+    "subtitle": "",
+    "subtitleLines": [
+      "Technologia,",
+      "która ma sens"
+    ],
+    "description": "Sokołek Studio tworzymy we dwoje. Pracujemy blisko projektu i bezpośrednio z klientami - bez przekazywania zadań między kolejnymi szczeblami. Wiesz, z kim rozmawiasz i kto odpowiada za to, co budujemy."
   },
   "services": {
     "label": "Oferta",
     "heading": "Małe studio. Pełna uwaga.",
-    "description": "Marka, strona, technologia i komunikacja powinny mówić jednym głosem. Dlatego patrzymy na firmę jako całość i dobieramy zakres pracy do tego, czego naprawdę potrzebuje - od pierwszego pomysłu po rozwiązanie gotowe do codziennej pracy.",
+    "description": "Pracujesz bezpośrednio z osobami, które projektują i budują system. Mały zespół, techniczne zaplecze i odpowiedzialność za całość - od decyzji architektonicznych po wdrożenie.",
     "items": [
       {
         "index": "01",
-        "title": "Audyt procesów i strategia AI",
-        "description": "Pomagamy znaleźć miejsca, w których AI lub automatyzacja naprawdę mają sens. Przyglądamy się procesom, wiedzy i celom firmy, a następnie porządkujemy pomysły, wybieramy najważniejsze kierunki i przygotowujemy konkretny plan pilota lub wdrożenia.",
-        "tags": "PROCESY · POTRZEBY · ROADMAPA"
+        "title": "Systemy AI i bazy wiedzy",
+        "description": "Budujemy dedykowane systemy AI do pracy z firmową wiedzą i dokumentami. Od wyszukiwania informacji w dużych zbiorach danych i systemów RAG po specjalistycznych asystentów i agentów AI.",
+        "tags": "RAG · DOKUMENTY · BAZY WIEDZY"
       },
       {
         "index": "02",
-        "title": "Systemy AI i automatyzacje",
-        "featuredLabel": "FLAGOWA OFERTA",
-        "description": "Tworzymy narzędzia, które upraszczają pracę z dokumentami, wiedzą i powtarzalnymi procesami. Projektujemy je od podstaw - od prototypu i integracji z danymi oraz istniejącymi narzędziami po bezpieczny system gotowy do codziennego użycia.",
-        "tags": "PROTOTYP · INTEGRACJE · PRODUKCJA"
+        "title": "Prywatna infrastruktura AI",
+        "description": "Dobieramy i uruchamiamy modele AI w środowisku dopasowanym do wymagań firmy. Pracujemy z modelami open-weight, rozwiązaniami europejskimi i prywatną infrastrukturą - od cloud po on-premise. Z naciskiem na kontrolę nad danymi, bezpieczeństwo i niezależność.",
+        "tags": "OPEN-WEIGHT · ON-PREMISE · PRIVATE CLOUD"
       },
       {
         "index": "03",
-        "title": "Digital Foundation",
-        "description": "Z nami zbudujesz swoją markę od podstaw - od pozycjonowania i tożsamości wizualnej po stronę internetową i jedno kluczowe wdrożenie technologiczne. Łączymy je w spójny cyfrowy fundament, który wspiera dalszy rozwój firmy.",
-        "tags": "STRATEGIA · BRANDING · WEB · TECHNOLOGIA"
-      },
-      {
-        "index": "04",
-        "title": "Brand & Web",
-        "description": "Projektujemy dopracowane marki, strony i produkty cyfrowe, które wyglądają i brzmią jak Twoja firma. Od strategii i identyfikacji po UX/UI, development i język komunikacji.",
-        "tags": "IDENTYFIKACJA · UX/UI · DEVELOPMENT"
+        "title": "Integracje i dedykowane oprogramowanie",
+        "description": "Łączymy systemy AI z bazami danych, API i oprogramowaniem, z którego firma już korzysta. Gdy gotowe narzędzia nie wystarczają, projektujemy własne aplikacje, backendy i usługi. Dbamy też o ich wdrożenie, monitoring i dalszy rozwój.",
+        "tags": "CUSTOM SOFTWARE · API · MLOPS"
       }
     ]
   },
   "targetAudience": {
     "label": "Dla kogo",
-    "heading": "Dla firm, które mają dużo wiedzy, dokumentów i ręcznej pracy.",
-    "accentWord": "wiedzy",
-    "description": "Najlepiej pomagamy organizacjom, w których ważne informacje są rozproszone, eksperci tracą czas na powtarzalne zadania, a istniejące narzędzia nie nadążają za rozwojem firmy. Nie wdrażamy technologii dla samego efektu - szukamy rozwiązań, które realnie ułatwiają codzienną pracę i wspierają rozwój zespołu.",
+    "heading": "Dla firm, którym gotowe narzędzia przestają wystarczać.",
+    "accentWord": "gotowe",
     "items": [
       {
         "index": "01",
-        "title": "Praca z dokumentami zajmuje zbyt dużo czasu",
-        "description": "Zespół traci czas na wyszukiwanie, porównywanie i przepisywanie informacji, zamiast wykorzystywać swoją wiedzę w pracy z klientami, projektami i decyzjami."
+        "title": "Gotowy chatbot nie zna specyfiki firmy",
+        "description": "Potrzebny jest system, który pracuje na własnych dokumentach i danych, rozumie kontekst branży i potrafi wskazać źródła informacji."
       },
       {
         "index": "02",
-        "title": "Wiedza jest rozproszona między ludźmi i narzędziami",
-        "description": "Najważniejsze informacje znajdują się w mailach, plikach, rozmowach i głowach kilku osób, przez co trudno je znaleźć, przekazać i dobrze wykorzystać."
+        "title": "Dane wymagają większej kontroli",
+        "description": "Dokumentacja, dane klientów lub własność intelektualna nie zawsze mogą trafiać do publicznych usług AI. Dobieramy model i środowisko do wymagań dotyczących prywatności i bezpieczeństwa."
       },
       {
         "index": "03",
-        "title": "Powtarzalne procesy blokują rozwój",
-        "description": "Firma rośnie, ale część pracy nadal wymaga ręcznego pilnowania, kopiowania danych i odtwarzania tych samych kroków przy każdym kolejnym zleceniu."
+        "title": "AI musi współpracować z istniejącymi systemami",
+        "description": "Nowe rozwiązanie musi korzystać z firmowych baz danych, API, aplikacji i uprawnień. Projektujemy integracje dopasowane do tego, co już działa w organizacji."
       },
       {
         "index": "04",
-        "title": "Potrzebna jest nowa cyfrowa podstawa",
-        "description": "Marka, strona, komunikacja i używane narzędzia przestały nadążać za tym, dokąd zmierza firma i jakiego doświadczenia oczekują jej klienci oraz zespół."
+        "title": "Prototyp to dopiero początek",
+        "description": "W codziennej pracy liczą się nie tylko odpowiedzi modelu, ale też monitoring, koszty, bezpieczeństwo, niezawodność i możliwość dalszego rozwoju."
       }
     ]
   },
   "process": {
     "label": "Proces",
-    "heading": "Od pomysłu do działającego rozwiązania.",
-    "description": "Najpierw wspólnie rozumiemy, czego naprawdę potrzebujesz. Potem sprawdzamy pomysł na małą skalę i dopiero wtedy budujemy rozwiązanie, które może dobrze działać w codziennym rytmie firmy.",
+    "heading": "Od problemu do systemu, który działa.",
     "items": [
       {
         "index": "01",
         "title": "Rozpoznanie",
-        "description": "Poznajemy firmę, ludzi, dane i proces. Szukamy miejsca, w którym technologia może przynieść realną wartość."
+        "description": "Ustalamy problem, użytkowników, źródła danych, ograniczenia techniczne i sposób oceny efektu."
       },
       {
         "index": "02",
-        "title": "Prototyp",
-        "description": "Sprawdzamy najważniejsze założenia na konkretnym, ograniczonym zakresie, zanim rozwiązanie urośnie do produkcyjnej skali."
+        "title": "Architektura i prototyp",
+        "description": "Dobieramy podejście, modele i infrastrukturę. Na konkretnym przypadku sprawdzamy, czy rozwiązanie działa i gdzie są jego ograniczenia."
       },
       {
         "index": "03",
-        "title": "Wdrożenie",
-        "description": "Budujemy system, łączymy go z istniejącymi narzędziami i dbamy o użyteczność, bezpieczeństwo oraz niezawodne działanie."
+        "title": "Budowa i wdrożenie",
+        "description": "Tworzymy aplikację, backend i integracje. Przygotowujemy system do pracy w środowisku klienta, z uwzględnieniem bezpieczeństwa i uprawnień."
       },
       {
         "index": "04",
-        "title": "Rozwój",
-        "description": "Obserwujemy, jak rozwiązanie działa w praktyce, rozwijamy je i dopasowujemy do zmieniających się potrzeb firmy oraz zespołu."
+        "title": "Utrzymanie i rozwój",
+        "description": "Monitorujemy jakość, koszty i niezawodność. Poprawiamy rozwiązanie i rozwijamy je wraz ze zmianą potrzeb."
       }
     ]
   },
   "philosophy": {
     "label": "Nasze podejście",
-    "heading": "Technologia tam, gdzie ma sens.",
-    "accentWord": "sens",
-    "description": "Wykorzystujemy nowe technologie etycznie i tylko tam, gdzie są naprawdę potrzebne. Nie traktujemy ich jako celu samego w sobie ani prostego sposobu na zastępowanie ludzi. Projektujemy rozwiązania, które zdejmują z zespołów mechaniczną pracę, porządkują wiedzę i wspierają podejmowanie decyzji. Dzięki temu ludzie mogą poświęcić więcej czasu zadaniom wymagającym doświadczenia, kreatywności, odpowiedzialności i relacji."
+    "heading": "Nie każde rozwiązanie potrzebuje AI.",
+    "accentWord": "AI",
+    "description": "Nie przywiązujemy się do jednego modelu ani dostawcy. Wybieramy technologię do wymagań projektu: czasem będzie to model open-weight we własnej infrastrukturze, czasem europejska usługa, a czasem klasyczne oprogramowanie bez AI. Liczy się kontrola nad danymi i rozwiązanie, które można bezpiecznie rozwijać."
   },
   "engineeringFoundation": {
-    "label": "Zaplecze technologiczne",
-    "note": "Wybrane doświadczenie zawodowe współzałożyciela studia.",
-    "heading": "Doświadczenie, na którym można polegać.",
-    "description": "Za technologiczną stronę Sokołek Studio odpowiada Maksymilian - senior software engineer z ponad 6-letnim doświadczeniem w tworzeniu systemów AI, aplikacji webowych i architektury chmurowej. Projektował i wdrażał rozwiązania od pierwszych prototypów po systemy działające w produkcji, dla startupów oraz globalnych firm z branż medycznej, chemicznej, reklamowej, półprzewodnikowej i finansowej.",
+    "note": "Wybrane projekty z doświadczenia zawodowego Maksa.",
+    "heading": "Systemy od architektury po produkcję.",
+    "description": "Ponad 6 lat pracy przy systemach AI, aplikacjach i infrastrukturze - od pierwszych prototypów po rozwiązania działające produkcyjnie.",
     "pillars": [
       {
-        "title": "Platforma AI do pracy z dokumentacją medyczną",
-        "outcome": "Zaprojektowanie i zbudowanie od podstaw aplikacji do pracy z dokumentacją i wiedzą medyczną - od architektury chmurowej i integracji modeli AI po interfejs użytkownika oraz proces wdrożenia.",
+        "title": "Aplikacja AI do pracy z dokumentacją medyczną",
+        "outcome": "Zaprojektowanie i zbudowanie aplikacji do pracy z dokumentacją i wiedzą medyczną. Zakres obejmował architekturę chmurową, integrację modeli AI, interfejs użytkownika i przygotowanie rozwiązania do wdrożenia.",
         "role": "Lead Full-Stack AI Software Engineer",
         "stack": [
           "React",
@@ -133,8 +126,8 @@
         ]
       },
       {
-        "title": "System agentów AI dla branży reklamowej",
-        "outcome": "Budowa systemu agentowego, który planuje i wykonuje wieloetapowe zadania, współpracuje z różnymi modelami AI oraz przekazuje ustrukturyzowane wyniki pomiędzy usługami.",
+        "title": "System agentów do wieloetapowych zadań",
+        "outcome": "Budowa systemu, w którym agenci planują i wykonują złożone zadania, współpracują z różnymi modelami AI i przekazują ustrukturyzowane wyniki pomiędzy usługami.",
         "role": "AI Engineer",
         "stack": [
           "AI Agents",
@@ -146,8 +139,8 @@
         ]
       },
       {
-        "title": "Infrastruktura MLOps dla branży półprzewodników",
-        "outcome": "Zaprojektowanie i wdrożenie produkcyjnego środowiska MLOps opartego na Kubernetes, które ujednoliciło pracę nad modelami uczenia maszynowego oraz usprawniło ich rozwój i wdrażanie w globalnej organizacji inżynieryjnej.",
+        "title": "Platforma MLOps dla branży półprzewodników",
+        "outcome": "Zaprojektowanie i wdrożenie środowiska MLOps opartego na Kubernetes. Platforma ujednoliciła pracę nad modelami uczenia maszynowego i usprawniła ich rozwój oraz wdrażanie w globalnej organizacji inżynieryjnej.",
         "role": "Full-Stack AI Software Engineer",
         "stack": [
           "Kubernetes",
@@ -158,8 +151,8 @@
         ]
       },
       {
-        "title": "Architektura danych dla sektora bankowego",
-        "outcome": "Budowa systemów danych analizujących informacje i wspierających utrzymanie globalnej infrastruktury bankomatowej.",
+        "title": "Systemy danych dla sektora bankowego",
+        "outcome": "Budowa systemów danych, które analizowały informacje i wspierały utrzymanie globalnej infrastruktury bankomatowej.",
         "role": "Software Engineer",
         "stack": [
           "Data Pipelines",
@@ -171,8 +164,8 @@
         ]
       },
       {
-        "title": "Platforma wiedzy dla branży chemicznej",
-        "outcome": "Zaprojektowanie platformy, która przetworzyła około 100 000 technicznych dokumentów PDF, uporządkowała zawarte w nich dane i przygotowała je do wyszukiwania oraz wykorzystania przez narzędzia AI.",
+        "title": "Platforma wiedzy dla 100 000 dokumentów technicznych",
+        "outcome": "Zaprojektowanie platformy, która przetworzyła około 100 000 technicznych plików PDF, uporządkowała zawarte w nich informacje i przygotowała je do wyszukiwania oraz wykorzystania przez narzędzia AI.",
         "role": "Full-Stack AI Engineer",
         "stack": [
           "Python",
@@ -186,9 +179,9 @@
         ]
       },
       {
-        "title": "Infrastruktura generatywnej AI dla wideo i audio",
-        "outcome": "Projektowanie infrastruktury Kubernetes dla produkcyjnych obciążeń AI, w tym potoków generowania wideo i audio wykorzystujących GPU. Rozwój usług backendowych, workflow ML i orkiestracji agentów oraz usprawnianie wdrożeń, obserwowalności i niezawodności.",
-        "role": "Full-Stack Engineer · Brahma AI · 04.2026–obecnie",
+        "title": "Infrastruktura AI dla generowania wideo i audio",
+        "outcome": "Rozwój infrastruktury Kubernetes dla produkcyjnych obciążeń AI wykorzystujących GPU. Praca obejmowała usługi backendowe, workflow ML, orkiestrację agentów, wdrożenia, obserwowalność i niezawodność.",
+        "role": "Full-Stack Engineer",
         "stack": [
           "Kubernetes",
           "GPU Workloads",
@@ -204,12 +197,12 @@
   },
   "portfolio": {
     "label": "Realizacje",
-    "heading": "Projekty, z których jesteśmy dumni.",
-    "intro": "Najlepiej pracuje nam się z ludźmi, którzy naprawdę znają i lubią to, co robią. Tworzymy dla nich rozwiązania, w których strategia, technologia, obraz i język pracują razem.",
+    "heading": "Wybrane realizacje.",
+    "intro": "Wybrane wdrożenie zrealizowane przez Sokołek Studio. Doświadczenie zawodowe Maksymiliana pokazujemy osobno.",
     "dogTok": {
       "title": "DOG TOK",
       "subtitle": "DOG TOK - Szkoleniowy Raj",
-      "summary": "Uporządkowaliśmy rozbudowaną ofertę DOG TOK-a w prostą i czytelną strukturę. Zaprojektowaliśmy stronę, która oddaje atmosferę miejsca, ułatwia znalezienie najważniejszych informacji i prowadzi użytkownika przez warsztaty, obozy, noclegi oraz harmonogram wydarzeń.",
+      "summary": "Przebudowaliśmy strukturę rozbudowanej oferty DOG TOK-a tak, żeby odwiedzający szybko znajdowali informacje o warsztatach, obozach, noclegach i wydarzeniach. Zaprojektowaliśmy i wdrożyliśmy stronę, która porządkuje ofertę i oddaje charakter miejsca.",
       "imageAlt": "Strona DOG TOK - Szkoleniowy Raj zaprojektowana i wdrożona przez Sokołek Studio",
       "labels": {
         "client": "KLIENT",
@@ -226,39 +219,37 @@
     }
   },
   "midPageCta": {
-    "label": "Następny krok",
-    "heading": "Masz proces, który zabiera zespołowi zbyt dużo czasu?",
-    "description": "Nie musisz wiedzieć, jak go zautomatyzować ani czy AI jest właściwym rozwiązaniem. Opowiedz nam, jak wygląda dziś. Pomożemy nazwać problem, znaleźć sensowny kierunek i zdecydować, co naprawdę warto zbudować.",
-    "cta": "Porozmawiajmy o procesie"
+    "label": "Masz projekt?",
+    "heading": "Masz problem, którego nie rozwiąże gotowe narzędzie?",
+    "cta": "Opowiedz nam o projekcie"
   },
   "manifesto": {
     "label": "O nas",
     "imageAlt": "Maksymilian i Klaudia, założyciele Sokołek Studio",
     "sectionOne": {
-      "heading": "Trochę o nas",
-      "description": "Za technologiczną stronę studia odpowiada Maksymilian. Od lat tworzy oprogramowanie i systemy AI, zarówno dla startupów, jak i dużych korporacji. Łączy doświadczenie inżynierskie z dużą ciekawością nowych technologii, ale nie wdraża ich dla samego efektu. Lubi proste rozwiązania, czysty kod i projekty dopracowane do ostatniego szczegółu."
+      "heading": "Bezpośrednia współpraca.",
+      "description": "Maksymilian odpowiada za architekturę, AI i development. Pracował przy systemach, w których liczą się dane, niezawodność i kontrola nad infrastrukturą."
     },
     "sectionTwo": {
       "heading_part1": "Maksymilian",
       "heading_part2": "Klaudia",
-      "description": "Za kreatywną stronę studia odpowiada Klaudia. Łączy doświadczenie w PR i komunikacji z UX, fotografią, montażem video oraz social mediami. Ma dobre oko do obrazu, wyczucie trendów i wie, jak przełożyć charakter marki oraz złożoną technologię na prosty, naturalny język. Dba o to, żeby całość była spójna, użyteczna i po prostu dobrze wyglądała."
+      "description": "Klaudia zajmuje się komunikacją i UX - dba o to, żeby złożone rozwiązania były zrozumiałe i wygodne w codziennym użyciu."
     },
     "principles": [
-      "Pro, but make it fun",
-      "Technologia tam, gdzie ma sens",
-      "Cyfrowo, ale realnie",
-      "Prosta i dobra komunikacja"
+      "Najpierw problem, potem technologia.",
+      "Nie wdrażamy AI na siłę.",
+      "Kontrola nad danymi ma znaczenie.",
+      "Mały zespół. Pełna odpowiedzialność."
     ],
     "openScope": {
-      "heading": "Łączymy technologię, design i komunikację.",
-      "description": "Nie zaczynamy od listy usług ani wybranej technologii. Najpierw poznajemy sytuację firmy, a następnie dobieramy zakres potrzebny do rozwiązania konkretnego problemu i osiągnięcia realnego rezultatu."
+      "heading": "Technologia ma służyć ludziom, którzy z niej korzystają.",
+      "description": "Dlatego patrzymy nie tylko na architekturę i kod, ale też na sposób pracy zespołu. Dobry system powinien pasować do ludzi i ich zadań, a nie dokładać im kolejnego narzędzia do obsługi."
     }
   },
   "contact": {
-    "heading_part1": "Zacznijmy od problemu,",
-    "heading_part2": "nie od technologii.",
-    "description": "Opowiedz nam o procesie, który zabiera zbyt dużo czasu, wiedzy trudnej do odnalezienia albo rozwiązaniu cyfrowym, które przestało nadążać za rozwojem firmy. Pomożemy uporządkować sytuację i sprawdzić, jaki następny krok ma sens.",
-    "secondaryDescription": "Jeżeli potrzebujesz nowej marki, strony albo kompleksowej Digital Foundation, możemy połączyć design, technologię i komunikację w jednym spójnym rozwiązaniu."
+    "heading_part1": "Gotowe rozwiązania",
+    "heading_part2": "nie wystarczają?",
+    "description": "Masz pomysł na system AI, problem z danymi albo projekt, który utknął na etapie prototypu? Napisz kilka zdań. Wrócimy z pytaniami i sprawdzimy, czy możemy pomóc."
   },
   "footer": {
     "contact": "Napisz do nas"

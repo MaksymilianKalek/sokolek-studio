@@ -130,8 +130,7 @@ export function EngineeringFoundation() {
         >
           <div id="founder-background" className="site-container site-anchor">
             <SectionIntro
-              label={t('engineeringFoundation.label')}
-              note={t('engineeringFoundation.note')}
+              label={t('engineeringFoundation.note')}
               heading={t('engineeringFoundation.heading')}
               headingClassName="max-w-4xl"
               description={t('engineeringFoundation.description')}
@@ -202,7 +201,7 @@ function PillarCard({
         <p className="meta-text text-ink">
           {pillar.role}
         </p>
-        <div className="content-offset-tight flex flex-wrap gap-2">
+        {/* <div className="content-offset-tight flex flex-wrap gap-2">
           {pillar.stack.map((tag) => (
             <span
               key={tag}
@@ -211,7 +210,7 @@ function PillarCard({
               {tag}
             </span>
           ))}
-        </div>
+        </div> */}
       </div>
     </article>
   )

@@ -20,7 +20,6 @@ export function TargetAudience() {
         <SectionIntro
           label={t('targetAudience.label')}
           heading={<AccentWord text={heading} word={accentWord} />}
-          description={t('targetAudience.description')}
         />
 
         <div className="section-content-offset grid gap-4 md:grid-cols-2">

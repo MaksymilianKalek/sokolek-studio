@@ -112,7 +112,7 @@
   }
 }
 
-@media (hover: hover) and (pointer: fine) {
+/* @media (hover: hover) and (pointer: fine) {
   .service-row {
     height: var(--service-row-height, auto);
   }
@@ -140,7 +140,7 @@
     opacity: 1;
     transform: translateY(0);
   }
-}
+} */
 
 .interactive-accent-link {
   position: relative;

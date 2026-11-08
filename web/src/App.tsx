@@ -13,7 +13,7 @@ import { Services } from './components/home/services'
 import { TargetAudience } from './components/home/target-audience'
 import { useCookieConsent } from './hooks/use-cookie-consent'
 import { useSmoothScroll } from './hooks/use-smooth-scroll'
-import { RealizacjePage } from './pages/realizacje'
+// import { RealizacjePage } from './pages/realizacje'
 
 function getCurrentPath() {
   return window.location.pathname.replace(/\/$/, '') || '/'
@@ -46,18 +46,18 @@ function App() {
     window.scrollTo({ top: 0, left: 0 })
   }, [currentPath])
 
-  if (currentPath === '/portfolio') {
-    return (
-      <>
-        <RealizacjePage />
-        <AnimatePresence>
-          {shouldShowNotice ? (
-            <CookieConsentBanner onAccept={acceptAnalytics} onReject={rejectAnalytics} />
-          ) : null}
-        </AnimatePresence>
-      </>
-    )
-  }
+  // if (currentPath === '/portfolio') {
+  //   return (
+  //     <>
+  //       <RealizacjePage />
+  //       <AnimatePresence>
+  //         {shouldShowNotice ? (
+  //           <CookieConsentBanner onAccept={acceptAnalytics} onReject={rejectAnalytics} />
+  //         ) : null}
+  //       </AnimatePresence>
+  //     </>
+  //   )
+  // }
 
   return (
     <main className="site-shell min-h-dvh bg-paper text-ink antialiased">
@@ -78,8 +78,8 @@ function App() {
       <Services />
       <TargetAudience />
       <Process />
-      <MidPageCta />
-      <AiPhilosophy />
+      {/* <MidPageCta /> */}
+      {/* <AiPhilosophy /> */}
       <EngineeringFoundation />
       <Philosophy />
       <Footer />

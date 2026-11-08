@@ -21,7 +21,7 @@ export function Contact({ embedded = false }: ContactProps) {
           <div className="editorial-grid section-offset lg:items-end">
             <h2 className="heading-md">
               {t('contact.heading_part1')}{' '}
-              <span className="font-serif font-normal italic tracking-[-0.035em]">
+              <span className="accent-italic">
                 {t('contact.heading_part2')}
               </span>
             </h2>
@@ -29,9 +29,6 @@ export function Contact({ embedded = false }: ContactProps) {
             <div>
               <p className="body-copy max-w-xl">
                 {t('contact.description')}
-              </p>
-              <p className="body-copy content-offset-tight max-w-xl">
-                {t('contact.secondaryDescription')}
               </p>
               <PrimaryCtaLink
                 href="mailto:hello@sokolek.com"
