@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { Reveal } from '../reveal'
-import { AccentWord, SectionIntro } from './ui'
+import { SectionIntro } from './ui'
 
 type ProcessItem = {
   description: string
